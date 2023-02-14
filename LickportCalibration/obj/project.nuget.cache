@@ -1,0 +1,68 @@
+{
+  "version": 2,
+  "dgSpecHash": "bNxCuoAcQwLkh0sJIVMmUi1Ics8T2mpn5ilmDhTEAuUYjVX9tU8ONFae0BWnn87ytCIi1t3JbYYRxYVfRUnHEQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\edward.horrocks\\Documents\\Code\\AnimalBehaviouralTasks\\LickportCalibration\\BonsaiFiles\\Extensions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\bonsai.core\\2.6.3\\bonsai.core.2.6.3.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\mathnet.numerics\\4.5.1\\mathnet.numerics.4.5.1.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\opentk\\1.1.1589.5942\\opentk.1.1.1589.5942.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\rx-core\\2.2.5\\rx-core.2.2.5.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\rx-interfaces\\2.2.5\\rx-interfaces.2.2.5.nupkg.sha512",
+    "C:\\Users\\edward.horrocks\\.nuget\\packages\\rx-linq\\2.2.5\\rx-linq.2.2.5.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Bonsai.Core 2.6.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Bonsai.Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'OpenTK 1.1.1589.5942' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "OpenTK",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rx-Core 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Rx-Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rx-Interfaces 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Rx-Interfaces",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Rx-Linq 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Rx-Linq",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}
