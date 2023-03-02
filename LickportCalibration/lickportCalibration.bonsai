@@ -22,7 +22,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="IntProperty">
-                <Value>1</Value>
+                <Value>5</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="BehaviorSubject">
@@ -91,15 +91,7 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:CreateList">
                 <p1:ThisList>
-                  <p1:float>10</p1:float>
-                  <p1:float>20</p1:float>
-                  <p1:float>30</p1:float>
-                  <p1:float>40</p1:float>
                   <p1:float>50</p1:float>
-                  <p1:float>60</p1:float>
-                  <p1:float>70</p1:float>
-                  <p1:float>80</p1:float>
-                  <p1:float>90</p1:float>
                   <p1:float>100</p1:float>
                 </p1:ThisList>
               </Combinator>
@@ -316,7 +308,7 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Timer">
                 <rx:DueTime>PT1S</rx:DueTime>
-                <rx:Period>PT0.25S</rx:Period>
+                <rx:Period>PT0.5S</rx:Period>
               </Combinator>
             </Expression>
             <Expression xsi:type="Condition">
@@ -446,7 +438,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>20</Value>
+                <Value>10</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
