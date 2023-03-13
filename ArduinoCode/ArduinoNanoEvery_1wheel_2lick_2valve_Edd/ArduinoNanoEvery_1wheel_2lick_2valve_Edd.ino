@@ -1,7 +1,4 @@
 
-
-
-
 /*
   Tomaso Muzzu - UCL - 25 May 2017
   Script to communicate with the following devices from Matlab:
@@ -23,8 +20,8 @@
 // Unfortunately 0 and 1 don't work on arduino during serial, so we can only get one encoder input (forwards only!, sucks!)
 #define LickPinL 2 // digital pin of lick detector
 #define LickPinR 3 // digital pin of lick detector
-#define encoder0PinA 7          // sensor A of rotary encoder
-#define encoder0PinB 3          // sensor B of rotary encoder
+#define encoder0PinA 18          // sensor A of rotary encoder
+#define encoder0PinB 19          // sensor B of rotary encoder
 #define SValvePinL 11             // digital pin controlling the solenoid valve
 #define SValvePinR 12
 //#define SyncPin 10               // sync pulse pin
@@ -67,9 +64,9 @@ uint32_t StartTimeR = 0;      // variable to store temporary timestamps of previ
 
 
 // variable for sync pulse
-volatile unsigned int PinStatus = 0;      // variable for transitions
-uint32_t TempTime = 0;           // variable to store time when sync pulse goes up
-volatile unsigned Delta_t = 0;            // variable to store intervals between 0->1 transitions
+//volatile unsigned int PinStatus = 0;      // variable for transitions
+//uint32_t TempTime = 0;           // variable to store time when sync pulse goes up
+//volatile unsigned Delta_t = 0;            // variable to store intervals between 0->1 transitions
 
 // variables for eye tracking camera trigger
 boolean cameraState = false;
