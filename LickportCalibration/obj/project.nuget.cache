@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bNxCuoAcQwLkh0sJIVMmUi1Ics8T2mpn5ilmDhTEAuUYjVX9tU8ONFae0BWnn87ytCIi1t3JbYYRxYVfRUnHEQ==",
+  "dgSpecHash": "fzHEMGayMR7Qn3ltIO7+s8l003c3UbCBUGQsqKfhyFmwkZ9VXqTkdBVCyMLKKaUa1p6puCpThQiX5lJI+QyQLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\edward.horrocks\\Documents\\Code\\AnimalBehaviouralTasks\\LickportCalibration\\BonsaiFiles\\Extensions.csproj",
+  "projectFilePath": "C:\\Users\\edward.horrocks\\Documents\\Code\\MatrixRigs-main\\LickportCalibration\\Extensions.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edward.horrocks\\.nuget\\packages\\bonsai.core\\2.6.3\\bonsai.core.2.6.3.nupkg.sha512",
     "C:\\Users\\edward.horrocks\\.nuget\\packages\\mathnet.numerics\\4.5.1\\mathnet.numerics.4.5.1.nupkg.sha512",

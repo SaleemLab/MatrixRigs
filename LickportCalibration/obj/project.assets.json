@@ -417,11 +417,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\edward.horrocks\\Documents\\Code\\AnimalBehaviouralTasks\\LickportCalibration\\BonsaiFiles\\Extensions.csproj",
+      "projectUniqueName": "C:\\Users\\edward.horrocks\\Documents\\Code\\MatrixRigs-main\\LickportCalibration\\Extensions.csproj",
       "projectName": "Extensions",
-      "projectPath": "C:\\Users\\edward.horrocks\\Documents\\Code\\AnimalBehaviouralTasks\\LickportCalibration\\BonsaiFiles\\Extensions.csproj",
+      "projectPath": "C:\\Users\\edward.horrocks\\Documents\\Code\\MatrixRigs-main\\LickportCalibration\\Extensions.csproj",
       "packagesPath": "C:\\Users\\edward.horrocks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\edward.horrocks\\Documents\\Code\\AnimalBehaviouralTasks\\LickportCalibration\\BonsaiFiles\\obj\\",
+      "outputPath": "C:\\Users\\edward.horrocks\\Documents\\Code\\MatrixRigs-main\\LickportCalibration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
