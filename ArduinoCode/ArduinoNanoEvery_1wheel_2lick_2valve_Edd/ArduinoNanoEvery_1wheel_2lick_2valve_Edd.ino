@@ -115,7 +115,7 @@ void setup() {
   // interrupt for recording camera pulse counter
   //attachInterrupt(digitalPinToInterrupt(RecCameraTrPin_IN), RecCameraPulse_Receiver, CHANGE);
   
-  Serial.begin (250000);
+  Serial.begin (1000000);
   Serial.setTimeout(5);
 
   delay(500);
