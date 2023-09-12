@@ -1,34 +1,13 @@
-
-/*
-  Tomaso Muzzu - UCL - 25 May 2017
-  Script to communicate with the following devices from Matlab:
-  - rotary encoder with quadrature encoding of position. Model Kubler 05.2400.1122.1024 (READ)
-  - pintch valve for water reward. Model NResearch 225P011-21 (WRITE)
-  - lick detector based on IR beam breaking circuit. Model OP550 and IR26-21C-L110-TR8 (READ)
-*/
-/* 22 Jan 2018
-  read out of the sync pulse for syncing VR with ePhys
-  sync pulse signal is read via an interrupt and I store the time in ms
-  timestamp of the last 0->1 signal transition is sent to Matlab
-*/
-/* ***** NOTDUE 2 lick port VERSION -> Serial -> SErial. 2 lick counters and svalves******* */
-
 #include <Event.h>
 #include <Timer.h>
 
-// IMPORTANT: because we are using interrupts, it's important to assign the lickpins and encoder pins as follows. 
-// Unfortunately 0 and 1 don't work on arduino during serial, so we can only get one encoder input (forwards only!, sucks!)
 #define LickPinL 2 // digital pin of lick detector
 #define LickPinR 3 // digital pin of lick detector
 #define encoder0PinA 18          // sensor A of rotary encoder
 #define encoder0PinB 19          // sensor B of rotary encoder
 #define SValvePinL 11             // digital pin controlling the solenoid valve
 #define SValvePinR 12
-//#define SyncPin 10               // sync pulse pin
-//#define EyeCameraTrPin_IN 12    // trigger pin to start sending pulse to the eye camera
-//#define EyeCameraTrPin_OUT 13   // trigger to eye tracking camera
-//#define RecCameraTrPin_IN 1     // register recording camera frame times
-//#define RecCameraTrPin_OUT 8    // trigger pin to start/stop recording camera
+
 
 // variables for rotary encoder
 volatile unsigned int encoder0Pos = 0;    // variable for counting ticks of rotary encoder
@@ -63,27 +42,12 @@ boolean TimerFinishedR = false;
 uint32_t StartTimeR = 0;      // variable to store temporary timestamps of previous iteration of the while loop
 
 
-// variable for sync pulse
-//volatile unsigned int PinStatus = 0;      // variable for transitions
-//uint32_t TempTime = 0;           // variable to store time when sync pulse goes up
-//volatile unsigned Delta_t = 0;            // variable to store intervals between 0->1 transitions
 
-// variables for eye tracking camera trigger
-boolean cameraState = false;
-int VFR = 50; // frame rate of eye tracking camera
-int VFR_T = 1000/VFR; // inverse of frame rate in ms
-int EyeTr_dur_ON = 5; // duration in ms of the ttl pulse for the eye camera
-char frameRate[6];
-// variable for recording camera trigger recording
-volatile unsigned int FrameCount = 0;    // variable for counting frames
-uint32_t FrameTime = 0;            // variable to store intervals between 0->1 transitions
-unsigned int tmp_FrameCount = 0;           // temporary variable for counting Frames
+// serial frequency variables
+unsigned long startMillis;  //some global variables available anywhere in the program
+unsigned long currentMillis;
+const unsigned long period = 10;  //the value is a number of milliseconds
 
-// delete
-////volatile unsigned int RecCamPinStatus = 0;      // variable for transitions
-////uint32_t RecCamTempTime = 0;           // variable to store time when sync pulse goes up
-////volatile unsigned RecCamDelta_t = 0;            // variable to store intervals between transitions
-//// unsigned int tmp_FrameCount = 0;           // temporary variable for counting licks
 
 void setup() {
 
@@ -96,12 +60,6 @@ void setup() {
   pinMode(SValvePinL, OUTPUT);           // solenoid valve for left port
   pinMode(SValvePinR, OUTPUT);          // solenoid valve for right port
   
-  //pinMode(SyncPin, INPUT);              // sync pulse
-//  pinMode(EyeCameraTrPin_IN, INPUT);    // trigger in for camera
- // pinMode(EyeCameraTrPin_OUT, OUTPUT);  // eye camera trigger
- // pinMode(RecCameraTrPin_OUT, OUTPUT);  // trigger to start/stop camera
- // pinMode(RecCameraTrPin_IN, INPUT);    // eye camera register frame time (trigger)
-  
   // interrupts for rotary encoder
   attachInterrupt(digitalPinToInterrupt(encoder0PinA), doEncoderA, CHANGE);
   attachInterrupt(digitalPinToInterrupt(encoder0PinB), doEncoderB, CHANGE);
@@ -110,12 +68,9 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(LickPinL), Lick_CounterL, FALLING);
   attachInterrupt(digitalPinToInterrupt(LickPinR), Lick_CounterR, FALLING);
 
-  // interrupt for sync pulse
-  //attachInterrupt(digitalPinToInterrupt(SyncPin), SyncPulse_Receiver, CHANGE);
-  // interrupt for recording camera pulse counter
-  //attachInterrupt(digitalPinToInterrupt(RecCameraTrPin_IN), RecCameraPulse_Receiver, CHANGE);
+
   
-  Serial.begin (9600);
+  Serial.begin (1000000);
   Serial.setTimeout(5);
 
   delay(500);
@@ -127,49 +82,28 @@ void setup() {
 void loop() {
   //Check for change in position and send to Serial buffer
 
-  if (tmp_Pos != encoder0Pos || (tmp_LickCountL != LickCountL) || (tmp_LickCountR != LickCountR)) { // || (tmp_FrameCount != FrameCount)) { //should I add a FrameCount condition and create a temp_FrameCount as well?
+    currentMillis = millis();  //get the current "time" (actually the number of milliseconds since the program started)
+  if (currentMillis - startMillis >= period)  //test whether the period has elapsed
+  {
     Serial.print(encoder0Pos);//
     Serial.print("\t");
     Serial.print(LickCountL);//
     Serial.print("\t");
     Serial.print(LickCountR);//
-    //Serial.print("\t");
-    //Serial.print(PinStatus);
-    //Serial.print("\t");
-    //Serial.print(FrameCount);
-    //Serial.print("\t");
-    //Serial.print(FrameTime);
-    //Serial.print("\t");
-    //Serial.print(receivedChars);
-    Serial.print("\n");
-    tmp_Pos = encoder0Pos;
-    tmp_LickCountL = LickCountL;
-    tmp_LickCountR = LickCountR;
-    //tmp_FrameCount = FrameCount;
-  }
-  else {
-    Serial.print(tmp_Pos);//
     Serial.print("\t");
-    Serial.print(tmp_LickCountL);//
-    Serial.print("\t");
-    Serial.print(tmp_LickCountR);//
-    //Serial.print("\t");
-    //Serial.print(PinStatus);
-    //Serial.print("\t");
-    //Serial.print(tmp_FrameCount);
-    //Serial.print("\t");
-    //Serial.print(FrameTime);
-    //Serial.print("\t");
-    //Serial.print(receivedChars);
+    Serial.print(millis());
     Serial.print("\n");
+
+    
+    startMillis = currentMillis;  // update timer
   }
+
+    
 
   GetSerialInput();
   ActivatePVL();
   ActivatePVR();
-  //TriggerCamera();
 
-  //delay(1);
 }
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -212,32 +146,14 @@ void GetSerialInput() { // part of code taken from http://forum.arduino.cc/index
         newRewardL = true;  
       }
 
-//    if (receivedChars[0] == 'c'){
-//      toggleCameraState(); // either 0 or 1
-//    }
-//    if (receivedChars[0] == 'f'){
-//     for(int i=0;i<5; i=i+1){
-//        frameRate[i] = receivedChars[i+1];
-//      }
-//     VFR = atoi(frameRate);
-//     VFR_T = 1000/VFR; // inverse of frame rate in ms
-//    }
+
   }
 }
 
-//void toggleCameraState() {
-//  if (receivedChars[1] == '1') {  // strcmp(cameraStateInput,"1")
-//    cameraState = true;
-//    digitalWrite(RecCameraTrPin_OUT, HIGH);
-//  }
-//  if (receivedChars[1] == '0') { // strcmp(cameraStateInput,"0")
-//    cameraState = false;
-//    digitalWrite(RecCameraTrPin_OUT, LOW);
-//  }
-//}
+
   
 /////////////////////////////////////////////////////////////////////////////
-// Timer for the output signal to the pintch valve to stay high
+// Timer for the output signal to the pinch valve to stay high
 
 void ActivatePVL() {
   if (newRewardL == true) {
@@ -291,22 +207,7 @@ void ActivatePVR() {
   }
 }
 
-/////////////////////////////////////////////////////////////////////////////
-// trigger signal to acquire frames through eye camera. Get Start/Stop via hardware from other Arduino
-//void TriggerCamera() {
-//  if (cameraState == true) {
-//  // if (tmp_Pos>5000) {
-//    if (millis()%VFR_T <= EyeTr_dur_ON){
-//      digitalWrite(EyeCameraTrPin_OUT, HIGH); // trigger a frame exposure to the camera 
-//    }
-//    else {
-//      digitalWrite(EyeCameraTrPin_OUT, LOW); // make sure the camera does not acquire anything
-//    }
-//  }
-//  else {
-//    digitalWrite(EyeCameraTrPin_OUT, LOW); // make sure the camera does not acquire anything
-//  }
-//}
+
 
 /////////////////////////////////////////////////////////////////////////////
 // Interrupt on A changing state
@@ -350,30 +251,3 @@ void Lick_CounterR() {
   if (digitalRead(LickPinR) == LOW) {LickCountR = LickCountR + 1;}
 }
 
-
-/////////////////////////////////////////////////////////////////////////////
-// Interrupt for when sync signal goes up
-//void SyncPulse_Receiver() {
-//  // low-to-high transition?
-//  if (digitalRead(SyncPin) == HIGH) {
-//    PinStatus = 1;
-//    // Delta_t = millis()- TempTime;
-//    // TempTime = millis();
-//  }
-//  else if (digitalRead(SyncPin) == LOW) {
-//    PinStatus = 0;
-//  }
-//}
-
-/////////////////////////////////////////////////////////////////////////////
-// Interrupt for when sync signal goes up
-// void RecCameraPulse_Receiver() {
-//  // CHANGE transition?
-//   if (digitalRead(RecCameraTrPin_IN) == CHANGE) {
-//     FrameCount = FrameCount + 1;
-//     FrameTime = millis();
-//   }
-//
-//}
-
-// EOF
