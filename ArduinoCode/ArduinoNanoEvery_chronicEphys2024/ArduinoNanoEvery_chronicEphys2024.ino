@@ -5,12 +5,16 @@
 #define LickPinR 3 // digital pin of lick detector
 #define encoder0PinA 18          // sensor A of rotary encoder
 #define encoder0PinB 19          // sensor B of rotary encoder
-#define SValvePinL 11             // digital pin controlling the solenoid valve
-#define SValvePinR 12
+#define SValvePinL 11             // digital pin controlling the left solenoid valve
+#define SValvePinR 12            // digital pin controlling the right solenoid valve
 #define SyncPin 10               // sync pulse pin
+#define PhotodiodePin 17         // photoiode analog input 
 
 // variable for sync pulse
 volatile unsigned int SyncPinStatus = 0;      // variable for counting licks
+
+// variable for photodiode
+int PhotodiodeVal;
 
 // variables for rotary encoder
 volatile unsigned int encoder0Pos = 0;    // variable for counting ticks of rotary encoder
@@ -64,6 +68,8 @@ void setup() {
   pinMode(SValvePinL, OUTPUT);           // solenoid valve for left port
   pinMode(SValvePinR, OUTPUT);          // solenoid valve for right port
   pinMode(SyncPin, INPUT);              // sync pulse
+  pinMode(PhotodiodePin, INPUT);        // PhotoDiode
+
   // interrupts for rotary encoder
   attachInterrupt(digitalPinToInterrupt(encoder0PinA), doEncoderA, CHANGE);
   attachInterrupt(digitalPinToInterrupt(encoder0PinB), doEncoderB, CHANGE);
@@ -98,6 +104,8 @@ void loop() {
     Serial.print("\t");
     Serial.print(SyncPinStatus);// Sync pulse high/low status
     Serial.print("\t");
+    Serial.print(PhotodiodeVal);
+    Serial.print("\t");
     Serial.print(millis());// Arduino timestamp
     Serial.print("\n");
     startMillis = currentMillis;  // update timer
@@ -108,6 +116,8 @@ void loop() {
   GetSerialInput();
   ActivatePVL();
   ActivatePVR();
+  PhotodiodeVal = analogRead(PhotodiodePin);    // read the input pin
+
 
 }
 /////////////////////////////////////////////////////////////////////////////
