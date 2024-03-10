@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.6.3"
+<WorkflowBuilder Version="2.7.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
@@ -16,10 +16,10 @@
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="FloatProperty">
-          <Value>1</Value>
+          <Value>6</Value>
         </Combinator>
       </Expression>
-      <Expression xsi:type="BehaviorSubject">
+      <Expression xsi:type="rx:BehaviorSubject">
         <Name>RewardVolume</Name>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
@@ -34,7 +34,7 @@
               <Property Name="FileName" />
             </Expression>
             <Expression xsi:type="io:CsvReader">
-              <io:FileName>testLUT.csv</io:FileName>
+              <io:FileName>Bonsai_LPCAL_Rig_TrinityTest_Lickport_l_2023-06-20T17_49_14.csv</io:FileName>
               <io:ListSeparator />
               <io:ScanPattern>%f,%f</io:ScanPattern>
               <io:SkipRows>0</io:SkipRows>
@@ -64,7 +64,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>1</Value>
+                <Value>6</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

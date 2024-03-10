@@ -1,9 +1,11 @@
 %% generate LUT mapping reward weight to open times
 
+% output file from Bonsai
 filename = 'LPCAL_Rig_TrinityTest_Lickport_l_2023-06-20T17_49_14.csv';
 
-valueRange = []; % in mg, default is range collected from scales
-resolution = 0.1; % in mg
+% options
+valueRange = [1 10]; % in mg, leave empty to use range defined by input file
+resolution = 0.1; % in mg, resolution of chooseable reward weights
 plotFlag=true;
 
 %% load data
@@ -67,7 +69,7 @@ out_tbl=table;
 out_tbl.OpenTime = vq(:); 
 out_tbl.Weight = xq(:);
 
-outputFilename = ['Bonsai_', filename];
+outputFilename = ['Proc', filename];
 
 writetable(out_tbl,outputFilename,'WriteVariableNames',0)
 
