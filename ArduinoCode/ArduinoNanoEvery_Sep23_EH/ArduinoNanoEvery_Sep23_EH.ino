@@ -32,7 +32,6 @@ int TimeONL = 0;             // new for this version
 int TempVarL = 0;
 boolean TimerFinishedL = false;
 uint32_t StartTimeL = 0;      // variable to store temporary timestamps of previous iteration of the while loop
-
 // right reward
 char rewardTimeR[6];   // an array to store the received data
 boolean newRewardR = false;
@@ -40,7 +39,6 @@ int TimeONR = 0;             // new for this version
 int TempVarR = 0;
 boolean TimerFinishedR = false;
 uint32_t StartTimeR = 0;      // variable to store temporary timestamps of previous iteration of the while loop
-
 
 
 // serial frequency variables
