@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.7.3"
+<WorkflowBuilder Version="2.7.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns:gl="clr-namespace:Bonsai.Shaders;assembly=Bonsai.Shaders"
@@ -13,7 +13,7 @@
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="io:CreateSerialPort">
           <io:Name>ArduinoSerial</io:Name>
-          <io:PortName>COM3</io:PortName>
+          <io:PortName>COM5</io:PortName>
           <io:BaudRate>1000000</io:BaudRate>
           <io:Encoding>utf-8</io:Encoding>
           <io:Parity>None</io:Parity>
@@ -52,7 +52,7 @@
 def process(value):
   mylist = value.split("\t")
 
-  if len(mylist) == 3:
+  if len(mylist) == 4:
     return True
   else:
     return False
@@ -99,7 +99,7 @@ def process(value):
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>l300</Value>
+          <Value>l30</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -116,7 +116,7 @@ def process(value):
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>r300</Value>
+          <Value>r30</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -131,13 +131,13 @@ def process(value):
           <gl:Height>600</gl:Height>
           <gl:VSync>On</gl:VSync>
           <gl:SwapSync>false</gl:SwapSync>
-          <gl:ClearColor>Black</gl:ClearColor>
+          <gl:ClearColor>Gray</gl:ClearColor>
           <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
           <gl:CursorVisible>true</gl:CursorVisible>
           <gl:Location xsi:nil="true" />
-          <gl:WindowBorder>Fixed</gl:WindowBorder>
-          <gl:WindowState>Normal</gl:WindowState>
-          <gl:DisplayDevice>Primary</gl:DisplayDevice>
+          <gl:WindowBorder>Hidden</gl:WindowBorder>
+          <gl:WindowState>Fullscreen</gl:WindowState>
+          <gl:DisplayDevice>Second</gl:DisplayDevice>
           <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
           <gl:TargetUpdateFrequency xsi:nil="true" />
           <gl:RenderState />
@@ -176,7 +176,7 @@ def process(value):
             </cv:CapturePropertyAssignment>
             <cv:CapturePropertyAssignment>
               <cv:Property>Exposure</cv:Property>
-              <cv:Value>0</cv:Value>
+              <cv:Value>-5</cv:Value>
             </cv:CapturePropertyAssignment>
             <cv:CapturePropertyAssignment>
               <cv:Property>Gain</cv:Property>
@@ -215,30 +215,18 @@ def process(value):
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="cv:Flip">
-          <cv:Mode>Vertical</cv:Mode>
+          <cv:Mode>Both</cv:Mode>
         </Combinator>
       </Expression>
-      <Expression xsi:type="Disable">
-        <Builder xsi:type="Combinator">
-          <Combinator xsi:type="cv:Crop">
-            <cv:RegionOfInterest>
-              <cv:X>1676</cv:X>
-              <cv:Y>176</cv:Y>
-              <cv:Width>76</cv:Width>
-              <cv:Height>62</cv:Height>
-            </cv:RegionOfInterest>
-          </Combinator>
-        </Builder>
-      </Expression>
-      <Expression xsi:type="Disable">
-        <Builder xsi:type="MemberSelector">
-          <Selector>Height</Selector>
-        </Builder>
-      </Expression>
-      <Expression xsi:type="Disable">
-        <Builder xsi:type="MemberSelector">
-          <Selector>Width</Selector>
-        </Builder>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="cv:Crop">
+          <cv:RegionOfInterest>
+            <cv:X>1676</cv:X>
+            <cv:Y>176</cv:Y>
+            <cv:Width>76</cv:Width>
+            <cv:Height>62</cv:Height>
+          </cv:RegionOfInterest>
+        </Combinator>
       </Expression>
     </Nodes>
     <Edges>
@@ -259,8 +247,6 @@ def process(value):
       <Edge From="17" To="18" Label="Source1" />
       <Edge From="20" To="21" Label="Source1" />
       <Edge From="21" To="22" Label="Source1" />
-      <Edge From="21" To="23" Label="Source1" />
-      <Edge From="21" To="24" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
