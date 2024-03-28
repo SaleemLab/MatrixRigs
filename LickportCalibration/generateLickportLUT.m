@@ -1,37 +1,52 @@
 %% generate LUT mapping reward weight to open times
 
 % output file from Bonsai
-filename = 'LPCAL_Rig_TrinityTest_Lickport_l_2023-06-20T17_49_14.csv';
+filename = 'lpCal_Switch_r_2024-03-27T12_08_58.csv';
 
 % options
-valueRange = [1 10]; % in mg, leave empty to use range defined by input file
+valueRange = []; % in mg, leave empty to use range defined by input file
 resolution = 0.1; % in mg, resolution of chooseable reward weights
 plotFlag=true;
 
 %% load data
 
-opts = delimitedTextImportOptions("NumVariables", 3);
-
-% Specify range and delimiter
-opts.DataLines = [2 inf];
-opts.Delimiter = ",";
-
-% Specify column names and types
-opts.VariableNames = ["OpenTime", "ScaleReading", "nReps"];
-opts.VariableTypes = ["double", "double", "double"];
-
-% Specify file level properties
-opts.ExtraColumnsRule = "ignore";
-opts.EmptyLineRule = "read";
+%opts = delimitedTextImportOptions('NumVariables', 3);
+% opts = struct;
+% % Specify range and delimiter
+% opts.DataLines = [2 inf];
+% opts.Delimiter = ',';
+% 
+% % Specify column names and types
+% opts.VariableNames = ['OpenTime', 'ScaleReading', 'nReps'];
+% opts.VariableTypes = ['double', 'double', 'double'];
+% 
+% % Specify file level properties
+% opts.ExtraColumnsRule = 'ignore';
+% opts.EmptyLineRule = 'read';
 
 % Import the data
-tbl = readtable(filename, opts);
+tbl = readtable(filename);%, opts);
 
 
 %% get mean weight for each open time
 
 tbl.TotalWeight = diff(cat(1,0,tbl.ScaleReading));
 tbl.MeanWeight = (tbl.TotalWeight./tbl.nReps)*1000; % convert to mg
+
+%% if open times repeated, get mean
+
+uniqueOpenTimes = unique(tbl.OpenTime);
+
+for iopenTime = 1:numel(uniqueOpenTimes)
+    
+    idx = find(tbl.OpenTime==uniqueOpenTimes(iopenTime));
+    
+    meanWeights(iopenTime) = mean(tbl.MeanWeight(idx));
+end
+
+temp_tbl = table;
+temp_tbl.OpenTime = uniqueOpenTimes;
+temp_tbl.MeanWeight = meanWeights(:);
 
 %% interpolate values
 
@@ -47,8 +62,8 @@ roundArg = b(2)*-1;
 valueRange=round(valueRange,roundArg);
 
 % do the actual interpolation
-x = tbl.MeanWeight;
-v = tbl.OpenTime;
+x = temp_tbl.MeanWeight;
+v = temp_tbl.OpenTime;
 xq = valueRange(1):resolution:valueRange(2);
 vq = interp1(x,v,xq, 'linear','extrap');
 

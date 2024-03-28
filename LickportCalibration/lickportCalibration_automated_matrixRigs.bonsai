@@ -60,7 +60,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="IntProperty">
-                <Value>200</Value>
+                <Value>100</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
@@ -154,6 +154,22 @@
                   <p1:float>100</p1:float>
                   <p1:float>110</p1:float>
                   <p1:float>120</p1:float>
+                  <p1:float>130</p1:float>
+                  <p1:float>140</p1:float>
+                  <p1:float>150</p1:float>
+                  <p1:float>150</p1:float>
+                  <p1:float>140</p1:float>
+                  <p1:float>130</p1:float>
+                  <p1:float>120</p1:float>
+                  <p1:float>110</p1:float>
+                  <p1:float>100</p1:float>
+                  <p1:float>90</p1:float>
+                  <p1:float>80</p1:float>
+                  <p1:float>70</p1:float>
+                  <p1:float>60</p1:float>
+                  <p1:float>50</p1:float>
+                  <p1:float>40</p1:float>
+                  <p1:float>30</p1:float>
                 </p1:ThisList>
               </Combinator>
             </Expression>
@@ -293,7 +309,7 @@
               <Property Name="FileName" />
             </Expression>
             <Expression xsi:type="io:CsvWriter">
-              <io:FileName>lpCal_Tank_l_.csv</io:FileName>
+              <io:FileName>lpCal_Switch_r_.csv</io:FileName>
               <io:Append>false</io:Append>
               <io:Overwrite>false</io:Overwrite>
               <io:Suffix>Timestamp</io:Suffix>
@@ -369,7 +385,7 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Timer">
                 <rx:DueTime>PT1S</rx:DueTime>
-                <rx:Period>PT1S</rx:Period>
+                <rx:Period>PT0.5S</rx:Period>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:Condition">
@@ -387,7 +403,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>l120</Value>
+                <Value>r20</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -810,7 +826,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>Tank</Value>
+                <Value>Switch</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
@@ -821,7 +837,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>l</Value>
+                <Value>r</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
