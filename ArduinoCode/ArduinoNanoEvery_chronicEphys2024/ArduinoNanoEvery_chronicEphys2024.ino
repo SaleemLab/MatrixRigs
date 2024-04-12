@@ -106,7 +106,7 @@ void loop() {
     Serial.print("\t");
     Serial.print(PhotodiodeVal);
     Serial.print("\t");
-    Serial.print(millis());// Arduino timestamp
+    Serial.print(currentMillis);// Arduino timestamp
     Serial.print("\n");
     startMillis = currentMillis;  // update timer
   }
