@@ -23,11 +23,9 @@ bool A_set;
 bool B_set;
 
 // event time variables (async pulse, licks)
-unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
+unsigned long lastSyncPulseTime    // updates each time async pulse goes HIGH
 unsigned long lastLeftLickTime;  // updates each time left lick detector goes LOW
 unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
-volatile unsigned int LickCountL = 0;
-volatile unsigned int LickCountR = 0;
 
 // variables for pinch valve of reward system
 const byte numChars = 10;
@@ -97,15 +95,15 @@ void loop() {
   if (currentMillis - startMillis >= interval)  //test whether the period has elapsed
   {
     Serial.print(encoder0Pos);  // Wheel raw input
-    Serial.print(",");
-    Serial.print(LickCountL);  // timestamp of last left lick was detected
-    Serial.print(",");
-    Serial.print(LickCountR);  // last timestmap a right lick was detected
-    Serial.print(",");
+    Serial.print("\t");
+    Serial.print(lastLeftLickTime);  // last timestmap a left lick was detected
+    Serial.print("\t");
+    Serial.print(lastRightLickTime);  // last timestmap a right lick was detected
+    Serial.print("\t");
     Serial.print(lastSyncPulseTime);  // last time a HIGH async pulse value was detected
-    Serial.print(",");
+    Serial.print("\t");
     Serial.print(PhotodiodeVal); // most recent photodiode value (we probably want to use a separate arduino for this, to sample at 1kHz+)
-    Serial.print(",");
+    Serial.print("\t");
     Serial.print(currentMillis);  // Arduino timestamp for these values (mainly relevant for wheel)
     Serial.print("\n");
 
@@ -116,7 +114,7 @@ void loop() {
   GetSerialInput();
   ActivatePVL();
   ActivatePVR();
-  //PhotodiodeVal = analogRead(PhotodiodePin);  // read the input pin
+  PhotodiodeVal = analogRead(PhotodiodePin);  // read the input pin
 }
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -248,11 +246,9 @@ void doEncoderB() { // Interrupt on B changing state
 // Interrupt for when IR beam detection goes LOW (lick breaks beam)
 void Lick_CounterL() {
   lastLeftLickTime = millis();
-  LickCountL = LickCountL + 1;
 }
 void Lick_CounterR() {
   lastRightLickTime = millis();
-  LickCountR = LickCountR + 1;
 }
 
 ///////////////////////////////////////
