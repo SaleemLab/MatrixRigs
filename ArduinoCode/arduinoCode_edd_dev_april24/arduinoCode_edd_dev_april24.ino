@@ -23,6 +23,8 @@ bool B_set;
 unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
 //unsigned long lastLeftLickTime;  // [not currently used] updates each time left lick detector goes LOW
 //unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
+
+// lick counter variables
 volatile unsigned int LickCountL = 0;
 volatile unsigned int LickCountR = 0;
 
@@ -244,11 +246,11 @@ void doEncoderB() { // Interrupt on B changing state
 /////////////////////////////////////
 // Interrupt for when IR beam detection goes LOW (lick breaks beam)
 void Lick_CounterL() {
-  lastLeftLickTime = millis();
+  //lastLeftLickTime = millis(); // [not currently used]
   LickCountL = LickCountL + 1;
 }
 void Lick_CounterR() {
-  lastRightLickTime = millis();
+  //lastRightLickTime = millis();
   LickCountR = LickCountR + 1;
 }
 
