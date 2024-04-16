@@ -1,6 +1,3 @@
-//#include <Event.h>
-//#include <Timer.h>
-
 // define the pins that hardware are connected to
 #define LickPinL 2        // digital pin of lick detector
 #define LickPinR 3        // digital pin of lick detector
@@ -24,8 +21,8 @@ bool B_set;
 
 // event time variables (async pulse, licks)
 unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
-unsigned long lastLeftLickTime;  // updates each time left lick detector goes LOW
-unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
+//unsigned long lastLeftLickTime;  // [not currently used] updates each time left lick detector goes LOW
+//unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
 volatile unsigned int LickCountL = 0;
 volatile unsigned int LickCountR = 0;
 
