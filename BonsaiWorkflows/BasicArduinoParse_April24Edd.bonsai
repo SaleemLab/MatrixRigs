@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.7.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="io:CreateSerialPort">
+          <io:Name>ArduinoSerial</io:Name>
+          <io:PortName>COM5</io:PortName>
+          <io:BaudRate>1000000</io:BaudRate>
+          <io:Encoding>us-ascii</io:Encoding>
+          <io:Parity>None</io:Parity>
+          <io:ParityReplace>63</io:ParityReplace>
+          <io:DataBits>8</io:DataBits>
+          <io:StopBits>One</io:StopBits>
+          <io:Handshake>None</io:Handshake>
+          <io:DiscardNull>false</io:DiscardNull>
+          <io:DtrEnable>true</io:DtrEnable>
+          <io:RtsEnable>false</io:RtsEnable>
+          <io:ReadBufferSize>4096</io:ReadBufferSize>
+          <io:WriteBufferSize>2048</io:WriteBufferSize>
+          <io:ReceivedBytesThreshold>1</io:ReceivedBytesThreshold>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="PortName" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="io:SerialStringRead">
+          <io:PortName>ArduinoSerial</io:PortName>
+          <io:NewLine>\n</io:NewLine>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Parse">
+        <Pattern>%i,%i,%i,%i,%i,%i</Pattern>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Retry" />
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item1</Selector>
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>WheelInput</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item2</Selector>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:DistinctUntilChanged" />
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>LeftLick</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item3</Selector>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:DistinctUntilChanged" />
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>RightLick</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item4</Selector>
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>LastSyncPulseTime</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item5</Selector>
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>Photodiode</Name>
+      </Expression>
+      <Expression xsi:type="MemberSelector">
+        <Selector>Item6</Selector>
+      </Expression>
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>ArduinoTime</Name>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="3" To="4" Label="Source1" />
+      <Edge From="4" To="5" Label="Source1" />
+      <Edge From="4" To="7" Label="Source1" />
+      <Edge From="4" To="10" Label="Source1" />
+      <Edge From="4" To="13" Label="Source1" />
+      <Edge From="4" To="15" Label="Source1" />
+      <Edge From="4" To="17" Label="Source1" />
+      <Edge From="5" To="6" Label="Source1" />
+      <Edge From="7" To="8" Label="Source1" />
+      <Edge From="8" To="9" Label="Source1" />
+      <Edge From="10" To="11" Label="Source1" />
+      <Edge From="11" To="12" Label="Source1" />
+      <Edge From="13" To="14" Label="Source1" />
+      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="17" To="18" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>
