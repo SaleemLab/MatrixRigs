@@ -99,7 +99,7 @@ def process(value):
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>l30</Value>
+          <Value>l300</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -116,7 +116,7 @@ def process(value):
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="StringProperty">
-          <Value>r30</Value>
+          <Value>r300</Value>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">

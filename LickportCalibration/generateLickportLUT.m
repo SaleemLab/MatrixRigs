@@ -1,7 +1,7 @@
 %% generate LUT mapping reward weight to open times
 
 % output file from Bonsai
-filename = 'lpCal_Switch_r_2024-03-27T12_08_58.csv';
+filename = 'lpCal_Switch_r_2024-04-10T12_56_40.csv';
 
 % options
 valueRange = []; % in mg, leave empty to use range defined by input file

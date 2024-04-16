@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.7.3"
+<WorkflowBuilder Version="2.7.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
@@ -9,7 +9,7 @@
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="io:CreateSerialPort">
           <io:Name>ArduinoSerial</io:Name>
-          <io:PortName>COM3</io:PortName>
+          <io:PortName>COM5</io:PortName>
           <io:BaudRate>1000000</io:BaudRate>
           <io:Encoding>utf-8</io:Encoding>
           <io:Parity>None</io:Parity>

@@ -60,7 +60,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="IntProperty">
-                <Value>100</Value>
+                <Value>300</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
@@ -149,27 +149,6 @@
                   <p1:float>50</p1:float>
                   <p1:float>60</p1:float>
                   <p1:float>70</p1:float>
-                  <p1:float>80</p1:float>
-                  <p1:float>90</p1:float>
-                  <p1:float>100</p1:float>
-                  <p1:float>110</p1:float>
-                  <p1:float>120</p1:float>
-                  <p1:float>130</p1:float>
-                  <p1:float>140</p1:float>
-                  <p1:float>150</p1:float>
-                  <p1:float>150</p1:float>
-                  <p1:float>140</p1:float>
-                  <p1:float>130</p1:float>
-                  <p1:float>120</p1:float>
-                  <p1:float>110</p1:float>
-                  <p1:float>100</p1:float>
-                  <p1:float>90</p1:float>
-                  <p1:float>80</p1:float>
-                  <p1:float>70</p1:float>
-                  <p1:float>60</p1:float>
-                  <p1:float>50</p1:float>
-                  <p1:float>40</p1:float>
-                  <p1:float>30</p1:float>
                 </p1:ThisList>
               </Combinator>
             </Expression>
@@ -385,7 +364,7 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Timer">
                 <rx:DueTime>PT1S</rx:DueTime>
-                <rx:Period>PT0.5S</rx:Period>
+                <rx:Period>PT0.25S</rx:Period>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:Condition">
@@ -837,7 +816,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>r</Value>
+                <Value>l</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
