@@ -6,7 +6,7 @@
 #define SValvePinL 11     // digital pin controlling the left solenoid valve
 #define SValvePinR 12     // digital pin controlling the right solenoid valve
 #define SyncPin 10        // sync pulse pin
-#define PhotodiodePin 17  // photoiode analog input
+#define PhotodiodePin A0  // photoiode analog input
 
 // Serial communication variables
 float samplingFrequency = 100; // frequency to send new values to computer
