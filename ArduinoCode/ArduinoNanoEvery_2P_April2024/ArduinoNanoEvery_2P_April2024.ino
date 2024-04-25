@@ -1,3 +1,16 @@
+// Serial output has this format - each line has ('\t separated/): 
+//     1. Wheel counter
+//     2. Lick Left 
+//     3. Lick Right
+//     4. Async Pulse
+//     5. Photodiode Value
+//     6. 2p frame count
+//     7. 2p line count
+//     8. Arduino time stamp
+//
+// Last edit April 2024
+// Aman and Sonali 
+
 #include <Event.h>
 #include <Timer.h>
 
