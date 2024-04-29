@@ -11,6 +11,8 @@
 // Last edit April 2024
 // Aman and Sonali 
 
+// did not update new valve open condition from Edd's recent code - AS 29/04/2024
+
 #include <Event.h>
 #include <Timer.h>
 
@@ -25,29 +27,25 @@
 #define FrameTrig 9         // frame trigger digital input 
 #define LineTrig 8         // line trigger digital input 
 
-// variable for sync pulse
-volatile unsigned int SyncPinStatus = 0;      // variable for counting licks
-
-// variable for photodiode
-int PhotodiodeVal;
+// serial frequency variables
+float samplingFrequency = 100; // frequency to send new values to computer
+const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values
+unsigned long startMillis;  // sample timer that resets each time new data is sent
+unsigned long currentMillis; // rolling timer to check if it's time to send new data
 
 // variables for rotary encoder
 volatile unsigned int encoder0Pos = 0;    // variable for counting ticks of rotary encoder
-unsigned int tmp_Pos = 1;                 // variable for counting ticks of rotary encoder
 boolean A_set;
 boolean B_set;
 
-// variables for lick counters
-volatile unsigned int LickCountL = 0;      // variable for counting licks
-unsigned int tmp_LickCountL = 0;           // temporary variable for counting licks
-volatile unsigned int LickCountR = 0;      // variable for counting licks
-unsigned int tmp_LickCountR = 0;           // temporary variable for counting licks
+// event time variables (async pulse, licks)
+unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
+unsigned long lastLeftLickTime;  // updates each time left lick detector goes LOW
+unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
 
 // variables for frame trigger and line trigger counters 
-volatile unsigned int FrameCount = 0;      // variable for counting 2p frames
-unsigned int tmp_FrameCount = 0;           // temporary variable for counting 2p frames
-volatile unsigned int LineCount = 0;      // variable for counting line scanner
-unsigned int tmp_LineCount = 0;           // temporary variable for counting line scanner
+unsigned long last2pFrameTime;   // updates each time 2p frame goes LOW
+unsigned long last2pLineTime;   // updates each time async pulse goes HIGH
 
 // variables for pinch valve of reward system
 const byte numChars = 10;
@@ -56,24 +54,31 @@ boolean newData = false;
 
 // left reward
 char rewardTimeL[6];   // an array to store the received data
-boolean newRewardL = false;
+bool newRewardL = false;
 int TimeONL = 0;             // new for this version
 int TempVarL = 0;
-boolean TimerFinishedL = false;
+bool TimerFinishedL = false;
 uint32_t StartTimeL = 0;      // variable to store temporary timestamps of previous iteration of the while loop
 
 // right reward
 char rewardTimeR[6];   // an array to store the received data
-boolean newRewardR = false;
+bool newRewardR = false;
 int TimeONR = 0;             // new for this version
 int TempVarR = 0;
-boolean TimerFinishedR = false;
+bool TimerFinishedR = false;
 uint32_t StartTimeR = 0;      // variable to store temporary timestamps of previous iteration of the while loop
 
-// serial frequency variables
-unsigned long startMillis;  //some global variables available anywhere in the program
-unsigned long currentMillis;
-const unsigned long period = 10;  //the value is a number of milliseconds
+// variable for photodiode
+int PhotodiodeVal;
+
+//volatile unsigned int FrameCount = 0;      // variable for counting 2p frames
+//unsigned int tmp_FrameCount = 0;           // temporary variable for counting 2p frames
+//volatile unsigned int LineCount = 0;      // variable for counting line scanner
+//unsigned int tmp_LineCount = 0;           // temporary variable for counting line scanner
+
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
 
 
 void setup() {
@@ -121,23 +126,23 @@ void loop() {
   //Check for change in position and send to Serial buffer
 
     currentMillis = millis();  //get the current "time" (actually the number of milliseconds since the program started)
-  if (currentMillis - startMillis >= period)  //test whether the period has elapsed
+  if (currentMillis - startMillis >= interval)  //test whether the period has elapsed
   {
     Serial.print(encoder0Pos);// Wheel raw input
     Serial.print("\t");
-    Serial.print(LickCountL);// Left lick count
+    Serial.print(lastLeftLickTime);// Left lick count
     Serial.print("\t");
-    Serial.print(LickCountR);// Right lick count
+    Serial.print(lastRightLickTime);// Right lick count
     Serial.print("\t");
-    Serial.print(SyncPinStatus);// Sync pulse high/low status
+    Serial.print(lastSyncPulseTime);// Sync pulse high/low status
     Serial.print("\t");
     Serial.print(PhotodiodeVal);
     Serial.print("\t");
-    Serial.print(FrameCount);// 2p frame count
+    Serial.print(last2pFrameTime);// 2p frame count
     Serial.print("\t");
-    Serial.print(LineCount);// line scanner count
+    Serial.print(last2pLineTime);// line scanner count
     Serial.print("\t");
-    Serial.print(millis());// Arduino timestamp
+    Serial.print(currentMillis);// Arduino timestamp
     Serial.print("\n");
     startMillis = currentMillis;  // update timer
   }
@@ -253,11 +258,11 @@ void ActivatePVR() {
   }
 }
 
+/////////////////////////////////////
+/// Wheel pos recording functions ///
+/////////////////////////////////////
 
-
-/////////////////////////////////////////////////////////////////////////////
-// Interrupt on A changing state
-void doEncoderA() {
+void doEncoderA() { // Interrupt on A changing state
   // Low to High transition?
   if (digitalRead(encoder0PinA) == HIGH) {
     A_set = true;
@@ -270,8 +275,8 @@ void doEncoderA() {
     A_set = false;
   }
 }
-// Interrupt on B changing state
-void doEncoderB() {
+
+void doEncoderB() { // Interrupt on B changing state
   // Low-to-high transition?
   if (digitalRead(encoder0PinB) == HIGH) {
     B_set = true;
@@ -285,41 +290,36 @@ void doEncoderB() {
   }
 }
 
-/////////////////////////////////////////////////////////////////////////////
-// Interrupt for when IR beam breaking circuit goes down
-void Lick_CounterL() {
-  // High-to-low transition?
-  if (digitalRead(LickPinL) == LOW) {LickCountL = LickCountL + 1;}
+/////////////////////////////////////
+/// Lick time recording functions ///
+/////////////////////////////////////
+
+void Lick_CounterL() { // Interrupt for when IR beam breaking circuit goes LOW
+    lastLeftLickTime = millis();
 }
 
 void Lick_CounterR() {
-  // High-to-low transition?
-  if (digitalRead(LickPinR) == LOW) {LickCountR = LickCountR + 1;}
+    lastRightLickTime = millis();
 }
 
-/////////////////////////////////////////////////////////////////////////////
-// Interrupt for when frame trigger goes down and line trigger goes up
-void Frame_Counter() {
-  // High-to-low transition?
-  if (digitalRead(FrameTrig) == LOW) {FrameCount = FrameCount + 1;}
+/////////////////////////////////////////
+/// 2p frame time recording functions ///
+/////////////////////////////////////////
+
+void Frame_Counter() { // Interrupt for when frame trigger goes down and line trigger goes LOW
+  last2pFrameTime = millis();
 }
 
-void Line_Counter() {
-  // Low-to-high transition?
-  if (digitalRead(LineTrig) == HIGH) {LineCount = LineCount + 1;}
+void Line_Counter() { // Interrupt for when frame trigger goes down and line trigger goes HIGH
+  last2pLineTime = millis();
 }
 
-/////////////////////////////////////////////////////////////////////////////
-// Interrupt for when sync signal goes up
+///////////////////////////////////////
+/// aSync pulse recording functions ///
+///////////////////////////////////////
+// Interrupt for when sync signal goes HIGH
 void SyncPulse_Receiver() {
-  // low-to-high transition?
-  if (digitalRead(SyncPin) == HIGH) {
-    SyncPinStatus = 1;
-    // Delta_t = millis()- TempTime;
-    // TempTime = millis();
-  }
-  else if (digitalRead(SyncPin) == LOW) {
-    SyncPinStatus = 0;
-  }
+  lastSyncPulseTime = millis();
 }
+
 
