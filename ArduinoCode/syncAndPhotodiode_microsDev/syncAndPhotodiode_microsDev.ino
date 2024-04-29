@@ -5,7 +5,7 @@
 #define syncPin 10             // digital pin of sync
 
 // Serial communication variables
-float samplingFrequency = 2000; // frequency to send new values to computer
+float samplingFrequency = 1000; // frequency to send new values to computer
 const long interval = 1000000 / (samplingFrequency);  // sampling interval to send new values
 unsigned long startMillis;  // sample timer that resets each time new data is sent
 unsigned long currentMillis; // rolling timer to check if it's time to send new data
