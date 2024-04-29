@@ -2,7 +2,7 @@
 //#include <Timer.h>
 
 #define photodiodePin 0        // PhotoDiode pin - analogue
-#define syncPin 3             // digital pin of sync
+#define syncPin 10             // digital pin of sync
 
 // Serial communication variables
 float samplingFrequency = 2000; // frequency to send new values to computer
