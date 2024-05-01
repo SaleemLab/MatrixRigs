@@ -7,8 +7,8 @@
 // Serial communication variables
 float samplingFrequency = 1000; // frequency to send new values to computer
 const long interval = 1000000 / (samplingFrequency);  // sampling interval to send new values
-unsigned long startMillis;  // sample timer that resets each time new data is sent
-unsigned long currentMillis; // rolling timer to check if it's time to send new data
+unsigned long startMicros;  // sample timer that resets each time new data is sent
+unsigned long currentMicros; // rolling timer to check if it's time to send new data
 
 /*
 int photodiodePin = 0;    
@@ -36,14 +36,14 @@ void loop()
 
   photodiodeVal = analogRead(photodiodePin);    // read the input pin
   syncVal = digitalRead(syncPin);
-  currentMillis = micros();                   //get the current "time" (actually the number of milliseconds since the program started)
-  if (currentMillis - startMillis >= interval)  //test whether the period has elapsed
+  currentMicros = micros();                   //get the current "time" (actually the number of milliseconds since the program started)
+  if (currentMicros - startMicros >= interval)  //test whether the period has elapsed
   {
   Serial.print(photodiodeVal);
   Serial.print(",");
   Serial.println(syncVal);
   //delay(0);
-      startMillis = currentMillis;  // reset timer
+      startMicros = currentMicros;  // reset timer
   }
   
 }

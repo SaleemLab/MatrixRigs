@@ -3,12 +3,48 @@
   <WindowState>Maximized</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>299</X>
-    <Y>43</Y>
-    <Width>849</Width>
+    <X>65</X>
+    <Y>6</Y>
+    <Width>1158</Width>
     <Height>778</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
+    <RecentlyUsedFile>
+      <Timestamp>2024-05-01T18:15:19.5152213+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\DotCorridorTask\BonsaiWorkflows\DotCorridor_training_DEV.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-05-01T09:45:07.0811641+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\DotCorridorTask\BonsaiWorkflows\DotCorridor_training.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-30T18:43:45.1647621+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\LickportCalibration\lickportCalibration_automated_matrixRigs.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-30T18:35:48.9446323+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\BonsaiWorkflows\FlushRewardSystem.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-30T14:45:17.0123482+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\BonsaiWorkflows\TestPeripherals.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-30T14:12:03.5585626+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_2024\solenoid_testing.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-30T12:56:58.7784910+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_2024\CorridorVR_Two_tracks_training_room_ephys.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-29T17:39:30.6953773+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test\solenoid_testing.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-04-29T17:34:46.5333134+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test\CorridorVR_Two_tracks_training_room_ephys.bonsai</Name>
+    </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2024-04-29T17:14:56.2958463+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\OpenFieldChronic\OpenFieldChronic_2024.bonsai</Name>
@@ -16,14 +52,6 @@
     <RecentlyUsedFile>
       <Timestamp>2024-04-29T15:53:07.1563977+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\BonsaiWorkflows\BasicArduinoParse_April24Edd.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-04-29T15:50:23.9206064+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\BonsaiWorkflows\TestPeripherals.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-04-29T11:02:17.1880631+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\DotCorridorTask\BonsaiWorkflows\DotCorridor_training.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2024-04-16T10:46:45.8088334+01:00</Timestamp>
@@ -80,34 +108,6 @@
     <RecentlyUsedFile>
       <Timestamp>2023-03-16T11:29:10.0008387+00:00</Timestamp>
       <Name>D:\Bonvision\Matrix training code\ARCHIVE_dotCorridor\solenoid_testing.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-15T15:23:07.2535239+00:00</Timestamp>
-      <Name>D:\Bonvision\Masa_two_tracks_test\CorridorVR_Two_tracks_training_room.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-15T14:45:35.7062354+00:00</Timestamp>
-      <Name>D:\Bonvision\Matrix training code\ARCHIVE_dotCorridor\BonsaiWorkflows\DotCorridor_training.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-15T13:36:36.5625491+00:00</Timestamp>
-      <Name>D:\Bonvision\Matrix training code\MatrixRigs\LickportCalibration\lickportCalibration_updated.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-15T13:35:52.7945958+00:00</Timestamp>
-      <Name>D:\Bonvision\Matrix training code\MatrixRigs\LickportCalibration\lickportCalibration.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-15T13:34:08.6291449+00:00</Timestamp>
-      <Name>D:\Bonvision\Masa_two_tracks_test\ArduinoRead_forMasaAdam.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-14T16:38:15.3872697+00:00</Timestamp>
-      <Name>C:\Users\lab\Documents\edd\DotCorridorTask\BonsaiWorkflows\DotCorridor_training.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2023-03-06T13:05:42.4933342+00:00</Timestamp>
-      <Name>C:\Users\lab\Desktop\DotCorridorTask\BonsaiWorkflows\DotCorridor_training.bonsai</Name>
     </RecentlyUsedFile>
   </RecentlyUsedFiles>
 </EditorSettings>
