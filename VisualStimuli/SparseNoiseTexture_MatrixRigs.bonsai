@@ -15,6 +15,10 @@
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="DisplayDevice" />
+        <Property Name="WindowState" />
+      </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>DisplayAndResources</Name>
         <Workflow>
@@ -123,7 +127,7 @@
             <Expression xsi:type="rx:Accumulate" />
             <Expression xsi:type="GreaterThanOrEqual">
               <Operand xsi:type="DoubleProperty">
-                <Value>10</Value>
+                <Value>60</Value>
               </Operand>
             </Expression>
             <Expression xsi:type="rx:Condition">
@@ -179,7 +183,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>60</Value>
+                <Value>600</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="PropertyMapping">
@@ -283,8 +287,8 @@
               <Duration>PT0.1S</Duration>
               <ActiveQuads>5</ActiveQuads>
               <GridSize>
-                <Width>12</Width>
-                <Height>5</Height>
+                <Width>16</Width>
+                <Height>8</Height>
               </GridSize>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -448,10 +452,10 @@
         </PropertyMappings>
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
-        <Left>-90</Left>
-        <Right>90</Right>
-        <Bottom>-30</Bottom>
-        <Top>40</Top>
+        <Left>-120</Left>
+        <Right>120</Right>
+        <Bottom>-60</Bottom>
+        <Top>60</Top>
       </Expression>
       <Expression xsi:type="rx:PublishSubject">
         <Name>DrawStimuli</Name>
@@ -534,7 +538,7 @@
         <Height>19.5</Height>
         <Rotation>
           <X>0</X>
-          <Y>60.000001669652114</Y>
+          <Y>-60.0000016696521</Y>
           <Z>0</Z>
         </Rotation>
         <Translation>
@@ -561,22 +565,6 @@
           </gl:RenderState>
         </Combinator>
       </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawImage.bonsai">
-        <Angle>0</Angle>
-        <TextureName>DynamicVideo</TextureName>
-        <ExtentX>180</ExtentX>
-        <ExtentY>70</ExtentY>
-        <LocationX>0</LocationX>
-        <LocationY>5</LocationY>
-        <Layer>0</Layer>
-        <ScaleX>1</ScaleX>
-        <ScaleY>1</ScaleY>
-        <ShiftX>0</ShiftX>
-        <ShiftY>0</ShiftY>
-      </Expression>
-      <Expression xsi:type="rx:PublishSubject">
-        <Name>DrawNormalizedStimuli</Name>
-      </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="rx:ElementIndex" />
       </Expression>
@@ -590,10 +578,32 @@
         <Selector>TimeStep.ElapsedRealTime</Selector>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
-        <Property Name="TopBorder" />
-        <Property Name="BottomBorder" />
-        <Property Name="LeftBorder" />
-        <Property Name="RightBorder" />
+        <Property Name="ExtentX" />
+        <Property Name="ExtentY" />
+        <Property Name="LocationX" />
+        <Property Name="LocationY" />
+      </Expression>
+      <Expression xsi:type="SubscribeSubject">
+        <Name>DrawStimuli</Name>
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawImage.bonsai">
+        <Angle>0</Angle>
+        <TextureName>DynamicVideo</TextureName>
+        <ExtentX>240</ExtentX>
+        <ExtentY>120</ExtentY>
+        <LocationX>0</LocationX>
+        <LocationY>0</LocationY>
+        <Layer>0</Layer>
+        <ScaleX>1</ScaleX>
+        <ScaleY>1</ScaleY>
+        <ShiftX>0</ShiftX>
+        <ShiftY>0</ShiftY>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="TopBorder" Category="OrthBorder" />
+        <Property Name="BottomBorder" Category="OrthBorder" />
+        <Property Name="LeftBorder" Category="OrthBorder" />
+        <Property Name="RightBorder" Category="OrthBorder" />
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>Borders</Name>
@@ -604,7 +614,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>40</Value>
+                <Value>60</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -616,7 +626,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>-30</Value>
+                <Value>-60</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -628,7 +638,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>-90</Value>
+                <Value>-120</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -640,7 +650,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="FloatProperty">
-                <Value>90</Value>
+                <Value>120</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ReplaySubject">
@@ -794,13 +804,7 @@
         </Workflow>
       </Expression>
       <Expression xsi:type="SubscribeSubject">
-        <Name>DrawQuad</Name>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
-        <Left>-90</Left>
-        <Right>90</Right>
-        <Bottom>30</Bottom>
-        <Top>-40</Top>
+        <Name>DrawStimuli</Name>
       </Expression>
       <Expression xsi:type="SubscribeSubject">
         <Name>QuadState</Name>
@@ -815,8 +819,8 @@
       <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawQuad.bonsai">
         <ExtentX>5</ExtentX>
         <ExtentY>5</ExtentY>
-        <LocationX>-87.5</LocationX>
-        <LocationY>27.5</LocationY>
+        <LocationX>-80</LocationX>
+        <LocationY>-30</LocationY>
         <Layer>1</Layer>
         <Angle>0</Angle>
         <ColorR>0</ColorR>
@@ -1357,7 +1361,7 @@
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Exposure</cv:Property>
-                    <cv:Value>-9</cv:Value>
+                    <cv:Value>-5</cv:Value>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Gain</cv:Property>
@@ -1630,55 +1634,52 @@
           </Edges>
         </Workflow>
       </Expression>
-      <Expression xsi:type="SubscribeSubject">
-        <Name>Bottom</Name>
-      </Expression>
     </Nodes>
     <Edges>
-      <Edge From="1" To="2" Label="Source1" />
-      <Edge From="2" To="15" Label="Source2" />
-      <Edge From="3" To="4" Label="Source1" />
+      <Edge From="0" To="1" Label="Source1" />
+      <Edge From="2" To="3" Label="Source1" />
+      <Edge From="3" To="16" Label="Source2" />
       <Edge From="4" To="5" Label="Source1" />
       <Edge From="5" To="6" Label="Source1" />
-      <Edge From="6" To="14" Label="Source2" />
-      <Edge From="7" To="12" Label="Source1" />
-      <Edge From="8" To="9" Label="Source1" />
-      <Edge From="9" To="13" Label="Source2" />
-      <Edge From="10" To="11" Label="Source1" />
-      <Edge From="10" To="12" Label="Source2" />
-      <Edge From="12" To="13" Label="Source1" />
+      <Edge From="6" To="7" Label="Source1" />
+      <Edge From="7" To="15" Label="Source2" />
+      <Edge From="8" To="13" Label="Source1" />
+      <Edge From="9" To="10" Label="Source1" />
+      <Edge From="10" To="14" Label="Source2" />
+      <Edge From="11" To="12" Label="Source1" />
+      <Edge From="11" To="13" Label="Source2" />
       <Edge From="13" To="14" Label="Source1" />
       <Edge From="14" To="15" Label="Source1" />
       <Edge From="15" To="16" Label="Source1" />
-      <Edge From="17" To="20" Label="Source1" />
-      <Edge From="17" To="34" Label="Source1" />
-      <Edge From="17" To="37" Label="Source1" />
-      <Edge From="18" To="19" Label="Source1" />
-      <Edge From="19" To="20" Label="Source2" />
-      <Edge From="20" To="21" Label="Source1" />
-      <Edge From="20" To="32" Label="Source1" />
-      <Edge From="20" To="33" Label="Source1" />
+      <Edge From="16" To="17" Label="Source1" />
+      <Edge From="18" To="21" Label="Source1" />
+      <Edge From="18" To="33" Label="Source1" />
+      <Edge From="18" To="36" Label="Source1" />
+      <Edge From="19" To="20" Label="Source1" />
+      <Edge From="20" To="21" Label="Source2" />
       <Edge From="21" To="22" Label="Source1" />
       <Edge From="22" To="23" Label="Source1" />
-      <Edge From="22" To="26" Label="Source1" />
-      <Edge From="22" To="29" Label="Source1" />
       <Edge From="23" To="24" Label="Source1" />
+      <Edge From="23" To="27" Label="Source1" />
+      <Edge From="23" To="30" Label="Source1" />
       <Edge From="24" To="25" Label="Source1" />
-      <Edge From="26" To="27" Label="Source1" />
+      <Edge From="25" To="26" Label="Source1" />
       <Edge From="27" To="28" Label="Source1" />
-      <Edge From="29" To="30" Label="Source1" />
+      <Edge From="28" To="29" Label="Source1" />
       <Edge From="30" To="31" Label="Source1" />
+      <Edge From="31" To="32" Label="Source1" />
+      <Edge From="33" To="34" Label="Source1" />
       <Edge From="34" To="35" Label="Source1" />
-      <Edge From="35" To="36" Label="Source1" />
-      <Edge From="38" To="39" Label="Source1" />
-      <Edge From="41" To="42" Label="Source1" />
-      <Edge From="42" To="45" Label="Source1" />
-      <Edge From="43" To="44" Label="Source1" />
-      <Edge From="44" To="45" Label="Source2" />
-      <Edge From="46" To="47" Label="Source1" />
-      <Edge From="50" To="52" Label="Source1" />
-      <Edge From="51" To="52" Label="Source2" />
-      <Edge From="53" To="54" Label="Source1" />
+      <Edge From="37" To="39" Label="Source1" />
+      <Edge From="38" To="39" Label="Source2" />
+      <Edge From="40" To="41" Label="Source1" />
+      <Edge From="43" To="46" Label="Source1" />
+      <Edge From="44" To="45" Label="Source1" />
+      <Edge From="45" To="46" Label="Source2" />
+      <Edge From="47" To="48" Label="Source1" />
+      <Edge From="51" To="53" Label="Source1" />
+      <Edge From="52" To="53" Label="Source2" />
+      <Edge From="54" To="55" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
