@@ -243,15 +243,15 @@
               <Name>DrawStimuli</Name>
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawQuad.bonsai">
-              <ExtentX>240</ExtentX>
-              <ExtentY>120</ExtentY>
-              <LocationX>0</LocationX>
-              <LocationY>30</LocationY>
-              <Layer>0</Layer>
+              <ExtentX>5</ExtentX>
+              <ExtentY>5</ExtentY>
+              <LocationX>-80</LocationX>
+              <LocationY>-30</LocationY>
+              <Layer>1</Layer>
               <Angle>0</Angle>
-              <ColorR>0.5</ColorR>
-              <ColorG>0.5</ColorG>
-              <ColorB>0.5</ColorB>
+              <ColorR>0</ColorR>
+              <ColorG>0</ColorG>
+              <ColorB>0</ColorB>
               <ColorA>1</ColorA>
             </Expression>
             <Expression xsi:type="Combinator">
