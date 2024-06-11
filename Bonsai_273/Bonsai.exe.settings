@@ -1,14 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorSettings>
-  <WindowState>Maximized</WindowState>
+  <WindowState>Normal</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
     <X>-7</X>
     <Y>0</Y>
-    <Width>654</Width>
+    <Width>1343</Width>
     <Height>983</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
+    <RecentlyUsedFile>
+      <Timestamp>2024-06-06T12:15:33.9411309+01:00</Timestamp>
+      <Name>C:\Users\masah\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_2024\CorridorVR_Two_tracks_reward.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-06-06T12:13:55.2629547+01:00</Timestamp>
+      <Name>P:\Bonvision\CorridorVR_Two_tracks_training_room_ephys.bonsai</Name>
+    </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2024-05-10T16:02:16.2345340+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\Checkboard_MatrixRigs.bonsai</Name>
@@ -100,14 +108,6 @@
     <RecentlyUsedFile>
       <Timestamp>2024-04-15T17:23:55.8124978+01:00</Timestamp>
       <Name>C:\Users\lab\Documents\MeshMapping3D.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-04-15T17:03:21.5100259+01:00</Timestamp>
-      <Name>C:\Home\Code\Bonsai_2.8.2\CreateTextures_weirdCopyBug.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-04-15T14:08:01.8107374+01:00</Timestamp>
-      <Name>C:\Home\Code\Masa_2024\Masa_two_tracks_2024\CorridorVR_Two_tracks_training_room_v1.bonsai</Name>
     </RecentlyUsedFile>
   </RecentlyUsedFiles>
 </EditorSettings>
