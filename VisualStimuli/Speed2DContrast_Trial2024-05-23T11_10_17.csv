@@ -1,0 +1,8 @@
+Frame,Timestamp,Value
+48,0.8651922,({Id=2, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=-32, VelX2=-32, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40218523.6864)
+176,2.9987129,({Id=3, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=-64, VelX2=-64, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40220686.2336)
+298,5.0318374,({Id=1, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=-16, VelX2=-16, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40222712.8704)
+420,7.0651518,({Id=5, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=-256, VelX2=-256, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40224746.7392)
+542,9.0990687,({Id=0, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=0, VelX2=0, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40226780.5056)
+664,11.1320071,({Id=4, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=-128, VelX2=-128, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40228814.3744)
+786,13.1654047,({Id=4, Duration=1, Size=2, Colour1=0, Colour2=1, numDots1=573, numDots2=573, dotLifeBool=0, dotLifetime=1, Contrast1=1, Contrast2=1, VelX1=-128, VelX2=-128, VelY1=0, VelY2=0, Coherence1=100, Coherence2=100}, 40230848.384)
