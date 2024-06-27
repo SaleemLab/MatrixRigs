@@ -86,154 +86,172 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="res:LoadResources" />
             </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:RenderFrame" />
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>Borders</Name>
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="Top" Selector="Item1" />
+                <Property Name="Bottom" Selector="Item2" />
+                <Property Name="Left" Selector="Item3" />
+                <Property Name="Right" Selector="Item4" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
+              <Left>-120</Left>
+              <Right>120</Right>
+              <Bottom>-60</Bottom>
+              <Top>60</Top>
+            </Expression>
+            <Expression xsi:type="rx:PublishSubject">
+              <Name>DrawStimuli</Name>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.SphereMapping.bonsai">
+              <FaceSize xsi:nil="true" />
+              <ClearColor>Gray</ClearColor>
+              <Width xsi:nil="true" />
+              <Height xsi:nil="true" />
+              <RotationZ>0</RotationZ>
+              <RotationY>0</RotationY>
+              <RotationX>0</RotationX>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>60.000001669652114</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>-12</X>
+                <Y>0</Y>
+                <Z>-9</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0</X>
+              <Y>0</Y>
+              <Width>0.334</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>-15</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0.333</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0.333</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>-60.000001669652114</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>12</X>
+                <Y>0</Y>
+                <Z>-9</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0.667</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0.665</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>TimeStep.ElapsedRealTime</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ElementIndex" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Index</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>RenderFrameCount</Name>
+            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
             <Edge From="1" To="2" Label="Source1" />
             <Edge From="2" To="3" Label="Source1" />
             <Edge From="3" To="4" Label="Source1" />
+            <Edge From="5" To="8" Label="Source1" />
+            <Edge From="5" To="20" Label="Source1" />
+            <Edge From="5" To="21" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="8" Label="Source2" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="10" To="14" Label="Source1" />
+            <Edge From="10" To="17" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
+            <Edge From="18" To="19" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="22" To="23" Label="Source1" />
           </Edges>
         </Workflow>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="gl:RenderFrame" />
-      </Expression>
-      <Expression xsi:type="SubscribeSubject">
-        <Name>Borders</Name>
-      </Expression>
-      <Expression xsi:type="PropertyMapping">
-        <PropertyMappings>
-          <Property Name="Top" Selector="Item1" />
-          <Property Name="Bottom" Selector="Item2" />
-          <Property Name="Left" Selector="Item3" />
-          <Property Name="Right" Selector="Item4" />
-        </PropertyMappings>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
-        <Left>-120</Left>
-        <Right>120</Right>
-        <Bottom>-60</Bottom>
-        <Top>60</Top>
-      </Expression>
-      <Expression xsi:type="rx:PublishSubject">
-        <Name>DrawStimuli</Name>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.SphereMapping.bonsai">
-        <FaceSize xsi:nil="true" />
-        <ClearColor>Gray</ClearColor>
-        <Width xsi:nil="true" />
-        <Height xsi:nil="true" />
-        <RotationZ>0</RotationZ>
-        <RotationY>0</RotationY>
-        <RotationX>0</RotationX>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
-        <Width>15</Width>
-        <Height>19.5</Height>
-        <Rotation>
-          <X>0</X>
-          <Y>60.000001669652114</Y>
-          <Z>0</Z>
-        </Rotation>
-        <Translation>
-          <X>-12</X>
-          <Y>0</Y>
-          <Z>-9</Z>
-        </Translation>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
-        <X>0</X>
-        <Y>0</Y>
-        <Width>0.334</Width>
-        <Height>1</Height>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="gl:UpdateRenderState">
-          <gl:RenderState>
-            <gl:StateConfiguration xsi:type="gl:ViewportState">
-              <gl:X>0</gl:X>
-              <gl:Y>0</gl:Y>
-              <gl:Width>0.333</gl:Width>
-              <gl:Height>1</gl:Height>
-            </gl:StateConfiguration>
-          </gl:RenderState>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
-        <Width>15</Width>
-        <Height>19.5</Height>
-        <Rotation>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>0</Z>
-        </Rotation>
-        <Translation>
-          <X>0</X>
-          <Y>0</Y>
-          <Z>-15</Z>
-        </Translation>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
-        <X>0.333</X>
-        <Y>0</Y>
-        <Width>0.333</Width>
-        <Height>1</Height>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="gl:UpdateRenderState">
-          <gl:RenderState>
-            <gl:StateConfiguration xsi:type="gl:ViewportState">
-              <gl:X>0.333</gl:X>
-              <gl:Y>0</gl:Y>
-              <gl:Width>0.333</gl:Width>
-              <gl:Height>1</gl:Height>
-            </gl:StateConfiguration>
-          </gl:RenderState>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
-        <Width>15</Width>
-        <Height>19.5</Height>
-        <Rotation>
-          <X>0</X>
-          <Y>-60.000001669652114</Y>
-          <Z>0</Z>
-        </Rotation>
-        <Translation>
-          <X>12</X>
-          <Y>0</Y>
-          <Z>-9</Z>
-        </Translation>
-      </Expression>
-      <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
-        <X>0.667</X>
-        <Y>0</Y>
-        <Width>0.333</Width>
-        <Height>1</Height>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="gl:UpdateRenderState">
-          <gl:RenderState>
-            <gl:StateConfiguration xsi:type="gl:ViewportState">
-              <gl:X>0.665</gl:X>
-              <gl:Y>0</gl:Y>
-              <gl:Width>0.333</gl:Width>
-              <gl:Height>1</gl:Height>
-            </gl:StateConfiguration>
-          </gl:RenderState>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="MemberSelector">
-        <Selector>TimeStep.ElapsedRealTime</Selector>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:ElementIndex" />
-      </Expression>
-      <Expression xsi:type="MemberSelector">
-        <Selector>Index</Selector>
-      </Expression>
-      <Expression xsi:type="rx:BehaviorSubject">
-        <Name>RenderFrameCount</Name>
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>Borders</Name>
@@ -331,8 +349,910 @@
             <Expression xsi:type="WorkflowInput">
               <Name>Source1</Name>
             </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="GroupWorkflow">
+                <Name>S2</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="p1:MotionCoherenceSpecification">
+                        <p1:Trials>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>0</p1:VelocityX1>
+                            <p1:VelocityX2>0</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>16</p1:VelocityX1>
+                            <p1:VelocityX2>16</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>32</p1:VelocityX1>
+                            <p1:VelocityX2>32</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>64</p1:VelocityX1>
+                            <p1:VelocityX2>64</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>128</p1:VelocityX1>
+                            <p1:VelocityX2>128</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>256</p1:VelocityX1>
+                            <p1:VelocityX2>256</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                        </p1:Trials>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>EnsureMotionCoherenceParameters</Name>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:ElementIndex" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Index</Selector>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Duration</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="DotSize" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Colour1" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Colour2" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="numDots1" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="numDots2" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="dotLifeBool" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="dotLifetime" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Duration" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Size</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Colour1</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Colour2</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.numDots1</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.numDots2</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.dotLifeBool</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="IntProperty">
+                              <Value>0</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.dotLifetime</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="IntProperty">
+                              <Value>0</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Contrast1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Contrast1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Contrast2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Contrast2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityX1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityX1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityX2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityX2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityY1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityY1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityY2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityY2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Coherence1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Coherence1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Coherence2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Coherence2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="scr:ExpressionTransform">
+                            <scr:Expression>new(
+Item1.Item1 as Id,
+Item1.Item2 as Duration,
+Item1.Item3 as Size,
+Item1.Item4 as Colour1,
+Item1.Item5 as Colour2,
+Item1.Item6 as numDots1,
+Item1.Item7 as numDots2,
+
+Item2.Item1 as dotLifeBool,
+Item2.Item2 as dotLifetime,
+Item2.Item3 as Contrast1,
+Item2.Item4 as Contrast2,
+
+Item3.Item1 as VelX1,
+Item3.Item2 as VelX2,
+Item3.Item3 as VelY1,
+Item3.Item4 as VelY2,
+Item3.Item5 as Coherence1,
+Item3.Item6 as Coherence2)</scr:Expression>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="1" Label="Source1" />
+                          <Edge From="1" To="2" Label="Source1" />
+                          <Edge From="1" To="3" Label="Source1" />
+                          <Edge From="1" To="13" Label="Source1" />
+                          <Edge From="1" To="15" Label="Source1" />
+                          <Edge From="1" To="17" Label="Source1" />
+                          <Edge From="1" To="19" Label="Source1" />
+                          <Edge From="1" To="21" Label="Source1" />
+                          <Edge From="1" To="24" Label="Source1" />
+                          <Edge From="1" To="26" Label="Source1" />
+                          <Edge From="1" To="28" Label="Source1" />
+                          <Edge From="1" To="31" Label="Source1" />
+                          <Edge From="1" To="35" Label="Source1" />
+                          <Edge From="1" To="38" Label="Source1" />
+                          <Edge From="1" To="41" Label="Source1" />
+                          <Edge From="1" To="44" Label="Source1" />
+                          <Edge From="1" To="47" Label="Source1" />
+                          <Edge From="1" To="50" Label="Source1" />
+                          <Edge From="2" To="23" Label="Source1" />
+                          <Edge From="3" To="12" Label="Source1" />
+                          <Edge From="4" To="14" Label="Source2" />
+                          <Edge From="5" To="16" Label="Source2" />
+                          <Edge From="6" To="18" Label="Source2" />
+                          <Edge From="7" To="20" Label="Source2" />
+                          <Edge From="8" To="22" Label="Source2" />
+                          <Edge From="9" To="25" Label="Source2" />
+                          <Edge From="10" To="27" Label="Source2" />
+                          <Edge From="11" To="12" Label="Source2" />
+                          <Edge From="12" To="23" Label="Source2" />
+                          <Edge From="13" To="14" Label="Source1" />
+                          <Edge From="14" To="23" Label="Source3" />
+                          <Edge From="15" To="16" Label="Source1" />
+                          <Edge From="16" To="23" Label="Source4" />
+                          <Edge From="17" To="18" Label="Source1" />
+                          <Edge From="18" To="23" Label="Source5" />
+                          <Edge From="19" To="20" Label="Source1" />
+                          <Edge From="20" To="23" Label="Source6" />
+                          <Edge From="21" To="22" Label="Source1" />
+                          <Edge From="22" To="23" Label="Source7" />
+                          <Edge From="23" To="54" Label="Source1" />
+                          <Edge From="24" To="25" Label="Source1" />
+                          <Edge From="25" To="34" Label="Source1" />
+                          <Edge From="26" To="27" Label="Source1" />
+                          <Edge From="27" To="34" Label="Source2" />
+                          <Edge From="28" To="30" Label="Source1" />
+                          <Edge From="29" To="30" Label="Source2" />
+                          <Edge From="30" To="34" Label="Source3" />
+                          <Edge From="31" To="33" Label="Source1" />
+                          <Edge From="32" To="33" Label="Source2" />
+                          <Edge From="33" To="34" Label="Source4" />
+                          <Edge From="34" To="54" Label="Source2" />
+                          <Edge From="35" To="37" Label="Source1" />
+                          <Edge From="36" To="37" Label="Source2" />
+                          <Edge From="37" To="53" Label="Source1" />
+                          <Edge From="38" To="40" Label="Source1" />
+                          <Edge From="39" To="40" Label="Source2" />
+                          <Edge From="40" To="53" Label="Source2" />
+                          <Edge From="41" To="43" Label="Source1" />
+                          <Edge From="42" To="43" Label="Source2" />
+                          <Edge From="43" To="53" Label="Source3" />
+                          <Edge From="44" To="46" Label="Source1" />
+                          <Edge From="45" To="46" Label="Source2" />
+                          <Edge From="46" To="53" Label="Source4" />
+                          <Edge From="47" To="49" Label="Source1" />
+                          <Edge From="48" To="49" Label="Source2" />
+                          <Edge From="49" To="53" Label="Source5" />
+                          <Edge From="50" To="52" Label="Source1" />
+                          <Edge From="51" To="52" Label="Source2" />
+                          <Edge From="52" To="53" Label="Source6" />
+                          <Edge From="53" To="54" Label="Source3" />
+                          <Edge From="54" To="55" Label="Source1" />
+                          <Edge From="55" To="56" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="2" To="3" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="GroupWorkflow">
+                <Name>S2dirRecordLeft</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="p1:MotionCoherenceSpecification">
+                        <p1:Trials>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>-32</p1:VelocityX1>
+                            <p1:VelocityX2>-32</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>-22.6274</p1:VelocityX1>
+                            <p1:VelocityX2>-22.6274</p1:VelocityX2>
+                            <p1:VelocityY1>-22.6274</p1:VelocityY1>
+                            <p1:VelocityY2>-22.6274</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>0</p1:VelocityX1>
+                            <p1:VelocityX2>0</p1:VelocityX2>
+                            <p1:VelocityY1>-32</p1:VelocityY1>
+                            <p1:VelocityY2>-32</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>22.6274</p1:VelocityX1>
+                            <p1:VelocityX2>22.6274</p1:VelocityX2>
+                            <p1:VelocityY1>-22.6274</p1:VelocityY1>
+                            <p1:VelocityY2>-22.6274</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>32</p1:VelocityX1>
+                            <p1:VelocityX2>32</p1:VelocityX2>
+                            <p1:VelocityY1>0</p1:VelocityY1>
+                            <p1:VelocityY2>0</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>22.6274</p1:VelocityX1>
+                            <p1:VelocityX2>22.6274</p1:VelocityX2>
+                            <p1:VelocityY1>22.6274</p1:VelocityY1>
+                            <p1:VelocityY2>22.6274</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>0</p1:VelocityX1>
+                            <p1:VelocityX2>0</p1:VelocityX2>
+                            <p1:VelocityY1>32</p1:VelocityY1>
+                            <p1:VelocityY2>32</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                          <p1:MotionCoherenceParams>
+                            <p1:Duration>1</p1:Duration>
+                            <p1:Size>2</p1:Size>
+                            <p1:dotLifeBool>0</p1:dotLifeBool>
+                            <p1:dotLifetime>1</p1:dotLifetime>
+                            <p1:Colour1>0</p1:Colour1>
+                            <p1:Colour2>1</p1:Colour2>
+                            <p1:numDots1>573</p1:numDots1>
+                            <p1:numDots2>573</p1:numDots2>
+                            <p1:Contrast1>1</p1:Contrast1>
+                            <p1:Contrast2>1</p1:Contrast2>
+                            <p1:VelocityX1>-22.6274</p1:VelocityX1>
+                            <p1:VelocityX2>-22.6274</p1:VelocityX2>
+                            <p1:VelocityY1>32</p1:VelocityY1>
+                            <p1:VelocityY2>32</p1:VelocityY2>
+                            <p1:Coherence1>100</p1:Coherence1>
+                            <p1:Coherence2>100</p1:Coherence2>
+                          </p1:MotionCoherenceParams>
+                        </p1:Trials>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="GroupWorkflow">
+                      <Name>EnsureMotionCoherenceParameters</Name>
+                      <Workflow>
+                        <Nodes>
+                          <Expression xsi:type="WorkflowInput">
+                            <Name>Source1</Name>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:ElementIndex" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Index</Selector>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Duration</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="DotSize" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Colour1" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Colour2" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="numDots1" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="numDots2" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="dotLifeBool" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="dotLifetime" />
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Duration" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Size</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Colour1</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Colour2</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.numDots1</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.numDots2</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.dotLifeBool</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="IntProperty">
+                              <Value>0</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.dotLifetime</Selector>
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="IntProperty">
+                              <Value>0</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Contrast1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Contrast1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Contrast2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Contrast2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityX1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityX1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityX2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityX2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityY1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityY1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.VelocityY2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="VelocityY2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Coherence1</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Coherence1" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="MemberSelector">
+                            <Selector>Value.Coherence2</Selector>
+                          </Expression>
+                          <Expression xsi:type="ExternalizedMapping">
+                            <Property Name="Value" DisplayName="Coherence2" />
+                          </Expression>
+                          <Expression xsi:type="GetValueOrDefault">
+                            <Operand xsi:type="FloatProperty">
+                              <Value>1</Value>
+                            </Operand>
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="Combinator">
+                            <Combinator xsi:type="rx:Zip" />
+                          </Expression>
+                          <Expression xsi:type="scr:ExpressionTransform">
+                            <scr:Expression>new(
+Item1.Item1 as Id,
+Item1.Item2 as Duration,
+Item1.Item3 as Size,
+Item1.Item4 as Colour1,
+Item1.Item5 as Colour2,
+Item1.Item6 as numDots1,
+Item1.Item7 as numDots2,
+
+Item2.Item1 as dotLifeBool,
+Item2.Item2 as dotLifetime,
+Item2.Item3 as Contrast1,
+Item2.Item4 as Contrast2,
+
+Item3.Item1 as VelX1,
+Item3.Item2 as VelX2,
+Item3.Item3 as VelY1,
+Item3.Item4 as VelY2,
+Item3.Item5 as Coherence1,
+Item3.Item6 as Coherence2)</scr:Expression>
+                          </Expression>
+                          <Expression xsi:type="WorkflowOutput" />
+                        </Nodes>
+                        <Edges>
+                          <Edge From="0" To="1" Label="Source1" />
+                          <Edge From="1" To="2" Label="Source1" />
+                          <Edge From="1" To="3" Label="Source1" />
+                          <Edge From="1" To="13" Label="Source1" />
+                          <Edge From="1" To="15" Label="Source1" />
+                          <Edge From="1" To="17" Label="Source1" />
+                          <Edge From="1" To="19" Label="Source1" />
+                          <Edge From="1" To="21" Label="Source1" />
+                          <Edge From="1" To="24" Label="Source1" />
+                          <Edge From="1" To="26" Label="Source1" />
+                          <Edge From="1" To="28" Label="Source1" />
+                          <Edge From="1" To="31" Label="Source1" />
+                          <Edge From="1" To="35" Label="Source1" />
+                          <Edge From="1" To="38" Label="Source1" />
+                          <Edge From="1" To="41" Label="Source1" />
+                          <Edge From="1" To="44" Label="Source1" />
+                          <Edge From="1" To="47" Label="Source1" />
+                          <Edge From="1" To="50" Label="Source1" />
+                          <Edge From="2" To="23" Label="Source1" />
+                          <Edge From="3" To="12" Label="Source1" />
+                          <Edge From="4" To="14" Label="Source2" />
+                          <Edge From="5" To="16" Label="Source2" />
+                          <Edge From="6" To="18" Label="Source2" />
+                          <Edge From="7" To="20" Label="Source2" />
+                          <Edge From="8" To="22" Label="Source2" />
+                          <Edge From="9" To="25" Label="Source2" />
+                          <Edge From="10" To="27" Label="Source2" />
+                          <Edge From="11" To="12" Label="Source2" />
+                          <Edge From="12" To="23" Label="Source2" />
+                          <Edge From="13" To="14" Label="Source1" />
+                          <Edge From="14" To="23" Label="Source3" />
+                          <Edge From="15" To="16" Label="Source1" />
+                          <Edge From="16" To="23" Label="Source4" />
+                          <Edge From="17" To="18" Label="Source1" />
+                          <Edge From="18" To="23" Label="Source5" />
+                          <Edge From="19" To="20" Label="Source1" />
+                          <Edge From="20" To="23" Label="Source6" />
+                          <Edge From="21" To="22" Label="Source1" />
+                          <Edge From="22" To="23" Label="Source7" />
+                          <Edge From="23" To="54" Label="Source1" />
+                          <Edge From="24" To="25" Label="Source1" />
+                          <Edge From="25" To="34" Label="Source1" />
+                          <Edge From="26" To="27" Label="Source1" />
+                          <Edge From="27" To="34" Label="Source2" />
+                          <Edge From="28" To="30" Label="Source1" />
+                          <Edge From="29" To="30" Label="Source2" />
+                          <Edge From="30" To="34" Label="Source3" />
+                          <Edge From="31" To="33" Label="Source1" />
+                          <Edge From="32" To="33" Label="Source2" />
+                          <Edge From="33" To="34" Label="Source4" />
+                          <Edge From="34" To="54" Label="Source2" />
+                          <Edge From="35" To="37" Label="Source1" />
+                          <Edge From="36" To="37" Label="Source2" />
+                          <Edge From="37" To="53" Label="Source1" />
+                          <Edge From="38" To="40" Label="Source1" />
+                          <Edge From="39" To="40" Label="Source2" />
+                          <Edge From="40" To="53" Label="Source2" />
+                          <Edge From="41" To="43" Label="Source1" />
+                          <Edge From="42" To="43" Label="Source2" />
+                          <Edge From="43" To="53" Label="Source3" />
+                          <Edge From="44" To="46" Label="Source1" />
+                          <Edge From="45" To="46" Label="Source2" />
+                          <Edge From="46" To="53" Label="Source4" />
+                          <Edge From="47" To="49" Label="Source1" />
+                          <Edge From="48" To="49" Label="Source2" />
+                          <Edge From="49" To="53" Label="Source5" />
+                          <Edge From="50" To="52" Label="Source1" />
+                          <Edge From="51" To="52" Label="Source2" />
+                          <Edge From="52" To="53" Label="Source6" />
+                          <Edge From="53" To="54" Label="Source3" />
+                          <Edge From="54" To="55" Label="Source1" />
+                          <Edge From="55" To="56" Label="Source1" />
+                        </Edges>
+                      </Workflow>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="2" To="3" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
+            </Expression>
             <Expression xsi:type="GroupWorkflow">
-              <Name>S2</Name>
+              <Name>Blank</Name>
               <Workflow>
                 <Nodes>
                   <Expression xsi:type="WorkflowInput">
@@ -343,111 +1263,21 @@
                       <p1:Trials>
                         <p1:MotionCoherenceParams>
                           <p1:Duration>1</p1:Duration>
-                          <p1:Size>2</p1:Size>
-                          <p1:dotLifeBool>0</p1:dotLifeBool>
-                          <p1:dotLifetime>1</p1:dotLifetime>
-                          <p1:Colour1>0</p1:Colour1>
-                          <p1:Colour2>1</p1:Colour2>
-                          <p1:numDots1>573</p1:numDots1>
-                          <p1:numDots2>573</p1:numDots2>
-                          <p1:Contrast1>1</p1:Contrast1>
-                          <p1:Contrast2>1</p1:Contrast2>
-                          <p1:VelocityX1>0</p1:VelocityX1>
-                          <p1:VelocityX2>0</p1:VelocityX2>
-                          <p1:VelocityY1>0</p1:VelocityY1>
-                          <p1:VelocityY2>0</p1:VelocityY2>
-                          <p1:Coherence1>100</p1:Coherence1>
-                          <p1:Coherence2>100</p1:Coherence2>
-                        </p1:MotionCoherenceParams>
-                        <p1:MotionCoherenceParams>
-                          <p1:Duration>1</p1:Duration>
-                          <p1:Size>2</p1:Size>
-                          <p1:dotLifeBool>0</p1:dotLifeBool>
-                          <p1:dotLifetime>1</p1:dotLifetime>
-                          <p1:Colour1>0</p1:Colour1>
-                          <p1:Colour2>1</p1:Colour2>
-                          <p1:numDots1>573</p1:numDots1>
-                          <p1:numDots2>573</p1:numDots2>
-                          <p1:Contrast1>1</p1:Contrast1>
-                          <p1:Contrast2>1</p1:Contrast2>
-                          <p1:VelocityX1>16</p1:VelocityX1>
-                          <p1:VelocityX2>16</p1:VelocityX2>
-                          <p1:VelocityY1>0</p1:VelocityY1>
-                          <p1:VelocityY2>0</p1:VelocityY2>
-                          <p1:Coherence1>100</p1:Coherence1>
-                          <p1:Coherence2>100</p1:Coherence2>
-                        </p1:MotionCoherenceParams>
-                        <p1:MotionCoherenceParams>
-                          <p1:Duration>1</p1:Duration>
-                          <p1:Size>2</p1:Size>
-                          <p1:dotLifeBool>0</p1:dotLifeBool>
-                          <p1:dotLifetime>1</p1:dotLifetime>
-                          <p1:Colour1>0</p1:Colour1>
-                          <p1:Colour2>1</p1:Colour2>
-                          <p1:numDots1>573</p1:numDots1>
-                          <p1:numDots2>573</p1:numDots2>
-                          <p1:Contrast1>1</p1:Contrast1>
-                          <p1:Contrast2>1</p1:Contrast2>
-                          <p1:VelocityX1>32</p1:VelocityX1>
-                          <p1:VelocityX2>32</p1:VelocityX2>
-                          <p1:VelocityY1>0</p1:VelocityY1>
-                          <p1:VelocityY2>0</p1:VelocityY2>
-                          <p1:Coherence1>100</p1:Coherence1>
-                          <p1:Coherence2>100</p1:Coherence2>
-                        </p1:MotionCoherenceParams>
-                        <p1:MotionCoherenceParams>
-                          <p1:Duration>1</p1:Duration>
-                          <p1:Size>2</p1:Size>
-                          <p1:dotLifeBool>0</p1:dotLifeBool>
-                          <p1:dotLifetime>1</p1:dotLifetime>
-                          <p1:Colour1>0</p1:Colour1>
-                          <p1:Colour2>1</p1:Colour2>
-                          <p1:numDots1>573</p1:numDots1>
-                          <p1:numDots2>573</p1:numDots2>
-                          <p1:Contrast1>1</p1:Contrast1>
-                          <p1:Contrast2>1</p1:Contrast2>
-                          <p1:VelocityX1>64</p1:VelocityX1>
-                          <p1:VelocityX2>64</p1:VelocityX2>
-                          <p1:VelocityY1>0</p1:VelocityY1>
-                          <p1:VelocityY2>0</p1:VelocityY2>
-                          <p1:Coherence1>100</p1:Coherence1>
-                          <p1:Coherence2>100</p1:Coherence2>
-                        </p1:MotionCoherenceParams>
-                        <p1:MotionCoherenceParams>
-                          <p1:Duration>1</p1:Duration>
-                          <p1:Size>2</p1:Size>
-                          <p1:dotLifeBool>0</p1:dotLifeBool>
-                          <p1:dotLifetime>1</p1:dotLifetime>
-                          <p1:Colour1>0</p1:Colour1>
-                          <p1:Colour2>1</p1:Colour2>
-                          <p1:numDots1>573</p1:numDots1>
-                          <p1:numDots2>573</p1:numDots2>
-                          <p1:Contrast1>1</p1:Contrast1>
-                          <p1:Contrast2>1</p1:Contrast2>
-                          <p1:VelocityX1>128</p1:VelocityX1>
-                          <p1:VelocityX2>128</p1:VelocityX2>
-                          <p1:VelocityY1>0</p1:VelocityY1>
-                          <p1:VelocityY2>0</p1:VelocityY2>
-                          <p1:Coherence1>100</p1:Coherence1>
-                          <p1:Coherence2>100</p1:Coherence2>
-                        </p1:MotionCoherenceParams>
-                        <p1:MotionCoherenceParams>
-                          <p1:Duration>1</p1:Duration>
-                          <p1:Size>2</p1:Size>
-                          <p1:dotLifeBool>0</p1:dotLifeBool>
-                          <p1:dotLifetime>1</p1:dotLifetime>
-                          <p1:Colour1>0</p1:Colour1>
-                          <p1:Colour2>1</p1:Colour2>
-                          <p1:numDots1>573</p1:numDots1>
-                          <p1:numDots2>573</p1:numDots2>
-                          <p1:Contrast1>1</p1:Contrast1>
-                          <p1:Contrast2>1</p1:Contrast2>
-                          <p1:VelocityX1>256</p1:VelocityX1>
-                          <p1:VelocityX2>256</p1:VelocityX2>
-                          <p1:VelocityY1>0</p1:VelocityY1>
-                          <p1:VelocityY2>0</p1:VelocityY2>
-                          <p1:Coherence1>100</p1:Coherence1>
-                          <p1:Coherence2>100</p1:Coherence2>
+                          <p1:Size xsi:nil="true" />
+                          <p1:dotLifeBool xsi:nil="true" />
+                          <p1:dotLifetime xsi:nil="true" />
+                          <p1:Colour1 xsi:nil="true" />
+                          <p1:Colour2 xsi:nil="true" />
+                          <p1:numDots1>0</p1:numDots1>
+                          <p1:numDots2>0</p1:numDots2>
+                          <p1:Contrast1 xsi:nil="true" />
+                          <p1:Contrast2 xsi:nil="true" />
+                          <p1:VelocityX1 xsi:nil="true" />
+                          <p1:VelocityX2 xsi:nil="true" />
+                          <p1:VelocityY1 xsi:nil="true" />
+                          <p1:VelocityY2 xsi:nil="true" />
+                          <p1:Coherence1 xsi:nil="true" />
+                          <p1:Coherence2 xsi:nil="true" />
                         </p1:MotionCoherenceParams>
                       </p1:Trials>
                     </Combinator>
@@ -763,7 +1593,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
               </Workflow>
             </Expression>
             <Expression xsi:type="GroupWorkflow">
-              <Name>Blank</Name>
+              <Name>S2dirRecordLeft_50degs_12dirs</Name>
               <Workflow>
                 <Nodes>
                   <Expression xsi:type="WorkflowInput">
@@ -774,21 +1604,219 @@ Item3.Item6 as Coherence2)</scr:Expression>
                       <p1:Trials>
                         <p1:MotionCoherenceParams>
                           <p1:Duration>1</p1:Duration>
-                          <p1:Size xsi:nil="true" />
-                          <p1:dotLifeBool xsi:nil="true" />
-                          <p1:dotLifetime xsi:nil="true" />
-                          <p1:Colour1 xsi:nil="true" />
-                          <p1:Colour2 xsi:nil="true" />
-                          <p1:numDots1>0</p1:numDots1>
-                          <p1:numDots2>0</p1:numDots2>
-                          <p1:Contrast1 xsi:nil="true" />
-                          <p1:Contrast2 xsi:nil="true" />
-                          <p1:VelocityX1 xsi:nil="true" />
-                          <p1:VelocityX2 xsi:nil="true" />
-                          <p1:VelocityY1 xsi:nil="true" />
-                          <p1:VelocityY2 xsi:nil="true" />
-                          <p1:Coherence1 xsi:nil="true" />
-                          <p1:Coherence2 xsi:nil="true" />
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>0</p1:VelocityX1>
+                          <p1:VelocityX2>0</p1:VelocityX2>
+                          <p1:VelocityY1>50</p1:VelocityY1>
+                          <p1:VelocityY2>50</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>25</p1:VelocityX1>
+                          <p1:VelocityX2>25</p1:VelocityX2>
+                          <p1:VelocityY1>43.3013</p1:VelocityY1>
+                          <p1:VelocityY2>43.3013</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>43.3013</p1:VelocityX1>
+                          <p1:VelocityX2>43.3013</p1:VelocityX2>
+                          <p1:VelocityY1>25</p1:VelocityY1>
+                          <p1:VelocityY2>25</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>50</p1:VelocityX1>
+                          <p1:VelocityX2>50</p1:VelocityX2>
+                          <p1:VelocityY1>0</p1:VelocityY1>
+                          <p1:VelocityY2>0</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>43.3013</p1:VelocityX1>
+                          <p1:VelocityX2>43.3013</p1:VelocityX2>
+                          <p1:VelocityY1>-25</p1:VelocityY1>
+                          <p1:VelocityY2>-25</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>25</p1:VelocityX1>
+                          <p1:VelocityX2>25</p1:VelocityX2>
+                          <p1:VelocityY1>-43.3013</p1:VelocityY1>
+                          <p1:VelocityY2>-43.3013</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>0</p1:VelocityX1>
+                          <p1:VelocityX2>0</p1:VelocityX2>
+                          <p1:VelocityY1>-50</p1:VelocityY1>
+                          <p1:VelocityY2>-50</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>-25</p1:VelocityX1>
+                          <p1:VelocityX2>-25</p1:VelocityX2>
+                          <p1:VelocityY1>-43.3013</p1:VelocityY1>
+                          <p1:VelocityY2>-43.3013</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>-43.3013</p1:VelocityX1>
+                          <p1:VelocityX2>-43.3013</p1:VelocityX2>
+                          <p1:VelocityY1>-25</p1:VelocityY1>
+                          <p1:VelocityY2>-25</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>-50</p1:VelocityX1>
+                          <p1:VelocityX2>-50</p1:VelocityX2>
+                          <p1:VelocityY1>0</p1:VelocityY1>
+                          <p1:VelocityY2>0</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>-43.3013</p1:VelocityX1>
+                          <p1:VelocityX2>-43.3013</p1:VelocityX2>
+                          <p1:VelocityY1>25</p1:VelocityY1>
+                          <p1:VelocityY2>25</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
+                        </p1:MotionCoherenceParams>
+                        <p1:MotionCoherenceParams>
+                          <p1:Duration>1</p1:Duration>
+                          <p1:Size>2</p1:Size>
+                          <p1:dotLifeBool>0</p1:dotLifeBool>
+                          <p1:dotLifetime>1</p1:dotLifetime>
+                          <p1:Colour1>0</p1:Colour1>
+                          <p1:Colour2>1</p1:Colour2>
+                          <p1:numDots1>573</p1:numDots1>
+                          <p1:numDots2>573</p1:numDots2>
+                          <p1:Contrast1>1</p1:Contrast1>
+                          <p1:Contrast2>1</p1:Contrast2>
+                          <p1:VelocityX1>-25</p1:VelocityX1>
+                          <p1:VelocityX2>-25</p1:VelocityX2>
+                          <p1:VelocityY1>43.3013</p1:VelocityY1>
+                          <p1:VelocityY2>43.3013</p1:VelocityY2>
+                          <p1:Coherence1>100</p1:Coherence1>
+                          <p1:Coherence2>100</p1:Coherence2>
                         </p1:MotionCoherenceParams>
                       </p1:Trials>
                     </Combinator>
@@ -1424,11 +2452,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
-<<<<<<< Updated upstream
-                            <p1:rndseed>20</p1:rndseed>
-=======
-                            <p1:rndseed>45</p1:rndseed>
->>>>>>> Stashed changes
+                            <p1:rndseed>23</p1:rndseed>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -1651,12 +2675,8 @@ Item3.Item6 as Coherence2)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
-<<<<<<< Updated upstream
-                                  <p1:VelocityX>4.266667</p1:VelocityX>
-=======
-                                  <p1:VelocityX>0</p1:VelocityX>
->>>>>>> Stashed changes
-                                  <p1:VelocityY>0</p1:VelocityY>
+                                  <p1:VelocityX>-0.72168833</p1:VelocityX>
+                                  <p1:VelocityY>0.416666657</p1:VelocityY>
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                   <p1:dotLifetime>60</p1:dotLifetime>
@@ -1767,11 +2787,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
-<<<<<<< Updated upstream
-                            <p1:rndseed>119</p1:rndseed>
-=======
-                            <p1:rndseed>144</p1:rndseed>
->>>>>>> Stashed changes
+                            <p1:rndseed>122</p1:rndseed>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -1994,12 +3010,8 @@ Item3.Item6 as Coherence2)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
-<<<<<<< Updated upstream
-                                  <p1:VelocityX>4.266667</p1:VelocityX>
-=======
-                                  <p1:VelocityX>0</p1:VelocityX>
->>>>>>> Stashed changes
-                                  <p1:VelocityY>0</p1:VelocityY>
+                                  <p1:VelocityX>-0.72168833</p1:VelocityX>
+                                  <p1:VelocityY>0.416666657</p1:VelocityY>
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                   <p1:dotLifetime>60</p1:dotLifetime>
@@ -2254,11 +3266,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
-<<<<<<< Updated upstream
-                <rx:Count>100</rx:Count>
-=======
-                <rx:Count>30</rx:Count>
->>>>>>> Stashed changes
+                <rx:Count>50</rx:Count>
               </Combinator>
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
@@ -3203,16 +4211,19 @@ Item3.Item6 as Coherence2)</scr:Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
-            <Edge From="0" To="2" Label="Source1" />
-            <Edge From="1" To="3" Label="Source1" />
-            <Edge From="2" To="3" Label="Source2" />
-            <Edge From="3" To="5" Label="Source1" />
-            <Edge From="4" To="5" Label="Source2" />
-            <Edge From="5" To="6" Label="Source1" />
-            <Edge From="6" To="7" Label="Source1" />
-            <Edge From="7" To="9" Label="Source1" />
-            <Edge From="8" To="9" Label="Source2" />
-            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="0" To="3" Label="Source1" />
+            <Edge From="0" To="4" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="5" Label="Source1" />
+            <Edge From="3" To="5" Label="Source2" />
+            <Edge From="4" To="5" Label="Source3" />
+            <Edge From="5" To="7" Label="Source1" />
+            <Edge From="6" To="7" Label="Source2" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="9" To="11" Label="Source1" />
+            <Edge From="10" To="11" Label="Source2" />
+            <Edge From="11" To="12" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -3366,7 +4377,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
         <ExtentX>5</ExtentX>
         <ExtentY>5</ExtentY>
         <LocationX>-80</LocationX>
-        <LocationY>-32</LocationY>
+        <LocationY>-30</LocationY>
         <Layer>1</Layer>
         <Angle>0</Angle>
         <ColorR>0</ColorR>
@@ -3566,7 +4577,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     <Name>WheelLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24019_DotMotion_SpeedTuning_Wheel.csv</io:FileName>
+                    <io:FileName>test_DotMotion_Dir_Wheel.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -3641,7 +4652,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24019_DotMotion_SpeedTuning_Video.csv</io:FileName>
+                    <io:FileName>test_DotMotion_Dir_Video.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -3712,7 +4723,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     <Name>PDLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24019_DotMotion_SpeedTuning_Photodiode.csv</io:FileName>
+                    <io:FileName>test_DotMotion_Dir_Photodiode.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -3801,7 +4812,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     </Builder>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24019_DotMotion_SpeedTuning_TrialParams.csv</io:FileName>
+                    <io:FileName>test_DotMotion_Dir_TrialParams.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -4250,17 +5261,10 @@ Item3.Item3 as Coherence2)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
-<<<<<<< Updated upstream
-                  <cv:X>1952</cv:X>
-                  <cv:Y>63</cv:Y>
-                  <cv:Width>59</cv:Width>
-                  <cv:Height>70</cv:Height>
-=======
-                  <cv:X>1960</cv:X>
-                  <cv:Y>66</cv:Y>
-                  <cv:Width>72</cv:Width>
-                  <cv:Height>72</cv:Height>
->>>>>>> Stashed changes
+                  <cv:X>1936</cv:X>
+                  <cv:Y>54</cv:Y>
+                  <cv:Width>128</cv:Width>
+                  <cv:Height>84</cv:Height>
                 </cv:RegionOfInterest>
               </Combinator>
             </Expression>
@@ -4290,7 +5294,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
-                <cv:FileName>M24019_DotMotion_SpeedTuning_video.avi</cv:FileName>
+                <cv:FileName>test_DotMotion_Dir_video.avi</cv:FileName>
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -4371,7 +5375,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>DotMotion_SpeedTuning</Value>
+                <Value>DotMotion_Dir</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -4451,81 +5455,19 @@ Item3.Item3 as Coherence2)</scr:Expression>
           </Edges>
         </Workflow>
       </Expression>
-<<<<<<< Updated upstream
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="wie:KeyDown">
-          <wie:Filter>A</wie:Filter>
-          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="StringProperty">
-          <Value>l50</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\r</io:NewLine>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="wie:KeyDown">
-          <wie:Filter>D</wie:Filter>
-          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="StringProperty">
-          <Value>r30</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\r</io:NewLine>
-        </Combinator>
-      </Expression>
-=======
->>>>>>> Stashed changes
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
-      <Edge From="2" To="5" Label="Source1" />
-      <Edge From="2" To="17" Label="Source1" />
-      <Edge From="2" To="18" Label="Source1" />
-      <Edge From="3" To="4" Label="Source1" />
-      <Edge From="4" To="5" Label="Source2" />
-      <Edge From="5" To="6" Label="Source1" />
+      <Edge From="3" To="6" Label="Source1" />
+      <Edge From="4" To="7" Label="Source2" />
+      <Edge From="5" To="6" Label="Source2" />
       <Edge From="6" To="7" Label="Source1" />
-      <Edge From="7" To="8" Label="Source1" />
-      <Edge From="7" To="11" Label="Source1" />
-      <Edge From="7" To="14" Label="Source1" />
-      <Edge From="8" To="9" Label="Source1" />
-      <Edge From="9" To="10" Label="Source1" />
-      <Edge From="11" To="12" Label="Source1" />
-      <Edge From="12" To="13" Label="Source1" />
-      <Edge From="14" To="15" Label="Source1" />
-      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="9" To="12" Label="Source1" />
+      <Edge From="10" To="11" Label="Source1" />
+      <Edge From="11" To="12" Label="Source2" />
+      <Edge From="15" To="17" Label="Source1" />
+      <Edge From="16" To="17" Label="Source2" />
       <Edge From="18" To="19" Label="Source1" />
-      <Edge From="19" To="20" Label="Source1" />
-      <Edge From="22" To="25" Label="Source1" />
-      <Edge From="23" To="26" Label="Source2" />
-      <Edge From="24" To="25" Label="Source2" />
-      <Edge From="25" To="26" Label="Source1" />
-      <Edge From="28" To="31" Label="Source1" />
-      <Edge From="29" To="30" Label="Source1" />
-      <Edge From="30" To="31" Label="Source2" />
-      <Edge From="34" To="36" Label="Source1" />
-      <Edge From="35" To="36" Label="Source2" />
-      <Edge From="37" To="38" Label="Source1" />
-<<<<<<< Updated upstream
-      <Edge From="39" To="40" Label="Source1" />
-      <Edge From="40" To="41" Label="Source1" />
-      <Edge From="42" To="43" Label="Source1" />
-      <Edge From="43" To="44" Label="Source1" />
-=======
->>>>>>> Stashed changes
     </Edges>
   </Workflow>
 </WorkflowBuilder>
