@@ -32,13 +32,8 @@
         <Y>3</Y>
       </Location>
       <Size>
-<<<<<<< Updated upstream
         <Width>809</Width>
         <Height>744</Height>
-=======
-        <Width>866</Width>
-        <Height>839</Height>
->>>>>>> Stashed changes
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -390,11 +385,7 @@
     </Size>
     <WindowState>Normal</WindowState>
   </DialogSettings>
-<<<<<<< Updated upstream
   <DialogSettings>
-=======
-  <DialogSettings xsi:type="WorkflowEditorSettings">
->>>>>>> Stashed changes
     <Visible>false</Visible>
     <Location>
       <X>0</X>
@@ -405,241 +396,6 @@
       <Height>0</Height>
     </Size>
     <WindowState>Normal</WindowState>
-<<<<<<< Updated upstream
-=======
-    <EditorDialogSettings>
-      <Visible>true</Visible>
-      <Location>
-        <X>3</X>
-        <Y>3</Y>
-      </Location>
-      <Size>
-        <Width>866</Width>
-        <Height>839</Height>
-      </Size>
-      <WindowState>Normal</WindowState>
-    </EditorDialogSettings>
-    <EditorVisualizerLayout>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings xsi:type="WorkflowEditorSettings">
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-        <EditorDialogSettings>
-          <Visible>true</Visible>
-          <Location>
-            <X>3</X>
-            <Y>3</Y>
-          </Location>
-          <Size>
-            <Width>866</Width>
-            <Height>839</Height>
-          </Size>
-          <WindowState>Normal</WindowState>
-        </EditorDialogSettings>
-        <EditorVisualizerLayout>
-          <DialogSettings>
-            <Visible>false</Visible>
-            <Location>
-              <X>0</X>
-              <Y>0</Y>
-            </Location>
-            <Size>
-              <Width>0</Width>
-              <Height>0</Height>
-            </Size>
-            <WindowState>Normal</WindowState>
-          </DialogSettings>
-          <DialogSettings>
-            <Visible>false</Visible>
-            <Location>
-              <X>0</X>
-              <Y>0</Y>
-            </Location>
-            <Size>
-              <Width>0</Width>
-              <Height>0</Height>
-            </Size>
-            <WindowState>Normal</WindowState>
-          </DialogSettings>
-          <DialogSettings>
-            <Visible>false</Visible>
-            <Location>
-              <X>0</X>
-              <Y>0</Y>
-            </Location>
-            <Size>
-              <Width>0</Width>
-              <Height>0</Height>
-            </Size>
-            <WindowState>Normal</WindowState>
-          </DialogSettings>
-          <DialogSettings>
-            <Visible>false</Visible>
-            <Location>
-              <X>0</X>
-              <Y>0</Y>
-            </Location>
-            <Size>
-              <Width>0</Width>
-              <Height>0</Height>
-            </Size>
-            <WindowState>Normal</WindowState>
-          </DialogSettings>
-        </EditorVisualizerLayout>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-      <DialogSettings>
-        <Visible>false</Visible>
-        <Location>
-          <X>0</X>
-          <Y>0</Y>
-        </Location>
-        <Size>
-          <Width>0</Width>
-          <Height>0</Height>
-        </Size>
-        <WindowState>Normal</WindowState>
-      </DialogSettings>
-    </EditorVisualizerLayout>
->>>>>>> Stashed changes
   </DialogSettings>
   <DialogSettings>
     <Visible>false</Visible>
@@ -671,13 +427,8 @@
         <Y>3</Y>
       </Location>
       <Size>
-<<<<<<< Updated upstream
         <Width>809</Width>
         <Height>744</Height>
-=======
-        <Width>866</Width>
-        <Height>839</Height>
->>>>>>> Stashed changes
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1074,13 +825,8 @@
         <Y>3</Y>
       </Location>
       <Size>
-<<<<<<< Updated upstream
         <Width>809</Width>
         <Height>744</Height>
-=======
-        <Width>866</Width>
-        <Height>839</Height>
->>>>>>> Stashed changes
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1376,13 +1122,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-<<<<<<< Updated upstream
           <X>484</X>
           <Y>694</Y>
-=======
-          <X>529</X>
-          <Y>660</Y>
->>>>>>> Stashed changes
         </Location>
         <Size>
           <Width>416</Width>
@@ -1394,13 +1135,8 @@
           <TimeSeriesVisualizer>
             <Capacity>640</Capacity>
             <Min>0</Min>
-<<<<<<< Updated upstream
             <Max>3.5</Max>
             <AutoScale>true</AutoScale>
-=======
-            <Max>300</Max>
-            <AutoScale>false</AutoScale>
->>>>>>> Stashed changes
           </TimeSeriesVisualizer>
         </VisualizerSettings>
       </DialogSettings>
@@ -1508,13 +1244,8 @@
             <Y>3</Y>
           </Location>
           <Size>
-<<<<<<< Updated upstream
             <Width>809</Width>
             <Height>744</Height>
-=======
-            <Width>866</Width>
-            <Height>839</Height>
->>>>>>> Stashed changes
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -1659,11 +1390,7 @@
             </Location>
             <Size>
               <Width>336</Width>
-<<<<<<< Updated upstream
               <Height>75</Height>
-=======
-              <Height>82</Height>
->>>>>>> Stashed changes
             </Size>
             <WindowState>Normal</WindowState>
             <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
@@ -2309,13 +2036,8 @@
         <Y>3</Y>
       </Location>
       <Size>
-<<<<<<< Updated upstream
         <Width>809</Width>
         <Height>744</Height>
-=======
-        <Width>866</Width>
-        <Height>839</Height>
->>>>>>> Stashed changes
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -2335,13 +2057,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-<<<<<<< Updated upstream
           <X>436</X>
           <Y>433</Y>
-=======
-          <X>221</X>
-          <Y>596</Y>
->>>>>>> Stashed changes
         </Location>
         <Size>
           <Width>336</Width>
@@ -2500,13 +2217,8 @@
         <VisualizerSettings>
           <TimeSeriesVisualizer>
             <Capacity>640</Capacity>
-<<<<<<< Updated upstream
             <Min>0</Min>
             <Max>1.1</Max>
-=======
-            <Min>250000</Min>
-            <Max>550000</Max>
->>>>>>> Stashed changes
             <AutoScale>true</AutoScale>
           </TimeSeriesVisualizer>
         </VisualizerSettings>
@@ -2645,7 +2357,6 @@
     </Size>
     <WindowState>Normal</WindowState>
   </DialogSettings>
-<<<<<<< Updated upstream
   <DialogSettings>
     <Visible>false</Visible>
     <Location>
@@ -2718,6 +2429,4 @@
     </Size>
     <WindowState>Normal</WindowState>
   </DialogSettings>
-=======
->>>>>>> Stashed changes
 </VisualizerLayout>
