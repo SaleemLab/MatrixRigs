@@ -1424,7 +1424,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
-                            <p1:rndseed>20</p1:rndseed>
+                            <p1:rndseed>48</p1:rndseed>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -1647,7 +1647,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
-                                  <p1:VelocityX>4.266667</p1:VelocityX>
+                                  <p1:VelocityX>0.533333361</p1:VelocityX>
                                   <p1:VelocityY>0</p1:VelocityY>
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -1759,7 +1759,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
-                            <p1:rndseed>119</p1:rndseed>
+                            <p1:rndseed>147</p1:rndseed>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -1982,7 +1982,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
-                                  <p1:VelocityX>4.266667</p1:VelocityX>
+                                  <p1:VelocityX>0.533333361</p1:VelocityX>
                                   <p1:VelocityY>0</p1:VelocityY>
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -3775,10 +3775,24 @@ Item3.Item6 as Coherence2)</scr:Expression>
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:WithLatestFrom" />
                   </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="scr:ExpressionTransform">
-                      <scr:Expression>new(Item1.Item1.TrialType as TrialType, Item1.Item1.Response as Response, Item1.Item1.TrialResult as TrialResult, Item1.Item1.LeftVel as LeftVel, Item1.Item1.RightVel as RightVel, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
-                    </Builder>
+                  <Expression xsi:type="scr:ExpressionTransform">
+                    <scr:Expression>new(Item1.Item1.Id as Id,
+Item1.Item1.Duration as Duration,
+Item1.Item1.Size as Size,
+Item1.Item1.Colour1 as Colour1,
+Item1.Item1.Colour2 as Colour2,
+Item1.Item1.numDots1 as numDots1,
+Item1.Item1.numDots2 as numDots2,
+Item1.Item1.dotLifeBool as dotLifeBool,
+Item1.Item1.dotLifetime as dotLifetime,
+Item1.Item1.Contrast1 as Contrast1,
+Item1.Item1.Contrast2 as Contrast2,
+Item1.Item1.VelX1 as VelX1,
+Item1.Item1.VelX2 as VelX2,
+Item1.Item1.Coherence1 as Coherence1,
+Item1.Item1.Coherence1 as Coherence1,
+Item1.Item2 as BonsaiTime,
+Item2 as ArduinoTime)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
                     <io:FileName>M24019_DotMotion_SpeedTuning_TrialParams.csv</io:FileName>
@@ -3787,7 +3801,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     <io:Overwrite>false</io:Overwrite>
                     <io:Suffix>Timestamp</io:Suffix>
                     <io:IncludeHeader>true</io:IncludeHeader>
-                    <io:Selector />
+                    <io:Selector>Id,Duration,Size,Colour1,Colour2,numDots1,numDots2,dotLifeBool,dotLifetime,Contrast1,Contrast2,VelX1,VelX2,Coherence1,BonsaiTime,ArduinoTime</io:Selector>
                   </Expression>
                 </Nodes>
                 <Edges>
@@ -4424,40 +4438,6 @@ Item3.Item3 as Coherence2)</scr:Expression>
           </Edges>
         </Workflow>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="wie:KeyDown">
-          <wie:Filter>A</wie:Filter>
-          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="StringProperty">
-          <Value>l50</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\r</io:NewLine>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="wie:KeyDown">
-          <wie:Filter>D</wie:Filter>
-          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="StringProperty">
-          <Value>r30</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\r</io:NewLine>
-        </Combinator>
-      </Expression>
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
@@ -4489,10 +4469,6 @@ Item3.Item3 as Coherence2)</scr:Expression>
       <Edge From="34" To="36" Label="Source1" />
       <Edge From="35" To="36" Label="Source2" />
       <Edge From="37" To="38" Label="Source1" />
-      <Edge From="39" To="40" Label="Source1" />
-      <Edge From="40" To="41" Label="Source1" />
-      <Edge From="42" To="43" Label="Source1" />
-      <Edge From="43" To="44" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
