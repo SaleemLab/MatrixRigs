@@ -325,7 +325,7 @@
         <Property Name="Count" DisplayName="nReps" Category="Trial" />
       </Expression>
       <Expression xsi:type="GroupWorkflow">
-        <Name>Speed2D</Name>
+        <Name>StimulusSelection</Name>
         <Workflow>
           <Nodes>
             <Expression xsi:type="WorkflowInput">
@@ -3680,10 +3680,8 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     <Name>Parameters</Name>
                     <rx:BufferSize xsi:nil="true" />
                   </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="MulticastSubject">
-                      <Name>TrialParams</Name>
-                    </Builder>
+                  <Expression xsi:type="MulticastSubject">
+                    <Name>TrialParams</Name>
                   </Expression>
                 </Nodes>
                 <Edges>
