@@ -10,9 +10,9 @@ using System.Reactive.Linq;
 [WorkflowElementCategory(ElementCategory.Transform)]
 public class IncrementStateDependentTrialCounter
 {
-    public int[][] TrialCounterArray {get; set;}
+    public List<int[]> TrialCounterArray {get; set;}
     
-    public IObservable<int[][]> Process(IObservable<Tuple<int, int>> source)
+    public IObservable<List<int[]>> Process(IObservable<Tuple<int, int>> source)
     {
         
 
@@ -23,9 +23,9 @@ public class IncrementStateDependentTrialCounter
 
             TrialCounterArray[istate][istim]++;
 
-            Console.WriteLine("state: " + istate);
-            Console.WriteLine("stim: " + istim);
-            Console.WriteLine(TrialCounterArray[istate][istim]);
+           // Console.WriteLine("state: " + istate);
+            //Console.WriteLine("stim: " + istim);
+            //Console.WriteLine(TrialCounterArray[istate][istim]);
 
             return TrialCounterArray;
 

@@ -11,7 +11,7 @@ using System.Reactive;
 [WorkflowElementCategory(ElementCategory.Transform)]
 public class RandSampleFromIndexedDistribution
 {
-    public float[][] ProbabilityDistributions {get; set; }
+    public List<float[]> ProbabilityDistributions {get; set; }
     public int DistributionIndex {get; set; }
 
     public IObservable<int> Process(IObservable<Unit> source)
@@ -22,18 +22,18 @@ public class RandSampleFromIndexedDistribution
             int distIndex=DistributionIndex;
             thisDistribution = ProbabilityDistributions[distIndex];
             int nStim = thisDistribution.Length;
-            int iStim =-1;
+            int iStim = 0;
 
             var rng = new Random((int)DateTime.Now.Ticks); // random number generator
 
             int randomStim = rng.Next(1,100); // random number between 1 and 100
-            Console.WriteLine("rng: " + randomStim);
+            //Console.WriteLine("rng: " + randomStim);
             for (int i=0; i<nStim; i++) // loop through speed pair
             {
                 float sum = thisDistribution.Take(i+1).Sum(); // 
                 if (randomStim <= sum) // if the sum is more than the random number, choose it
                 {
-                    iStim = i; // index of the standard speed to be tested
+                    iStim = i; // index of the stimulus to show
                     break;
                 }
             }
