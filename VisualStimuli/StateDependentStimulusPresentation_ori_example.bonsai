@@ -93,13 +93,6 @@
                 <Property Name="ProbabilityDistributions" />
               </PropertyMappings>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:Timer">
-                <gl:DueTime>PT2S</gl:DueTime>
-                <gl:Period>PT2S</gl:Period>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Unit" />
             <Expression xsi:type="SubscribeSubject">
               <Name>CurrentState</Name>
             </Expression>
@@ -132,32 +125,73 @@
                 <Property Name="DistributionIndex" />
               </PropertyMappings>
             </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>TrialCounters</Name>
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="TrialCounterArray" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>CurrentState</Name>
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="Value" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>newStim</Name>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="gl:Timer">
+                  <gl:DueTime>PT2S</gl:DueTime>
+                  <gl:Period>PT2S</gl:Period>
+                </Combinator>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Unit" />
+            </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:RandSampleFromIndexedDistribution">
                 <p1:ProbabilityDistributions>
                   <p1:ArrayOfFloat>
-                    <p1:float>26.7815666</p1:float>
-                    <p1:float>26.1618919</p1:float>
-                    <p1:float>23.0635166</p1:float>
-                    <p1:float>23.9930286</p1:float>
+                    <p1:float>25</p1:float>
+                    <p1:float>25</p1:float>
+                    <p1:float>25</p1:float>
+                    <p1:float>25</p1:float>
                   </p1:ArrayOfFloat>
                   <p1:ArrayOfFloat>
-                    <p1:float>17.0634937</p1:float>
-                    <p1:float>26.587307</p1:float>
-                    <p1:float>36.11111</p1:float>
-                    <p1:float>20.2380924</p1:float>
+                    <p1:float>25</p1:float>
+                    <p1:float>25</p1:float>
+                    <p1:float>25</p1:float>
+                    <p1:float>25</p1:float>
                   </p1:ArrayOfFloat>
                 </p1:ProbabilityDistributions>
-                <p1:DistributionIndex>0</p1:DistributionIndex>
+                <p1:DistributionIndex>1</p1:DistributionIndex>
               </Combinator>
             </Expression>
-            <Expression xsi:type="scr:ExpressionTransform">
-              <scr:Expression>it == 0 ? 0 :
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="scr:ExpressionTransform">
+                <scr:Expression>it == 0 ? 0 :
 it == 1 ? 90 :
 it == 2 ? 180 :
 it == 3 ? 270 :
 360
 </scr:Expression>
+              </Builder>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>StimulusValues</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:CombineLatest" />
+            </Expression>
+            <Expression xsi:type="scr:ExpressionTransform">
+              <scr:Expression>Item2[Item1]</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="num:DegreeToRadian" />
@@ -194,7 +228,7 @@ it == 3 ? 270 :
                           <LocationX>0</LocationX>
                           <LocationY>0</LocationY>
                           <Layer>-1</Layer>
-                          <Angle>180</Angle>
+                          <Angle>270</Angle>
                           <SpatialFrequency>5</SpatialFrequency>
                           <TemporalFrequency>4</TemporalFrequency>
                           <Phase>0</Phase>
@@ -241,6 +275,13 @@ it == 3 ? 270 :
                             <gl:DueTime>PT1S</gl:DueTime>
                           </Combinator>
                         </Expression>
+                        <Expression xsi:type="Unit" />
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Last" />
+                        </Expression>
+                        <Expression xsi:type="MulticastSubject">
+                          <Name>newStim</Name>
+                        </Expression>
                         <Expression xsi:type="Disable">
                           <Builder xsi:type="GroupWorkflow">
                             <Name>SyncOFF</Name>
@@ -278,6 +319,9 @@ it == 3 ? 270 :
                         <Edge From="5" To="6" Label="Source1" />
                         <Edge From="6" To="7" Label="Source1" />
                         <Edge From="7" To="8" Label="Source1" />
+                        <Edge From="8" To="9" Label="Source1" />
+                        <Edge From="9" To="10" Label="Source1" />
+                        <Edge From="10" To="11" Label="Source1" />
                       </Edges>
                     </Workflow>
                   </Expression>
@@ -298,25 +342,9 @@ it == 3 ? 270 :
               <Combinator xsi:type="rx:Repeat" />
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
-            <Expression xsi:type="SubscribeSubject">
-              <Name>TrialCounters</Name>
-            </Expression>
-            <Expression xsi:type="PropertyMapping">
-              <PropertyMappings>
-                <Property Name="TrialCounterArray" />
-              </PropertyMappings>
-            </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>CurrentState</Name>
-            </Expression>
-            <Expression xsi:type="PropertyMapping">
-              <PropertyMappings>
-                <Property Name="Value" />
-              </PropertyMappings>
-            </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="IntProperty">
-                <Value>0</Value>
+                <Value>1</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -326,16 +354,16 @@ it == 3 ? 270 :
               <Combinator xsi:type="p1:IncrementStateDependentTrialCounter">
                 <p1:TrialCounterArray>
                   <p1:ArrayOfInt>
-                    <p1:int>317</p1:int>
-                    <p1:int>319</p1:int>
-                    <p1:int>329</p1:int>
-                    <p1:int>326</p1:int>
+                    <p1:int>6</p1:int>
+                    <p1:int>6</p1:int>
+                    <p1:int>6</p1:int>
+                    <p1:int>6</p1:int>
                   </p1:ArrayOfInt>
                   <p1:ArrayOfInt>
-                    <p1:int>34</p1:int>
-                    <p1:int>31</p1:int>
-                    <p1:int>28</p1:int>
-                    <p1:int>33</p1:int>
+                    <p1:int>5</p1:int>
+                    <p1:int>5</p1:int>
+                    <p1:int>5</p1:int>
+                    <p1:int>5</p1:int>
                   </p1:ArrayOfInt>
                 </p1:TrialCounterArray>
               </Combinator>
@@ -586,37 +614,41 @@ it == 3 ? 270 :
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="7" Label="Source3" />
+            <Edge From="1" To="12" Label="Source3" />
             <Edge From="2" To="3" Label="Source1" />
-            <Edge From="3" To="7" Label="Source1" />
-            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="12" Label="Source2" />
             <Edge From="5" To="6" Label="Source1" />
-            <Edge From="6" To="7" Label="Source2" />
+            <Edge From="6" To="24" Label="Source1" />
             <Edge From="7" To="8" Label="Source1" />
-            <Edge From="7" To="19" Label="Source2" />
-            <Edge From="7" To="18" Label="Source1" />
-            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="8" To="22" Label="Source2" />
             <Edge From="9" To="10" Label="Source1" />
             <Edge From="10" To="11" Label="Source1" />
             <Edge From="11" To="12" Label="Source1" />
             <Edge From="12" To="13" Label="Source1" />
-            <Edge From="14" To="15" Label="Source1" />
-            <Edge From="15" To="20" Label="Source1" />
+            <Edge From="12" To="23" Label="Source2" />
+            <Edge From="12" To="22" Label="Source1" />
+            <Edge From="13" To="15" Label="Source1" />
+            <Edge From="14" To="15" Label="Source2" />
+            <Edge From="15" To="16" Label="Source1" />
             <Edge From="16" To="17" Label="Source1" />
-            <Edge From="17" To="18" Label="Source2" />
+            <Edge From="17" To="18" Label="Source1" />
             <Edge From="18" To="19" Label="Source1" />
-            <Edge From="19" To="20" Label="Source2" />
-            <Edge From="19" To="23" Label="Source1" />
-            <Edge From="19" To="24" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
             <Edge From="20" To="21" Label="Source1" />
-            <Edge From="20" To="25" Label="Source1" />
-            <Edge From="21" To="22" Label="Source1" />
-            <Edge From="23" To="25" Label="Source2" />
-            <Edge From="24" To="25" Label="Source3" />
+            <Edge From="22" To="23" Label="Source1" />
+            <Edge From="23" To="24" Label="Source2" />
+            <Edge From="23" To="27" Label="Source1" />
+            <Edge From="23" To="28" Label="Source1" />
+            <Edge From="24" To="25" Label="Source1" />
+            <Edge From="24" To="29" Label="Source1" />
             <Edge From="25" To="26" Label="Source1" />
-            <Edge From="25" To="28" Label="Source1" />
-            <Edge From="26" To="27" Label="Source1" />
-            <Edge From="28" To="29" Label="Source1" />
+            <Edge From="27" To="29" Label="Source2" />
+            <Edge From="28" To="29" Label="Source3" />
+            <Edge From="29" To="30" Label="Source1" />
+            <Edge From="29" To="32" Label="Source1" />
+            <Edge From="30" To="31" Label="Source1" />
+            <Edge From="32" To="33" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -633,193 +665,6 @@ it == 3 ? 270 :
         <Name>GenStimProbDists</Name>
         <Workflow>
           <Nodes>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>25</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>25</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>25</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>25</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:Merge" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="FloatProperty">
-                <Value>0</Value>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>100</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>0</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="FloatProperty">
-                  <Value>0</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:Merge" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="ExternalizedMapping">
-                <Property Name="Value" DisplayName="nStim" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="IntProperty">
-                  <Value>4</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>nStim</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="PropertyMapping">
-                <PropertyMappings>
-                  <Property Name="Count" />
-                </PropertyMappings>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:Take">
-                  <rx:Count>4</rx:Count>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:ToList" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:ToArray" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>ProbDist1</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:Take">
-                  <rx:Count>4</rx:Count>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:ToList" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:ToArray" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>ProbDist2</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:Delay">
-                  <rx:DueTime>PT1S</rx:DueTime>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:Merge" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:ToList" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="rx:ToArray" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>ProbDistArray</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="MemberSelector">
-                <Selector>Count</Selector>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="MemberSelector">
-                <Selector>Length</Selector>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>nStates</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>initCountersSub</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="WorkflowOutput" />
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>OriginalProbDistArray</Name>
-              </Builder>
-            </Expression>
             <Expression xsi:type="io:CsvReader">
               <io:FileName>Example_SDstim_ori.csv</io:FileName>
               <io:ScanPattern>%f,%f,%f</io:ScanPattern>
@@ -827,6 +672,12 @@ it == 3 ? 270 :
             </Expression>
             <Expression xsi:type="MemberSelector">
               <Selector>Item1</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ToArray" />
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>StimulusValues</Name>
             </Expression>
             <Expression xsi:type="MemberSelector">
               <Selector>Item2</Selector>
@@ -891,60 +742,29 @@ it == 3 ? 270 :
             </Expression>
           </Nodes>
           <Edges>
-            <Edge From="0" To="4" Label="Source4" />
-            <Edge From="1" To="4" Label="Source3" />
-            <Edge From="2" To="4" Label="Source2" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="4" To="14" Label="Source1" />
-            <Edge From="5" To="9" Label="Source4" />
-            <Edge From="6" To="9" Label="Source3" />
-            <Edge From="7" To="9" Label="Source2" />
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="0" To="4" Label="Source1" />
+            <Edge From="0" To="7" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="11" Label="Source1" />
+            <Edge From="7" To="8" Label="Source1" />
             <Edge From="8" To="9" Label="Source1" />
-            <Edge From="9" To="18" Label="Source1" />
-            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="9" To="21" Label="Source1" />
+            <Edge From="10" To="11" Label="Source2" />
             <Edge From="11" To="12" Label="Source1" />
             <Edge From="12" To="13" Label="Source1" />
-            <Edge From="13" To="14" Label="Source2" />
-            <Edge From="13" To="18" Label="Source2" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="13" To="20" Label="Source1" />
             <Edge From="14" To="15" Label="Source1" />
             <Edge From="15" To="16" Label="Source1" />
             <Edge From="16" To="17" Label="Source1" />
-            <Edge From="17" To="23" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
             <Edge From="18" To="19" Label="Source1" />
-            <Edge From="19" To="20" Label="Source1" />
-            <Edge From="20" To="21" Label="Source1" />
             <Edge From="21" To="22" Label="Source1" />
-            <Edge From="22" To="23" Label="Source2" />
-            <Edge From="23" To="24" Label="Source1" />
-            <Edge From="24" To="25" Label="Source1" />
-            <Edge From="25" To="26" Label="Source1" />
-            <Edge From="25" To="32" Label="Source1" />
-            <Edge From="26" To="27" Label="Source1" />
-            <Edge From="27" To="28" Label="Source1" />
-            <Edge From="28" To="29" Label="Source1" />
-            <Edge From="29" To="30" Label="Source1" />
-            <Edge From="30" To="31" Label="Source1" />
-            <Edge From="33" To="34" Label="Source1" />
-            <Edge From="33" To="35" Label="Source1" />
-            <Edge From="33" To="38" Label="Source1" />
-            <Edge From="35" To="36" Label="Source1" />
-            <Edge From="36" To="37" Label="Source1" />
-            <Edge From="37" To="42" Label="Source1" />
-            <Edge From="38" To="39" Label="Source1" />
-            <Edge From="39" To="40" Label="Source1" />
-            <Edge From="40" To="41" Label="Source1" />
-            <Edge From="40" To="52" Label="Source1" />
-            <Edge From="41" To="42" Label="Source2" />
-            <Edge From="42" To="43" Label="Source1" />
-            <Edge From="43" To="44" Label="Source1" />
-            <Edge From="44" To="45" Label="Source1" />
-            <Edge From="44" To="51" Label="Source1" />
-            <Edge From="45" To="46" Label="Source1" />
-            <Edge From="46" To="47" Label="Source1" />
-            <Edge From="47" To="48" Label="Source1" />
-            <Edge From="48" To="49" Label="Source1" />
-            <Edge From="49" To="50" Label="Source1" />
-            <Edge From="52" To="53" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -1062,7 +882,7 @@ it == 3 ? 270 :
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="p1:UpdateProbDistArray">
-                <p1:scalingFactor>4</p1:scalingFactor>
+                <p1:scalingFactor>200</p1:scalingFactor>
               </Combinator>
             </Expression>
             <Expression xsi:type="rx:Condition">
@@ -1170,6 +990,10 @@ it == 3 ? 270 :
           </Edges>
         </Workflow>
       </Expression>
+      <Expression xsi:type="Unit" />
+      <Expression xsi:type="rx:BehaviorSubject">
+        <Name>newStim</Name>
+      </Expression>
     </Nodes>
     <Edges>
       <Edge From="0" To="1" Label="Source1" />
@@ -1184,6 +1008,7 @@ it == 3 ? 270 :
       <Edge From="11" To="13" Label="Source1" />
       <Edge From="12" To="13" Label="Source2" />
       <Edge From="16" To="17" Label="Source1" />
+      <Edge From="19" To="20" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
