@@ -1,5 +1,5 @@
 
-#define encoderPinOUT 10
+#define encoderPinOUT 8
 
 long wait_time;
 

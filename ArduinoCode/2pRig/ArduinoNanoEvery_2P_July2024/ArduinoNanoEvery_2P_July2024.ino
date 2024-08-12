@@ -26,11 +26,11 @@
 #define PhotodiodePin 17         // photoiode analog input 
 #define FrameTrig 9         // frame trigger digital input 
 #define LineTrig 8         // line trigger digital input 
-#define ScreenOnPin 7       // Teensy output (screen flicker)
+#define ScreenOnPin 7     // Teensy output (screen flicker)
 
 // serial frequency variables
-float samplingFrequency = 100; // frequency to send new values to computer
-const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values
+float samplingFrequency = 100; // frequency to send new values to computer (Hz)
+const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values (ms)
 unsigned long startMillis;  // sample timer that resets each time new data is sent
 unsigned long currentMillis; // rolling timer to check if it's time to send new data
 
@@ -41,6 +41,7 @@ boolean B_set;
 
 // event time variables (async pulse, licks)
 unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
+unsigned long lastPDOnSetTime;    // updates each time PD pulse goes HIGH
 unsigned long lastLeftLickTime;  // updates each time left lick detector goes LOW
 unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
 
@@ -70,7 +71,11 @@ bool TimerFinishedR = false;
 uint32_t StartTimeR = 0;      // variable to store temporary timestamps of previous iteration of the while loop
 
 // variable for photodiode
-int PhotodiodeVal;
+float PhotodiodeVal;
+float PhotodiodeSum = 0;
+float PhotodiodeReadCounter = 0;
+int ScreenOnVal;
+int NumofFlickers = 0;
 
 //bool ScreenOnVal; 
 //volatile unsigned int FrameCount = 0;      // variable for counting 2p frames
@@ -99,8 +104,8 @@ void setup() {
   
   pinMode(SyncPin, INPUT);              // sync pulse
   pinMode(PhotodiodePin, INPUT);        // PhotoDiode
-  
-  pinMode(ScreenOnPin, INPUT);
+
+  pinMode(ScreenOnPin, INPUT);     
 
   // interrupts for rotary encoder
   attachInterrupt(digitalPinToInterrupt(encoder0PinA), doEncoderA, CHANGE);
@@ -117,30 +122,47 @@ void setup() {
   // interrupt for sync pulse
   attachInterrupt(digitalPinToInterrupt(SyncPin), SyncPulse_Receiver, CHANGE);
   
-  Serial.begin (1000000);
+  // interrupt for PD upswing
+  //attachInterrupt(PhotodiodePin, PDPulse_Receiver, RISING);
+  // interrupt for screen on pin
+  
+  //attachInterrupt(digitalPinToInterrupt(ScreenOnPin), ScreenOn_updatePD, RISING);
+
+  Serial.begin(1000000);
   Serial.setTimeout(5);
 
   delay(500);
 }
 
+
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
+
 /////////////////////////////////////////////////////////////////////////////
 void loop() {
   //Check for change in position and send to Serial buffer
-
-    currentMillis = millis();  //get the current "time" (actually the number of milliseconds since the program started)
+  //if (digitalRead(ScreenOnPin) == HIGH) 
+  //{
+	PhotodiodeVal = analogRead(PhotodiodePin); //read the input pin
+  PhotodiodeReadCounter = PhotodiodeReadCounter+1;
+  PhotodiodeSum= PhotodiodeSum+PhotodiodeVal;
+  //}
+  
+  currentMillis = millis();  //get the current "time" (the number of milliseconds since the program started)
   if (currentMillis - startMillis >= interval)  //test whether the period has elapsed
   {
+    
+    //PhotodiodeVal = analogRead(PhotodiodePin); // read the input pin
     Serial.print(encoder0Pos);// Wheel raw input
     Serial.print("\t");
-    Serial.print(lastLeftLickTime);// Left lick count
+    //Serial.print(digitalRead(ScreenOnPin));// Screen on from the teensy 
+    Serial.print(lastLeftLickTime);// Lift lick count 
     Serial.print("\t");
     Serial.print(lastRightLickTime);// Right lick count
     Serial.print("\t");
     Serial.print(lastSyncPulseTime);// Sync pulse high/low status
     Serial.print("\t");
-    Serial.print(PhotodiodeVal);
+    Serial.print(PhotodiodeSum/PhotodiodeReadCounter); // PD value 
     Serial.print("\t");
     Serial.print(last2pFrameTime);// 2p frame count
     Serial.print("\t");
@@ -149,17 +171,16 @@ void loop() {
     Serial.print(currentMillis);// Arduino timestamp
     Serial.print("\n");
     startMillis = currentMillis;  // update timer
+  
+    PhotodiodeSum = 0;
+    PhotodiodeReadCounter = 0;
   }
-
     
 
   GetSerialInput();
   ActivatePVL();
   ActivatePVR();
-  if analogRead(ScreenOnPin) 
-  {
-	PhotodiodeVal = analogRead(PhotodiodePin);    // read the input pin
-  }
+  
 
 }
 /////////////////////////////////////////////////////////////////////////////
@@ -328,4 +349,15 @@ void SyncPulse_Receiver() {
   lastSyncPulseTime = millis();
 }
 
+// Interrupt for when P_D signal goes HIGH
+//void PDPulse_Receiver() {
+//  lastPDOnSetTime = millis();
+//}
 
+///////////////////////////////////////
+/// Screen on pin update function   ///
+///////////////////////////////////////
+//void ScreenOn_updatePD() { //Interrupt to update the Photodiode on screen on
+//  NumofFlickers = NumofFlickers + 1;
+  //PhotodiodeVal = analogRead(PhotodiodePin);   // read the input pin
+//} 

@@ -5,6 +5,7 @@ Adapted for Teensy 4.0 by Michael Krumin, March 2023
 
 // pin connected to the screen backlight
 const byte pulse_pin = 13;
+const byte pulse_pin_copy = 16;
 
 // rising and falling interrupt pins should both be tied 
 // to the same sync signal from the resonant mirrors
@@ -25,15 +26,20 @@ int sys_clock = 6e8;
 // Resonant mirror edge usually appears in the middle of a U-turn
 // So we need to wait until the end of that line to turn on the screens
 // For 12 kHz scanners, line time is ~41.67 us
-int delay_rising = 20700; //21e3 at 600MHz == 35 microseconds 
-int delay_falling = 20800;
+
+// New delay values for 7.5KHz scanner (B Scope); 60.2 microseconds between each line trigger 
+int delay_rising = 35100; 
+int delay_falling = 35100;
+
 
 // number of ticks in a pulse triggered by 
 // a rising/falling edge
 // This will depend on the scanners frequency and the temporal fill fraction of the acquisition parameters
 // Spatial fill fraction of 0.9 --> temporal 0.713 --> 11 microseconds is just right for a single U-Turn duration
-int pulse_ticks_rising = 5800; 
-int pulse_ticks_falling = 5800;
+
+// New tick rising & falling values for 7.5KHz scanner (B Scope)
+int pulse_ticks_rising = 5900; 
+int pulse_ticks_falling = 5900;
 
 int current_time_r, current_time_f, current_time, previous_time;
 int next_rising_pulse_start_tick;
@@ -50,6 +56,7 @@ void setup() {
   pulse_on = 0;
   //max_delay = max(delay_rising, delay_falling) + pulse_ticks + 1000;
   pinMode(pulse_pin, OUTPUT);
+  //pinMode(pulse_pin_copy, OUTPUT);
   pinMode(interrupt_pin_rising, INPUT_PULLUP);
   pinMode(interrupt_pin_falling, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(interrupt_pin_rising), pulse_rising, RISING);
@@ -93,6 +100,7 @@ void loop() {
           // one second from now, should never realistically trigger another pulse while the resonant scanner is running
           next_rising_pulse_start_tick = current_time + sys_clock;
           digitalWrite(pulse_pin, HIGH);
+          //digitalWrite(pulse_pin_copy, HIGH);
       }
     if (check_time(current_time, next_falling_pulse_start_tick)){
           pulse_on = 1;
@@ -100,6 +108,7 @@ void loop() {
           current_pulse_end_tick = current_time + pulse_ticks_falling;
           next_falling_pulse_start_tick = current_time + sys_clock;
           digitalWrite(pulse_pin, HIGH);
+          //digitalWrite(pulse_pin_copy, HIGH);
       }
   }   
   // if the pulse is currently on
@@ -108,6 +117,7 @@ void loop() {
     if (check_time(current_time, current_pulse_end_tick)){
           pulse_on = 0;
           digitalWrite(pulse_pin, LOW);
+          //digitalWrite(pulse_pin_copy, LOW);
       }
   }
 }
