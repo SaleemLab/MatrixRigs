@@ -41,11 +41,7 @@
                 <gl:Location xsi:nil="true" />
                 <gl:WindowBorder>Hidden</gl:WindowBorder>
                 <gl:WindowState>Fullscreen</gl:WindowState>
-<<<<<<< HEAD
                 <gl:DisplayDevice>First</gl:DisplayDevice>
-=======
-                <gl:DisplayDevice>Second</gl:DisplayDevice>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
                 <gl:TargetUpdateFrequency xsi:nil="true" />
                 <gl:RenderState />
@@ -2711,11 +2707,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
-<<<<<<< HEAD
                 <rx:Count>50</rx:Count>
-=======
-                <rx:Count>5</rx:Count>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
@@ -4822,11 +4814,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-<<<<<<< HEAD
                 <Value>DotMotion_DirTuning</Value>
-=======
-                <Value>DotMotion_Dir</Value>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -4834,11 +4822,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-<<<<<<< HEAD
                 <Value>M24019</Value>
-=======
-                <Value>test</Value>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

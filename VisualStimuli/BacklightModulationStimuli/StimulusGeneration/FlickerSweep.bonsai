@@ -1140,11 +1140,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-<<<<<<< HEAD
                 <Value>M24018</Value>
-=======
-                <Value>M24019</Value>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -1426,11 +1422,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
-<<<<<<< HEAD
                 <rx:Count>25</rx:Count>
-=======
-                <rx:Count>1</rx:Count>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

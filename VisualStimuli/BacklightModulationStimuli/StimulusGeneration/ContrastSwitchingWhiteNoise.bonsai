@@ -478,11 +478,7 @@
                     <Name>WheelLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-<<<<<<< HEAD
                     <io:FileName>M24018_Spontaneous_Wheel.csv</io:FileName>
-=======
-                    <io:FileName>M24019_ContrastSwitching_Wheel.csv</io:FileName>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -557,11 +553,7 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-<<<<<<< HEAD
                     <io:FileName>M24018_Spontaneous_Video.csv</io:FileName>
-=======
-                    <io:FileName>M24019_ContrastSwitching_Video.csv</io:FileName>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -632,11 +624,7 @@
                     <Name>PDLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-<<<<<<< HEAD
                     <io:FileName>M24018_Spontaneous_Photodiode.csv</io:FileName>
-=======
-                    <io:FileName>M24019_ContrastSwitching_Photodiode.csv</io:FileName>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -727,11 +715,7 @@
                     <scr:Expression>new(Item1.Item1.Item1 as StimulusType, Item1.Item1.Item2 as StimulusDuration, Item1.Item1.Item3 as ContrastSwitchTime, Item1.Item1.Item4 as UpdateTime, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-<<<<<<< HEAD
                     <io:FileName>M24018_Spontaneous_TrialParams.csv</io:FileName>
-=======
-                    <io:FileName>M24019_ContrastSwitching_TrialParams.csv</io:FileName>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -1055,11 +1039,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
-<<<<<<< HEAD
                 <cv:FileName>M24018_Spontaneous_video.avi</cv:FileName>
-=======
-                <cv:FileName>M24019_ContrastSwitching_video.avi</cv:FileName>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -1148,11 +1128,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-<<<<<<< HEAD
                 <Value>M24018</Value>
-=======
-                <Value>M24019</Value>
->>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
