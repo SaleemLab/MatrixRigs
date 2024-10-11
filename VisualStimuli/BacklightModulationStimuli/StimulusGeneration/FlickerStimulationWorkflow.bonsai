@@ -82,7 +82,11 @@
       <Expression xsi:type="io:CsvReader">
         <io:FileName>flickerFreqCSV.csv</io:FileName>
         <io:ListSeparator>,</io:ListSeparator>
+<<<<<<< HEAD
         <io:ScanPattern>%f</io:ScanPattern>
+=======
+        <io:ScanPattern>%i</io:ScanPattern>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
         <io:SkipRows>0</io:SkipRows>
       </Expression>
       <Expression xsi:type="scr:ExpressionTransform">
@@ -142,8 +146,13 @@
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.ParameterRange.bonsai">
               <RangeMin>0</RangeMin>
+<<<<<<< HEAD
               <RangeMax>10</RangeMax>
               <Count>11</Count>
+=======
+              <RangeMax>9</RangeMax>
+              <Count>10</Count>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             </Expression>
             <Expression xsi:type="scr:ExpressionTransform">
               <scr:Expression>Convert.ToInt32(it)</scr:Expression>
@@ -159,7 +168,11 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
+<<<<<<< HEAD
                 <rx:Count>50</rx:Count>
+=======
+                <rx:Count>1</rx:Count>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -292,7 +305,11 @@
                   </Expression>
                   <Expression xsi:type="LessThan">
                     <Operand xsi:type="IntProperty">
+<<<<<<< HEAD
                       <Value>550</Value>
+=======
+                      <Value>10</Value>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     </Operand>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
@@ -583,7 +600,11 @@
                     <Name>WheelLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>M24018_ScreenFlicker_0b_Wheel.csv</io:FileName>
+=======
+                    <io:FileName>test_ScreenFlicker_Wheel.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -658,7 +679,11 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>M24018_ScreenFlicker_0b_Video.csv</io:FileName>
+=======
+                    <io:FileName>test_ScreenFlicker_Video.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -729,7 +754,11 @@
                     <Name>PDLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>M24018_ScreenFlicker_0b_Photodiode.csv</io:FileName>
+=======
+                    <io:FileName>test_ScreenFlicker_Photodiode.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -765,7 +794,11 @@
                     <Name>TrialParams</Name>
                   </Expression>
                   <Expression xsi:type="Parse">
+<<<<<<< HEAD
                     <Pattern>%s,%i,%f</Pattern>
+=======
+                    <Pattern>%s,%i,%i</Pattern>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <Separator />
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -820,7 +853,11 @@
                     <scr:Expression>new(Item1.Item1.Item1 as StimulusType, Item1.Item1.Item2 as StimulusDuration, Item1.Item1.Item3 as StimulusFrequency, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>M24018_ScreenFlicker_0b_TrialParams.csv</io:FileName>
+=======
+                    <io:FileName>test_ScreenFlicker_TrialParams.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -1111,10 +1148,17 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
+<<<<<<< HEAD
                   <cv:X>1968</cv:X>
                   <cv:Y>42</cv:Y>
                   <cv:Width>64</cv:Width>
                   <cv:Height>78</cv:Height>
+=======
+                  <cv:X>1952</cv:X>
+                  <cv:Y>63</cv:Y>
+                  <cv:Width>59</cv:Width>
+                  <cv:Height>70</cv:Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 </cv:RegionOfInterest>
               </Combinator>
             </Expression>
@@ -1144,7 +1188,11 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
+<<<<<<< HEAD
                 <cv:FileName>M24018_ScreenFlicker_0b_video.avi</cv:FileName>
+=======
+                <cv:FileName>test_ScreenFlicker_video.avi</cv:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -1225,7 +1273,11 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
+<<<<<<< HEAD
                 <Value>ScreenFlicker_0b</Value>
+=======
+                <Value>ScreenFlicker</Value>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -1233,7 +1285,11 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
+<<<<<<< HEAD
                 <Value>M24018</Value>
+=======
+                <Value>M24019</Value>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

@@ -341,7 +341,10 @@
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="Count" DisplayName="nReps" Category="Trial" />
+<<<<<<< HEAD
         <Property Name="LocationX" />
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>Speed2D</Name>
@@ -2141,12 +2144,15 @@ Item3.Item6 as Coherence2)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="num:Permutation" />
             </Expression>
+<<<<<<< HEAD
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Count" />
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="LocationX" />
             </Expression>
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Expression xsi:type="rx:CreateObservable">
               <Name>CreateTrial</Name>
               <Workflow>
@@ -2154,9 +2160,12 @@ Item3.Item6 as Coherence2)</scr:Expression>
                   <Expression xsi:type="WorkflowInput">
                     <Name>Source1</Name>
                   </Expression>
+<<<<<<< HEAD
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="LocationX" />
                   </Expression>
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <Expression xsi:type="rx:SelectMany">
                     <Name>DrawStimulus</Name>
                     <Workflow>
@@ -2462,7 +2471,11 @@ Item3.Item6 as Coherence2)</scr:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
+<<<<<<< HEAD
                             <p1:rndseed>27</p1:rndseed>
+=======
+                            <p1:rndseed>23</p1:rndseed>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -2474,6 +2487,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Zip" />
                         </Expression>
+<<<<<<< HEAD
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="rx:Zip" />
                         </Expression>
@@ -2513,6 +2527,8 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Expression xsi:type="ExternalizedMapping">
                           <Property Name="LocationX" />
                         </Expression>
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Expression xsi:type="GroupWorkflow">
                           <Name>DrawMovingCircleArray-2d</Name>
                           <Description>Draws multiple colored circles using the input array as position data.</Description>
@@ -2628,7 +2644,11 @@ Item3.Item6 as Coherence2)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="gl:CreateTranslation">
+<<<<<<< HEAD
                                         <gl:X>-120</gl:X>
+=======
+                                        <gl:X>120</gl:X>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                                         <gl:Y>0</gl:Y>
                                         <gl:Z>0</gl:Z>
                                       </Combinator>
@@ -2724,8 +2744,13 @@ Item3.Item6 as Coherence2)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
+<<<<<<< HEAD
                                   <p1:VelocityX>0</p1:VelocityX>
                                   <p1:VelocityY>-0.8333333</p1:VelocityY>
+=======
+                                  <p1:VelocityX>-0.72168833</p1:VelocityX>
+                                  <p1:VelocityY>0.416666657</p1:VelocityY>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                   <p1:dotLifetime>60</p1:dotLifetime>
@@ -2800,13 +2825,56 @@ Item3.Item6 as Coherence2)</scr:Expression>
                           </Workflow>
                         </Expression>
                         <Expression xsi:type="Combinator">
+<<<<<<< HEAD
+=======
+                          <Combinator xsi:type="rx:Zip" />
+                        </Expression>
+                        <Expression xsi:type="Divide" />
+                        <Expression xsi:type="PropertyMapping">
+                          <PropertyMappings>
+                            <Property Name="dotLifetime" />
+                          </PropertyMappings>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="IntProperty">
+                            <Value>10</Value>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="rx:Timestamp" />
+                        </Expression>
+                        <Expression xsi:type="MemberSelector">
+                          <Selector>Timestamp.TimeOfDay.Seconds</Selector>
+                        </Expression>
+                        <Expression xsi:type="Add">
+                          <Operand xsi:type="IntProperty">
+                            <Value>99</Value>
+                          </Operand>
+                        </Expression>
+                        <Expression xsi:type="PropertyMapping">
+                          <PropertyMappings>
+                            <Property Name="rndseed" />
+                          </PropertyMappings>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                           <Combinator xsi:type="p1:GenerateDotField">
                             <p1:numDots>573</p1:numDots>
                             <p1:left>-120</p1:left>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
+<<<<<<< HEAD
                             <p1:rndseed>126</p1:rndseed>
+=======
+                            <p1:rndseed>122</p1:rndseed>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="p1:GenerateDotLives">
+                            <p1:dotLifetime>60</p1:dotLifetime>
+                            <p1:numDots>573</p1:numDots>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -2927,7 +2995,11 @@ Item3.Item6 as Coherence2)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="gl:CreateTranslation">
+<<<<<<< HEAD
                                         <gl:X>-120</gl:X>
+=======
+                                        <gl:X>120</gl:X>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                                         <gl:Y>0</gl:Y>
                                         <gl:Z>0</gl:Z>
                                       </Combinator>
@@ -3023,8 +3095,13 @@ Item3.Item6 as Coherence2)</scr:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
+<<<<<<< HEAD
                                   <p1:VelocityX>0</p1:VelocityX>
                                   <p1:VelocityY>-0.8333333</p1:VelocityY>
+=======
+                                  <p1:VelocityX>-0.72168833</p1:VelocityX>
+                                  <p1:VelocityY>0.416666657</p1:VelocityY>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
                                   <p1:dotLifetime>60</p1:dotLifetime>
@@ -3134,21 +3211,37 @@ Item3.Item6 as Coherence2)</scr:Expression>
                       <Edges>
                         <Edge From="0" To="1" Label="Source1" />
                         <Edge From="1" To="80" Label="Source1" />
+<<<<<<< HEAD
                         <Edge From="1" To="94" Label="Source1" />
+=======
+                        <Edge From="1" To="92" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="2" To="3" Label="Source1" />
                         <Edge From="3" To="4" Label="Source1" />
                         <Edge From="4" To="5" Label="Source1" />
                         <Edge From="5" To="6" Label="Source1" />
+<<<<<<< HEAD
                         <Edge From="6" To="99" Label="Source2" />
+=======
+                        <Edge From="6" To="98" Label="Source2" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="7" To="8" Label="Source1" />
                         <Edge From="8" To="9" Label="Source1" />
                         <Edge From="9" To="10" Label="Source1" />
                         <Edge From="10" To="11" Label="Source1" />
+<<<<<<< HEAD
                         <Edge From="11" To="101" Label="Source2" />
                         <Edge From="12" To="98" Label="Source2" />
                         <Edge From="13" To="14" Label="Source1" />
                         <Edge From="14" To="15" Label="Source1" />
                         <Edge From="15" To="105" Label="Source2" />
+=======
+                        <Edge From="11" To="100" Label="Source2" />
+                        <Edge From="12" To="97" Label="Source2" />
+                        <Edge From="13" To="14" Label="Source1" />
+                        <Edge From="14" To="15" Label="Source1" />
+                        <Edge From="15" To="104" Label="Source2" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="16" To="17" Label="Source1" />
                         <Edge From="17" To="21" Label="Source2" />
                         <Edge From="18" To="19" Label="Source1" />
@@ -3158,24 +3251,40 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Edge From="20" To="31" Label="Source1" />
                         <Edge From="20" To="36" Label="Source1" />
                         <Edge From="20" To="62" Label="Source2" />
+<<<<<<< HEAD
                         <Edge From="20" To="83" Label="Source2" />
                         <Edge From="21" To="22" Label="Source1" />
                         <Edge From="22" To="23" Label="Source1" />
                         <Edge From="23" To="93" Label="Source3" />
+=======
+                        <Edge From="20" To="84" Label="Source2" />
+                        <Edge From="21" To="22" Label="Source1" />
+                        <Edge From="22" To="23" Label="Source1" />
+                        <Edge From="23" To="83" Label="Source3" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="24" To="25" Label="Source1" />
                         <Edge From="25" To="26" Label="Source2" />
                         <Edge From="26" To="27" Label="Source1" />
                         <Edge From="27" To="28" Label="Source1" />
+<<<<<<< HEAD
                         <Edge From="28" To="96" Label="Source3" />
+=======
+                        <Edge From="28" To="95" Label="Source3" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="29" To="30" Label="Source1" />
                         <Edge From="30" To="31" Label="Source2" />
                         <Edge From="31" To="32" Label="Source1" />
                         <Edge From="32" To="33" Label="Source1" />
+<<<<<<< HEAD
                         <Edge From="33" To="93" Label="Source4" />
+=======
+                        <Edge From="33" To="83" Label="Source4" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="34" To="35" Label="Source1" />
                         <Edge From="35" To="36" Label="Source2" />
                         <Edge From="36" To="37" Label="Source1" />
                         <Edge From="37" To="38" Label="Source1" />
+<<<<<<< HEAD
                         <Edge From="38" To="96" Label="Source4" />
                         <Edge From="39" To="40" Label="Source1" />
                         <Edge From="40" To="41" Label="Source1" />
@@ -3195,6 +3304,27 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Edge From="54" To="55" Label="Source1" />
                         <Edge From="55" To="56" Label="Source1" />
                         <Edge From="56" To="96" Label="Source7" />
+=======
+                        <Edge From="38" To="95" Label="Source4" />
+                        <Edge From="39" To="40" Label="Source1" />
+                        <Edge From="40" To="41" Label="Source1" />
+                        <Edge From="41" To="83" Label="Source5" />
+                        <Edge From="42" To="43" Label="Source1" />
+                        <Edge From="43" To="44" Label="Source1" />
+                        <Edge From="44" To="95" Label="Source5" />
+                        <Edge From="45" To="46" Label="Source1" />
+                        <Edge From="46" To="47" Label="Source1" />
+                        <Edge From="47" To="83" Label="Source6" />
+                        <Edge From="48" To="49" Label="Source1" />
+                        <Edge From="49" To="50" Label="Source1" />
+                        <Edge From="50" To="95" Label="Source6" />
+                        <Edge From="51" To="52" Label="Source1" />
+                        <Edge From="52" To="53" Label="Source1" />
+                        <Edge From="53" To="83" Label="Source7" />
+                        <Edge From="54" To="55" Label="Source1" />
+                        <Edge From="55" To="56" Label="Source1" />
+                        <Edge From="56" To="95" Label="Source7" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="57" To="58" Label="Source1" />
                         <Edge From="58" To="59" Label="Source1" />
                         <Edge From="59" To="80" Label="Source2" />
@@ -3204,6 +3334,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Edge From="62" To="63" Label="Source1" />
                         <Edge From="63" To="64" Label="Source1" />
                         <Edge From="64" To="81" Label="Source2" />
+<<<<<<< HEAD
                         <Edge From="64" To="93" Label="Source9" />
                         <Edge From="65" To="66" Label="Source1" />
                         <Edge From="66" To="67" Label="Source1" />
@@ -3219,12 +3350,30 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Edge From="73" To="91" Label="Source1" />
                         <Edge From="74" To="75" Label="Source1" />
                         <Edge From="75" To="83" Label="Source1" />
+=======
+                        <Edge From="64" To="83" Label="Source9" />
+                        <Edge From="65" To="66" Label="Source1" />
+                        <Edge From="66" To="67" Label="Source1" />
+                        <Edge From="67" To="83" Label="Source8" />
+                        <Edge From="67" To="95" Label="Source8" />
+                        <Edge From="68" To="69" Label="Source1" />
+                        <Edge From="69" To="70" Label="Source1" />
+                        <Edge From="70" To="83" Label="Source2" />
+                        <Edge From="70" To="95" Label="Source2" />
+                        <Edge From="71" To="72" Label="Source1" />
+                        <Edge From="72" To="73" Label="Source1" />
+                        <Edge From="73" To="92" Label="Source2" />
+                        <Edge From="73" To="93" Label="Source1" />
+                        <Edge From="74" To="75" Label="Source1" />
+                        <Edge From="75" To="84" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                         <Edge From="76" To="77" Label="Source1" />
                         <Edge From="77" To="78" Label="Source1" />
                         <Edge From="78" To="79" Label="Source1" />
                         <Edge From="79" To="80" Label="Source3" />
                         <Edge From="80" To="82" Label="Source1" />
                         <Edge From="81" To="82" Label="Source2" />
+<<<<<<< HEAD
                         <Edge From="82" To="93" Label="Source1" />
                         <Edge From="83" To="84" Label="Source1" />
                         <Edge From="84" To="85" Label="Source1" />
@@ -3251,6 +3400,32 @@ Item3.Item6 as Coherence2)</scr:Expression>
                         <Edge From="102" To="103" Label="Source1" />
                         <Edge From="104" To="105" Label="Source1" />
                         <Edge From="105" To="106" Label="Source1" />
+=======
+                        <Edge From="82" To="83" Label="Source1" />
+                        <Edge From="83" To="96" Label="Source1" />
+                        <Edge From="84" To="85" Label="Source1" />
+                        <Edge From="85" To="86" Label="Source1" />
+                        <Edge From="86" To="93" Label="Source2" />
+                        <Edge From="86" To="95" Label="Source9" />
+                        <Edge From="87" To="88" Label="Source1" />
+                        <Edge From="88" To="89" Label="Source1" />
+                        <Edge From="89" To="90" Label="Source1" />
+                        <Edge From="90" To="91" Label="Source1" />
+                        <Edge From="91" To="92" Label="Source3" />
+                        <Edge From="92" To="94" Label="Source1" />
+                        <Edge From="93" To="94" Label="Source2" />
+                        <Edge From="94" To="95" Label="Source1" />
+                        <Edge From="95" To="96" Label="Source2" />
+                        <Edge From="96" To="97" Label="Source1" />
+                        <Edge From="97" To="98" Label="Source1" />
+                        <Edge From="98" To="99" Label="Source1" />
+                        <Edge From="99" To="100" Label="Source1" />
+                        <Edge From="99" To="103" Label="Source1" />
+                        <Edge From="100" To="101" Label="Source1" />
+                        <Edge From="101" To="102" Label="Source1" />
+                        <Edge From="103" To="104" Label="Source1" />
+                        <Edge From="104" To="105" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                       </Edges>
                     </Workflow>
                   </Expression>
@@ -3265,18 +3440,32 @@ Item3.Item6 as Coherence2)</scr:Expression>
                   </Expression>
                 </Nodes>
                 <Edges>
+<<<<<<< HEAD
                   <Edge From="0" To="2" Label="Source1" />
                   <Edge From="0" To="5" Label="Source1" />
                   <Edge From="1" To="2" Label="Source2" />
                   <Edge From="2" To="3" Label="Source1" />
                   <Edge From="3" To="4" Label="Source1" />
                   <Edge From="5" To="6" Label="Source1" />
+=======
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="0" To="4" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                  <Edge From="2" To="3" Label="Source1" />
+                  <Edge From="4" To="5" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 </Edges>
               </Workflow>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Concat" />
             </Expression>
+<<<<<<< HEAD
+=======
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Count" />
+            </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
                 <rx:Count>50</rx:Count>
@@ -4232,12 +4421,20 @@ Item3.Item6 as Coherence2)</scr:Expression>
             <Edge From="4" To="5" Label="Source3" />
             <Edge From="5" To="7" Label="Source1" />
             <Edge From="6" To="7" Label="Source2" />
+<<<<<<< HEAD
             <Edge From="7" To="10" Label="Source1" />
             <Edge From="8" To="12" Label="Source2" />
             <Edge From="9" To="10" Label="Source2" />
             <Edge From="10" To="11" Label="Source1" />
             <Edge From="11" To="12" Label="Source1" />
             <Edge From="12" To="13" Label="Source1" />
+=======
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="9" To="11" Label="Source1" />
+            <Edge From="10" To="11" Label="Source2" />
+            <Edge From="11" To="12" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Edges>
         </Workflow>
       </Expression>
@@ -5238,6 +5435,18 @@ Item3.Item3 as Coherence2)</scr:Expression>
                 <cv:Mode>Both</cv:Mode>
               </Combinator>
             </Expression>
+<<<<<<< HEAD
+=======
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ElementIndex" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Index</Selector>
+            </Expression>
+            <Expression xsi:type="MulticastSubject">
+              <Name>VideoFrameCount</Name>
+            </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Expression xsi:type="Disable">
               <Builder xsi:type="MemberSelector">
                 <Selector>Width</Selector>
@@ -5313,6 +5522,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
+<<<<<<< HEAD
               <Combinator xsi:type="rx:ElementIndex" />
             </Expression>
             <Expression xsi:type="MemberSelector">
@@ -5322,6 +5532,8 @@ Item3.Item3 as Coherence2)</scr:Expression>
               <Name>VideoFrameCount</Name>
             </Expression>
             <Expression xsi:type="Combinator">
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               <Combinator xsi:type="wie:KeyDown">
                 <wie:Filter>MButton Back Clear D H L Shift</wie:Filter>
                 <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
@@ -5344,6 +5556,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
+<<<<<<< HEAD
             <Edge From="0" To="14" Label="Source1" />
             <Edge From="1" To="2" Label="Source1" />
             <Edge From="1" To="3" Label="Source1" />
@@ -5361,6 +5574,25 @@ Item3.Item3 as Coherence2)</scr:Expression>
             <Edge From="14" To="15" Label="Source1" />
             <Edge From="15" To="16" Label="Source1" />
             <Edge From="16" To="17" Label="Source1" />
+=======
+            <Edge From="0" To="17" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="1" To="5" Label="Source1" />
+            <Edge From="1" To="6" Label="Source1" />
+            <Edge From="1" To="7" Label="Source1" />
+            <Edge From="1" To="8" Label="Source1" />
+            <Edge From="1" To="9" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="16" To="17" Label="Source2" />
+            <Edge From="16" To="20" Label="Source2" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Edge From="17" To="19" Label="Source1" />
             <Edge From="18" To="19" Label="Source2" />
             <Edge From="19" To="20" Label="Source1" />
@@ -5397,7 +5629,11 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
+<<<<<<< HEAD
                 <Value>M24018</Value>
+=======
+                <Value>M24019</Value>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

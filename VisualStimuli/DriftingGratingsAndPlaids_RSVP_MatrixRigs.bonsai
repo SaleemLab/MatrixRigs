@@ -411,7 +411,10 @@
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="Count" DisplayName="nReps" />
+<<<<<<< HEAD
         <Property Name="LocationX" />
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>Stimulus</Name>
@@ -1605,12 +1608,15 @@
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="num:Permutation" />
             </Expression>
+<<<<<<< HEAD
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Count" />
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="LocationX" />
             </Expression>
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Expression xsi:type="rx:CreateObservable">
               <Workflow>
                 <Nodes>
@@ -1733,6 +1739,26 @@
                       <Property Name="Phase" />
                     </PropertyMappings>
                   </Expression>
+<<<<<<< HEAD
+=======
+                  <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawGratings.bonsai">
+                    <LocationX>60</LocationX>
+                    <LocationY>0</LocationY>
+                    <Layer>-1</Layer>
+                    <Angle>210</Angle>
+                    <SpatialFrequency>0.04</SpatialFrequency>
+                    <TemporalFrequency>2</TemporalFrequency>
+                    <Phase>0</Phase>
+                    <SquareWave>false</SquareWave>
+                    <Contrast>1</Contrast>
+                    <DutyCycle xsi:nil="true" />
+                    <Radius>1</Radius>
+                    <Aperture>1</Aperture>
+                    <Opacity>1</Opacity>
+                    <ExtentX>120</ExtentX>
+                    <ExtentY>120</ExtentY>
+                  </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <Expression xsi:type="MemberSelector">
                     <Selector>phase_g2.Value</Selector>
                   </Expression>
@@ -1744,6 +1770,29 @@
                       <Property Name="Phase" />
                     </PropertyMappings>
                   </Expression>
+<<<<<<< HEAD
+=======
+                  <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawGratings.bonsai">
+                    <LocationX>60</LocationX>
+                    <LocationY>0</LocationY>
+                    <Layer>-1</Layer>
+                    <Angle>330</Angle>
+                    <SpatialFrequency>0.04</SpatialFrequency>
+                    <TemporalFrequency>2</TemporalFrequency>
+                    <Phase>0</Phase>
+                    <SquareWave>false</SquareWave>
+                    <Contrast>1</Contrast>
+                    <DutyCycle xsi:nil="true" />
+                    <Radius>1</Radius>
+                    <Aperture>1</Aperture>
+                    <Opacity>0.5</Opacity>
+                    <ExtentX>120</ExtentX>
+                    <ExtentY>120</ExtentY>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Merge" />
+                  </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="DueTime" DisplayName="StimulusDuration" />
                   </Expression>
@@ -1752,11 +1801,18 @@
                       <gl:DueTime>PT0.5S</gl:DueTime>
                     </Combinator>
                   </Expression>
+<<<<<<< HEAD
+=======
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:TakeUntil" />
+                  </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <Expression xsi:type="Disable">
                     <Builder xsi:type="ExternalizedMapping">
                       <Property Name="DueTime" DisplayName="InterStimulusInterval" />
                     </Builder>
                   </Expression>
+<<<<<<< HEAD
                   <Expression xsi:type="ExternalizedMapping">
                     <Property Name="LocationX" />
                   </Expression>
@@ -1800,6 +1856,8 @@
                   <Expression xsi:type="Combinator">
                     <Combinator xsi:type="rx:TakeUntil" />
                   </Expression>
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <Expression xsi:type="Disable">
                     <Builder xsi:type="Combinator">
                       <Combinator xsi:type="gl:Delay">
@@ -1817,8 +1875,13 @@
                   <Edge From="3" To="4" Label="Source1" />
                   <Edge From="4" To="5" Label="Source2" />
                   <Edge From="5" To="6" Label="Source1" />
+<<<<<<< HEAD
                   <Edge From="7" To="38" Label="Source1" />
                   <Edge From="7" To="39" Label="Source1" />
+=======
+                  <Edge From="7" To="31" Label="Source1" />
+                  <Edge From="7" To="35" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <Edge From="8" To="9" Label="Source1" />
                   <Edge From="9" To="10" Label="Source1" />
                   <Edge From="9" To="12" Label="Source1" />
@@ -1829,6 +1892,7 @@
                   <Edge From="9" To="24" Label="Source1" />
                   <Edge From="9" To="26" Label="Source1" />
                   <Edge From="9" To="28" Label="Source1" />
+<<<<<<< HEAD
                   <Edge From="9" To="31" Label="Source1" />
                   <Edge From="10" To="11" Label="Source1" />
                   <Edge From="11" To="38" Label="Source2" />
@@ -1866,12 +1930,55 @@
                   <Edge From="40" To="41" Label="Source1" />
                   <Edge From="41" To="42" Label="Source1" />
                   <Edge From="42" To="43" Label="Source1" />
+=======
+                  <Edge From="9" To="32" Label="Source1" />
+                  <Edge From="10" To="11" Label="Source1" />
+                  <Edge From="11" To="31" Label="Source2" />
+                  <Edge From="11" To="35" Label="Source2" />
+                  <Edge From="12" To="13" Label="Source1" />
+                  <Edge From="13" To="14" Label="Source1" />
+                  <Edge From="14" To="31" Label="Source3" />
+                  <Edge From="15" To="16" Label="Source1" />
+                  <Edge From="16" To="31" Label="Source4" />
+                  <Edge From="16" To="35" Label="Source4" />
+                  <Edge From="17" To="18" Label="Source1" />
+                  <Edge From="18" To="31" Label="Source5" />
+                  <Edge From="19" To="20" Label="Source1" />
+                  <Edge From="20" To="31" Label="Source6" />
+                  <Edge From="21" To="22" Label="Source1" />
+                  <Edge From="22" To="23" Label="Source1" />
+                  <Edge From="23" To="35" Label="Source3" />
+                  <Edge From="24" To="25" Label="Source1" />
+                  <Edge From="25" To="35" Label="Source5" />
+                  <Edge From="26" To="27" Label="Source1" />
+                  <Edge From="27" To="35" Label="Source6" />
+                  <Edge From="28" To="29" Label="Source1" />
+                  <Edge From="29" To="30" Label="Source1" />
+                  <Edge From="30" To="31" Label="Source7" />
+                  <Edge From="31" To="36" Label="Source1" />
+                  <Edge From="32" To="33" Label="Source1" />
+                  <Edge From="33" To="34" Label="Source1" />
+                  <Edge From="34" To="35" Label="Source7" />
+                  <Edge From="35" To="36" Label="Source2" />
+                  <Edge From="36" To="39" Label="Source1" />
+                  <Edge From="37" To="38" Label="Source1" />
+                  <Edge From="38" To="39" Label="Source2" />
+                  <Edge From="39" To="41" Label="Source1" />
+                  <Edge From="40" To="41" Label="Source2" />
+                  <Edge From="41" To="42" Label="Source1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 </Edges>
               </Workflow>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Concat" />
             </Expression>
+<<<<<<< HEAD
+=======
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Count" />
+            </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
                 <rx:Count>200</rx:Count>
@@ -1931,6 +2038,7 @@
             <Edge From="2" To="3" Label="Source2" />
             <Edge From="3" To="5" Label="Source1" />
             <Edge From="4" To="5" Label="Source2" />
+<<<<<<< HEAD
             <Edge From="5" To="8" Label="Source1" />
             <Edge From="6" To="10" Label="Source2" />
             <Edge From="7" To="8" Label="Source2" />
@@ -1941,6 +2049,17 @@
             <Edge From="13" To="16" Label="Source1" />
             <Edge From="14" To="15" Label="Source1" />
             <Edge From="15" To="16" Label="Source2" />
+=======
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="9" Label="Source1" />
+            <Edge From="8" To="9" Label="Source2" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="12" To="15" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="14" To="15" Label="Source2" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Edges>
         </Workflow>
       </Expression>
@@ -2164,7 +2283,11 @@
                     <Name>WheelLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>test_GratingsPlaidsRSVP_Wheel.csv</io:FileName>
+=======
+                    <io:FileName>M24019_GratingsPlaidsRSVP_Wheel.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -2239,7 +2362,11 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>test_GratingsPlaidsRSVP_Video.csv</io:FileName>
+=======
+                    <io:FileName>M24019_GratingsPlaidsRSVP_Video.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -2310,7 +2437,11 @@
                     <Name>PDLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>test_GratingsPlaidsRSVP_Photodiode.csv</io:FileName>
+=======
+                    <io:FileName>M24019_GratingsPlaidsRSVP_Photodiode.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -2449,7 +2580,11 @@ Item1.Item2 as BonsaiTime,
 Item2 as ArduinoTime)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
+<<<<<<< HEAD
                     <io:FileName>test_GratingsPlaidsRSVP_TrialParams.csv</io:FileName>
+=======
+                    <io:FileName>M24019_GratingsPlaidsRSVP_TrialParams.csv</io:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -2940,6 +3075,18 @@ Item3.Item3 as Coherence2)</scr:Expression>
                 <cv:Mode>Both</cv:Mode>
               </Combinator>
             </Expression>
+<<<<<<< HEAD
+=======
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ElementIndex" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Index</Selector>
+            </Expression>
+            <Expression xsi:type="MulticastSubject">
+              <Name>VideoFrameCount</Name>
+            </Expression>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Expression xsi:type="Disable">
               <Builder xsi:type="MemberSelector">
                 <Selector>Width</Selector>
@@ -2969,7 +3116,11 @@ Item3.Item3 as Coherence2)</scr:Expression>
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
                   <cv:X>1960</cv:X>
+<<<<<<< HEAD
                   <cv:Y>36</cv:Y>
+=======
+                  <cv:Y>66</cv:Y>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                   <cv:Width>80</cv:Width>
                   <cv:Height>84</cv:Height>
                 </cv:RegionOfInterest>
@@ -3001,7 +3152,11 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
+<<<<<<< HEAD
                 <cv:FileName>test_GratingsPlaidsRSVP_video.avi</cv:FileName>
+=======
+                <cv:FileName>M24019_GratingsPlaidsRSVP_video.avi</cv:FileName>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -3015,6 +3170,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
+<<<<<<< HEAD
               <Combinator xsi:type="rx:ElementIndex" />
             </Expression>
             <Expression xsi:type="MemberSelector">
@@ -3024,6 +3180,8 @@ Item3.Item3 as Coherence2)</scr:Expression>
               <Name>VideoFrameCount</Name>
             </Expression>
             <Expression xsi:type="Combinator">
+=======
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               <Combinator xsi:type="wie:KeyDown">
                 <wie:Filter>MButton Back Clear D H L Shift</wie:Filter>
                 <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
@@ -3046,6 +3204,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
+<<<<<<< HEAD
             <Edge From="0" To="14" Label="Source1" />
             <Edge From="1" To="2" Label="Source1" />
             <Edge From="1" To="3" Label="Source1" />
@@ -3063,6 +3222,25 @@ Item3.Item3 as Coherence2)</scr:Expression>
             <Edge From="14" To="15" Label="Source1" />
             <Edge From="15" To="16" Label="Source1" />
             <Edge From="16" To="17" Label="Source1" />
+=======
+            <Edge From="0" To="17" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="1" To="5" Label="Source1" />
+            <Edge From="1" To="6" Label="Source1" />
+            <Edge From="1" To="7" Label="Source1" />
+            <Edge From="1" To="8" Label="Source1" />
+            <Edge From="1" To="9" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="16" To="17" Label="Source2" />
+            <Edge From="16" To="20" Label="Source2" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             <Edge From="17" To="19" Label="Source1" />
             <Edge From="18" To="19" Label="Source2" />
             <Edge From="19" To="20" Label="Source1" />
@@ -3099,7 +3277,11 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
+<<<<<<< HEAD
                 <Value>M24018</Value>
+=======
+                <Value>M24019</Value>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

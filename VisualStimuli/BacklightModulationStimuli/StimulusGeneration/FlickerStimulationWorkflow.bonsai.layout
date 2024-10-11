@@ -188,8 +188,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>693</Width>
+        <Height>830</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -422,8 +427,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>693</Width>
+        <Height>830</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -494,8 +504,13 @@
             <Y>3</Y>
           </Location>
           <Size>
+<<<<<<< HEAD
             <Width>682</Width>
             <Height>732</Height>
+=======
+            <Width>809</Width>
+            <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -669,6 +684,13 @@
           <Height>139</Height>
         </Size>
         <WindowState>Normal</WindowState>
+<<<<<<< HEAD
+=======
+        <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
+        <VisualizerSettings>
+          <ObjectTextVisualizer />
+        </VisualizerSettings>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </DialogSettings>
       <DialogSettings>
         <Visible>false</Visible>
@@ -835,8 +857,13 @@
   <DialogSettings>
     <Visible>true</Visible>
     <Location>
+<<<<<<< HEAD
       <X>203</X>
       <Y>206</Y>
+=======
+      <X>182</X>
+      <Y>182</Y>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
     </Location>
     <Size>
       <Width>336</Width>
@@ -863,8 +890,13 @@
   <DialogSettings>
     <Visible>true</Visible>
     <Location>
+<<<<<<< HEAD
       <X>680</X>
       <Y>445</Y>
+=======
+      <X>697</X>
+      <Y>187</Y>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
     </Location>
     <Size>
       <Width>336</Width>
@@ -906,8 +938,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>809</Width>
+        <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1232,8 +1269,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>809</Width>
+        <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1256,8 +1298,13 @@
             <Y>3</Y>
           </Location>
           <Size>
+<<<<<<< HEAD
             <Width>682</Width>
             <Height>732</Height>
+=======
+            <Width>809</Width>
+            <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -1502,8 +1549,13 @@
             <Y>3</Y>
           </Location>
           <Size>
+<<<<<<< HEAD
             <Width>682</Width>
             <Height>732</Height>
+=======
+            <Width>809</Width>
+            <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -1523,8 +1575,13 @@
           <DialogSettings>
             <Visible>true</Visible>
             <Location>
+<<<<<<< HEAD
               <X>108</X>
               <Y>623</Y>
+=======
+              <X>875</X>
+              <Y>599</Y>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             </Location>
             <Size>
               <Width>336</Width>
@@ -1719,12 +1776,21 @@
           <DialogSettings>
             <Visible>true</Visible>
             <Location>
+<<<<<<< HEAD
               <X>599</X>
               <Y>552</Y>
             </Location>
             <Size>
               <Width>555</Width>
               <Height>192</Height>
+=======
+              <X>106</X>
+              <Y>628</Y>
+            </Location>
+            <Size>
+              <Width>732</Width>
+              <Height>244</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
             </Size>
             <WindowState>Normal</WindowState>
             <VisualizerTypeName>Bonsai.Design.ObjectTextVisualizer</VisualizerTypeName>
@@ -1764,8 +1830,13 @@
             <Y>3</Y>
           </Location>
           <Size>
+<<<<<<< HEAD
             <Width>682</Width>
             <Height>732</Height>
+=======
+            <Width>809</Width>
+            <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -1948,8 +2019,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>809</Width>
+        <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1969,8 +2045,13 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
+<<<<<<< HEAD
           <X>860</X>
           <Y>689</Y>
+=======
+          <X>958</X>
+          <Y>367</Y>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
         </Location>
         <Size>
           <Width>336</Width>
@@ -2055,6 +2136,7 @@
         <WindowState>Normal</WindowState>
       </DialogSettings>
       <DialogSettings>
+<<<<<<< HEAD
         <Visible>true</Visible>
         <Location>
           <X>479</X>
@@ -2069,16 +2151,37 @@
         <VisualizerSettings>
           <IplImageVisualizer />
         </VisualizerSettings>
+=======
+        <Visible>false</Visible>
+        <Location>
+          <X>0</X>
+          <Y>0</Y>
+        </Location>
+        <Size>
+          <Width>0</Width>
+          <Height>0</Height>
+        </Size>
+        <WindowState>Normal</WindowState>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </DialogSettings>
       <DialogSettings>
         <Visible>false</Visible>
         <Location>
+<<<<<<< HEAD
           <X>208</X>
           <Y>208</Y>
         </Location>
         <Size>
           <Width>336</Width>
           <Height>279</Height>
+=======
+          <X>0</X>
+          <Y>0</Y>
+        </Location>
+        <Size>
+          <Width>0</Width>
+          <Height>0</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
         </Size>
         <WindowState>Normal</WindowState>
       </DialogSettings>
@@ -2121,12 +2224,21 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
+<<<<<<< HEAD
           <X>1005</X>
           <Y>573</Y>
         </Location>
         <Size>
           <Width>187</Width>
           <Height>149</Height>
+=======
+          <X>825</X>
+          <Y>585</Y>
+        </Location>
+        <Size>
+          <Width>416</Width>
+          <Height>274</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
         </Size>
         <WindowState>Normal</WindowState>
         <VisualizerTypeName>Bonsai.Design.Visualizers.TimeSeriesVisualizer</VisualizerTypeName>
@@ -2228,8 +2340,13 @@
   <DialogSettings>
     <Visible>true</Visible>
     <Location>
+<<<<<<< HEAD
       <X>761</X>
       <Y>727</Y>
+=======
+      <X>759</X>
+      <Y>559</Y>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
     </Location>
     <Size>
       <Width>442</Width>
@@ -2295,8 +2412,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>809</Width>
+        <Height>606</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>

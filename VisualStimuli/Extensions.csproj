@@ -6,7 +6,11 @@
     <OldToolsVersion>2.0</OldToolsVersion>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Bonsai.Core" Version="2.6.0" />
+=======
+    <PackageReference Include="Bonsai.Core" Version="2.7.1" />
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
     <PackageReference Include="OpenTK" Version="1.1.1589.5942" />
     <PackageReference Include="MathNet.Numerics" Version="4.5.1" />
     <PackageReference Include="Rx-Core" Version="2.2.5" />

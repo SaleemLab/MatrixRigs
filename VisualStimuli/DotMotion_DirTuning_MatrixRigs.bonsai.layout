@@ -32,8 +32,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>666</Width>
+        <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -403,8 +408,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>666</Width>
+        <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -451,8 +461,13 @@
             <Y>3</Y>
           </Location>
           <Size>
+<<<<<<< HEAD
             <Width>682</Width>
             <Height>732</Height>
+=======
+            <Width>666</Width>
+            <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -555,7 +570,11 @@
         </Size>
         <WindowState>Normal</WindowState>
       </DialogSettings>
+<<<<<<< HEAD
       <DialogSettings>
+=======
+      <DialogSettings xsi:type="WorkflowEditorSettings">
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
         <Visible>false</Visible>
         <Location>
           <X>0</X>
@@ -566,6 +585,21 @@
           <Height>0</Height>
         </Size>
         <WindowState>Normal</WindowState>
+<<<<<<< HEAD
+=======
+        <EditorDialogSettings>
+          <Visible>false</Visible>
+          <Location>
+            <X>1998</X>
+            <Y>86</Y>
+          </Location>
+          <Size>
+            <Width>316</Width>
+            <Height>239</Height>
+          </Size>
+          <WindowState>Normal</WindowState>
+        </EditorDialogSettings>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </DialogSettings>
       <DialogSettings>
         <Visible>false</Visible>
@@ -731,8 +765,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>666</Width>
+        <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1070,8 +1109,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>666</Width>
+        <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
@@ -1094,8 +1138,13 @@
             <Y>3</Y>
           </Location>
           <Size>
+<<<<<<< HEAD
             <Width>682</Width>
             <Height>732</Height>
+=======
+            <Width>666</Width>
+            <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
           </Size>
           <WindowState>Normal</WindowState>
         </EditorDialogSettings>
@@ -1414,8 +1463,13 @@
         <Y>3</Y>
       </Location>
       <Size>
+<<<<<<< HEAD
         <Width>682</Width>
         <Height>732</Height>
+=======
+        <Width>666</Width>
+        <Height>1735</Height>
+>>>>>>> 62ed293254349d41d7c5a864e44aaa65200042f7
       </Size>
       <WindowState>Normal</WindowState>
     </EditorDialogSettings>
