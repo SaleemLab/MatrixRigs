@@ -82,7 +82,7 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
   Serial.println(receivedChars);
   char delimiters[] = ",";
   char *token;
-  uint8_t  idx = 0;
+  uint8_t  idx = 0;g
   #define MAX_VALS    5 // max required? freq, duration, contrast, carrier freq?
   char *serialVals[MAX_VALS];
   token = strtok( receivedChars, "," );
@@ -171,20 +171,11 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
           FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
 
         }
-        else if (FirstChar == "fs") // Flicker-sweep stimulus
+        else if (FirstChar == "sb") // Flicker-sweep stimulus
         {
-          stimulusDuration = atof(serialVals[1]);
-          startFrequency = atof(serialVals[2]); // flicker frequency
-          frequencyMultiplier = atof(serialVals[3]);
-          frequencyUpdateTime = atof(serialVals[4]);
+          pwmVal = atof(serialVals[1]);
           
-          //startFrequency = 1;
-          //frequencyMultiplier = 1.05; // update frequency
-          //frequencyUpdateTime = 200; // msstimulusDuration = 20000;
-          //stimulusDuration = 20000; // ms
-
-          //FlickerSweepLED(5, stimulusDuration);
-          FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
+          SetPWM(pwmVal);
 
         }
         else // not valid stimulus code
@@ -227,7 +218,8 @@ void FlickerLED(float FlickerFreq, float Duration)
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(128);
       Serial.println("99");
     }
   }
@@ -253,7 +245,8 @@ void SineLED(float SineFreq, float Duration)
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(128);
       Serial.println("99");
     }
   }
