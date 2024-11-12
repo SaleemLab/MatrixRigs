@@ -28,7 +28,7 @@ float contrastSwitchTime;
 float ledUpdateTime;
 
 // vars for flicker-sine convolution
-float carrierFrequency;
+float envelopeFrequency;
 
 // vars for flicker sweep
 float startFrequency;
@@ -50,9 +50,9 @@ void setup() {
   // create LUT for 48 step sine wave
   for (int i = 0; i <= 48; i++) {
     pwmSin[i] = (127.5 * (1 - (sin(PI + (2 * PI * i / 48))))) ;
-    //pwmSin[i] = 127.5 * sin(2 * PI * i / 48))) ;
+    //pwmSin[i] = 127.5 * sin(2 * PI * i / 48)));
 
-    //Serial.println(pwmSin[i]);
+    Serial.println(pwmSin[i]);
   }
 
   delay(500);
@@ -155,17 +155,17 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
         {
           stimulusDuration = atof(serialVals[1]);
           frequency = atof(serialVals[2]); // flicker frequency
-          carrierFrequency = atof(serialVals[3]);
+          envelopeFrequency = atof(serialVals[3]);
           Serial.println("Stim: Flicker-sine convolution");
           Serial.print("Stim duration: ");
           Serial.println(stimulusDuration);
           Serial.print("Flicker Frequency: ");
           
           Serial.println(frequency);
-          Serial.print("Carrier Frequency: ");
-          Serial.println(carrierFrequency);
+          Serial.print("Envelope Frequency: ");
+          Serial.println(envelopeFrequency);
           
-          SineFreqConv(stimulusDuration, frequency, carrierFrequency);
+          SineContrastConv(stimulusDuration, frequency, envelopeFrequency);
         }
         else if (FirstChar == "fs") // Flicker-sweep stimulus
         {
@@ -380,51 +380,53 @@ void FlickerSweepLED(float startFrequency, float frequencyMultiplier, float freq
 
 
 
-void SineFreqConv(float flickerFreq, float Duration, float carrierFreq)
+void SineContrastConv(float Duration, float SineFreq, float EnvelopeFreq)
 {
-  const long interval = 1000 / (flickerFreq * 2);  // interval at which to blink (milliseconds)
-  unsigned long TimerStart = millis();        // will store last time LED was updated
-  unsigned long previousMillis = 0;  // will store last time LED was updated
-  const long period = 1000/(carrierFreq);           // interval at which to blink (milliseconds)
+  const long interval = 1000000/(SineFreq*48);           // interval at which to blink (milliseconds)
+  const long intervalEnv = 1000000/(EnvelopeFreq*48);   // interval to change envelope contrast val
+  unsigned long previousMillis = 0;        // will store last time LED was updated
 
+  unsigned long TimerStart = millis();        // will store last time LED was updated
+  unsigned long previousMicros = 0;        // will store last time LED was updated
+  unsigned long previousMicrosEnv = 0;        // will store last time contrast was updated
   volatile byte ledState = LOW;
 
-
   bool runFunction = HIGH;
+  int i=0;
+  int j=0;
+  float contrastMult = 1;
+
   while (runFunction)
   {
-    // generate sine wave between 0 and 1
-  int time = millis() % period;        // returns a value between 0 and period;
-  float angle = (PI * time) / period;  // mapping to degrees
-  float y = sin(angle);
 
-  // get low and high luminance levels for sine wave-based contrast 
-  float lowValue = 127 - y * 127;
-  float highValue = 127 + y * 127;
+    unsigned long currentMicros = micros();
 
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= interval) {
-    // save the last time you blinked the LED
-    previousMillis = currentMillis;
-    ledState = !ledState;
-    //Serial.println(ledState);
+    if (currentMicros - previousMicrosEnv >= intervalEnv) { // check if time to update contrast envelope
+      previousMicrosEnv = currentMicros;
+      contrastMult = pwmSin[j]/255;
+      //Serial.println(contrastMult);
+      //Serial.println(pwmSin[i]);
+      j++;
+      if (j>47) {j=0;}
+       }
 
-    if (ledState == 0) {
-      analogWrite(ledPin, lowValue);
-      //Serial.println(lowValue);
+    if (currentMicros - previousMicros >= interval) { // check if time to update PWM duty cycle
+      previousMicros = currentMicros;
+      analogWrite(ledPin, 127.5+((pwmSin[i]-127.5)*contrastMult));
+      //Serial.println(pwmSin[i]);
+      i++;
+      if (i>47) {i=0;}
+       }
 
-    } else {
-      analogWrite(ledPin, highValue);
-      //Serial.println(highValue);
-    }
-  }
+       
 
-    unsigned long TimerMillis = millis();
+    unsigned long TimerMillis = millis(); // Check for end of stim duration
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
-      Serial.println("99");
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(127.5); // turn LED to mean luminance once done
+      //Serial.println("99");
     }
   }
 }
