@@ -20,6 +20,7 @@ float stimulusDuration;
 float pwmVal;
 
 // vars for flicker and sinusoidal dimming
+float pwmSin[48];
 float frequency;
 
 // vars for temporal contrast switching
@@ -38,10 +39,21 @@ float frequencyUpdateTime;
 
 void setup() {
   // set the digital pin as output:
+
+  TCB1_CTRLA = 0b00000011; // change pin3 pwm freq to 32.25kh
+
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW);
   Serial.begin(9600);
   Serial.setTimeout(5);
+
+  // create LUT for 48 step sine wave
+  for (int i = 0; i <= 48; i++) {
+    pwmSin[i] = (127.5 * (1 - (sin(PI + (2 * PI * i / 48))))) ;
+    //pwmSin[i] = 127.5 * sin(2 * PI * i / 48))) ;
+
+    //Serial.println(pwmSin[i]);
+  }
 
   delay(500);
 
@@ -219,36 +231,42 @@ void FlickerLED(float FlickerFreq, float Duration)
     {
       runFunction = LOW;
       //digitalWrite(ledPin, LOW); // turn led off once done
-      SetPWM(128);
-      Serial.println("99");
+      SetPWM(0);
+      //Serial.println("99");
     }
   }
 }
 
 void SineLED(float SineFreq, float Duration)
 {
-  const long interval = 1000/(SineFreq);           // interval at which to blink (milliseconds)
+  const long interval = 1000000/(SineFreq*48);           // interval at which to blink (milliseconds)
   unsigned long previousMillis = 0;        // will store last time LED was updated
+
   unsigned long TimerStart = millis();        // will store last time LED was updated
+  unsigned long previousMicros = 0;        // will store last time LED was updated
   volatile byte ledState = LOW;
 
   bool runFunction = HIGH;
+  int i=0;
+
   while (runFunction)
   {
-    int time = millis() % interval;              // returns a value between 0 and period;
-    float angle = (PI * time) / interval;        // mapping to degrees
-    int y = 100 * sin(angle);
+    unsigned long currentMicros = micros();
+    if (currentMicros - previousMicros >= interval) { // check if time to update PWM duty cycle
+      previousMicros = currentMicros;
+      analogWrite(ledPin, pwmSin[i]);
+      //Serial.println(pwmSin[i]);
+      i++;
+      if (i>47) {i=0;}
+       }
 
-    analogWrite(ledPin, y);
-    Serial.println(y);
-
-    unsigned long TimerMillis = millis();
+    unsigned long TimerMillis = millis(); // Check for end of stim duration
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
       //digitalWrite(ledPin, LOW); // turn led off once done
-      SetPWM(128);
-      Serial.println("99");
+      SetPWM(127.5); // turn LED to mean luminance once done
+      //Serial.println("99");
     }
   }
 }
@@ -415,6 +433,7 @@ void SineFreqConv(float flickerFreq, float Duration, float carrierFreq)
 void SetPWM(float pwmVal)
 {
   analogWrite(ledPin, pwmVal);
+  Serial.println("99");
 }
 
 
