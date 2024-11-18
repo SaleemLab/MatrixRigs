@@ -2664,10 +2664,8 @@ Item3.Item6 as Coherence2)</scr:Expression>
                     <Name>Parameters</Name>
                     <rx:BufferSize xsi:nil="true" />
                   </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="MulticastSubject">
-                      <Name>TrialParams</Name>
-                    </Builder>
+                  <Expression xsi:type="MulticastSubject">
+                    <Name>TrialParams</Name>
                   </Expression>
                 </Nodes>
                 <Edges>

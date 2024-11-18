@@ -1,6 +1,6 @@
 // constants won't change:
 const int ledPin =  3;// the number of the LED pin
-const unsigned long flickerFreq = 40;
+const unsigned long flickerFreq = 10;
 const long interval = 1000/(flickerFreq*2);           // interval at which to blink (milliseconds)
 
 // Variables will change:

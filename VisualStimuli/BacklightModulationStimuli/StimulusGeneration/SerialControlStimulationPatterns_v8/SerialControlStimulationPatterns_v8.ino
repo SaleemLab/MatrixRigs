@@ -16,6 +16,9 @@ String FirstChar;
 // generic stimulus duration var
 float stimulusDuration;
 
+// constant brightness value
+float pwmVal;
+
 // vars for flicker and sinusoidal dimming
 float frequency;
 
@@ -168,6 +171,22 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
           FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
 
         }
+        else if (FirstChar == "fs") // Flicker-sweep stimulus
+        {
+          stimulusDuration = atof(serialVals[1]);
+          startFrequency = atof(serialVals[2]); // flicker frequency
+          frequencyMultiplier = atof(serialVals[3]);
+          frequencyUpdateTime = atof(serialVals[4]);
+          
+          //startFrequency = 1;
+          //frequencyMultiplier = 1.05; // update frequency
+          //frequencyUpdateTime = 200; // msstimulusDuration = 20000;
+          //stimulusDuration = 20000; // ms
+
+          //FlickerSweepLED(5, stimulusDuration);
+          FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
+
+        }
         else // not valid stimulus code
         {
           Serial.print(FirstChar);
@@ -274,7 +293,7 @@ void contrastSwitching(float contrastSwitchTime, float Duration, float updateTim
   if (contrast==HIGH) 
   {
     randNumber = random(0, 255);
-    analogWrite(ledPin, randNumber);         
+    analogWrite(ledPin, randNumber);
   } else
     randNumber = random(64, 191);
     analogWrite(ledPin, randNumber);  
@@ -394,6 +413,12 @@ void SineFreqConv(float flickerFreq, float Duration, float carrierFreq)
       Serial.println("99");
     }
   }
+}
+
+
+void SetPWM(float pwmVal)
+{
+  analogWrite(ledPin, pwmVal);
 }
 
 
