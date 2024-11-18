@@ -28,8 +28,8 @@ int sys_clock = 6e8;
 // For 12 kHz scanners, line time is ~41.67 us
 
 // New delay values for 7.5KHz scanner (B Scope); 60.2 microseconds between each line trigger 
-int delay_rising = 35100; 
-int delay_falling = 35100;
+int delay_rising = 34100; 
+int delay_falling = 34100;
 
 
 // number of ticks in a pulse triggered by 

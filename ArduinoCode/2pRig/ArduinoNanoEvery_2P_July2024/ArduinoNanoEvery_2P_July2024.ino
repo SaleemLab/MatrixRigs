@@ -29,7 +29,7 @@
 #define ScreenOnPin 7     // Teensy output (screen flicker)
 
 // serial frequency variables
-float samplingFrequency = 100; // frequency to send new values to computer (Hz)
+float samplingFrequency = 120; // frequency to send new values to computer (Hz)
 const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values (ms)
 unsigned long startMillis;  // sample timer that resets each time new data is sent
 unsigned long currentMillis; // rolling timer to check if it's time to send new data
