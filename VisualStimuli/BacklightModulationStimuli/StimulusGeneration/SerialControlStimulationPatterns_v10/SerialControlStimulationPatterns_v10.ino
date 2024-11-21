@@ -44,7 +44,7 @@ void setup() {
 
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.setTimeout(5);
 
   // create LUT for 48 step sine wave
@@ -54,6 +54,8 @@ void setup() {
 
     Serial.println(pwmSin[i]);
   }
+
+  SetPWM(127.5);
 
   delay(500);
 
@@ -276,14 +278,17 @@ void contrastSwitching(float contrastSwitchTime, float Duration, float updateTim
   //const unsigned long contrastSwitchTime = 3000; // in ms
   //const unsigned long updateTime = 100; // in ms
 
-  long randNumber;      // the variable which is supposed to hold the random number
-  volatile byte contrast = HIGH;
+  int randNumber;      // the variable which is supposed to hold the random number
+  volatile byte randNumberByte;
+  volatile byte contrast = LOW; // this will switch to start at HIGH
 
   unsigned long previousMillis = 0;        // will store last time LED was updated
   unsigned long switchPreviousMillis = 0;        // will store last time LED was updated
 
   unsigned long TimerStart = millis();        // will store last time LED was updated
   volatile byte ledState = LOW;
+
+  unsigned long t = 0;
 
   bool runFunction = HIGH;
   while (runFunction)
@@ -306,19 +311,25 @@ void contrastSwitching(float contrastSwitchTime, float Duration, float updateTim
   {
     randNumber = random(0, 255);
     analogWrite(ledPin, randNumber);
-  } else
+    randNumberByte = randNumber;
+    Serial.println(byte(randNumber));
+
+  } 
+  else
+  {
     randNumber = random(64, 191);
     analogWrite(ledPin, randNumber);  
+    randNumberByte = randNumber;
+    Serial.println(byte(randNumber));
   }
 
-  Serial.println(randNumber);
-
+  }
   unsigned long TimerMillis = millis();
   if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
       digitalWrite(ledPin, LOW); // turn led off once done
-      Serial.println("99");
+      Serial.println("-1");
     }
 }
 }
@@ -372,7 +383,7 @@ void FlickerSweepLED(float startFrequency, float frequencyMultiplier, float freq
         {
           runFunction = LOW;
           digitalWrite(ledPin, LOW); // turn led off once done
-          Serial.println("99");
+          Serial.println("-1");
         }
     }
 }
@@ -435,7 +446,7 @@ void SineContrastConv(float Duration, float SineFreq, float EnvelopeFreq)
 void SetPWM(float pwmVal)
 {
   analogWrite(ledPin, pwmVal);
-  Serial.println("99");
+  Serial.println("-1");
 }
 
 
