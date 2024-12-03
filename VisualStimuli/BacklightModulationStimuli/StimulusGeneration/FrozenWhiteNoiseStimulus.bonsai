@@ -211,7 +211,7 @@
             <Expression xsi:type="rx:Accumulate" />
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>wn</Value>
+                <Value>fwn</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -233,7 +233,7 @@
                   </Expression>
                   <Expression xsi:type="LessThan">
                     <Operand xsi:type="IntProperty">
-                      <Value>8</Value>
+                      <Value>2</Value>
                     </Operand>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
@@ -272,6 +272,12 @@
             <Expression xsi:type="scr:ExpressionTransform">
               <scr:Expression>Convert.ToString(it)</scr:Expression>
             </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Item3</Selector>
+            </Expression>
+            <Expression xsi:type="scr:ExpressionTransform">
+              <scr:Expression>Convert.ToString(it)</scr:Expression>
+            </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Zip" />
             </Expression>
@@ -289,7 +295,7 @@
             <Edge From="5" To="6" Label="Source1" />
             <Edge From="6" To="7" Label="Source1" />
             <Edge From="7" To="11" Label="Source1" />
-            <Edge From="8" To="22" Label="Source1" />
+            <Edge From="8" To="24" Label="Source1" />
             <Edge From="9" To="10" Label="Source1" />
             <Edge From="10" To="11" Label="Source2" />
             <Edge From="11" To="12" Label="Source2" />
@@ -299,17 +305,20 @@
             <Edge From="15" To="16" Label="Source1" />
             <Edge From="16" To="17" Label="Source1" />
             <Edge From="16" To="19" Label="Source1" />
+            <Edge From="16" To="21" Label="Source1" />
             <Edge From="17" To="18" Label="Source1" />
-            <Edge From="18" To="21" Label="Source1" />
+            <Edge From="18" To="23" Label="Source1" />
             <Edge From="19" To="20" Label="Source1" />
-            <Edge From="20" To="21" Label="Source2" />
-            <Edge From="21" To="22" Label="Source2" />
-            <Edge From="22" To="23" Label="Source1" />
+            <Edge From="20" To="23" Label="Source2" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="22" To="23" Label="Source3" />
+            <Edge From="23" To="24" Label="Source2" />
+            <Edge From="24" To="25" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
       <Expression xsi:type="scr:ExpressionTransform">
-        <scr:Expression>Item1+","+Item2.Item1+","+Item2.Item2</scr:Expression>
+        <scr:Expression>Item1+","+Item2.Item1+","+Item2.Item2+","+Item2.Item3</scr:Expression>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="io:SerialStringWrite">
@@ -517,7 +526,7 @@
                     <Name>WheelLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_WhiteNoise_Wheel.csv</io:FileName>
+                    <io:FileName>M24018_FrozenWhiteNoise_Wheel.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -592,7 +601,7 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_WhiteNoise_Video.csv</io:FileName>
+                    <io:FileName>M24018_FrozenWhiteNoise_Video.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -663,7 +672,7 @@
                     <Name>PDLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_WhiteNoise_Photodiode.csv</io:FileName>
+                    <io:FileName>M24018_FrozenWhiteNoise_Photodiode.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -699,7 +708,7 @@
                     <Name>TrialParams</Name>
                   </Expression>
                   <Expression xsi:type="Parse">
-                    <Pattern>%s,%i,%i</Pattern>
+                    <Pattern>%s,%i,%i,%i</Pattern>
                     <Separator />
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -751,10 +760,10 @@
                     <Combinator xsi:type="rx:WithLatestFrom" />
                   </Expression>
                   <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>new(Item1.Item1.Item1 as StimulusType, Item1.Item1.Item2 as StimulusDuration, Item1.Item1.Item3 as UpdateTime, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
+                    <scr:Expression>new(Item1.Item1.Item1 as StimulusType, Item1.Item1.Item2 as StimulusDuration, Item1.Item1.Item3 as UpdateTime, Item1.Item1.Item4 as nReps, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_WhiteNoise_TrialParams.csv</io:FileName>
+                    <io:FileName>M24018_FrozenWhiteNoise_TrialParams.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -818,7 +827,7 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_WhiteNoise_ArduinoStimLog.csv</io:FileName>
+                    <io:FileName>M24018_FrozenWhiteNoise_ArduinoStimLog.csv</io:FileName>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
                     <io:Suffix>Timestamp</io:Suffix>
@@ -1213,7 +1222,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>WhiteNoise</Value>
+                <Value>FrozenWhiteNoise</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -1439,9 +1448,9 @@
         <Property Name="FileName" />
       </Expression>
       <Expression xsi:type="io:CsvReader">
-        <io:FileName>whiteNoiseCSV.csv</io:FileName>
+        <io:FileName>frozenWhiteNoiseCSV.csv</io:FileName>
         <io:ListSeparator />
-        <io:ScanPattern>%i,%i</io:ScanPattern>
+        <io:ScanPattern>%i,%i,%i</io:ScanPattern>
         <io:SkipRows>0</io:SkipRows>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -1503,7 +1512,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
-                <rx:Count>4</rx:Count>
+                <rx:Count>1</rx:Count>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
