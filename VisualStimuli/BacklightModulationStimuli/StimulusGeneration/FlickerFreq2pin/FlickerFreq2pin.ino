@@ -1,6 +1,8 @@
 // constants won't change:
-const int ledPin =  3;// the number of the LED pin
-const int ledPin2 = 4;//
+
+const int pin0 = 8;
+const int pin50 = 9;//
+const int ledPin =  10;// the number of the LED pin
 const unsigned long flickerFreq = 5;
 const long interval = 1000/(flickerFreq*2);           // interval at which to blink (milliseconds)
 
@@ -15,6 +17,11 @@ unsigned long previousMillis = 0;        // will store last time LED was updated
 void setup() {
   // set the digital pin as output:
   pinMode(ledPin, OUTPUT);
+  pinMode(pin0, OUTPUT);
+  pinMode(pin50, OUTPUT);
+
+  analogWrite(pin0, 0);
+  analogWrite(pin50, 50);
 }
 
 void loop() {
@@ -34,6 +41,5 @@ void loop() {
 
     // set the LED with the ledState of the variable:
     digitalWrite(ledPin, ledState);
-    digitalWrite(ledPin2, !ledState);
   }
 }

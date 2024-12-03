@@ -20,6 +20,7 @@ float stimulusDuration;
 float pwmVal;
 
 // vars for flicker and sinusoidal dimming
+float pwmSin[48];
 float frequency;
 
 // vars for temporal contrast switching
@@ -27,7 +28,7 @@ float contrastSwitchTime;
 float ledUpdateTime;
 
 // vars for flicker-sine convolution
-float carrierFrequency;
+float envelopeFrequency;
 
 // vars for flicker sweep
 float startFrequency;
@@ -38,10 +39,23 @@ float frequencyUpdateTime;
 
 void setup() {
   // set the digital pin as output:
+
+  TCB1_CTRLA = 0b00000011; // change pin3 pwm freq to 32.25kh
+
   pinMode(ledPin, OUTPUT);
   digitalWrite(ledPin, LOW);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.setTimeout(5);
+
+  // create LUT for 48 step sine wave
+  for (int i = 0; i <= 48; i++) {
+    pwmSin[i] = (127.5 * (1 - (sin(PI + (2 * PI * i / 48))))) ;
+    //pwmSin[i] = 127.5 * sin(2 * PI * i / 48)));
+
+    Serial.println(pwmSin[i]);
+  }
+
+  SetPWM(127.5);
 
   delay(500);
 
@@ -143,17 +157,17 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
         {
           stimulusDuration = atof(serialVals[1]);
           frequency = atof(serialVals[2]); // flicker frequency
-          carrierFrequency = atof(serialVals[3]);
+          envelopeFrequency = atof(serialVals[3]);
           Serial.println("Stim: Flicker-sine convolution");
           Serial.print("Stim duration: ");
           Serial.println(stimulusDuration);
           Serial.print("Flicker Frequency: ");
           
           Serial.println(frequency);
-          Serial.print("Carrier Frequency: ");
-          Serial.println(carrierFrequency);
+          Serial.print("Envelope Frequency: ");
+          Serial.println(envelopeFrequency);
           
-          SineFreqConv(stimulusDuration, frequency, carrierFrequency);
+          SineContrastConv(stimulusDuration, frequency, envelopeFrequency);
         }
         else if (FirstChar == "fs") // Flicker-sweep stimulus
         {
@@ -171,20 +185,11 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
           FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
 
         }
-        else if (FirstChar == "fs") // Flicker-sweep stimulus
+        else if (FirstChar == "sb") // Set Brightness
         {
-          stimulusDuration = atof(serialVals[1]);
-          startFrequency = atof(serialVals[2]); // flicker frequency
-          frequencyMultiplier = atof(serialVals[3]);
-          frequencyUpdateTime = atof(serialVals[4]);
+          pwmVal = atof(serialVals[1]);
           
-          //startFrequency = 1;
-          //frequencyMultiplier = 1.05; // update frequency
-          //frequencyUpdateTime = 200; // msstimulusDuration = 20000;
-          //stimulusDuration = 20000; // ms
-
-          //FlickerSweepLED(5, stimulusDuration);
-          FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
+          SetPWM(pwmVal);
 
         }
         else // not valid stimulus code
@@ -227,34 +232,43 @@ void FlickerLED(float FlickerFreq, float Duration)
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
-      Serial.println("99");
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(0);
+      //Serial.println("99");
     }
   }
 }
 
 void SineLED(float SineFreq, float Duration)
 {
-  const long interval = 1000/(SineFreq);           // interval at which to blink (milliseconds)
+  const long interval = 1000000/(SineFreq*48);           // interval at which to blink (milliseconds)
   unsigned long previousMillis = 0;        // will store last time LED was updated
+
   unsigned long TimerStart = millis();        // will store last time LED was updated
+  unsigned long previousMicros = 0;        // will store last time LED was updated
   volatile byte ledState = LOW;
 
   bool runFunction = HIGH;
+  int i=0;
+
   while (runFunction)
   {
-    int time = millis() % interval;              // returns a value between 0 and period;
-    float angle = (PI * time) / interval;        // mapping to degrees
-    int y = 100 * sin(angle);
+    unsigned long currentMicros = micros();
+    if (currentMicros - previousMicros >= interval) { // check if time to update PWM duty cycle
+      previousMicros = currentMicros;
+      analogWrite(ledPin, pwmSin[i]);
+      //Serial.println(pwmSin[i]);
+      i++;
+      if (i>47) {i=0;}
+       }
 
-    analogWrite(ledPin, y);
-
-    unsigned long TimerMillis = millis();
+    unsigned long TimerMillis = millis(); // Check for end of stim duration
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
-      Serial.println("99");
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(127.5); // turn LED to mean luminance once done
+      //Serial.println("99");
     }
   }
 }
@@ -264,14 +278,17 @@ void contrastSwitching(float contrastSwitchTime, float Duration, float updateTim
   //const unsigned long contrastSwitchTime = 3000; // in ms
   //const unsigned long updateTime = 100; // in ms
 
-  long randNumber;      // the variable which is supposed to hold the random number
-  volatile byte contrast = HIGH;
+  int randNumber;      // the variable which is supposed to hold the random number
+  volatile byte randNumberByte;
+  volatile byte contrast = LOW; // this will switch to start at HIGH
 
   unsigned long previousMillis = 0;        // will store last time LED was updated
   unsigned long switchPreviousMillis = 0;        // will store last time LED was updated
 
   unsigned long TimerStart = millis();        // will store last time LED was updated
   volatile byte ledState = LOW;
+
+  unsigned long t = 0;
 
   bool runFunction = HIGH;
   while (runFunction)
@@ -294,17 +311,25 @@ void contrastSwitching(float contrastSwitchTime, float Duration, float updateTim
   {
     randNumber = random(0, 255);
     analogWrite(ledPin, randNumber);
-  } else
+    randNumberByte = randNumber;
+    Serial.println(byte(randNumber));
+
+  } 
+  else
+  {
     randNumber = random(64, 191);
     analogWrite(ledPin, randNumber);  
+    randNumberByte = randNumber;
+    Serial.println(byte(randNumber));
   }
 
+  }
   unsigned long TimerMillis = millis();
   if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
       digitalWrite(ledPin, LOW); // turn led off once done
-      Serial.println("99");
+      Serial.println("-1");
     }
 }
 }
@@ -358,7 +383,7 @@ void FlickerSweepLED(float startFrequency, float frequencyMultiplier, float freq
         {
           runFunction = LOW;
           digitalWrite(ledPin, LOW); // turn led off once done
-          Serial.println("99");
+          Serial.println("-1");
         }
     }
 }
@@ -366,51 +391,53 @@ void FlickerSweepLED(float startFrequency, float frequencyMultiplier, float freq
 
 
 
-void SineFreqConv(float flickerFreq, float Duration, float carrierFreq)
+void SineContrastConv(float Duration, float SineFreq, float EnvelopeFreq)
 {
-  const long interval = 1000 / (flickerFreq * 2);  // interval at which to blink (milliseconds)
-  unsigned long TimerStart = millis();        // will store last time LED was updated
-  unsigned long previousMillis = 0;  // will store last time LED was updated
-  const long period = 1000/(carrierFreq);           // interval at which to blink (milliseconds)
+  const long interval = 1000000/(SineFreq*48);           // interval at which to blink (milliseconds)
+  const long intervalEnv = 1000000/(EnvelopeFreq*48);   // interval to change envelope contrast val
+  unsigned long previousMillis = 0;        // will store last time LED was updated
 
+  unsigned long TimerStart = millis();        // will store last time LED was updated
+  unsigned long previousMicros = 0;        // will store last time LED was updated
+  unsigned long previousMicrosEnv = 0;        // will store last time contrast was updated
   volatile byte ledState = LOW;
 
-
   bool runFunction = HIGH;
+  int i=0;
+  int j=0;
+  float contrastMult = 1;
+
   while (runFunction)
   {
-    // generate sine wave between 0 and 1
-  int time = millis() % period;        // returns a value between 0 and period;
-  float angle = (PI * time) / period;  // mapping to degrees
-  float y = sin(angle);
 
-  // get low and high luminance levels for sine wave-based contrast 
-  float lowValue = 127 - y * 127;
-  float highValue = 127 + y * 127;
+    unsigned long currentMicros = micros();
 
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousMillis >= interval) {
-    // save the last time you blinked the LED
-    previousMillis = currentMillis;
-    ledState = !ledState;
-    //Serial.println(ledState);
+    if (currentMicros - previousMicrosEnv >= intervalEnv) { // check if time to update contrast envelope
+      previousMicrosEnv = currentMicros;
+      contrastMult = pwmSin[j]/255;
+      //Serial.println(contrastMult);
+      //Serial.println(pwmSin[i]);
+      j++;
+      if (j>47) {j=0;}
+       }
 
-    if (ledState == 0) {
-      analogWrite(ledPin, lowValue);
-      //Serial.println(lowValue);
+    if (currentMicros - previousMicros >= interval) { // check if time to update PWM duty cycle
+      previousMicros = currentMicros;
+      analogWrite(ledPin, 127.5+((pwmSin[i]-127.5)*contrastMult));
+      //Serial.println(pwmSin[i]);
+      i++;
+      if (i>47) {i=0;}
+       }
 
-    } else {
-      analogWrite(ledPin, highValue);
-      //Serial.println(highValue);
-    }
-  }
+       
 
-    unsigned long TimerMillis = millis();
+    unsigned long TimerMillis = millis(); // Check for end of stim duration
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
-      Serial.println("99");
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(127.5); // turn LED to mean luminance once done
+      //Serial.println("99");
     }
   }
 }
@@ -419,6 +446,7 @@ void SineFreqConv(float flickerFreq, float Duration, float carrierFreq)
 void SetPWM(float pwmVal)
 {
   analogWrite(ledPin, pwmVal);
+  Serial.println("-1");
 }
 
 

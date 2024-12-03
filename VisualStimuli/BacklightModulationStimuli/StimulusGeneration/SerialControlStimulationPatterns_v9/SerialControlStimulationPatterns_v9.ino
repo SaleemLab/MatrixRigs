@@ -171,20 +171,11 @@ void ActionSerial() { // Actions serial data by choosing appropriate stimulation
           FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
 
         }
-        else if (FirstChar == "fs") // Flicker-sweep stimulus
+        else if (FirstChar == "sb") // Set Brightness
         {
-          stimulusDuration = atof(serialVals[1]);
-          startFrequency = atof(serialVals[2]); // flicker frequency
-          frequencyMultiplier = atof(serialVals[3]);
-          frequencyUpdateTime = atof(serialVals[4]);
+          pwmVal = atof(serialVals[1]);
           
-          //startFrequency = 1;
-          //frequencyMultiplier = 1.05; // update frequency
-          //frequencyUpdateTime = 200; // msstimulusDuration = 20000;
-          //stimulusDuration = 20000; // ms
-
-          //FlickerSweepLED(5, stimulusDuration);
-          FlickerSweepLED(startFrequency, frequencyMultiplier, frequencyUpdateTime, stimulusDuration);
+          SetPWM(pwmVal);
 
         }
         else // not valid stimulus code
@@ -227,7 +218,8 @@ void FlickerLED(float FlickerFreq, float Duration)
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(128);
       Serial.println("99");
     }
   }
@@ -248,12 +240,14 @@ void SineLED(float SineFreq, float Duration)
     int y = 100 * sin(angle);
 
     analogWrite(ledPin, y);
+    Serial.println(y);
 
     unsigned long TimerMillis = millis();
     if (TimerMillis-TimerStart >= Duration)
     {
       runFunction = LOW;
-      digitalWrite(ledPin, LOW); // turn led off once done
+      //digitalWrite(ledPin, LOW); // turn led off once done
+      SetPWM(128);
       Serial.println("99");
     }
   }
@@ -298,6 +292,8 @@ void contrastSwitching(float contrastSwitchTime, float Duration, float updateTim
     randNumber = random(64, 191);
     analogWrite(ledPin, randNumber);  
   }
+
+  Serial.println(randNumber);
 
   unsigned long TimerMillis = millis();
   if (TimerMillis-TimerStart >= Duration)

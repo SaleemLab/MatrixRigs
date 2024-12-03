@@ -108,6 +108,7 @@ switch sex
                             'minimum allowed weight: END POINT', ...
                             'original weight recording'},'Location','southeast')
         % save data onto txt file to be copied on Google sheet
+        mkdir('MouseData')
         fileID = fopen([cd '\MouseData\' mousename '_weightVSage' '.txt'],'w');
         fprintf(fileID, '%10s %12s \r\n','age (weeks)','weight (g)');
         fprintf(fileID, '%6.5f \t %6.5f \r\n',[W_fit(:,1), CurveAdj]');
