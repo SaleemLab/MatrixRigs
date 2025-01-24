@@ -70,13 +70,13 @@ public class UpdateProbDistArray
                     //newProbDistArray[istate][istim] = OriginalProbDistArray[istate][istim]+diffArray[istim];
                 }
 
-                Console.WriteLine("diffArray:");                
-                Console.WriteLine("[{0}]", string.Join(", ", diffArray));
+                //Console.WriteLine("diffArray:");                
+                //Console.WriteLine("[{0}]", string.Join(", ", diffArray));
 
 
 
-                Console.WriteLine("temp output dist: ");
-                Console.WriteLine("[{0}]", string.Join(", ", outputDist));
+               // Console.WriteLine("temp output dist: ");
+                //Console.WriteLine("[{0}]", string.Join(", ", outputDist));
 
 
                // normalise arrays back to 100
@@ -84,11 +84,11 @@ public class UpdateProbDistArray
                 float temp_sum = outputDist.Sum();
                 float multFactor2 = 100f/temp_sum;
                 outputDist = outputDist.Select(r=> r * multFactor2).ToArray();
-                if (istate==0)
-                {   
-                    Console.WriteLine("output dist:");
-                    Console.WriteLine("[{0}]", string.Join(", ", outputDist));
-                }
+                //if (istate==0)
+                //{   
+                //    Console.WriteLine("output dist:");
+                //    Console.WriteLine("[{0}]", string.Join(", ", outputDist));
+               // }
                 //for (int istim=0; istim<nStim; istim++)
                 //{Console.WriteLine("op: " + outputDist[istim]);};
                 //float normSum = normDist.Sum();

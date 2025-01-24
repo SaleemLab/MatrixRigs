@@ -24,10 +24,10 @@ public class RandSampleFromIndexedDistribution
             int nStim = thisDistribution.Length;
             int iStim = 0;
 
-            Console.WriteLine("dist index: ");
-            Console.WriteLine(distIndex);
-            Console.WriteLine("sample dist: ");
-            Console.WriteLine("[{0}]", string.Join(", ", thisDistribution));
+            //Console.WriteLine("dist index: ");
+            //Console.WriteLine(distIndex);
+            //Console.WriteLine("sample dist: ");
+            //Console.WriteLine("[{0}]", string.Join(", ", thisDistribution));
 
 
            //for (int i=0; i<nStim; i++) // loop through speed pair
