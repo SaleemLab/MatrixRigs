@@ -3,12 +3,36 @@
   <WindowState>Normal</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>-20</X>
-    <Y>36</Y>
-    <Width>1071</Width>
-    <Height>748</Height>
+    <X>258</X>
+    <Y>46</Y>
+    <Width>1480</Width>
+    <Height>1039</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-17T14:20:19.2012754+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\SinewaveEnvelope.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-17T14:12:30.9243584+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\WhiteNoiseStimulus.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-17T13:02:09.7094099+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\FlickerStimulationWorkflow.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-17T12:54:11.9460436+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FlickerStimulationWorkflow_v2.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-12T17:10:58.6462545+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FrozenWhiteNoiseStimulus.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-12T17:01:46.0015949+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\WhiteNoiseStimulus.bonsai</Name>
+    </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2024-12-03T16:44:05.3073908+00:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
