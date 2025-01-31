@@ -960,7 +960,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                       <p1:right>120</p1:right>
                       <p1:top>60</p1:top>
                       <p1:bottom>-60</p1:bottom>
-                      <p1:rndseed>18</p1:rndseed>
+                      <p1:rndseed>38</p1:rndseed>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -999,7 +999,7 @@ Item3.Item6 as Coherence2)</scr:Expression>
                       <p1:right>120</p1:right>
                       <p1:top>60</p1:top>
                       <p1:bottom>-60</p1:bottom>
-                      <p1:rndseed>117</p1:rndseed>
+                      <p1:rndseed>137</p1:rndseed>
                     </Combinator>
                   </Expression>
                   <Expression xsi:type="Combinator">
@@ -1115,22 +1115,22 @@ Item3.Item6 as Coherence2)</scr:Expression>
                           <Combinator xsi:type="p1:RandSampleFromIndexedDistribution">
                             <p1:ProbabilityDistributions>
                               <p1:ArrayOfFloat>
-                                <p1:float>14.2857141</p1:float>
-                                <p1:float>14.2857141</p1:float>
-                                <p1:float>14.2857141</p1:float>
-                                <p1:float>14.2857141</p1:float>
-                                <p1:float>14.2857141</p1:float>
-                                <p1:float>14.2857141</p1:float>
-                                <p1:float>14.2857141</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>100</p1:float>
+                                <p1:float>0</p1:float>
                               </p1:ArrayOfFloat>
                               <p1:ArrayOfFloat>
-                                <p1:float>16.666666</p1:float>
-                                <p1:float>16.666666</p1:float>
+                                <p1:float>25</p1:float>
                                 <p1:float>0</p1:float>
-                                <p1:float>16.666666</p1:float>
-                                <p1:float>16.666666</p1:float>
-                                <p1:float>16.666666</p1:float>
-                                <p1:float>16.666666</p1:float>
+                                <p1:float>25</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>25</p1:float>
+                                <p1:float>0</p1:float>
+                                <p1:float>25</p1:float>
                               </p1:ArrayOfFloat>
                             </p1:ProbabilityDistributions>
                             <p1:DistributionIndex>0</p1:DistributionIndex>
@@ -1487,7 +1487,7 @@ Item2</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="p1:moveDots_2dLife">
-                            <p1:VelocityX>-1.06666672</p1:VelocityX>
+                            <p1:VelocityX>-4.266667</p1:VelocityX>
                             <p1:VelocityY>0</p1:VelocityY>
                             <p1:Coherence>100</p1:Coherence>
                             <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -1782,7 +1782,7 @@ Item2</scr:Expression>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="p1:moveDots_2dLife">
-                            <p1:VelocityX>-1.06666672</p1:VelocityX>
+                            <p1:VelocityX>-4.266667</p1:VelocityX>
                             <p1:VelocityY>0</p1:VelocityY>
                             <p1:Coherence>100</p1:Coherence>
                             <p1:dotLifetimeBool>0</p1:dotLifetimeBool>
@@ -2107,22 +2107,22 @@ Item2</scr:Expression>
                           <Combinator xsi:type="p1:IncrementStateDependentTrialCounter">
                             <p1:TrialCounterArray>
                               <p1:ArrayOfInt>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>2</p1:int>
+                                <p1:int>3</p1:int>
                               </p1:ArrayOfInt>
                               <p1:ArrayOfInt>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
-                                <p1:int>0</p1:int>
+                                <p1:int>2</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>2</p1:int>
+                                <p1:int>3</p1:int>
+                                <p1:int>2</p1:int>
+                                <p1:int>4</p1:int>
+                                <p1:int>2</p1:int>
                               </p1:ArrayOfInt>
                             </p1:TrialCounterArray>
                           </Combinator>
@@ -2754,82 +2754,84 @@ Item1.Coherence2 as Coherence2)</scr:Expression>
                 </Edges>
               </Workflow>
             </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>SimulateState</Name>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="rx:Timer">
-                        <rx:DueTime>PT0S</rx:DueTime>
-                        <rx:Period>PT2S</rx:Period>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="num:CreateRandom">
-                        <num:Seed xsi:nil="true" />
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="p2:CreateNormal">
-                        <p2:Mean>0</p2:Mean>
-                        <p2:StdDev>4</p2:StdDev>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="p2:Sample" />
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="scr:ExpressionTransform">
-                      <scr:Expression>it &lt; 0 ? 0 :
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="GroupWorkflow">
+                <Name>SimulateState</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="Combinator">
+                        <Combinator xsi:type="rx:Timer">
+                          <rx:DueTime>PT0S</rx:DueTime>
+                          <rx:Period>PT2S</rx:Period>
+                        </Combinator>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="Combinator">
+                        <Combinator xsi:type="num:CreateRandom">
+                          <num:Seed xsi:nil="true" />
+                        </Combinator>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="Combinator">
+                        <Combinator xsi:type="p2:CreateNormal">
+                          <p2:Mean>0</p2:Mean>
+                          <p2:StdDev>4</p2:StdDev>
+                        </Combinator>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="Combinator">
+                        <Combinator xsi:type="p2:Sample" />
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="scr:ExpressionTransform">
+                        <scr:Expression>it &lt; 0 ? 0 :
 1
 </scr:Expression>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="rx:BehaviorSubject">
-                      <Name>CurrentState</Name>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="WorkflowOutput" />
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="ExternalizedMapping">
-                      <Property Name="Value" DisplayName="CurrentState" />
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Combinator">
-                      <Combinator xsi:type="IntProperty">
-                        <Value>2</Value>
-                      </Combinator>
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="rx:BehaviorSubject">
-                      <Name>CurrentState</Name>
-                    </Builder>
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                  <Edge From="2" To="3" Label="Source1" />
-                  <Edge From="3" To="4" Label="Source1" />
-                  <Edge From="4" To="5" Label="Source1" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="7" To="8" Label="Source1" />
-                  <Edge From="8" To="9" Label="Source1" />
-                </Edges>
-              </Workflow>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="rx:BehaviorSubject">
+                        <Name>CurrentState</Name>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="WorkflowOutput" />
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="ExternalizedMapping">
+                        <Property Name="Value" DisplayName="CurrentState" />
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="Combinator">
+                        <Combinator xsi:type="IntProperty">
+                          <Value>2</Value>
+                        </Combinator>
+                      </Builder>
+                    </Expression>
+                    <Expression xsi:type="Disable">
+                      <Builder xsi:type="rx:BehaviorSubject">
+                        <Name>CurrentState</Name>
+                      </Builder>
+                    </Expression>
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="2" To="3" Label="Source1" />
+                    <Edge From="3" To="4" Label="Source1" />
+                    <Edge From="4" To="5" Label="Source1" />
+                    <Edge From="5" To="6" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="9" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
             </Expression>
             <Expression xsi:type="GroupWorkflow">
               <Name>MonitorTrialCounts</Name>
