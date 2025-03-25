@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorSettings>
-  <WindowState>Normal</WindowState>
+  <WindowState>Maximized</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
     <X>399</X>
@@ -9,6 +9,10 @@
     <Height>1039</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-25T14:22:22.7646990+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\Ganzfeld_stateDependentControl.bonsai</Name>
+    </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2025-01-24T14:34:19.3661422+00:00</Timestamp>
       <Name>D:\Code\MatrixRigs-main\VisualStimuli\DotMotion_StateDependentSpeed_backup.bonsai</Name>
