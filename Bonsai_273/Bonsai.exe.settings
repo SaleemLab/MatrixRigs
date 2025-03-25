@@ -3,14 +3,18 @@
   <WindowState>Normal</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>410</X>
-    <Y>22</Y>
-    <Width>1357</Width>
+    <X>-7</X>
+    <Y>0</Y>
+    <Width>974</Width>
     <Height>1039</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
     <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:43:16.9098303+00:00</Timestamp>
+      <Timestamp>2025-03-25T14:54:39.7210576+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\Ganzfeld_stateDependentControl.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-25T14:44:48.9909800+00:00</Timestamp>
       <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\Ganzfeld_stateDependentControl.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
@@ -32,10 +36,6 @@
     <RecentlyUsedFile>
       <Timestamp>2025-03-25T14:37:02.2118449+00:00</Timestamp>
       <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:26:36.4774357+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\Ganzfeld_stateDependentControl.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2025-01-24T14:34:19.3661422+00:00</Timestamp>
