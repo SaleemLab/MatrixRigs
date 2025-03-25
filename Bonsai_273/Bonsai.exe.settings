@@ -1,28 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorSettings>
-  <WindowState>Maximized</WindowState>
+  <WindowState>Normal</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>-13</X>
-    <Y>99</Y>
+    <X>47</X>
+    <Y>62</Y>
     <Width>1917</Width>
-    <Height>767</Height>
+    <Height>1030</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
     <RecentlyUsedFile>
-      <Timestamp>2025-03-25T16:54:36.3311451+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\SinewaveEnvelope_reducedParams.bonsai</Name>
+      <Timestamp>2025-03-25T17:10:17.1829178+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\SineEnvelope_stateDependentControl.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-03-25T16:39:25.1762646+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\SinewaveEnvelope.bonsai</Name>
+      <Timestamp>2025-03-25T17:04:53.9694654+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\SineFlicker_stateDependentControl.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-03-25T15:35:33.5480542+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
+      <Timestamp>2025-03-25T16:47:58.8474702+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FlickerStimulationWorkflow_v3.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-03-25T15:33:58.7048185+00:00</Timestamp>
+      <Timestamp>2025-03-25T16:39:03.1268622+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\ContrastCarrier_stateDependentControl.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-25T16:38:52.4572061+00:00</Timestamp>
       <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\Ganzfeld_stateDependentControl.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
@@ -34,10 +38,6 @@
       <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\Ganzfeld_stateDependentControl.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:41:23.7323474+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FlickerStimulationWorkflow_v3.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
       <Timestamp>2025-03-25T14:38:54.6800928+00:00</Timestamp>
       <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FlickerStimulationWorkflow_v2.bonsai</Name>
     </RecentlyUsedFile>
@@ -46,12 +46,20 @@
       <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\FlickerStimulationWorkflow.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
+      <Timestamp>2025-03-25T14:37:02.2118449+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
       <Timestamp>2025-01-24T14:34:19.3661422+00:00</Timestamp>
       <Name>D:\Code\MatrixRigs-main\VisualStimuli\DotMotion_StateDependentSpeed_backup.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2025-01-24T13:32:46.9279135+00:00</Timestamp>
       <Name>D:\MatrixRigs-main\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2024-12-17T14:20:19.2012754+00:00</Timestamp>
+      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\SinewaveEnvelope.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2024-12-17T14:12:30.9243584+00:00</Timestamp>

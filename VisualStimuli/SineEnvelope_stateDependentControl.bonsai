@@ -1430,25 +1430,6 @@
         </Builder>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
-        <Property Name="Value" DisplayName="StimulusType" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="StringProperty">
-          <Value>s</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="ExternalizedMapping">
-        <Property Name="Value" DisplayName="StimDuration" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="IntProperty">
-          <Value>2000</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="scr:ExpressionTransform">
-        <scr:Expression>Convert.ToString(it)</scr:Expression>
-      </Expression>
-      <Expression xsi:type="ExternalizedMapping">
         <Property Name="ISI" />
       </Expression>
       <Expression xsi:type="GroupWorkflow">
@@ -1762,10 +1743,46 @@
         </Workflow>
       </Expression>
       <Expression xsi:type="Combinator">
+        <Combinator xsi:type="wie:KeyDown">
+          <wie:Filter>LButton RButton Cancel ShiftKey ControlKey Menu Pause A B C P Q R S Shift</wie:Filter>
+          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="StateTrackingDuration" />
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Value" DisplayName="StimDuration" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="IntProperty">
+          <Value>4000</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="scr:ExpressionTransform">
+        <scr:Expression>Convert.ToString(it)</scr:Expression>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Value" DisplayName="EnvelopeFrequency" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="IntProperty">
+          <Value>1</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="scr:ExpressionTransform">
+        <scr:Expression>Convert.ToString(it)</scr:Expression>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="StringProperty">
+          <Value>se</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
         <Combinator xsi:type="rx:CombineLatest" />
       </Expression>
       <Expression xsi:type="scr:ExpressionTransform">
-        <scr:Expression>Item1+","+Item2+","+Item3</scr:Expression>
+        <scr:Expression>Item1+","+Item2+","+Item3+","+Item4</scr:Expression>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="io:SerialStringWrite">
@@ -1775,15 +1792,6 @@
       </Expression>
       <Expression xsi:type="rx:BehaviorSubject">
         <Name>TrialParams</Name>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="wie:KeyDown">
-          <wie:Filter>LButton RButton Cancel ShiftKey ControlKey Menu Pause A B C P Q R S Shift</wie:Filter>
-          <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="ExternalizedMapping">
-        <Property Name="StateTrackingDuration" />
       </Expression>
       <Expression xsi:type="rx:SelectMany">
         <Workflow>
@@ -3018,23 +3026,25 @@
       <Edge From="24" To="25" Label="Source1" />
       <Edge From="27" To="28" Label="Source1" />
       <Edge From="29" To="30" Label="Source1" />
-      <Edge From="30" To="36" Label="Source1" />
-      <Edge From="31" To="32" Label="Source1" />
-      <Edge From="32" To="33" Label="Source1" />
-      <Edge From="33" To="36" Label="Source2" />
+      <Edge From="30" To="40" Label="Source3" />
+      <Edge From="31" To="47" Label="Source2" />
+      <Edge From="32" To="44" Label="Source2" />
+      <Edge From="33" To="34" Label="Source1" />
       <Edge From="34" To="35" Label="Source1" />
-      <Edge From="35" To="36" Label="Source3" />
+      <Edge From="35" To="40" Label="Source2" />
       <Edge From="36" To="37" Label="Source1" />
       <Edge From="37" To="38" Label="Source1" />
-      <Edge From="38" To="39" Label="Source1" />
-      <Edge From="39" To="42" Label="Source1" />
-      <Edge From="40" To="45" Label="Source2" />
-      <Edge From="41" To="42" Label="Source2" />
+      <Edge From="38" To="40" Label="Source4" />
+      <Edge From="39" To="40" Label="Source1" />
+      <Edge From="40" To="41" Label="Source1" />
+      <Edge From="41" To="42" Label="Source1" />
       <Edge From="42" To="43" Label="Source1" />
       <Edge From="43" To="44" Label="Source1" />
       <Edge From="44" To="45" Label="Source1" />
+      <Edge From="45" To="46" Label="Source1" />
       <Edge From="46" To="47" Label="Source1" />
       <Edge From="48" To="49" Label="Source1" />
+      <Edge From="50" To="51" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
