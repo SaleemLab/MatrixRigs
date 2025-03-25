@@ -199,159 +199,13 @@
           </Edges>
         </Workflow>
       </Expression>
-      <Expression xsi:type="GroupWorkflow">
-        <Name>Logging</Name>
-        <Workflow>
-          <Nodes>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>WheelLogger</Name>
-              <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Overwrite" />
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Suffix" />
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>FilenamePrefix</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value>_Wheel</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>it.Item1+it.Item2</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Take">
-                      <rx:Count>1</rx:Count>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Format">
-                    <Format>{0}.csv</Format>
-                  </Expression>
-                  <Expression xsi:type="PropertyMapping">
-                    <PropertyMappings>
-                      <Property Name="FileName" />
-                    </PropertyMappings>
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Name" />
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>WheelLog</Name>
-                  </Expression>
-                  <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>eddtest_WhiteNoise_Wheel.csv</io:FileName>
-                    <io:Delimiter>,</io:Delimiter>
-                    <io:Append>false</io:Append>
-                    <io:Overwrite>false</io:Overwrite>
-                    <io:Suffix>Timestamp</io:Suffix>
-                    <io:IncludeHeader>true</io:IncludeHeader>
-                    <io:Selector />
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="11" Label="Source2" />
-                  <Edge From="1" To="11" Label="Source3" />
-                  <Edge From="2" To="4" Label="Source1" />
-                  <Edge From="3" To="4" Label="Source2" />
-                  <Edge From="4" To="5" Label="Source1" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source1" />
-                  <Edge From="7" To="8" Label="Source1" />
-                  <Edge From="8" To="11" Label="Source1" />
-                  <Edge From="9" To="10" Label="Source1" />
-                  <Edge From="10" To="11" Label="Source4" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="wie:KeyDown">
-                <wie:Filter>MButton Back Clear D H L Shift</wie:Filter>
-                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:SubscribeWhen" />
-            </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>VideoLogger</Name>
-              <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>VideoLog</Name>
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Overwrite" />
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Suffix" />
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>FilenamePrefix</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value>_Video</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>it.Item1+it.Item2</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Take">
-                      <rx:Count>1</rx:Count>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Format">
-                    <Format>{0}.csv</Format>
-                  </Expression>
-                  <Expression xsi:type="PropertyMapping">
-                    <PropertyMappings>
-                      <Property Name="FileName" />
-                    </PropertyMappings>
-                  </Expression>
-                  <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>eddtest_WhiteNoise_Video.csv</io:FileName>
-                    <io:Delimiter>,</io:Delimiter>
-                    <io:Append>false</io:Append>
-                    <io:Overwrite>false</io:Overwrite>
-                    <io:Suffix>Timestamp</io:Suffix>
-                    <io:IncludeHeader>true</io:IncludeHeader>
-                    <io:Selector />
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="10" Label="Source4" />
-                  <Edge From="1" To="10" Label="Source2" />
-                  <Edge From="2" To="10" Label="Source3" />
-                  <Edge From="3" To="5" Label="Source1" />
-                  <Edge From="4" To="5" Label="Source2" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source1" />
-                  <Edge From="7" To="8" Label="Source1" />
-                  <Edge From="8" To="9" Label="Source1" />
-                  <Edge From="9" To="10" Label="Source1" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:SubscribeWhen" />
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="GroupWorkflow">
-                <Name>PhotodiodeLogger</Name>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="GroupWorkflow">
+          <Name>Logging</Name>
+          <Workflow>
+            <Nodes>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>WheelLogger</Name>
                 <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
                 <Workflow>
                   <Nodes>
@@ -366,7 +220,7 @@
                     </Expression>
                     <Expression xsi:type="Combinator">
                       <Combinator xsi:type="StringProperty">
-                        <Value>_Photodiode</Value>
+                        <Value>_Wheel</Value>
                       </Combinator>
                     </Expression>
                     <Expression xsi:type="Combinator">
@@ -392,10 +246,10 @@
                       <Property Name="Name" />
                     </Expression>
                     <Expression xsi:type="SubscribeSubject">
-                      <Name>PDLog</Name>
+                      <Name>WheelLog</Name>
                     </Expression>
                     <Expression xsi:type="io:CsvWriter">
-                      <io:FileName>edd_test_Photodiode.csv</io:FileName>
+                      <io:FileName>eddtest_WhiteNoise_Wheel.csv</io:FileName>
                       <io:Delimiter>,</io:Delimiter>
                       <io:Append>false</io:Append>
                       <io:Overwrite>false</io:Overwrite>
@@ -418,295 +272,213 @@
                     <Edge From="10" To="11" Label="Source4" />
                   </Edges>
                 </Workflow>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="wie:KeyDown">
+                  <wie:Filter>MButton Back Clear D H L Shift</wie:Filter>
+                  <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+                </Combinator>
+              </Expression>
+              <Expression xsi:type="Combinator">
                 <Combinator xsi:type="rx:SubscribeWhen" />
-              </Builder>
-            </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>TrialLogger</Name>
-              <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>TrialParams</Name>
-                  </Expression>
-                  <Expression xsi:type="Parse">
-                    <Pattern>%s,%i,%i</Pattern>
-                    <Separator />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Timestamp" />
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Timestamp.DateTime.TimeOfDay</Selector>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Overwrite" />
-                  </Expression>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="Suffix" />
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>FilenamePrefix</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value>_TrialParams</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>it.Item1+it.Item2</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Take">
-                      <rx:Count>1</rx:Count>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Format">
-                    <Format>{0}.csv</Format>
-                  </Expression>
-                  <Expression xsi:type="PropertyMapping">
-                    <PropertyMappings>
-                      <Property Name="FileName" />
-                    </PropertyMappings>
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>ArduinoTime</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:WithLatestFrom" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>new(Item1.Item1.Item1 as StimulusType, Item1.Item1.Item2 as StimulusDuration, Item1.Item1.Item3 as UpdateTime, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>eddtest_WhiteNoise_TrialParams.csv</io:FileName>
-                    <io:Delimiter>,</io:Delimiter>
-                    <io:Append>false</io:Append>
-                    <io:Overwrite>false</io:Overwrite>
-                    <io:Suffix>Timestamp</io:Suffix>
-                    <io:IncludeHeader>true</io:IncludeHeader>
-                    <io:Selector />
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="4" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                  <Edge From="2" To="3" Label="Source1" />
-                  <Edge From="3" To="4" Label="Source2" />
-                  <Edge From="4" To="15" Label="Source1" />
-                  <Edge From="5" To="17" Label="Source2" />
-                  <Edge From="6" To="17" Label="Source3" />
-                  <Edge From="7" To="9" Label="Source1" />
-                  <Edge From="8" To="9" Label="Source2" />
-                  <Edge From="9" To="10" Label="Source1" />
-                  <Edge From="10" To="11" Label="Source1" />
-                  <Edge From="11" To="12" Label="Source1" />
-                  <Edge From="12" To="13" Label="Source1" />
-                  <Edge From="13" To="17" Label="Source1" />
-                  <Edge From="14" To="15" Label="Source2" />
-                  <Edge From="15" To="16" Label="Source1" />
-                  <Edge From="16" To="17" Label="Source4" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:SubscribeWhen" />
-            </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>ArduinoStimLogger</Name>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="io:SerialStringRead">
-                      <io:PortName>ArdPWM</io:PortName>
-                      <io:NewLine>\r\n</io:NewLine>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Disable">
-                    <Builder xsi:type="Format">
-                      <Format>{0};</Format>
-                      <Selector />
-                    </Builder>
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>FilenamePrefix</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="StringProperty">
-                      <Value>_ArduinoStimLog</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>it.Item1+it.Item2+".csv"</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="PropertyMapping">
-                    <PropertyMappings>
-                      <Property Name="FileName" />
-                    </PropertyMappings>
-                  </Expression>
-                  <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>eddtest_WhiteNoise_ArduinoStimLog.csv</io:FileName>
-                    <io:ListSeparator />
-                    <io:Append>false</io:Append>
-                    <io:Overwrite>false</io:Overwrite>
-                    <io:Suffix>Timestamp</io:Suffix>
-                    <io:IncludeHeader>false</io:IncludeHeader>
-                    <io:Selector>it</io:Selector>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="7" Label="Source2" />
-                  <Edge From="2" To="4" Label="Source1" />
-                  <Edge From="3" To="4" Label="Source2" />
-                  <Edge From="4" To="5" Label="Source1" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source1" />
-                  <Edge From="7" To="8" Label="Source1" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:SubscribeWhen" />
-            </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>WheelLogging</Name>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>WheelInput</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Timestamp" />
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Timestamp.TimeOfDay.TotalMilliseconds</Selector>
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>LastSyncPulseTime</Name>
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>ArduinoTime</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>RenderFrameCount</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:WithLatestFrom" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>new(Item1.Item1 as Wheel, Item1.Item2 as LastSyncPulseTime, Item1.Item3 as ArduinoTime, Item1.Item4 as BonsaiTime, Item2 as RenderFrameCount)</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="rx:BehaviorSubject">
-                    <Name>WheelLog</Name>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="IntProperty">
-                      <Value>0</Value>
-                    </Combinator>
-                  </Expression>
-                  <Expression xsi:type="MulticastSubject">
-                    <Name>RenderFrameCount</Name>
-                  </Expression>
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="0" To="5" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                  <Edge From="2" To="5" Label="Source4" />
-                  <Edge From="3" To="5" Label="Source2" />
-                  <Edge From="4" To="5" Label="Source3" />
-                  <Edge From="5" To="7" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source2" />
-                  <Edge From="7" To="8" Label="Source1" />
-                  <Edge From="8" To="9" Label="Source1" />
-                  <Edge From="9" To="10" Label="Source1" />
-                  <Edge From="11" To="12" Label="Source1" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>VideoLogging</Name>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>VideoFrameCount</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Timestamp" />
-                  </Expression>
-                  <Expression xsi:type="MemberSelector">
-                    <Selector>Timestamp.TimeOfDay.TotalMilliseconds</Selector>
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>ArduinoTime</Name>
-                  </Expression>
-                  <Expression xsi:type="SubscribeSubject">
-                    <Name>VideoLEDAsync</Name>
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:Zip" />
-                  </Expression>
-                  <Expression xsi:type="Combinator">
-                    <Combinator xsi:type="rx:WithLatestFrom" />
-                  </Expression>
-                  <Expression xsi:type="scr:ExpressionTransform">
-                    <scr:Expression>new(Item1.Item1 as VideoFrameCount, Item1.Item3 as LEDAsync, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
-                  </Expression>
-                  <Expression xsi:type="rx:BehaviorSubject">
-                    <Name>VideoLog</Name>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="0" To="5" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                  <Edge From="2" To="5" Label="Source2" />
-                  <Edge From="3" To="6" Label="Source2" />
-                  <Edge From="4" To="5" Label="Source3" />
-                  <Edge From="5" To="6" Label="Source1" />
-                  <Edge From="6" To="7" Label="Source1" />
-                  <Edge From="7" To="8" Label="Source1" />
-                  <Edge From="8" To="9" Label="Source1" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="GroupWorkflow">
-                <Name>PhotodiodeLogging</Name>
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>VideoLogger</Name>
+                <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
                 <Workflow>
                   <Nodes>
                     <Expression xsi:type="SubscribeSubject">
-                      <Name>PDandAsync</Name>
+                      <Name>VideoLog</Name>
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Overwrite" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Suffix" />
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>FilenamePrefix</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="StringProperty">
+                        <Value>_Video</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Zip" />
+                    </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>it.Item1+it.Item2</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Take">
+                        <rx:Count>1</rx:Count>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Format">
+                      <Format>{0}.csv</Format>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="FileName" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="io:CsvWriter">
+                      <io:FileName>eddtest_WhiteNoise_Video.csv</io:FileName>
+                      <io:Delimiter>,</io:Delimiter>
+                      <io:Append>false</io:Append>
+                      <io:Overwrite>false</io:Overwrite>
+                      <io:Suffix>Timestamp</io:Suffix>
+                      <io:IncludeHeader>true</io:IncludeHeader>
+                      <io:Selector />
+                    </Expression>
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="10" Label="Source4" />
+                    <Edge From="1" To="10" Label="Source2" />
+                    <Edge From="2" To="10" Label="Source3" />
+                    <Edge From="3" To="5" Label="Source1" />
+                    <Edge From="4" To="5" Label="Source2" />
+                    <Edge From="5" To="6" Label="Source1" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="9" Label="Source1" />
+                    <Edge From="9" To="10" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="rx:SubscribeWhen" />
+              </Expression>
+              <Expression xsi:type="Disable">
+                <Builder xsi:type="GroupWorkflow">
+                  <Name>PhotodiodeLogger</Name>
+                  <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
+                  <Workflow>
+                    <Nodes>
+                      <Expression xsi:type="ExternalizedMapping">
+                        <Property Name="Overwrite" />
+                      </Expression>
+                      <Expression xsi:type="ExternalizedMapping">
+                        <Property Name="Suffix" />
+                      </Expression>
+                      <Expression xsi:type="SubscribeSubject">
+                        <Name>FilenamePrefix</Name>
+                      </Expression>
+                      <Expression xsi:type="Combinator">
+                        <Combinator xsi:type="StringProperty">
+                          <Value>_Photodiode</Value>
+                        </Combinator>
+                      </Expression>
+                      <Expression xsi:type="Combinator">
+                        <Combinator xsi:type="rx:Zip" />
+                      </Expression>
+                      <Expression xsi:type="scr:ExpressionTransform">
+                        <scr:Expression>it.Item1+it.Item2</scr:Expression>
+                      </Expression>
+                      <Expression xsi:type="Combinator">
+                        <Combinator xsi:type="rx:Take">
+                          <rx:Count>1</rx:Count>
+                        </Combinator>
+                      </Expression>
+                      <Expression xsi:type="Format">
+                        <Format>{0}.csv</Format>
+                      </Expression>
+                      <Expression xsi:type="PropertyMapping">
+                        <PropertyMappings>
+                          <Property Name="FileName" />
+                        </PropertyMappings>
+                      </Expression>
+                      <Expression xsi:type="ExternalizedMapping">
+                        <Property Name="Name" />
+                      </Expression>
+                      <Expression xsi:type="SubscribeSubject">
+                        <Name>PDLog</Name>
+                      </Expression>
+                      <Expression xsi:type="io:CsvWriter">
+                        <io:FileName>edd_test_Photodiode.csv</io:FileName>
+                        <io:Delimiter>,</io:Delimiter>
+                        <io:Append>false</io:Append>
+                        <io:Overwrite>false</io:Overwrite>
+                        <io:Suffix>Timestamp</io:Suffix>
+                        <io:IncludeHeader>true</io:IncludeHeader>
+                        <io:Selector />
+                      </Expression>
+                    </Nodes>
+                    <Edges>
+                      <Edge From="0" To="11" Label="Source2" />
+                      <Edge From="1" To="11" Label="Source3" />
+                      <Edge From="2" To="4" Label="Source1" />
+                      <Edge From="3" To="4" Label="Source2" />
+                      <Edge From="4" To="5" Label="Source1" />
+                      <Edge From="5" To="6" Label="Source1" />
+                      <Edge From="6" To="7" Label="Source1" />
+                      <Edge From="7" To="8" Label="Source1" />
+                      <Edge From="8" To="11" Label="Source1" />
+                      <Edge From="9" To="10" Label="Source1" />
+                      <Edge From="10" To="11" Label="Source4" />
+                    </Edges>
+                  </Workflow>
+                </Builder>
+              </Expression>
+              <Expression xsi:type="Disable">
+                <Builder xsi:type="Combinator">
+                  <Combinator xsi:type="rx:SubscribeWhen" />
+                </Builder>
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>TrialLogger</Name>
+                <Description>Creates and initializes a CSV file, and matching behavior subject, on which to timestamp and log events.</Description>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>TrialParams</Name>
+                    </Expression>
+                    <Expression xsi:type="Parse">
+                      <Pattern>%s,%i,%i</Pattern>
+                      <Separator />
                     </Expression>
                     <Expression xsi:type="Combinator">
                       <Combinator xsi:type="rx:Timestamp" />
                     </Expression>
                     <Expression xsi:type="MemberSelector">
-                      <Selector>Timestamp.TimeOfDay.TotalMilliseconds</Selector>
+                      <Selector>Timestamp.DateTime.TimeOfDay</Selector>
                     </Expression>
                     <Expression xsi:type="Combinator">
                       <Combinator xsi:type="rx:Zip" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Overwrite" />
+                    </Expression>
+                    <Expression xsi:type="ExternalizedMapping">
+                      <Property Name="Suffix" />
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>FilenamePrefix</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="StringProperty">
+                        <Value>_TrialParams</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Zip" />
+                    </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>it.Item1+it.Item2</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Take">
+                        <rx:Count>1</rx:Count>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Format">
+                      <Format>{0}.csv</Format>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="FileName" />
+                      </PropertyMappings>
                     </Expression>
                     <Expression xsi:type="SubscribeSubject">
                       <Name>ArduinoTime</Name>
@@ -714,48 +486,278 @@
                     <Expression xsi:type="Combinator">
                       <Combinator xsi:type="rx:WithLatestFrom" />
                     </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>new(Item1.Item1.Item1 as StimulusType, Item1.Item1.Item2 as StimulusDuration, Item1.Item1.Item3 as UpdateTime, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="io:CsvWriter">
+                      <io:FileName>eddtest_WhiteNoise_TrialParams.csv</io:FileName>
+                      <io:Delimiter>,</io:Delimiter>
+                      <io:Append>false</io:Append>
+                      <io:Overwrite>false</io:Overwrite>
+                      <io:Suffix>Timestamp</io:Suffix>
+                      <io:IncludeHeader>true</io:IncludeHeader>
+                      <io:Selector />
+                    </Expression>
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="4" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="2" To="3" Label="Source1" />
+                    <Edge From="3" To="4" Label="Source2" />
+                    <Edge From="4" To="15" Label="Source1" />
+                    <Edge From="5" To="17" Label="Source2" />
+                    <Edge From="6" To="17" Label="Source3" />
+                    <Edge From="7" To="9" Label="Source1" />
+                    <Edge From="8" To="9" Label="Source2" />
+                    <Edge From="9" To="10" Label="Source1" />
+                    <Edge From="10" To="11" Label="Source1" />
+                    <Edge From="11" To="12" Label="Source1" />
+                    <Edge From="12" To="13" Label="Source1" />
+                    <Edge From="13" To="17" Label="Source1" />
+                    <Edge From="14" To="15" Label="Source2" />
+                    <Edge From="15" To="16" Label="Source1" />
+                    <Edge From="16" To="17" Label="Source4" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="rx:SubscribeWhen" />
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>ArduinoStimLogger</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="io:SerialStringRead">
+                        <io:PortName>ArdPWM</io:PortName>
+                        <io:NewLine>\r\n</io:NewLine>
+                      </Combinator>
+                    </Expression>
                     <Expression xsi:type="Disable">
-                      <Builder xsi:type="scr:ExpressionTransform">
-                        <scr:Expression>new(Item1.Item1 as Photodiode, Item1.Item2 as AsyncPulse, Item2 as BonsaiTime, Item3 as ArduinoTime)</scr:Expression>
+                      <Builder xsi:type="Format">
+                        <Format>{0};</Format>
+                        <Selector />
                       </Builder>
                     </Expression>
-                    <Expression xsi:type="scr:ExpressionTransform">
-                      <scr:Expression>new(Item1.Item1.Item1 as Photodiode, Item1.Item1.Item2 as AsyncPulse, Item1.Item2 as BonsaiTime, Item2 as ArduinoTime)</scr:Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>FilenamePrefix</Name>
                     </Expression>
-                    <Expression xsi:type="rx:BehaviorSubject">
-                      <Name>PDLog</Name>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="StringProperty">
+                        <Value>_ArduinoStimLog</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Zip" />
+                    </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>it.Item1+it.Item2+".csv"</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="PropertyMapping">
+                      <PropertyMappings>
+                        <Property Name="FileName" />
+                      </PropertyMappings>
+                    </Expression>
+                    <Expression xsi:type="io:CsvWriter">
+                      <io:FileName>eddtest_WhiteNoise_ArduinoStimLog.csv</io:FileName>
+                      <io:ListSeparator />
+                      <io:Append>false</io:Append>
+                      <io:Overwrite>false</io:Overwrite>
+                      <io:Suffix>Timestamp</io:Suffix>
+                      <io:IncludeHeader>false</io:IncludeHeader>
+                      <io:Selector>it</io:Selector>
                     </Expression>
                     <Expression xsi:type="WorkflowOutput" />
                   </Nodes>
                   <Edges>
                     <Edge From="0" To="1" Label="Source1" />
-                    <Edge From="0" To="3" Label="Source1" />
+                    <Edge From="1" To="7" Label="Source2" />
+                    <Edge From="2" To="4" Label="Source1" />
+                    <Edge From="3" To="4" Label="Source2" />
+                    <Edge From="4" To="5" Label="Source1" />
+                    <Edge From="5" To="6" Label="Source1" />
+                    <Edge From="6" To="7" Label="Source1" />
+                    <Edge From="7" To="8" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="rx:SubscribeWhen" />
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>WheelLogging</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>WheelInput</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Timestamp" />
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Timestamp.TimeOfDay.TotalMilliseconds</Selector>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>LastSyncPulseTime</Name>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>ArduinoTime</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Zip" />
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>RenderFrameCount</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:WithLatestFrom" />
+                    </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>new(Item1.Item1 as Wheel, Item1.Item2 as LastSyncPulseTime, Item1.Item3 as ArduinoTime, Item1.Item4 as BonsaiTime, Item2 as RenderFrameCount)</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="rx:BehaviorSubject">
+                      <Name>WheelLog</Name>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="IntProperty">
+                        <Value>0</Value>
+                      </Combinator>
+                    </Expression>
+                    <Expression xsi:type="MulticastSubject">
+                      <Name>RenderFrameCount</Name>
+                    </Expression>
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="0" To="5" Label="Source1" />
                     <Edge From="1" To="2" Label="Source1" />
-                    <Edge From="2" To="3" Label="Source2" />
-                    <Edge From="3" To="5" Label="Source1" />
-                    <Edge From="4" To="5" Label="Source2" />
+                    <Edge From="2" To="5" Label="Source4" />
+                    <Edge From="3" To="5" Label="Source2" />
+                    <Edge From="4" To="5" Label="Source3" />
+                    <Edge From="5" To="7" Label="Source1" />
+                    <Edge From="6" To="7" Label="Source2" />
+                    <Edge From="7" To="8" Label="Source1" />
+                    <Edge From="8" To="9" Label="Source1" />
+                    <Edge From="9" To="10" Label="Source1" />
+                    <Edge From="11" To="12" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Expression>
+              <Expression xsi:type="GroupWorkflow">
+                <Name>VideoLogging</Name>
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>VideoFrameCount</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Timestamp" />
+                    </Expression>
+                    <Expression xsi:type="MemberSelector">
+                      <Selector>Timestamp.TimeOfDay.TotalMilliseconds</Selector>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>ArduinoTime</Name>
+                    </Expression>
+                    <Expression xsi:type="SubscribeSubject">
+                      <Name>VideoLEDAsync</Name>
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:Zip" />
+                    </Expression>
+                    <Expression xsi:type="Combinator">
+                      <Combinator xsi:type="rx:WithLatestFrom" />
+                    </Expression>
+                    <Expression xsi:type="scr:ExpressionTransform">
+                      <scr:Expression>new(Item1.Item1 as VideoFrameCount, Item1.Item3 as LEDAsync, Item2 as ArduinoTime, Item1.Item2 as BonsaiTime)</scr:Expression>
+                    </Expression>
+                    <Expression xsi:type="rx:BehaviorSubject">
+                      <Name>VideoLog</Name>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="0" To="5" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                    <Edge From="2" To="5" Label="Source2" />
+                    <Edge From="3" To="6" Label="Source2" />
+                    <Edge From="4" To="5" Label="Source3" />
                     <Edge From="5" To="6" Label="Source1" />
                     <Edge From="6" To="7" Label="Source1" />
                     <Edge From="7" To="8" Label="Source1" />
                     <Edge From="8" To="9" Label="Source1" />
                   </Edges>
                 </Workflow>
-              </Builder>
-            </Expression>
-          </Nodes>
-          <Edges>
-            <Edge From="0" To="2" Label="Source1" />
-            <Edge From="1" To="2" Label="Source2" />
-            <Edge From="1" To="4" Label="Source2" />
-            <Edge From="1" To="6" Label="Source2" />
-            <Edge From="1" To="8" Label="Source2" />
-            <Edge From="1" To="10" Label="Source2" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="5" To="6" Label="Source1" />
-            <Edge From="7" To="8" Label="Source1" />
-            <Edge From="9" To="10" Label="Source1" />
-          </Edges>
-        </Workflow>
+              </Expression>
+              <Expression xsi:type="Disable">
+                <Builder xsi:type="GroupWorkflow">
+                  <Name>PhotodiodeLogging</Name>
+                  <Workflow>
+                    <Nodes>
+                      <Expression xsi:type="SubscribeSubject">
+                        <Name>PDandAsync</Name>
+                      </Expression>
+                      <Expression xsi:type="Combinator">
+                        <Combinator xsi:type="rx:Timestamp" />
+                      </Expression>
+                      <Expression xsi:type="MemberSelector">
+                        <Selector>Timestamp.TimeOfDay.TotalMilliseconds</Selector>
+                      </Expression>
+                      <Expression xsi:type="Combinator">
+                        <Combinator xsi:type="rx:Zip" />
+                      </Expression>
+                      <Expression xsi:type="SubscribeSubject">
+                        <Name>ArduinoTime</Name>
+                      </Expression>
+                      <Expression xsi:type="Combinator">
+                        <Combinator xsi:type="rx:WithLatestFrom" />
+                      </Expression>
+                      <Expression xsi:type="Disable">
+                        <Builder xsi:type="scr:ExpressionTransform">
+                          <scr:Expression>new(Item1.Item1 as Photodiode, Item1.Item2 as AsyncPulse, Item2 as BonsaiTime, Item3 as ArduinoTime)</scr:Expression>
+                        </Builder>
+                      </Expression>
+                      <Expression xsi:type="scr:ExpressionTransform">
+                        <scr:Expression>new(Item1.Item1.Item1 as Photodiode, Item1.Item1.Item2 as AsyncPulse, Item1.Item2 as BonsaiTime, Item2 as ArduinoTime)</scr:Expression>
+                      </Expression>
+                      <Expression xsi:type="rx:BehaviorSubject">
+                        <Name>PDLog</Name>
+                      </Expression>
+                      <Expression xsi:type="WorkflowOutput" />
+                    </Nodes>
+                    <Edges>
+                      <Edge From="0" To="1" Label="Source1" />
+                      <Edge From="0" To="3" Label="Source1" />
+                      <Edge From="1" To="2" Label="Source1" />
+                      <Edge From="2" To="3" Label="Source2" />
+                      <Edge From="3" To="5" Label="Source1" />
+                      <Edge From="4" To="5" Label="Source2" />
+                      <Edge From="5" To="6" Label="Source1" />
+                      <Edge From="6" To="7" Label="Source1" />
+                      <Edge From="7" To="8" Label="Source1" />
+                      <Edge From="8" To="9" Label="Source1" />
+                    </Edges>
+                  </Workflow>
+                </Builder>
+              </Expression>
+            </Nodes>
+            <Edges>
+              <Edge From="0" To="2" Label="Source1" />
+              <Edge From="1" To="2" Label="Source2" />
+              <Edge From="1" To="4" Label="Source2" />
+              <Edge From="1" To="6" Label="Source2" />
+              <Edge From="1" To="8" Label="Source2" />
+              <Edge From="1" To="10" Label="Source2" />
+              <Edge From="3" To="4" Label="Source1" />
+              <Edge From="5" To="6" Label="Source1" />
+              <Edge From="7" To="8" Label="Source1" />
+              <Edge From="9" To="10" Label="Source1" />
+            </Edges>
+          </Workflow>
+        </Builder>
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>Video</Name>
@@ -1190,35 +1192,53 @@
       <Expression xsi:type="rx:BehaviorSubject">
         <Name>RenderFrameCount</Name>
       </Expression>
-      <Expression xsi:type="ExternalizedMapping">
-        <Property Name="FileName" DisplayName="StimulusCSV" />
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="ExternalizedMapping">
+          <Property Name="FileName" DisplayName="StimulusCSV" />
+        </Builder>
       </Expression>
-      <Expression xsi:type="io:CsvReader">
-        <io:FileName>BacklightModulationStimuli\StimulusGeneration\flickerFreqCSV.csv</io:FileName>
-        <io:ListSeparator>,</io:ListSeparator>
-        <io:ScanPattern>%f</io:ScanPattern>
-        <io:SkipRows>0</io:SkipRows>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="io:CsvReader">
+          <io:FileName>BacklightModulationStimuli\StimulusGeneration\flickerFreqCSV.csv</io:FileName>
+          <io:ListSeparator>,</io:ListSeparator>
+          <io:ScanPattern>%f</io:ScanPattern>
+          <io:SkipRows>0</io:SkipRows>
+        </Builder>
       </Expression>
-      <Expression xsi:type="scr:ExpressionTransform">
-        <scr:Expression>it[0]</scr:Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="scr:ExpressionTransform">
+          <scr:Expression>it[0]</scr:Expression>
+        </Builder>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:ToArray" />
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="rx:ToArray" />
+        </Builder>
       </Expression>
-      <Expression xsi:type="MemberSelector">
-        <Selector>Length</Selector>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="MemberSelector">
+          <Selector>Length</Selector>
+        </Builder>
       </Expression>
-      <Expression xsi:type="rx:BehaviorSubject">
-        <Name>nFreqs</Name>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="rx:BehaviorSubject">
+          <Name>nFreqs</Name>
+        </Builder>
       </Expression>
-      <Expression xsi:type="rx:BehaviorSubject">
-        <Name>FreqArray</Name>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="rx:BehaviorSubject">
+          <Name>FreqArray</Name>
+        </Builder>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:Zip" />
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="rx:Zip" />
+        </Builder>
       </Expression>
-      <Expression xsi:type="rx:BehaviorSubject">
-        <Name>StimulusCSVLoaded</Name>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="rx:BehaviorSubject">
+          <Name>StimulusCSVLoaded</Name>
+        </Builder>
       </Expression>
       <Expression xsi:type="Disable">
         <Builder xsi:type="Combinator">
@@ -1314,96 +1334,100 @@
           </Workflow>
         </Builder>
       </Expression>
-      <Expression xsi:type="ExternalizedMapping">
-        <Property Name="Count" DisplayName="nReps" />
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="ExternalizedMapping">
+          <Property Name="Count" DisplayName="nReps" />
+        </Builder>
       </Expression>
-      <Expression xsi:type="GroupWorkflow">
-        <Name>GenerateRandomStimOrder</Name>
-        <Workflow>
-          <Nodes>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>nFreqs</Name>
-            </Expression>
-            <Expression xsi:type="Subtract">
-              <Operand xsi:type="IntProperty">
-                <Value>1</Value>
-              </Operand>
-            </Expression>
-            <Expression xsi:type="PropertyMapping">
-              <PropertyMappings>
-                <Property Name="RangeMax" />
-              </PropertyMappings>
-            </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>nFreqs</Name>
-            </Expression>
-            <Expression xsi:type="PropertyMapping">
-              <PropertyMappings>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="GroupWorkflow">
+          <Name>GenerateRandomStimOrder</Name>
+          <Workflow>
+            <Nodes>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>nFreqs</Name>
+              </Expression>
+              <Expression xsi:type="Subtract">
+                <Operand xsi:type="IntProperty">
+                  <Value>1</Value>
+                </Operand>
+              </Expression>
+              <Expression xsi:type="PropertyMapping">
+                <PropertyMappings>
+                  <Property Name="RangeMax" />
+                </PropertyMappings>
+              </Expression>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>nFreqs</Name>
+              </Expression>
+              <Expression xsi:type="PropertyMapping">
+                <PropertyMappings>
+                  <Property Name="Count" />
+                </PropertyMappings>
+              </Expression>
+              <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.ParameterRange.bonsai">
+                <RangeMin>0</RangeMin>
+                <RangeMax>10</RangeMax>
+                <Count>11</Count>
+              </Expression>
+              <Expression xsi:type="scr:ExpressionTransform">
+                <scr:Expression>Convert.ToInt32(it)</scr:Expression>
+              </Expression>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>Random</Name>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="num:Permutation" />
+              </Expression>
+              <Expression xsi:type="ExternalizedMapping">
                 <Property Name="Count" />
-              </PropertyMappings>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.ParameterRange.bonsai">
-              <RangeMin>0</RangeMin>
-              <RangeMax>10</RangeMax>
-              <Count>11</Count>
-            </Expression>
-            <Expression xsi:type="scr:ExpressionTransform">
-              <scr:Expression>Convert.ToInt32(it)</scr:Expression>
-            </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>Random</Name>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="num:Permutation" />
-            </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Count" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:RepeatCount">
-                <rx:Count>50</rx:Count>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:ToArray" />
-            </Expression>
-            <Expression xsi:type="rx:BehaviorSubject">
-              <Name>StimIndexArray</Name>
-            </Expression>
-            <Expression xsi:type="MemberSelector">
-              <Selector>Length</Selector>
-            </Expression>
-            <Expression xsi:type="rx:BehaviorSubject">
-              <Name>TotalStimulusCount</Name>
-            </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>StimulusCSVLoaded</Name>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:SubscribeWhen" />
-            </Expression>
-            <Expression xsi:type="WorkflowOutput" />
-          </Nodes>
-          <Edges>
-            <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="2" Label="Source1" />
-            <Edge From="2" To="5" Label="Source1" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="4" To="5" Label="Source2" />
-            <Edge From="5" To="6" Label="Source1" />
-            <Edge From="6" To="8" Label="Source1" />
-            <Edge From="7" To="8" Label="Source2" />
-            <Edge From="8" To="10" Label="Source1" />
-            <Edge From="9" To="10" Label="Source2" />
-            <Edge From="10" To="11" Label="Source1" />
-            <Edge From="11" To="12" Label="Source1" />
-            <Edge From="12" To="13" Label="Source1" />
-            <Edge From="13" To="14" Label="Source1" />
-            <Edge From="14" To="16" Label="Source1" />
-            <Edge From="15" To="16" Label="Source2" />
-            <Edge From="16" To="17" Label="Source1" />
-          </Edges>
-        </Workflow>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="rx:RepeatCount">
+                  <rx:Count>50</rx:Count>
+                </Combinator>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="rx:ToArray" />
+              </Expression>
+              <Expression xsi:type="rx:BehaviorSubject">
+                <Name>StimIndexArray</Name>
+              </Expression>
+              <Expression xsi:type="MemberSelector">
+                <Selector>Length</Selector>
+              </Expression>
+              <Expression xsi:type="rx:BehaviorSubject">
+                <Name>TotalStimulusCount</Name>
+              </Expression>
+              <Expression xsi:type="SubscribeSubject">
+                <Name>StimulusCSVLoaded</Name>
+              </Expression>
+              <Expression xsi:type="Combinator">
+                <Combinator xsi:type="rx:SubscribeWhen" />
+              </Expression>
+              <Expression xsi:type="WorkflowOutput" />
+            </Nodes>
+            <Edges>
+              <Edge From="0" To="1" Label="Source1" />
+              <Edge From="1" To="2" Label="Source1" />
+              <Edge From="2" To="5" Label="Source1" />
+              <Edge From="3" To="4" Label="Source1" />
+              <Edge From="4" To="5" Label="Source2" />
+              <Edge From="5" To="6" Label="Source1" />
+              <Edge From="6" To="8" Label="Source1" />
+              <Edge From="7" To="8" Label="Source2" />
+              <Edge From="8" To="10" Label="Source1" />
+              <Edge From="9" To="10" Label="Source2" />
+              <Edge From="10" To="11" Label="Source1" />
+              <Edge From="11" To="12" Label="Source1" />
+              <Edge From="12" To="13" Label="Source1" />
+              <Edge From="13" To="14" Label="Source1" />
+              <Edge From="14" To="16" Label="Source1" />
+              <Edge From="15" To="16" Label="Source2" />
+              <Edge From="16" To="17" Label="Source1" />
+            </Edges>
+          </Workflow>
+        </Builder>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="Value" DisplayName="StimulusType" />
@@ -1644,16 +1668,16 @@
               <Combinator xsi:type="p1:RandSampleFromIndexedDistribution">
                 <p1:ProbabilityDistributions>
                   <p1:ArrayOfFloat>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
-                    <p1:float>10</p1:float>
+                    <p1:float>0</p1:float>
+                    <p1:float>0</p1:float>
+                    <p1:float>16.6666679</p1:float>
+                    <p1:float>16.6666679</p1:float>
+                    <p1:float>0</p1:float>
+                    <p1:float>16.6666679</p1:float>
+                    <p1:float>16.6666679</p1:float>
+                    <p1:float>0</p1:float>
+                    <p1:float>16.6666679</p1:float>
+                    <p1:float>16.6666679</p1:float>
                   </p1:ArrayOfFloat>
                   <p1:ArrayOfFloat>
                     <p1:float>10</p1:float>
@@ -1742,11 +1766,345 @@
       <Expression xsi:type="scr:ExpressionTransform">
         <scr:Expression>Item1+","+Item2+","+Item3</scr:Expression>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArdPWM</io:PortName>
-          <io:NewLine>\r</io:NewLine>
-        </Combinator>
+      <Expression xsi:type="rx:SelectMany">
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="WorkflowInput">
+              <Name>Source1</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="io:SerialStringWrite">
+                <io:PortName>ArdPWM</io:PortName>
+                <io:NewLine>\r</io:NewLine>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="DueTime" DisplayName="ISI" />
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>StimEnded</Name>
+            </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>ClasifyTrialAndUpdateCounters</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>MovMeanWheelSpeed</Name>
+                  </Expression>
+                  <Expression xsi:type="WorkflowInput">
+                    <Name>Source1</Name>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:TakeUntil" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Average" />
+                  </Expression>
+                  <Expression xsi:type="rx:BehaviorSubject">
+                    <Name>MeanRunSpeed</Name>
+                  </Expression>
+                  <Expression xsi:type="rx:Condition">
+                    <Name>RunTrial?</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="GreaterThan">
+                          <Operand xsi:type="DoubleProperty">
+                            <Value>3</Value>
+                          </Operand>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="IntProperty">
+                      <Value>1</Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="rx:Condition">
+                    <Name>StatTrial?</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="LessThanOrEqual">
+                          <Operand xsi:type="DoubleProperty">
+                            <Value>3</Value>
+                          </Operand>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="IntProperty">
+                      <Value>0</Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Merge" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:First" />
+                  </Expression>
+                  <Expression xsi:type="rx:BehaviorSubject">
+                    <Name>TrialStateClass</Name>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="FloatProperty">
+                      <Value>1</Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="rx:Accumulate" />
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:TakeUntil" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Last" />
+                  </Expression>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="RunMinPropThresh" />
+                  </Expression>
+                  <Expression xsi:type="rx:Condition">
+                    <Name>OverRunThresh?</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="RunMinPropThresh" />
+                        </Expression>
+                        <Expression xsi:type="GreaterThanOrEqual">
+                          <Operand xsi:type="DoubleProperty">
+                            <Value>0.5</Value>
+                          </Operand>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="2" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source2" />
+                        <Edge From="2" To="3" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="FloatProperty">
+                      <Value>1</Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="rx:Accumulate" />
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="StatMaxPropThresh" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="FloatProperty">
+                      <Value>0</Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Merge" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:TakeUntil" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Last" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Zip" />
+                  </Expression>
+                  <Expression xsi:type="Divide" />
+                  <Expression xsi:type="rx:BehaviorSubject">
+                    <Name>RunProp</Name>
+                  </Expression>
+                  <Expression xsi:type="rx:Condition">
+                    <Name>UnderStatThresh?</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="Value" DisplayName="StatMaxPropThresh" />
+                        </Expression>
+                        <Expression xsi:type="LessThanOrEqual">
+                          <Operand xsi:type="DoubleProperty">
+                            <Value>3</Value>
+                          </Operand>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="2" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source2" />
+                        <Edge From="2" To="3" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="FloatProperty">
+                      <Value>1</Value>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="rx:Accumulate" />
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Merge" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:TakeUntil" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Last" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Zip" />
+                  </Expression>
+                  <Expression xsi:type="Divide" />
+                  <Expression xsi:type="rx:BehaviorSubject">
+                    <Name>StatProp</Name>
+                  </Expression>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>TrialCounters</Name>
+                  </Expression>
+                  <Expression xsi:type="PropertyMapping">
+                    <PropertyMappings>
+                      <Property Name="TrialCounterArray" />
+                    </PropertyMappings>
+                  </Expression>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>CurrentStimIndex</Name>
+                  </Expression>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>TrialStateClass</Name>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Zip" />
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="p1:IncrementStateDependentTrialCounter">
+                      <p1:TrialCounterArray>
+                        <p1:ArrayOfInt>
+                          <p1:int>1</p1:int>
+                          <p1:int>1</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>1</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>2</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                        </p1:ArrayOfInt>
+                        <p1:ArrayOfInt>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                          <p1:int>0</p1:int>
+                        </p1:ArrayOfInt>
+                      </p1:TrialCounterArray>
+                    </Combinator>
+                  </Expression>
+                  <Expression xsi:type="MulticastSubject">
+                    <Name>TrialCounters</Name>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:Zip" />
+                  </Expression>
+                  <Expression xsi:type="MulticastSubject">
+                    <Name>MonitorTrialCountsSub</Name>
+                  </Expression>
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="2" Label="Source1" />
+                  <Edge From="0" To="12" Label="Source1" />
+                  <Edge From="0" To="17" Label="Source1" />
+                  <Edge From="0" To="28" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source2" />
+                  <Edge From="1" To="23" Label="Source2" />
+                  <Edge From="1" To="14" Label="Source2" />
+                  <Edge From="1" To="32" Label="Source2" />
+                  <Edge From="2" To="3" Label="Source1" />
+                  <Edge From="3" To="4" Label="Source1" />
+                  <Edge From="4" To="5" Label="Source1" />
+                  <Edge From="4" To="7" Label="Source1" />
+                  <Edge From="5" To="6" Label="Source1" />
+                  <Edge From="6" To="9" Label="Source1" />
+                  <Edge From="7" To="8" Label="Source1" />
+                  <Edge From="8" To="9" Label="Source2" />
+                  <Edge From="9" To="10" Label="Source1" />
+                  <Edge From="10" To="11" Label="Source1" />
+                  <Edge From="12" To="13" Label="Source1" />
+                  <Edge From="13" To="14" Label="Source1" />
+                  <Edge From="14" To="15" Label="Source1" />
+                  <Edge From="15" To="25" Label="Source2" />
+                  <Edge From="15" To="34" Label="Source2" />
+                  <Edge From="16" To="17" Label="Source2" />
+                  <Edge From="17" To="18" Label="Source1" />
+                  <Edge From="18" To="19" Label="Source1" />
+                  <Edge From="19" To="22" Label="Source1" />
+                  <Edge From="20" To="28" Label="Source2" />
+                  <Edge From="21" To="31" Label="Source2" />
+                  <Edge From="21" To="22" Label="Source2" />
+                  <Edge From="22" To="23" Label="Source1" />
+                  <Edge From="23" To="24" Label="Source1" />
+                  <Edge From="24" To="25" Label="Source1" />
+                  <Edge From="25" To="26" Label="Source1" />
+                  <Edge From="26" To="27" Label="Source1" />
+                  <Edge From="28" To="29" Label="Source1" />
+                  <Edge From="29" To="30" Label="Source1" />
+                  <Edge From="30" To="31" Label="Source1" />
+                  <Edge From="31" To="32" Label="Source1" />
+                  <Edge From="32" To="33" Label="Source1" />
+                  <Edge From="33" To="34" Label="Source1" />
+                  <Edge From="34" To="35" Label="Source1" />
+                  <Edge From="35" To="36" Label="Source1" />
+                  <Edge From="37" To="38" Label="Source1" />
+                  <Edge From="38" To="42" Label="Source1" />
+                  <Edge From="39" To="41" Label="Source2" />
+                  <Edge From="39" To="44" Label="Source2" />
+                  <Edge From="40" To="41" Label="Source1" />
+                  <Edge From="40" To="44" Label="Source1" />
+                  <Edge From="41" To="42" Label="Source2" />
+                  <Edge From="42" To="43" Label="Source1" />
+                  <Edge From="43" To="44" Label="Source3" />
+                  <Edge From="44" To="45" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Delay">
+                <rx:DueTime>PT0.5S</rx:DueTime>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="3" To="5" Label="Source1" />
+            <Edge From="5" To="6" Label="Source1" />
+          </Edges>
+        </Workflow>
       </Expression>
       <Expression xsi:type="rx:BehaviorSubject">
         <Name>TrialParams</Name>
