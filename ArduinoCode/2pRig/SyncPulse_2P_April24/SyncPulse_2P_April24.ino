@@ -10,8 +10,8 @@ void setup() {
 
   randomSeed(analogRead(0));
   
-  //Serial.begin(9600);
-  // Serial.setTimeout(5);
+  Serial.begin(9600);
+  Serial.setTimeout(5);
 
   delay(500);
   
