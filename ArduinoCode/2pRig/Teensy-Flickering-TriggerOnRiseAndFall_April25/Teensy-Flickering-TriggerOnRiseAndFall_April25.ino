@@ -38,8 +38,8 @@ int delay_falling = 35500;
 // Spatial fill fraction of 0.9 --> temporal 0.713 --> 11 microseconds is just right for a single U-Turn duration
 
 // New tick rising & falling values for 8KHz scanner (B Scope)
-int pulse_ticks_rising = 7000; 
-int pulse_ticks_falling = 7000;
+int pulse_ticks_rising = 5900; 
+int pulse_ticks_falling = 5900;
 
 int current_time_r, current_time_f, current_time, previous_time;
 int next_rising_pulse_start_tick;
