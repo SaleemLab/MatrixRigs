@@ -5,7 +5,11 @@
 #define WheelPin2 19      // sensor B of rotary encoder (GREY)
 #define SValvePinL 11     // digital pin controlling the left solenoid valve
 #define SValvePinR 12     // digital pin controlling the right solenoid valve
-#define SyncPin 10        // sync pulse pin
+#define SyncPin1 6        // sync pulse pin
+#define SyncPin2 7        // sync pulse pin
+#define SyncPin3 8        // sync pulse pin
+#define SyncPin4 9        // sync pulse pin
+
 #define PhotodiodePin A0  // photoiode analog input
 
 // Serial communication variables
@@ -17,6 +21,7 @@ bool newData = false;
 String FirstChar;
 unsigned long startMillis;  // sample timer that resets each time new data is sent
 unsigned long currentMillis; // rolling timer to check if it's time to send new data
+unsigned long previousMillis; // sample timer that resets every time sync pulse changes
 
 // variables for rotary encoder
 volatile long encoderCount = 0;    // Stores the count from the encoder
@@ -31,8 +36,6 @@ unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
 // lick counter variables
 volatile unsigned int LickCountL = 0;
 volatile unsigned int LickCountR = 0;
-
-
 
 // left reward vars
 int rewardTimeL; // an array to store the received data
@@ -51,6 +54,13 @@ bool TimerFinishedR = false;
 // variable for photodiode value
 int PhotodiodeVal;
 
+// sync pulse vars
+unsigned long waitTime = 0;
+bool isSyncHigh = false;
+int syncPulseOnTime = 500;
+int syncPulseLowerBound = 1000;
+int syncPulseUpperBound = 3500;
+
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////
@@ -66,7 +76,11 @@ void setup() {
   pinMode(SValvePinL, OUTPUT);    // solenoid valve for left port
   pinMode(SValvePinR, OUTPUT);    // solenoid valve for right port
 
-  pinMode(SyncPin, INPUT);        // sync pulse
+  pinMode(SyncPin1, OUTPUT);        // sync pulse
+  pinMode(SyncPin2, OUTPUT);        // sync pulse
+  pinMode(SyncPin3, OUTPUT);        // sync pulse
+  pinMode(SyncPin4, OUTPUT);        // sync pulse
+
 
   pinMode(PhotodiodePin, INPUT);  // Photodiode
 
@@ -83,8 +97,8 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(LickPinL), Lick_CounterL, FALLING);
   attachInterrupt(digitalPinToInterrupt(LickPinR), Lick_CounterR, FALLING);
 
-  // interrupt for sync pulse
-  attachInterrupt(digitalPinToInterrupt(SyncPin), SyncPulse_Receiver, RISING);
+  // interrupt for sync pulse - no longer used
+  //attachInterrupt(digitalPinToInterrupt(SyncPin), SyncPulse_Receiver, RISING);
 
   Serial.begin(1000000);
   Serial.setTimeout(5);
@@ -99,10 +113,35 @@ void setup() {
 void loop() {
   //Check for change in position and send to Serial buffer
 
+  currentMillis = millis();     //get the current "time" (actually the number of milliseconds since the program started)
   
 
-  currentMillis = millis();                   //get the current "time" (actually the number of milliseconds since the program started)
-  if (currentMillis - startMillis >= interval)  //test whether the period has elapsed
+  // update sync pulse
+  if (!isSyncHigh && currentMillis - previousMillis >= waitTime) {
+    // Turn pins HIGH
+    lastSyncPulseTime = currentMillis;
+    digitalWrite(SyncPin1, HIGH);
+    digitalWrite(SyncPin2, HIGH);
+    digitalWrite(SyncPin3, HIGH);
+    digitalWrite(SyncPin4, HIGH);
+
+    previousMillis = currentMillis;
+    waitTime = syncPulseOnTime; // turn sync pulse on for 500ms
+    isSyncHigh = true;
+  }
+  else if (isSyncHigh && currentMillis - previousMillis >= waitTime) {
+    // Turn pins LOW
+    digitalWrite(SyncPin1, LOW);
+    digitalWrite(SyncPin2, LOW);
+    digitalWrite(SyncPin3, LOW);
+    digitalWrite(SyncPin4, LOW);
+
+    previousMillis = currentMillis;
+    waitTime = random(syncPulseLowerBound, syncPulseUpperBound); // get next random interval
+    isSyncHigh = false;
+  }
+  
+  if (currentMillis - startMillis >= interval)  // check whether time to send new serial message
   {
     Serial.print(encoderCount);  // Wheel raw input
     Serial.print(",");
@@ -119,24 +158,26 @@ void loop() {
 
     startMillis = currentMillis;  // reset timer
   }
-
-
-
+  
   GetSerialInput(); // get any serial input
-  if (newData) {
+
+  if (newData) { // action any new serial data
     newData = false;
     ActionSerial();
   }
+
   ActivatePVL(); // activate or deactivate valves
   ActivatePVR();
+
   PhotodiodeVal = analogRead(PhotodiodePin);  // read the photodiode input pin
 
   // get the latest rotary encoder value
   long count;
   count = encoderCount;
 
-
 }
+
+
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
@@ -284,6 +325,6 @@ void Lick_CounterR() {
 /// aSync pulse recording functions ///
 ///////////////////////////////////////
 // Interrupt for when sync signal goes HIGH
-void SyncPulse_Receiver() {
-  lastSyncPulseTime = millis();
-}
+//void SyncPulse_Receiver() {
+//  lastSyncPulseTime = millis();
+//}
