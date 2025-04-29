@@ -1761,15 +1761,15 @@
                     <Property Name="LocationX" />
                   </Expression>
                   <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawGratings.bonsai">
-                    <LocationX>-60</LocationX>
+                    <LocationX>60</LocationX>
                     <LocationY>0</LocationY>
                     <Layer>-1</Layer>
-                    <Angle>240</Angle>
+                    <Angle>60</Angle>
                     <SpatialFrequency>0.04</SpatialFrequency>
                     <TemporalFrequency>2</TemporalFrequency>
                     <Phase>0</Phase>
                     <SquareWave>false</SquareWave>
-                    <Contrast>0.5</Contrast>
+                    <Contrast>1</Contrast>
                     <DutyCycle xsi:nil="true" />
                     <Radius>1</Radius>
                     <Aperture>1</Aperture>
@@ -1778,19 +1778,19 @@
                     <ExtentY>120</ExtentY>
                   </Expression>
                   <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawGratings.bonsai">
-                    <LocationX>-60</LocationX>
+                    <LocationX>60</LocationX>
                     <LocationY>0</LocationY>
                     <Layer>-1</Layer>
-                    <Angle>0</Angle>
+                    <Angle>180</Angle>
                     <SpatialFrequency>0.04</SpatialFrequency>
                     <TemporalFrequency>2</TemporalFrequency>
                     <Phase>0</Phase>
                     <SquareWave>false</SquareWave>
-                    <Contrast>0</Contrast>
+                    <Contrast>1</Contrast>
                     <DutyCycle xsi:nil="true" />
                     <Radius>1</Radius>
                     <Aperture>1</Aperture>
-                    <Opacity>0</Opacity>
+                    <Opacity>0.5</Opacity>
                     <ExtentX>120</ExtentX>
                     <ExtentY>120</ExtentY>
                   </Expression>
@@ -1874,7 +1874,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:RepeatCount">
-                <rx:Count>200</rx:Count>
+                <rx:Count>140</rx:Count>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -3099,7 +3099,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M24018</Value>
+                <Value>M24065</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">

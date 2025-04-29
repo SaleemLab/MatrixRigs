@@ -492,7 +492,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>DotMotion_FastSpeedChange_150</Value>
+                <Value>DotMotion_FastSpeedChange_250</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -500,7 +500,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M24018</Value>
+                <Value>M24065</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -592,9 +592,9 @@
         <LocationY>-32</LocationY>
         <Layer>1</Layer>
         <Angle>0</Angle>
-        <ColorR>1</ColorR>
-        <ColorG>1</ColorG>
-        <ColorB>1</ColorB>
+        <ColorR>0</ColorR>
+        <ColorG>0</ColorG>
+        <ColorB>0</ColorB>
         <ColorA>1</ColorA>
       </Expression>
       <Expression xsi:type="WorkflowInput">
@@ -1037,7 +1037,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
-                            <p1:rndseed>34</p1:rndseed>
+                            <p1:rndseed>3</p1:rndseed>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="SubscribeSubject">
@@ -1249,7 +1249,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="DoubleProperty">
-                            <Value>0.15</Value>
+                            <Value>0.25</Value>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="PropertyMapping">
@@ -1420,7 +1420,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                               </Expression>
                               <Expression xsi:type="Multiply">
                                 <Operand xsi:type="FloatProperty">
-                                  <Value>-1</Value>
+                                  <Value>1</Value>
                                 </Operand>
                               </Expression>
                               <Expression xsi:type="MulticastSubject">
@@ -1718,7 +1718,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="gl:CreateTranslation">
-                                        <gl:X>-120</gl:X>
+                                        <gl:X>120</gl:X>
                                         <gl:Y>0</gl:Y>
                                         <gl:Z>0</gl:Z>
                                       </Combinator>
@@ -1851,7 +1851,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
-                                  <p1:VelocityX>-0.266666681</p1:VelocityX>
+                                  <p1:VelocityX>4.266667</p1:VelocityX>
                                   <p1:VelocityY>0</p1:VelocityY>
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -1933,7 +1933,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                             <p1:right>120</p1:right>
                             <p1:top>60</p1:top>
                             <p1:bottom>-60</p1:bottom>
-                            <p1:rndseed>133</p1:rndseed>
+                            <p1:rndseed>102</p1:rndseed>
                           </Combinator>
                         </Expression>
                         <Expression xsi:type="Combinator">
@@ -2017,7 +2017,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="gl:CreateTranslation">
-                                        <gl:X>-120</gl:X>
+                                        <gl:X>120</gl:X>
                                         <gl:Y>0</gl:Y>
                                         <gl:Z>0</gl:Z>
                                       </Combinator>
@@ -2150,7 +2150,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                               </Expression>
                               <Expression xsi:type="Combinator">
                                 <Combinator xsi:type="p1:moveDots_2dLife">
-                                  <p1:VelocityX>-0.266666681</p1:VelocityX>
+                                  <p1:VelocityX>4.266667</p1:VelocityX>
                                   <p1:VelocityY>0</p1:VelocityY>
                                   <p1:Coherence>100</p1:Coherence>
                                   <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3558,7 +3558,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                     <Name>WheelLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_DotMotion_FastSpeedChange_250_Wheel.csv</io:FileName>
+                    <io:FileName>M24065_DotMotion_FastSpeedChange_250_Wheel.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -3633,7 +3633,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_DotMotion_FastSpeedChange_250_Video.csv</io:FileName>
+                    <io:FileName>M24065_DotMotion_FastSpeedChange_250_Video.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -3704,7 +3704,7 @@ Item3.Item6 as Coherence2)</p2:Expression>
                     <Name>PDLog</Name>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_DotMotion_FastSpeedChange_250_Photodiode.csv</io:FileName>
+                    <io:FileName>M24065_DotMotion_FastSpeedChange_250_Photodiode.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -3793,7 +3793,7 @@ Item1.Item2 as BonsaiTime,
 Item2 as ArduinoTime)</scr:Expression>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>M24018_DotMotion_FastSpeedChange_250_TrialParams.csv</io:FileName>
+                    <io:FileName>M24065_DotMotion_FastSpeedChange_250_TrialParams.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -4131,7 +4131,7 @@ Item2 as ArduinoTime)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
-                <cv:FileName>M24018_DotMotion_FastSpeedChange_250_video.avi</cv:FileName>
+                <cv:FileName>M24065_DotMotion_FastSpeedChange_250_video.avi</cv:FileName>
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
