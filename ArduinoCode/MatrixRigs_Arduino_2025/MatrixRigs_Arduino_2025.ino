@@ -5,15 +5,13 @@
 #define WheelPin2 19      // sensor B of rotary encoder (GREY)
 #define SValvePinL 11     // digital pin controlling the left solenoid valve
 #define SValvePinR 12     // digital pin controlling the right solenoid valve
-#define SyncPin1 6        // sync pulse pin
-#define SyncPin2 7        // sync pulse pin
-#define SyncPin3 8        // sync pulse pin
-#define SyncPin4 9        // sync pulse pin
+#define SyncPin 6        // sync pulse pin
+
 
 #define PhotodiodePin A0  // photoiode analog input
 
 // Serial communication variables
-float samplingFrequency = 100; // frequency to send new values to computer
+float samplingFrequency = 100`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; // frequency to send new values to computer
 const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values
 const byte numChars = 30;
 char receivedChars[numChars];  // an array to store the received data
@@ -76,11 +74,7 @@ void setup() {
   pinMode(SValvePinL, OUTPUT);    // solenoid valve for left port
   pinMode(SValvePinR, OUTPUT);    // solenoid valve for right port
 
-  pinMode(SyncPin1, OUTPUT);        // sync pulse
-  pinMode(SyncPin2, OUTPUT);        // sync pulse
-  pinMode(SyncPin3, OUTPUT);        // sync pulse
-  pinMode(SyncPin4, OUTPUT);        // sync pulse
-
+  pinMode(SyncPin, OUTPUT);        // sync pulse
 
   pinMode(PhotodiodePin, INPUT);  // Photodiode
 
@@ -120,10 +114,7 @@ void loop() {
   if (!isSyncHigh && currentMillis - previousMillis >= waitTime) {
     // Turn pins HIGH
     lastSyncPulseTime = currentMillis;
-    digitalWrite(SyncPin1, HIGH);
-    digitalWrite(SyncPin2, HIGH);
-    digitalWrite(SyncPin3, HIGH);
-    digitalWrite(SyncPin4, HIGH);
+    digitalWrite(SyncPin, HIGH);
 
     previousMillis = currentMillis;
     waitTime = syncPulseOnTime; // turn sync pulse on for 500ms
@@ -131,10 +122,7 @@ void loop() {
   }
   else if (isSyncHigh && currentMillis - previousMillis >= waitTime) {
     // Turn pins LOW
-    digitalWrite(SyncPin1, LOW);
-    digitalWrite(SyncPin2, LOW);
-    digitalWrite(SyncPin3, LOW);
-    digitalWrite(SyncPin4, LOW);
+    digitalWrite(SyncPin, LOW);
 
     previousMillis = currentMillis;
     waitTime = random(syncPulseLowerBound, syncPulseUpperBound); // get next random interval
