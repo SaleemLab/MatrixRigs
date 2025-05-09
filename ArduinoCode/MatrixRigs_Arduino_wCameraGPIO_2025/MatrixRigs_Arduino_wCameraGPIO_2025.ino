@@ -11,7 +11,7 @@
 #define PhotodiodePin A0  // photoiode analog input
 
 // Serial communication variables
-float samplingFrequency = 100`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; // frequency to send new values to computer
+float samplingFrequency = 120;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; // frequency to send new values to computer
 const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values
 const byte numChars = 30;
 char receivedChars[numChars];  // an array to store the received data
@@ -27,9 +27,9 @@ volatile uint8_t lastEncoded = 0;  // Holds the previous state of the encoder
 
 
 // event time variables (async pulse, camera frame times)
-unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
-unsigned long lastBodyCamFrameTime;
-unsigned long lastFaceCamFrameTime;
+volatile unsigned long lastSyncPulseTime;    // updates each time async pulse goes HIGH
+volatile unsigned long lastBodyCamFrameTime;
+volatile unsigned long lastFaceCamFrameTime;
 //unsigned long lastLeftLickTime;  // [not currently used] updates each time left lick detector goes LOW
 //unsigned long lastRightLickTime;   // updates each time right lick detector goes LOW
 
@@ -143,14 +143,14 @@ void loop() {
   {
     Serial.print(encoderCount);  // Wheel raw input
     Serial.print(",");
-    Serial.print(LickCountL);  // timestamp of last left lick was detected
+    Serial.print(lastFaceCamFrameTime);  // timestamp of last left lick was detected
     Serial.print(",");
-    Serial.print(LickCountR);  // last timestmap a right lick was detected
+    Serial.print(lastBodyCamFrameTime);  // last timestmap a right lick was detected
     Serial.print(",");
     Serial.print(lastSyncPulseTime);  // last time a HIGH async pulse value was detected
     Serial.print(",");
-    Serial.print(PhotodiodeVal); // most recent photodiode value (we probably want to use a separate arduino for this, to sample at 1kHz+)
-    Serial.print(",");
+    //Serial.print(PhotodiodeVal); // most recent photodiode value (we probably want to use a separate arduino for this, to sample at 1kHz+)
+    //Serial.print(",");
     Serial.print(currentMillis);  // Arduino timestamp for these values (mainly relevant for wheel)
     Serial.print("\n");
 
@@ -323,10 +323,12 @@ void Lick_CounterR() {
 /// Camera frame time recording functions ///
 /////////////////////////////////////
 void FaceCam_Receiver() {
+  //Serial.println("trigger");
   lastFaceCamFrameTime = millis();
 }
 
 void BodyCam_Receiver() {
+  //Serial.println("trigger");
   lastBodyCamFrameTime = millis();
 }
 
