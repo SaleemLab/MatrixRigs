@@ -11,7 +11,7 @@
 #define PhotodiodePin A0  // photoiode analog input
 
 // Serial communication variables
-float samplingFrequency = 100`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; // frequency to send new values to computer
+float samplingFrequency = 100; // frequency to send new values to computer
 const long interval = 1000 / (samplingFrequency);  // sampling interval to send new values
 const byte numChars = 30;
 char receivedChars[numChars];  // an array to store the received data
