@@ -1,6 +1,6 @@
 // define the pins that hardware are connected to
 #define LickPinL 2        // digital pin of lick detector
-#define LickPinR 3        // digital pin of lick detector
+#define LickPinR 3          // digital pin of lick detector
 #define WheelPin1 18      // sensor A of rotary encoder (GREEN)
 #define WheelPin2 19      // sensor B of rotary encoder (GREY)
 #define SValvePinL 11     // digital pin controlling the left solenoid valve

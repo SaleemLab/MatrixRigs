@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WorkflowBuilder Version="2.7.1"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:ipy="clr-namespace:Bonsai.Scripting.IronPython;assembly=Bonsai.Scripting.IronPython"
+                 xmlns="https://bonsai-rx.org/2018/workflow">
+  <Workflow>
+    <Nodes>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="StimulusID" Category="Filename" />
+        <Property Name="MouseID" Category="Filename" />
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Generate File Names</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="StimulusID" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>tf_tuning_hab</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="MouseID" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>test</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>DateDir</Name>
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="SavingDirBase" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="StringProperty">
+                <Value>D:\</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Zip" />
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{2}\Data\{1}\{3}\{0}_{1}</Format>
+              <Selector>Item1,Item2,Item3,Item4</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>FilenamePrefix</Name>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>FilenamePrefix</Name>
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{0}_WheelLog.csv</Format>
+              <Selector>it</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>WheelName</Name>
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{0}_Trial.csv</Format>
+              <Selector>it</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>TrialName</Name>
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{0}_Video.csv</Format>
+              <Selector>it</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>VideoCSVName</Name>
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{0}_FaceVideo.avi</Format>
+              <Selector>it</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>FaceVideoName</Name>
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{0}_BodyVideo.avi</Format>
+              <Selector>it</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>BodyVideoName</Name>
+            </Expression>
+            <Expression xsi:type="Format">
+              <Format>{0}_ArduinoStim.csv</Format>
+              <Selector>it</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>PWMCSVName</Name>
+            </Expression>
+            <Expression xsi:type="ipy:PythonSource">
+              <ipy:Script>from System import DateTime,String
+
+@returns(String)
+def generate(): 
+  yield (DateTime.Now).ToString("yyyyMMdd")</ipy:Script>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>DateDir</Name>
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="7" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="7" Label="Source2" />
+            <Edge From="4" To="7" Label="Source4" />
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source3" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="10" To="13" Label="Source1" />
+            <Edge From="10" To="15" Label="Source1" />
+            <Edge From="10" To="17" Label="Source1" />
+            <Edge From="10" To="19" Label="Source1" />
+            <Edge From="10" To="21" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="15" To="16" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
+            <Edge From="19" To="20" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="23" To="24" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+    </Nodes>
+    <Edges>
+      <Edge From="0" To="1" Label="Source1" />
+    </Edges>
+  </Workflow>
+</WorkflowBuilder>
