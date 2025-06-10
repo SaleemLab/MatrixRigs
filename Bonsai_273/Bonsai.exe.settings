@@ -3,107 +3,111 @@
   <WindowState>Normal</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>-954</X>
-    <Y>367</Y>
-    <Width>1909</Width>
-    <Height>1030</Height>
+    <X>-8</X>
+    <Y>0</Y>
+    <Width>1116</Width>
+    <Height>701</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
     <RecentlyUsedFile>
-      <Timestamp>2025-06-06T17:29:37.8954014+01:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\Bonsai_VR_navigation\Dot corridor closed loop_2024\DotCorridor_ClosedLoop_masa.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T17:10:17.1829178+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\SineEnvelope_stateDependentControl.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T17:04:53.9694654+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\SineFlicker_stateDependentControl.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T16:47:58.8474702+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FlickerStimulationWorkflow_v3.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T16:39:03.1268622+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\ContrastCarrier_stateDependentControl.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T16:38:52.4572061+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\Ganzfeld_stateDependentControl.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:44:48.9909800+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\Ganzfeld_stateDependentControl.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:42:32.6580386+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\Ganzfeld_stateDependentControl.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:38:54.6800928+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FlickerStimulationWorkflow_v2.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:38:00.3560628+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\FlickerStimulationWorkflow.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-03-25T14:37:02.2118449+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-01-24T14:34:19.3661422+00:00</Timestamp>
-      <Name>D:\Code\MatrixRigs-main\VisualStimuli\DotMotion_StateDependentSpeed_backup.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-01-24T13:32:46.9279135+00:00</Timestamp>
-      <Name>D:\MatrixRigs-main\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-12-17T14:20:19.2012754+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\SinewaveEnvelope.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-12-17T14:12:30.9243584+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\WhiteNoiseStimulus.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-12-12T17:10:58.6462545+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\LEDStimulation\BonsaiCode\FrozenWhiteNoiseStimulus.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-12-12T17:01:46.0015949+00:00</Timestamp>
-      <Name>C:\Users\saleemlab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\WhiteNoiseStimulus.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2024-12-03T16:44:05.3073908+00:00</Timestamp>
+      <Timestamp>2025-06-10T14:51:32.5927609+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2024-12-03T15:47:45.8627898+00:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\Checkboard_MatrixRigs.bonsai</Name>
+      <Timestamp>2025-06-10T14:17:34.6914053+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DriftingGratingsAndPlaids_MatrixRigs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2024-12-03T15:46:54.7738319+00:00</Timestamp>
+      <Timestamp>2025-06-10T14:13:15.1434681+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DriftingGratingsAndPlaids_RSVP_MatrixRigs.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-06-10T14:12:16.8073097+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\DotCorridorTask\BonsaiWorkflows\DotCorridor_training_refactor_integration.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-06-10T14:10:33.5645505+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\DotCorridorTask\BonsaiWorkflows\DotCorridor_training.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-05-23T17:48:02.2603665+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\visual_stimuli\SparseNoiseTexture_MatrixRigs.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-05-23T14:47:31.5957009+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_SpeedTuning_MatrixRigs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2024-12-03T13:53:53.8082550+00:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\FrozenWhiteNoiseStimulus_backup.bonsai</Name>
+      <Timestamp>2025-05-23T14:25:32.2642933+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\visual_stimuli\Checkboard_MatrixRigs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2024-12-03T13:44:03.2463429+00:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\FrozenWhiteNoiseStimulus.bonsai</Name>
+      <Timestamp>2025-05-23T14:03:41.3491927+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\SparseNoiseTexture_MatrixRigs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2024-12-03T13:42:40.7886260+00:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\BacklightModulationStimuli\StimulusGeneration\WhiteNoiseStimulus.bonsai</Name>
+      <Timestamp>2025-05-07T13:14:10.8853315+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Dot corridor closed loop_2024\DotCorridor_ClosedLoop_masa.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2024-12-03T13:37:30.2810564+00:00</Timestamp>
+      <Timestamp>2025-05-07T13:13:56.3393746+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\EH_Speed2D.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-04-03T17:12:56.9288814+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\solenoid_testing.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-20T14:52:02.5285868+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\DT_VR_training_room -novel.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-19T11:57:08.2352276+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\DT_VR_training_room -novel - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-09T16:23:30.4311879+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\DT_VR_training_room -novel - Copy - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-03-08T14:11:41.8362273+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\DT_VR_training_room - Copy - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-22T15:01:04.9778913+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\DT_VR_training_room - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-18T10:49:33.4235022+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_ephys_2024\CorridorVR_Two_tracks_training_room_ephys - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-18T09:20:17.3962210+00:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_ephys_2024\solenoid_testing.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-17T09:28:28.0605590+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_ephys_2024\CorridorVR_Two_tracks_training_room_ephys - Copy - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-16T17:54:46.0877737+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\DT_VR_training_room.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-11T09:27:49.1309169+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_ephys_2024\CorridorVR_Two_tracks_training_room_ephys_Novel_Both_with_blanks.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-10T12:47:57.2013010+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed_backup.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-08T10:49:22.4563498+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_ephys_2024\CorridorVR_Two_tracks_training_room_ephys_Novel_Both - Copy.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-02-05T12:21:25.4949236+00:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Masa_two_tracks_test_ephys_2024\CorridorVR_Two_tracks_training_room_ephys_Novel_Left.bonsai</Name>
     </RecentlyUsedFile>
   </RecentlyUsedFiles>
 </EditorSettings>
