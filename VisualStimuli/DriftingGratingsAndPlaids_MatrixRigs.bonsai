@@ -2998,7 +2998,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
               <Combinator xsi:type="rx:Zip" />
             </Expression>
             <Expression xsi:type="Format">
-              <Format>{2}\Data\{1}\{3}\{0}_{1}</Format>
+              <Format>{2}\Data\{0}\{3}\{0}_{1}</Format>
               <Selector>Item1,Item2,Item3,Item4</Selector>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
@@ -3062,9 +3062,9 @@ def generate():
           </Nodes>
           <Edges>
             <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="7" Label="Source1" />
+            <Edge From="1" To="7" Label="Source2" />
             <Edge From="2" To="3" Label="Source1" />
-            <Edge From="3" To="7" Label="Source2" />
+            <Edge From="3" To="7" Label="Source1" />
             <Edge From="4" To="7" Label="Source4" />
             <Edge From="5" To="6" Label="Source1" />
             <Edge From="6" To="7" Label="Source3" />
