@@ -1531,7 +1531,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -1750,7 +1750,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -1941,7 +1941,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2135,7 +2135,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -2326,7 +2326,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2520,7 +2520,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -2706,7 +2706,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2903,7 +2903,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3179,7 +3179,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -3398,7 +3398,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3589,7 +3589,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -3783,7 +3783,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3974,7 +3974,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4168,7 +4168,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -4354,7 +4354,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-13.83459</Value>
+                                        <Value>-11.0925989</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4551,7 +4551,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>0</p1:VelocityX>
+                                        <p1:VelocityX>-11.0925989</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
