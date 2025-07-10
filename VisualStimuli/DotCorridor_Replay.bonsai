@@ -1531,7 +1531,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -1750,7 +1750,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -1941,7 +1941,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2135,7 +2135,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -2326,7 +2326,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2520,7 +2520,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -2706,7 +2706,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2903,7 +2903,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3179,7 +3179,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -3398,7 +3398,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3589,7 +3589,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -3783,7 +3783,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -3974,7 +3974,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4168,7 +4168,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -4354,7 +4354,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-13.83459</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4551,7 +4551,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>0</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
@@ -6600,97 +6600,125 @@ def process(value):
                 <Value>-1</Value>
               </Operand>
             </Expression>
-            <Expression xsi:type="rx:BehaviorSubject">
-              <Name>MovMeanWheelSpeed</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:BehaviorSubject">
+                <Name>MovMeanWheelSpeed</Name>
+              </Builder>
             </Expression>
-            <Expression xsi:type="rx:Condition">
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="WorkflowInput">
-                    <Name>Source1</Name>
-                  </Expression>
-                  <Expression xsi:type="GreaterThan">
-                    <Operand xsi:type="DoubleProperty">
-                      <Value>3</Value>
-                    </Operand>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                </Edges>
-              </Workflow>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:Condition">
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="GreaterThan">
+                      <Operand xsi:type="DoubleProperty">
+                        <Value>3</Value>
+                      </Operand>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="IntProperty">
-                <Value>1</Value>
-              </Combinator>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="IntProperty">
+                  <Value>1</Value>
+                </Combinator>
+              </Builder>
             </Expression>
-            <Expression xsi:type="rx:Condition">
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="WorkflowInput">
-                    <Name>Source1</Name>
-                  </Expression>
-                  <Expression xsi:type="LessThanOrEqual">
-                    <Operand xsi:type="DoubleProperty">
-                      <Value>3</Value>
-                    </Operand>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                </Edges>
-              </Workflow>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="rx:Condition">
+                <Workflow>
+                  <Nodes>
+                    <Expression xsi:type="WorkflowInput">
+                      <Name>Source1</Name>
+                    </Expression>
+                    <Expression xsi:type="LessThanOrEqual">
+                      <Operand xsi:type="DoubleProperty">
+                        <Value>3</Value>
+                      </Operand>
+                    </Expression>
+                    <Expression xsi:type="WorkflowOutput" />
+                  </Nodes>
+                  <Edges>
+                    <Edge From="0" To="1" Label="Source1" />
+                    <Edge From="1" To="2" Label="Source1" />
+                  </Edges>
+                </Workflow>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="IntProperty">
-                <Value>0</Value>
-              </Combinator>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="IntProperty">
+                  <Value>0</Value>
+                </Combinator>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Merge" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="rx:Merge" />
+              </Builder>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>CurrentState</Name>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:SampleOnRenderFrame" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="gl:SampleOnRenderFrame" />
+              </Builder>
             </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Overwrite" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="ExternalizedMapping">
+                <Property Name="Overwrite" />
+              </Builder>
             </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Suffix" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="ExternalizedMapping">
+                <Property Name="Suffix" />
+              </Builder>
             </Expression>
-            <Expression xsi:type="SubscribeSubject">
-              <Name>WheelReplayName</Name>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="SubscribeSubject">
+                <Name>WheelReplayName</Name>
+              </Builder>
             </Expression>
-            <Expression xsi:type="PropertyMapping">
-              <PropertyMappings>
-                <Property Name="FileName" />
-              </PropertyMappings>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="PropertyMapping">
+                <PropertyMappings>
+                  <Property Name="FileName" />
+                </PropertyMappings>
+              </Builder>
             </Expression>
-            <Expression xsi:type="io:CsvWriter">
-              <io:FileName>C:\Data\Data\DotCorridor_ClosedLoop\20250710\test_DotCorridor_ClosedLoop_WheelReplay.csv</io:FileName>
-              <io:Delimiter>,</io:Delimiter>
-              <io:Append>false</io:Append>
-              <io:Overwrite>false</io:Overwrite>
-              <io:Suffix>Timestamp</io:Suffix>
-              <io:IncludeHeader>true</io:IncludeHeader>
-              <io:Selector />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="io:CsvWriter">
+                <io:FileName>C:\Data\Data\DotCorridor_ClosedLoop\20250710\test_DotCorridor_ClosedLoop_WheelReplay.csv</io:FileName>
+                <io:Delimiter>,</io:Delimiter>
+                <io:Append>false</io:Append>
+                <io:Overwrite>false</io:Overwrite>
+                <io:Suffix>Timestamp</io:Suffix>
+                <io:IncludeHeader>false</io:IncludeHeader>
+                <io:Selector>it</io:Selector>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="wie:KeyDown">
-                <wie:Filter>LButton RButton Cancel ShiftKey ControlKey Menu Pause A B C P Q R S Shift</wie:Filter>
-                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
-              </Combinator>
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="wie:KeyDown">
+                  <wie:Filter>LButton RButton Cancel ShiftKey ControlKey Menu Pause A B C P Q R S Shift</wie:Filter>
+                  <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+                </Combinator>
+              </Builder>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:SubscribeWhen" />
+            <Expression xsi:type="Disable">
+              <Builder xsi:type="Combinator">
+                <Combinator xsi:type="rx:SubscribeWhen" />
+              </Builder>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
               <Property Name="Value" DisplayName="TicksPerRev" />
@@ -6726,6 +6754,94 @@ def process(value):
             <Expression xsi:type="Divide" />
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>cmPerTick</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateFrame" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="IntProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:Accumulate" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="wie:KeyDown">
+                <wie:Filter>LButton RButton Cancel ShiftKey ControlKey Menu Pause A B C P Q R S Shift</wie:Filter>
+                <wie:SuppressRepetitions>false</wie:SuppressRepetitions>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="SubscribeSubject">
+              <Name>WheelToReplay</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:CombineLatest" />
+            </Expression>
+            <Expression xsi:type="rx:TakeWhile">
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="WorkflowInput">
+                    <Name>Source1</Name>
+                  </Expression>
+                  <Expression xsi:type="MemberSelector">
+                    <Selector>Item1.Length</Selector>
+                  </Expression>
+                  <Expression xsi:type="MemberSelector">
+                    <Selector>Item2</Selector>
+                  </Expression>
+                  <Expression xsi:type="Combinator">
+                    <Combinator xsi:type="rx:CombineLatest" />
+                  </Expression>
+                  <Expression xsi:type="LessThan" />
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="0" To="2" Label="Source1" />
+                  <Edge From="1" To="3" Label="Source2" />
+                  <Edge From="2" To="3" Label="Source1" />
+                  <Edge From="3" To="4" Label="Source1" />
+                  <Edge From="4" To="5" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="scr:ExpressionTransform">
+              <scr:Expression>Item1[Item2]</scr:Expression>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>MovMeanWheelSpeed</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:SubscribeWhen" />
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="FileName" />
+            </Expression>
+            <Expression xsi:type="io:CsvReader">
+              <io:FileName>C:\Data\Data\exampleData\20250710\exampleData_DotCorridor_ClosedLoop_WheelReplay2025-07-10T10_42_51.csv</io:FileName>
+              <io:SkipRows>0</io:SkipRows>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Skip">
+                <rx:Count>1</rx:Count>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Parse">
+              <Pattern>%d</Pattern>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ToArray" />
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>WheelToReplay</Name>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Length</Selector>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>nFrames</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateFrame" />
             </Expression>
           </Nodes>
           <Edges>
@@ -6778,6 +6894,22 @@ def process(value):
             <Edge From="45" To="46" Label="Source1" />
             <Edge From="46" To="47" Label="Source1" />
             <Edge From="47" To="48" Label="Source1" />
+            <Edge From="49" To="50" Label="Source1" />
+            <Edge From="50" To="51" Label="Source1" />
+            <Edge From="51" To="54" Label="Source2" />
+            <Edge From="52" To="58" Label="Source2" />
+            <Edge From="53" To="54" Label="Source1" />
+            <Edge From="54" To="55" Label="Source1" />
+            <Edge From="55" To="56" Label="Source1" />
+            <Edge From="56" To="57" Label="Source1" />
+            <Edge From="57" To="58" Label="Source1" />
+            <Edge From="59" To="60" Label="Source1" />
+            <Edge From="60" To="61" Label="Source1" />
+            <Edge From="61" To="62" Label="Source1" />
+            <Edge From="62" To="63" Label="Source1" />
+            <Edge From="63" To="64" Label="Source1" />
+            <Edge From="64" To="65" Label="Source1" />
+            <Edge From="65" To="66" Label="Source1" />
           </Edges>
         </Workflow>
       </Expression>
@@ -6809,7 +6941,7 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>exampleData</Value>
+                <Value>test</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
