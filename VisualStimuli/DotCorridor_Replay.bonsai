@@ -5208,10 +5208,33 @@ Item4.Item2 as transXR)</scr:Expression>
         <Combinator xsi:type="rx:SubscribeWhen" />
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="gl:UpdateFrame" />
+        <Combinator xsi:type="p2:CreateContinuousUniform">
+          <p2:Lower>200000</p2:Lower>
+          <p2:Upper>500000</p2:Upper>
+        </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="FloatProperty">
+        <Combinator xsi:type="num:Permutation" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="p2:Sample" />
+      </Expression>
+      <Expression xsi:type="PropertyMapping">
+        <PropertyMappings>
+          <Property Name="DueTime" />
+        </PropertyMappings>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Timer">
+          <rx:DueTime>PT0.0368053S</rx:DueTime>
+          <rx:Period>PT0S</rx:Period>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Repeat" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="IntProperty">
           <Value>1</Value>
         </Combinator>
       </Expression>
@@ -5220,6 +5243,17 @@ Item4.Item2 as transXR)</scr:Expression>
         <Operand xsi:type="IntProperty">
           <Value>2</Value>
         </Operand>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="IntProperty">
+          <Value>1</Value>
+        </Combinator>
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="rx:Merge" />
+      </Expression>
+      <Expression xsi:type="Combinator">
+        <Combinator xsi:type="gl:SampleOnUpdateFrame" />
       </Expression>
       <Expression xsi:type="MulticastSubject">
         <Name>QuadState</Name>
@@ -8280,7 +8314,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
       <Edge From="2" To="4" Label="Source1" />
       <Edge From="5" To="8" Label="Source1" />
       <Edge From="6" To="9" Label="Source2" />
-      <Edge From="6" To="15" Label="Source2" />
+      <Edge From="6" To="23" Label="Source2" />
       <Edge From="7" To="8" Label="Source2" />
       <Edge From="8" To="9" Label="Source1" />
       <Edge From="10" To="11" Label="Source1" />
@@ -8288,23 +8322,31 @@ Item3.Item3 as Coherence2)</scr:Expression>
       <Edge From="12" To="13" Label="Source1" />
       <Edge From="13" To="14" Label="Source1" />
       <Edge From="14" To="15" Label="Source1" />
+      <Edge From="15" To="16" Label="Source1" />
+      <Edge From="16" To="17" Label="Source1" />
+      <Edge From="17" To="18" Label="Source1" />
       <Edge From="18" To="20" Label="Source1" />
       <Edge From="19" To="20" Label="Source2" />
+      <Edge From="20" To="21" Label="Source1" />
       <Edge From="21" To="22" Label="Source1" />
-      <Edge From="24" To="27" Label="Source1" />
-      <Edge From="25" To="26" Label="Source1" />
-      <Edge From="26" To="27" Label="Source2" />
-      <Edge From="28" To="30" Label="Source1" />
-      <Edge From="29" To="30" Label="Source2" />
-      <Edge From="31" To="34" Label="Source1" />
-      <Edge From="32" To="33" Label="Source1" />
-      <Edge From="33" To="34" Label="Source2" />
-      <Edge From="35" To="36" Label="Source1" />
-      <Edge From="36" To="37" Label="Source1" />
-      <Edge From="38" To="39" Label="Source1" />
-      <Edge From="39" To="40" Label="Source1" />
-      <Edge From="42" To="44" Label="Source1" />
-      <Edge From="43" To="44" Label="Source2" />
+      <Edge From="22" To="23" Label="Source1" />
+      <Edge From="26" To="28" Label="Source1" />
+      <Edge From="27" To="28" Label="Source2" />
+      <Edge From="29" To="30" Label="Source1" />
+      <Edge From="32" To="35" Label="Source1" />
+      <Edge From="33" To="34" Label="Source1" />
+      <Edge From="34" To="35" Label="Source2" />
+      <Edge From="36" To="38" Label="Source1" />
+      <Edge From="37" To="38" Label="Source2" />
+      <Edge From="39" To="42" Label="Source1" />
+      <Edge From="40" To="41" Label="Source1" />
+      <Edge From="41" To="42" Label="Source2" />
+      <Edge From="43" To="44" Label="Source1" />
+      <Edge From="44" To="45" Label="Source1" />
+      <Edge From="46" To="47" Label="Source1" />
+      <Edge From="47" To="48" Label="Source1" />
+      <Edge From="50" To="52" Label="Source1" />
+      <Edge From="51" To="52" Label="Source2" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>
