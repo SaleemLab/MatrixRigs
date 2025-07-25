@@ -6897,9 +6897,6 @@ def process(value):
             <Expression xsi:type="rx:BehaviorSubject">
               <Name>nFrames</Name>
             </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:UpdateFrame" />
-            </Expression>
           </Nodes>
           <Edges>
             <Edge From="0" To="2" Label="Source1" />
