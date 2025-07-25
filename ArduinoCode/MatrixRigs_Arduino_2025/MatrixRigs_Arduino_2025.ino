@@ -194,7 +194,7 @@ void GetSerialInput() {  // part of code taken from http://forum.arduino.cc/inde
 
 void ActionSerial() {  // Actions serial data by choosing appropriate stimulation
   
-    char delimiters[] = ",";
+  char delimiters[] = ",";
   char *token;
   uint8_t idx = 0;
   #define MAX_VALS 5  // max required? freq, duration, contrast, carrier freq?

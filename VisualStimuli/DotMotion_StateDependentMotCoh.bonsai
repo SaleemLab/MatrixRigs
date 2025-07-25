@@ -4079,8 +4079,8 @@ Item3.Item3 as Coherence2)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
-                  <cv:X>2096</cv:X>
-                  <cv:Y>42</cv:Y>
+                  <cv:X>2272</cv:X>
+                  <cv:Y>84</cv:Y>
                   <cv:Width>59</cv:Width>
                   <cv:Height>70</cv:Height>
                 </cv:RegionOfInterest>
@@ -4658,7 +4658,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>DotMotion_SpeedTuning</Value>
+                <Value>DotMotion_MotionCoherence</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -4666,7 +4666,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M25065</Value>
+                <Value>M25066</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -4677,14 +4677,14 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>C:\Data</Value>
+                <Value>C:\</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="rx:Zip" />
             </Expression>
             <Expression xsi:type="Format">
-              <Format>{2}\Data\{1}\{3}\{0}_{1}</Format>
+              <Format>{2}\Data\{0}\{3}\{0}_{1}</Format>
               <Selector>Item1,Item2,Item3,Item4</Selector>
             </Expression>
             <Expression xsi:type="rx:BehaviorSubject">

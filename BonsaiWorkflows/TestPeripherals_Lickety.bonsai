@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.7.1"
+<WorkflowBuilder Version="2.8.0"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xmlns:io="clr-namespace:Bonsai.IO;assembly=Bonsai.System"
+                 xmlns:port="clr-namespace:Bonsai.IO.Ports;assembly=Bonsai.System"
                  xmlns:gl="clr-namespace:Bonsai.Shaders;assembly=Bonsai.Shaders"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
                  xmlns:ipy="clr-namespace:Bonsai.Scripting.IronPython;assembly=Bonsai.Scripting.IronPython"
@@ -11,31 +11,31 @@
   <Workflow>
     <Nodes>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:CreateSerialPort">
-          <io:Name>ArduinoSerial</io:Name>
-          <io:PortName>COM4</io:PortName>
-          <io:BaudRate>1000000</io:BaudRate>
-          <io:Encoding>utf-8</io:Encoding>
-          <io:Parity>None</io:Parity>
-          <io:ParityReplace>63</io:ParityReplace>
-          <io:DataBits>8</io:DataBits>
-          <io:StopBits>One</io:StopBits>
-          <io:Handshake>None</io:Handshake>
-          <io:DiscardNull>false</io:DiscardNull>
-          <io:DtrEnable>false</io:DtrEnable>
-          <io:RtsEnable>false</io:RtsEnable>
-          <io:ReadBufferSize>4096</io:ReadBufferSize>
-          <io:WriteBufferSize>2048</io:WriteBufferSize>
-          <io:ReceivedBytesThreshold>1</io:ReceivedBytesThreshold>
+        <Combinator xsi:type="port:CreateSerialPort">
+          <port:Name>ArduinoSerial</port:Name>
+          <port:PortName>COM3</port:PortName>
+          <port:BaudRate>1000000</port:BaudRate>
+          <port:Encoding>utf-8</port:Encoding>
+          <port:NewLine>\n</port:NewLine>
+          <port:Parity>None</port:Parity>
+          <port:ParityReplace>63</port:ParityReplace>
+          <port:DataBits>8</port:DataBits>
+          <port:StopBits>One</port:StopBits>
+          <port:Handshake>None</port:Handshake>
+          <port:DiscardNull>false</port:DiscardNull>
+          <port:DtrEnable>false</port:DtrEnable>
+          <port:RtsEnable>false</port:RtsEnable>
+          <port:ReadBufferSize>4096</port:ReadBufferSize>
+          <port:WriteBufferSize>2048</port:WriteBufferSize>
+          <port:ReceivedBytesThreshold>1</port:ReceivedBytesThreshold>
         </Combinator>
       </Expression>
       <Expression xsi:type="ExternalizedMapping">
         <Property Name="PortName" />
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringRead">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\n</io:NewLine>
+        <Combinator xsi:type="port:SerialReadLine">
+          <port:PortName>ArduinoSerial</port:PortName>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -103,9 +103,9 @@ def process(value):
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\r</io:NewLine>
+        <Combinator xsi:type="port:SerialWriteLine">
+          <port:PortName>ArduinoSerial</port:PortName>
+          <port:NewLine>\r</port:NewLine>
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
@@ -120,49 +120,10 @@ def process(value):
         </Combinator>
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="io:SerialStringWrite">
-          <io:PortName>ArduinoSerial</io:PortName>
-          <io:NewLine>\r</io:NewLine>
+        <Combinator xsi:type="port:SerialWriteLine">
+          <port:PortName>ArduinoSerial</port:PortName>
+          <port:NewLine>\r</port:NewLine>
         </Combinator>
-      </Expression>
-      <Expression xsi:type="Disable">
-        <Builder xsi:type="Combinator">
-          <Combinator xsi:type="gl:CreateWindow">
-            <gl:Width>800</gl:Width>
-            <gl:Height>600</gl:Height>
-            <gl:VSync>On</gl:VSync>
-            <gl:SwapSync>false</gl:SwapSync>
-            <gl:ClearColor>Gray</gl:ClearColor>
-            <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
-            <gl:CursorVisible>true</gl:CursorVisible>
-            <gl:Location xsi:nil="true" />
-            <gl:WindowBorder>Hidden</gl:WindowBorder>
-            <gl:WindowState>Fullscreen</gl:WindowState>
-            <gl:DisplayDevice>Second</gl:DisplayDevice>
-            <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
-            <gl:TargetUpdateFrequency xsi:nil="true" />
-            <gl:RenderState />
-            <gl:GraphicsMode>
-              <gl:ColorFormat>
-                <gl:Red>8</gl:Red>
-                <gl:Green>8</gl:Green>
-                <gl:Blue>8</gl:Blue>
-                <gl:Alpha>8</gl:Alpha>
-              </gl:ColorFormat>
-              <gl:Depth>16</gl:Depth>
-              <gl:Stencil>0</gl:Stencil>
-              <gl:Samples>0</gl:Samples>
-              <gl:AccumulatorFormat>
-                <gl:Red>0</gl:Red>
-                <gl:Green>0</gl:Green>
-                <gl:Blue>0</gl:Blue>
-                <gl:Alpha>0</gl:Alpha>
-              </gl:AccumulatorFormat>
-              <gl:Buffers>2</gl:Buffers>
-              <gl:Stereo>false</gl:Stereo>
-            </gl:GraphicsMode>
-          </Combinator>
-        </Builder>
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="cv:CameraCapture">
@@ -178,7 +139,7 @@ def process(value):
             </cv:CapturePropertyAssignment>
             <cv:CapturePropertyAssignment>
               <cv:Property>Exposure</cv:Property>
-              <cv:Value>-5</cv:Value>
+              <cv:Value>-6</cv:Value>
             </cv:CapturePropertyAssignment>
             <cv:CapturePropertyAssignment>
               <cv:Property>Gain</cv:Property>
@@ -223,16 +184,57 @@ def process(value):
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="cv:Crop">
           <cv:RegionOfInterest>
-            <cv:X>1676</cv:X>
-            <cv:Y>176</cv:Y>
-            <cv:Width>76</cv:Width>
-            <cv:Height>62</cv:Height>
+            <cv:X>1120</cv:X>
+            <cv:Y>36</cv:Y>
+            <cv:Width>360</cv:Width>
+            <cv:Height>186</cv:Height>
           </cv:RegionOfInterest>
         </Combinator>
+      </Expression>
+      <Expression xsi:type="Disable">
+        <Builder xsi:type="Combinator">
+          <Combinator xsi:type="gl:CreateWindow">
+            <gl:Width>800</gl:Width>
+            <gl:Height>600</gl:Height>
+            <gl:VSync>On</gl:VSync>
+            <gl:SwapSync>false</gl:SwapSync>
+            <gl:ClearColor>Gray</gl:ClearColor>
+            <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
+            <gl:CursorVisible>true</gl:CursorVisible>
+            <gl:Location xsi:nil="true" />
+            <gl:WindowBorder>Hidden</gl:WindowBorder>
+            <gl:WindowState>Fullscreen</gl:WindowState>
+            <gl:DisplayDevice>Second</gl:DisplayDevice>
+            <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
+            <gl:TargetUpdateFrequency xsi:nil="true" />
+            <gl:RenderState />
+            <gl:GraphicsMode>
+              <gl:ColorFormat>
+                <gl:Red>8</gl:Red>
+                <gl:Green>8</gl:Green>
+                <gl:Blue>8</gl:Blue>
+                <gl:Alpha>8</gl:Alpha>
+              </gl:ColorFormat>
+              <gl:Depth>16</gl:Depth>
+              <gl:Stencil>0</gl:Stencil>
+              <gl:Samples>0</gl:Samples>
+              <gl:AccumulatorFormat>
+                <gl:Red>0</gl:Red>
+                <gl:Green>0</gl:Green>
+                <gl:Blue>0</gl:Blue>
+                <gl:Alpha>0</gl:Alpha>
+              </gl:AccumulatorFormat>
+              <gl:Buffers>2</gl:Buffers>
+              <gl:Stereo>false</gl:Stereo>
+            </gl:GraphicsMode>
+          </Combinator>
+        </Builder>
       </Expression>
     </Nodes>
     <Edges>
       <Edge From="1" To="2" Label="Source1" />
+      <Edge From="1" To="15" Label="Source2" />
+      <Edge From="1" To="18" Label="Source2" />
       <Edge From="2" To="3" Label="Source1" />
       <Edge From="3" To="4" Label="Source1" />
       <Edge From="4" To="5" Label="Source1" />
@@ -247,8 +249,8 @@ def process(value):
       <Edge From="14" To="15" Label="Source1" />
       <Edge From="16" To="17" Label="Source1" />
       <Edge From="17" To="18" Label="Source1" />
+      <Edge From="19" To="20" Label="Source1" />
       <Edge From="20" To="21" Label="Source1" />
-      <Edge From="21" To="22" Label="Source1" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>

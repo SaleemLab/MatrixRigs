@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <WorkflowBuilder Version="2.7.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                 xmlns:gl="clr-namespace:Bonsai.Shaders;assembly=Bonsai.Shaders"
-                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
-                 xmlns:res="clr-namespace:Bonsai.Resources;assembly=Bonsai.System"
                  xmlns:num="clr-namespace:Bonsai.Numerics;assembly=Bonsai.Numerics"
+                 xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
+                 xmlns:gl="clr-namespace:Bonsai.Shaders;assembly=Bonsai.Shaders"
                  xmlns:wie="clr-namespace:Bonsai.Windows.Input;assembly=Bonsai.Windows.Input"
                  xmlns:p1="clr-namespace:;assembly=Extensions"
                  xmlns:scr="clr-namespace:Bonsai.Scripting.Expressions;assembly=Bonsai.Scripting.Expressions"
@@ -14,424 +13,10 @@
                  xmlns:ipy="clr-namespace:Bonsai.Scripting.IronPython;assembly=Bonsai.Scripting.IronPython"
                  xmlns:dsp="clr-namespace:Bonsai.Dsp;assembly=Bonsai.Dsp"
                  xmlns:cv="clr-namespace:Bonsai.Vision;assembly=Bonsai.Vision"
+                 xmlns:res="clr-namespace:Bonsai.Resources;assembly=Bonsai.System"
                  xmlns="https://bonsai-rx.org/2018/workflow">
   <Workflow>
     <Nodes>
-      <Expression xsi:type="GroupWorkflow">
-        <Name>DisplayAndResources</Name>
-        <Workflow>
-          <Nodes>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:RenderFrame" />
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.CubemapView.bonsai">
-              <Eye>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>-25</Z>
-              </Eye>
-              <NearClip>0.1</NearClip>
-              <FarClip>10000</FarClip>
-              <Light>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Light>
-            </Expression>
-            <Expression xsi:type="rx:BehaviorSubject">
-              <Name>Draw3DStim</Name>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:RenderCubemap">
-                <gl:RenderState />
-                <gl:ClearColor>Gray</gl:ClearColor>
-                <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
-                <gl:FaceSize xsi:nil="true" />
-                <gl:InternalFormat>Rgb</gl:InternalFormat>
-                <gl:MinFilter>Linear</gl:MinFilter>
-                <gl:MagFilter>Linear</gl:MagFilter>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
-              <Width>15</Width>
-              <Height>19.5</Height>
-              <Rotation>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Rotation>
-              <Translation>
-                <X>-13.5</X>
-                <Y>0</Y>
-                <Z>-11</Z>
-              </Translation>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
-              <ClearColor>Gray</ClearColor>
-              <GammaLut>LUT_GRB.bmp</GammaLut>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
-              <X>0</X>
-              <Y>0</Y>
-              <Width>0.333</Width>
-              <Height>1</Height>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:UpdateRenderState">
-                <gl:RenderState>
-                  <gl:StateConfiguration xsi:type="gl:ViewportState">
-                    <gl:X>0</gl:X>
-                    <gl:Y>0</gl:Y>
-                    <gl:Width>0.333</gl:Width>
-                    <gl:Height>1</gl:Height>
-                  </gl:StateConfiguration>
-                </gl:RenderState>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
-              <Width>15</Width>
-              <Height>19.5</Height>
-              <Rotation>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Rotation>
-              <Translation>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>-18.5</Z>
-              </Translation>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
-              <ClearColor>Gray</ClearColor>
-              <GammaLut>LUT_GRB.bmp</GammaLut>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
-              <X>0.333</X>
-              <Y>0</Y>
-              <Width>0.333</Width>
-              <Height>1</Height>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:UpdateRenderState">
-                <gl:RenderState>
-                  <gl:StateConfiguration xsi:type="gl:ViewportState">
-                    <gl:X>0.333</gl:X>
-                    <gl:Y>0</gl:Y>
-                    <gl:Width>0.333</gl:Width>
-                    <gl:Height>1</gl:Height>
-                  </gl:StateConfiguration>
-                </gl:RenderState>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
-              <Width>15</Width>
-              <Height>19.5</Height>
-              <Rotation>
-                <X>0</X>
-                <Y>0</Y>
-                <Z>0</Z>
-              </Rotation>
-              <Translation>
-                <X>13.5</X>
-                <Y>0</Y>
-                <Z>-11</Z>
-              </Translation>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
-              <ClearColor>Gray</ClearColor>
-              <GammaLut>LUT_GRB.bmp</GammaLut>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
-              <X>0.665</X>
-              <Y>0</Y>
-              <Width>0.333</Width>
-              <Height>1</Height>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:UpdateRenderState">
-                <gl:RenderState>
-                  <gl:StateConfiguration xsi:type="gl:ViewportState">
-                    <gl:X>0.665</gl:X>
-                    <gl:Y>0</gl:Y>
-                    <gl:Width>0.333</gl:Width>
-                    <gl:Height>1</gl:Height>
-                  </gl:StateConfiguration>
-                </gl:RenderState>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
-              <Left>-180</Left>
-              <Right>180</Right>
-              <Bottom>-90</Bottom>
-              <Top>90</Top>
-            </Expression>
-            <Expression xsi:type="rx:BehaviorSubject">
-              <Name>Draw2D</Name>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="Combinator">
-                <Combinator xsi:type="IntProperty">
-                  <Value>1</Value>
-                </Combinator>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:Accumulate" />
-            </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="rx:BehaviorSubject">
-                <Name>RenderFrameCount</Name>
-              </Builder>
-            </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="DisplayDevice" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:CreateWindow">
-                <gl:Width>1280</gl:Width>
-                <gl:Height>800</gl:Height>
-                <gl:VSync>On</gl:VSync>
-                <gl:SwapSync>false</gl:SwapSync>
-                <gl:ClearColor>Gray</gl:ClearColor>
-                <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
-                <gl:CursorVisible>true</gl:CursorVisible>
-                <gl:Location xsi:nil="true" />
-                <gl:WindowBorder>Resizable</gl:WindowBorder>
-                <gl:WindowState>Fullscreen</gl:WindowState>
-                <gl:DisplayDevice>Second</gl:DisplayDevice>
-                <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
-                <gl:TargetUpdateFrequency xsi:nil="true" />
-                <gl:RenderState />
-                <gl:GraphicsMode>
-                  <gl:ColorFormat>
-                    <gl:Red>8</gl:Red>
-                    <gl:Green>8</gl:Green>
-                    <gl:Blue>8</gl:Blue>
-                    <gl:Alpha>8</gl:Alpha>
-                  </gl:ColorFormat>
-                  <gl:Depth>16</gl:Depth>
-                  <gl:Stencil>0</gl:Stencil>
-                  <gl:Samples>0</gl:Samples>
-                  <gl:AccumulatorFormat>
-                    <gl:Red>0</gl:Red>
-                    <gl:Green>0</gl:Green>
-                    <gl:Blue>0</gl:Blue>
-                    <gl:Alpha>0</gl:Alpha>
-                  </gl:AccumulatorFormat>
-                  <gl:Buffers>2</gl:Buffers>
-                  <gl:Stereo>false</gl:Stereo>
-                </gl:GraphicsMode>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.BonVisionResources.bonsai" />
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:TextureResources">
-                <gl:Textures>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>plaid</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\plaid.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>vertGrat</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\vertGrat.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>fwn1</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\fwn1.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>fwn2</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\fwn2.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>fwn3</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\fwn3.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>fwn4</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\fwn4.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>grayEnd</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\grayEnd.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
-                    <gl:Name>horGrat</gl:Name>
-                    <gl:Width xsi:nil="true" />
-                    <gl:Height xsi:nil="true" />
-                    <gl:InternalFormat>Rgba</gl:InternalFormat>
-                    <gl:WrapS>Repeat</gl:WrapS>
-                    <gl:WrapT>Repeat</gl:WrapT>
-                    <gl:MinFilter>Linear</gl:MinFilter>
-                    <gl:MagFilter>Linear</gl:MagFilter>
-                    <gl:FileName>Textures\horGrat.jpg</gl:FileName>
-                    <gl:ColorType>Unchanged</gl:ColorType>
-                    <gl:FlipMode>Vertical</gl:FlipMode>
-                  </gl:TextureConfiguration>
-                </gl:Textures>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:MeshResources">
-                <gl:Meshes>
-                  <gl:MeshConfiguration xsi:type="gl:TexturedModel">
-                    <gl:Name>cube3d</gl:Name>
-                    <gl:FileName>cube3d.obj</gl:FileName>
-                  </gl:MeshConfiguration>
-                </gl:Meshes>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="gl:ShaderResources">
-                <gl:Shaders>
-                  <gl:ShaderConfiguration xsi:type="gl:Material">
-                    <gl:Name>MeshMapSphere</gl:Name>
-                    <gl:RenderState />
-                    <gl:ShaderUniforms />
-                    <gl:BufferBindings>
-                      <gl:BufferBinding xsi:type="gl:TextureBinding">
-                        <gl:Name>tex</gl:Name>
-                        <gl:TextureSlot>Texture0</gl:TextureSlot>
-                        <gl:TextureTarget>Texture2D</gl:TextureTarget>
-                      </gl:BufferBinding>
-                      <gl:BufferBinding xsi:type="gl:TextureBinding">
-                        <gl:Name>meshMap</gl:Name>
-                        <gl:TextureSlot>Texture1</gl:TextureSlot>
-                        <gl:TextureTarget>Texture2D</gl:TextureTarget>
-                      </gl:BufferBinding>
-                    </gl:BufferBindings>
-                    <gl:FramebufferAttachments />
-                    <gl:VertexShader>Shaders\MeshMapSphere.vert</gl:VertexShader>
-                    <gl:FragmentShader>Shaders\MeshMapSphere.frag</gl:FragmentShader>
-                  </gl:ShaderConfiguration>
-                  <gl:ShaderConfiguration xsi:type="gl:Material">
-                    <gl:Name>MeshMapGradient</gl:Name>
-                    <gl:RenderState />
-                    <gl:ShaderUniforms />
-                    <gl:BufferBindings />
-                    <gl:FramebufferAttachments />
-                    <gl:VertexShader>Shaders\MeshMapSphere.vert</gl:VertexShader>
-                    <gl:FragmentShader>Shaders\gradient.frag</gl:FragmentShader>
-                  </gl:ShaderConfiguration>
-                  <gl:ShaderConfiguration xsi:type="gl:Material">
-                    <gl:Name>MeshMapVector</gl:Name>
-                    <gl:RenderState />
-                    <gl:ShaderUniforms />
-                    <gl:BufferBindings>
-                      <gl:BufferBinding xsi:type="gl:TextureBinding">
-                        <gl:Name>meshMap</gl:Name>
-                        <gl:TextureSlot>Texture0</gl:TextureSlot>
-                        <gl:TextureName>plaid</gl:TextureName>
-                        <gl:TextureTarget>Texture2D</gl:TextureTarget>
-                      </gl:BufferBinding>
-                    </gl:BufferBindings>
-                    <gl:FramebufferAttachments />
-                    <gl:VertexShader>Shaders\MeshMapSphere.vert</gl:VertexShader>
-                    <gl:FragmentShader>Shaders\vector.frag</gl:FragmentShader>
-                  </gl:ShaderConfiguration>
-                </gl:Shaders>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="res:LoadResources" />
-            </Expression>
-            <Expression xsi:type="WorkflowOutput" />
-          </Nodes>
-          <Edges>
-            <Edge From="0" To="1" Label="Source1" />
-            <Edge From="0" To="16" Label="Source1" />
-            <Edge From="0" To="18" Label="Source1" />
-            <Edge From="1" To="2" Label="Source1" />
-            <Edge From="2" To="3" Label="Source1" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="3" To="8" Label="Source1" />
-            <Edge From="3" To="12" Label="Source1" />
-            <Edge From="4" To="5" Label="Source1" />
-            <Edge From="5" To="6" Label="Source1" />
-            <Edge From="6" To="7" Label="Source1" />
-            <Edge From="8" To="9" Label="Source1" />
-            <Edge From="9" To="10" Label="Source1" />
-            <Edge From="10" To="11" Label="Source1" />
-            <Edge From="12" To="13" Label="Source1" />
-            <Edge From="13" To="14" Label="Source1" />
-            <Edge From="14" To="15" Label="Source1" />
-            <Edge From="16" To="17" Label="Source1" />
-            <Edge From="18" To="19" Label="Source1" />
-            <Edge From="19" To="20" Label="Source1" />
-            <Edge From="21" To="22" Label="Source1" />
-            <Edge From="22" To="23" Label="Source1" />
-            <Edge From="23" To="24" Label="Source1" />
-            <Edge From="24" To="25" Label="Source1" />
-            <Edge From="25" To="26" Label="Source1" />
-            <Edge From="26" To="27" Label="Source1" />
-            <Edge From="27" To="28" Label="Source1" />
-          </Edges>
-        </Workflow>
-      </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>VarInIt</Name>
         <Workflow>
@@ -1207,8 +792,8 @@ Item4.Item2 as transXR)</scr:Expression>
                           <TranslationX>-100</TranslationX>
                           <TranslationY>0</TranslationY>
                           <TranslationZ>15</TranslationZ>
-                          <ScaleX>540</ScaleX>
-                          <ScaleY>240</ScaleY>
+                          <ScaleX>720</ScaleX>
+                          <ScaleY>180</ScaleY>
                           <ScaleZ>1</ScaleZ>
                           <MeshName>Plane</MeshName>
                           <Ambient>
@@ -1277,8 +862,8 @@ Item4.Item2 as transXR)</scr:Expression>
                           <TranslationX>100</TranslationX>
                           <TranslationY>0</TranslationY>
                           <TranslationZ>15</TranslationZ>
-                          <ScaleX>540</ScaleX>
-                          <ScaleY>240</ScaleY>
+                          <ScaleX>720</ScaleX>
+                          <ScaleY>180</ScaleY>
                           <ScaleZ>1</ScaleZ>
                           <MeshName>Plane</MeshName>
                           <Ambient>
@@ -1358,10 +943,10 @@ Item4.Item2 as transXR)</scr:Expression>
                           <Name>DrawStimuli</Name>
                         </Expression>
                         <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
-                          <Left>-270</Left>
-                          <Right>270</Right>
-                          <Bottom>-120</Bottom>
-                          <Top>120</Top>
+                          <Left>-360</Left>
+                          <Right>360</Right>
+                          <Bottom>-90</Bottom>
+                          <Top>90</Top>
                         </Expression>
                         <Expression xsi:type="Combinator">
                           <Combinator xsi:type="gl:UpdateFrame" />
@@ -1458,7 +1043,7 @@ Item4.Item2 as transXR)</scr:Expression>
                                           </Expression>
                                           <Expression xsi:type="Combinator">
                                             <Combinator xsi:type="rx:Timer">
-                                              <rx:DueTime>PT5.256S</rx:DueTime>
+                                              <rx:DueTime>PT5.925S</rx:DueTime>
                                               <rx:Period>PT0S</rx:Period>
                                             </Combinator>
                                           </Expression>
@@ -1514,11 +1099,11 @@ Item4.Item2 as transXR)</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="scr:ExpressionTransform">
                                       <scr:Expression>it == 1 ? 0 :
-it == 2 ? -37.2337 :
-it == 3 ? -74.4674 :
-it == 4 ? -148.9348 :
-it == 5 ? -297.8695 :
--595.7391</scr:Expression>
+it == 2 ? -100 :
+it == 3 ? -200 :
+it == 4 ? -300 :
+it == 5 ? -400 :
+-500</scr:Expression>
                                     </Expression>
                                     <Expression xsi:type="MulticastSubject">
                                       <Name>PerturbationState</Name>
@@ -1764,7 +1349,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -1956,10 +1541,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>0</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -1983,15 +1568,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -1999,10 +1584,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -2159,10 +1744,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>1</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -2174,7 +1759,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2368,15 +1953,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -2384,10 +1969,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -2544,10 +2129,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>2</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -2559,7 +2144,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -2753,15 +2338,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -2769,10 +2354,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -2915,10 +2500,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>3</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -2939,7 +2524,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -3136,15 +2721,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -3152,10 +2737,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -3412,7 +2997,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -3604,10 +3189,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>0</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -3631,15 +3216,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -3647,10 +3232,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -3807,10 +3392,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>1</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -3822,7 +3407,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4016,15 +3601,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -4032,10 +3617,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -4192,10 +3777,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>2</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -4207,7 +3792,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4401,15 +3986,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -4417,10 +4002,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -4563,10 +4148,10 @@ it == 5 ? -297.8695 :
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:GenerateDotField">
                                         <p1:numDots>238</p1:numDots>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                         <p1:rndseed>3</p1:rndseed>
                                       </Combinator>
                                     </Expression>
@@ -4587,7 +4172,7 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="FloatProperty">
-                                        <Value>-0</Value>
+                                        <Value>-7.16090155</Value>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Disable">
@@ -4784,15 +4369,15 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:moveDots_2dLife">
-                                        <p1:VelocityX>-0</p1:VelocityX>
+                                        <p1:VelocityX>-7.16090155</p1:VelocityX>
                                         <p1:VelocityY>0</p1:VelocityY>
                                         <p1:Coherence>100</p1:Coherence>
                                         <p1:dotLifetimeBool>1</p1:dotLifetimeBool>
                                         <p1:dotLifetime>600</p1:dotLifetime>
-                                        <p1:left>-270</p1:left>
-                                        <p1:right>270</p1:right>
-                                        <p1:top>120</p1:top>
-                                        <p1:bottom>-120</p1:bottom>
+                                        <p1:left>-360</p1:left>
+                                        <p1:right>360</p1:right>
+                                        <p1:top>90</p1:top>
+                                        <p1:bottom>-90</p1:bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="MemberSelector">
@@ -4800,10 +4385,10 @@ it == 5 ? -297.8695 :
                                     </Expression>
                                     <Expression xsi:type="Combinator">
                                       <Combinator xsi:type="p1:wrapAroundDots">
-                                        <p1:Left>-270</p1:Left>
-                                        <p1:Right>270</p1:Right>
-                                        <p1:Top>120</p1:Top>
-                                        <p1:Bottom>-120</p1:Bottom>
+                                        <p1:Left>-360</p1:Left>
+                                        <p1:Right>360</p1:Right>
+                                        <p1:Top>90</p1:Top>
+                                        <p1:Bottom>-90</p1:Bottom>
                                       </Combinator>
                                     </Expression>
                                     <Expression xsi:type="Combinator">
@@ -5434,43 +5019,6 @@ it == 5 ? -297.8695 :
         <Combinator xsi:type="rx:SubscribeWhen" />
       </Expression>
       <Expression xsi:type="Combinator">
-        <Combinator xsi:type="p2:CreateContinuousUniform">
-          <p2:Lower>200000</p2:Lower>
-          <p2:Upper>500000</p2:Upper>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="num:Permutation" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="p2:Sample" />
-      </Expression>
-      <Expression xsi:type="PropertyMapping">
-        <PropertyMappings>
-          <Property Name="DueTime" />
-        </PropertyMappings>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:Timer">
-          <rx:DueTime>PT0.0368053S</rx:DueTime>
-          <rx:Period>PT0S</rx:Period>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:Repeat" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="IntProperty">
-          <Value>1</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="rx:Accumulate" />
-      <Expression xsi:type="Mod">
-        <Operand xsi:type="IntProperty">
-          <Value>2</Value>
-        </Operand>
-      </Expression>
-      <Expression xsi:type="Combinator">
         <Combinator xsi:type="gl:RenderFrame" />
       </Expression>
       <Expression xsi:type="Combinator">
@@ -5482,16 +5030,75 @@ it == 5 ? -297.8695 :
       <Expression xsi:type="MulticastSubject">
         <Name>RenderFrameCount</Name>
       </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="IntProperty">
-          <Value>1</Value>
-        </Combinator>
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="rx:Merge" />
-      </Expression>
-      <Expression xsi:type="Combinator">
-        <Combinator xsi:type="gl:SampleOnUpdateFrame" />
+      <Expression xsi:type="GroupWorkflow">
+        <Name>ControlQuad</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="p2:CreateContinuousUniform">
+                <p2:Lower>200000</p2:Lower>
+                <p2:Upper>500000</p2:Upper>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="num:Permutation" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="p2:Sample" />
+            </Expression>
+            <Expression xsi:type="PropertyMapping">
+              <PropertyMappings>
+                <Property Name="DueTime" />
+              </PropertyMappings>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Timer">
+                <rx:DueTime>PT0.0338939S</rx:DueTime>
+                <rx:Period>PT0S</rx:Period>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Repeat" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="IntProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:Accumulate" />
+            <Expression xsi:type="Mod">
+              <Operand xsi:type="IntProperty">
+                <Value>2</Value>
+              </Operand>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="IntProperty">
+                <Value>1</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Merge" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:SampleOnUpdateFrame" />
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="10" Label="Source1" />
+            <Edge From="9" To="10" Label="Source2" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+          </Edges>
+        </Workflow>
       </Expression>
       <Expression xsi:type="MulticastSubject">
         <Name>QuadState</Name>
@@ -5501,86 +5108,6 @@ it == 5 ? -297.8695 :
       </Expression>
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="rx:SubscribeWhen" />
-      </Expression>
-      <Expression xsi:type="GroupWorkflow">
-        <Name>Borders</Name>
-        <Description>Set values for borders of display</Description>
-        <Workflow>
-          <Nodes>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Value" DisplayName="TopBorder" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="FloatProperty">
-                <Value>120</Value>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="rx:ReplaySubject">
-              <Name>Top</Name>
-              <rx:BufferSize xsi:nil="true" />
-            </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Value" DisplayName="BottomBorder" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="FloatProperty">
-                <Value>-120</Value>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="rx:ReplaySubject">
-              <Name>Bottom</Name>
-              <rx:BufferSize xsi:nil="true" />
-            </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Value" DisplayName="LeftBorder" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="FloatProperty">
-                <Value>-270</Value>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="rx:ReplaySubject">
-              <Name>Left</Name>
-              <rx:BufferSize xsi:nil="true" />
-            </Expression>
-            <Expression xsi:type="ExternalizedMapping">
-              <Property Name="Value" DisplayName="RightBorder" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="FloatProperty">
-                <Value>270</Value>
-              </Combinator>
-            </Expression>
-            <Expression xsi:type="rx:ReplaySubject">
-              <Name>Right</Name>
-              <rx:BufferSize xsi:nil="true" />
-            </Expression>
-            <Expression xsi:type="Combinator">
-              <Combinator xsi:type="rx:Zip" />
-            </Expression>
-            <Expression xsi:type="rx:ReplaySubject">
-              <Name>Borders</Name>
-              <rx:BufferSize xsi:nil="true" />
-            </Expression>
-            <Expression xsi:type="WorkflowOutput" />
-          </Nodes>
-          <Edges>
-            <Edge From="0" To="1" Label="Source1" />
-            <Edge From="1" To="2" Label="Source1" />
-            <Edge From="2" To="12" Label="Source1" />
-            <Edge From="3" To="4" Label="Source1" />
-            <Edge From="4" To="5" Label="Source1" />
-            <Edge From="5" To="12" Label="Source2" />
-            <Edge From="6" To="7" Label="Source1" />
-            <Edge From="7" To="8" Label="Source1" />
-            <Edge From="8" To="12" Label="Source3" />
-            <Edge From="9" To="10" Label="Source1" />
-            <Edge From="10" To="11" Label="Source1" />
-            <Edge From="11" To="12" Label="Source4" />
-            <Edge From="12" To="13" Label="Source1" />
-            <Edge From="13" To="14" Label="Source1" />
-          </Edges>
-        </Workflow>
       </Expression>
       <Expression xsi:type="GroupWorkflow">
         <Name>Dome</Name>
@@ -7076,7 +6603,7 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>DotCorridor_ClosedLoopPerturbation</Value>
+                <Value>DotCorridor_ClosedLoopPerturbations</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="ExternalizedMapping">
@@ -7084,7 +6611,7 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M25070</Value>
+                <Value>M25065</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -7095,7 +6622,7 @@ def process(value):
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>C:\Data</Value>
+                <Value>C:\</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
@@ -7562,32 +7089,32 @@ def generate():
         </PropertyMappings>
       </Expression>
       <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.DrawModel.bonsai">
-        <TranslationX>-82</TranslationX>
-        <TranslationY>-38</TranslationY>
-        <TranslationZ>-68</TranslationZ>
-        <ScaleX>1</ScaleX>
-        <ScaleY>25</ScaleY>
-        <ScaleZ>25</ScaleZ>
+        <TranslationX>-28</TranslationX>
+        <TranslationY>-16</TranslationY>
+        <TranslationZ>-102</TranslationZ>
+        <ScaleX>10</ScaleX>
+        <ScaleY>10</ScaleY>
+        <ScaleZ>40</ScaleZ>
         <MeshName>cube3d</MeshName>
         <Ambient>
-          <X>1</X>
-          <Y>1</Y>
-          <Z>1</Z>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
         </Ambient>
         <Diffuse>
-          <X>1</X>
-          <Y>1</Y>
-          <Z>1</Z>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
         </Diffuse>
         <Specular>
-          <X>1</X>
-          <Y>1</Y>
-          <Z>1</Z>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
         </Specular>
         <SpecularExponent>0</SpecularExponent>
-        <RotationZ>29.3023243</RotationZ>
-        <RotationY>-180</RotationY>
-        <RotationX>-75.34884</RotationX>
+        <RotationZ>-71.16279</RotationZ>
+        <RotationY>175.813965</RotationY>
+        <RotationX>-8.372093</RotationX>
       </Expression>
       <Expression xsi:type="Disable">
         <Builder xsi:type="SubscribeSubject">
@@ -7703,7 +7230,7 @@ def generate():
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25070\20250710\M25070_DotCorridor_ClosedLoopPerturbation_WheelLog.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25065\20250716\M25065_DotCorridor_ClosedLoopPerturbations_WheelLog.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -7754,7 +7281,7 @@ def generate():
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25070\20250710\M25070_DotCorridor_ClosedLoopPerturbation_Video.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25065\20250716\M25065_DotCorridor_ClosedLoopPerturbations_Video.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -7801,7 +7328,7 @@ def generate():
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25070\20250710\M25070_DotCorridor_ClosedLoopPerturbation_PDAsync.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25065\20250716\M25065_DotCorridor_ClosedLoopPerturbations_PDAsync.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -8348,8 +7875,8 @@ Item3.Item3 as Coherence2)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
-                  <cv:X>2096</cv:X>
-                  <cv:Y>42</cv:Y>
+                  <cv:X>2368</cv:X>
+                  <cv:Y>90</cv:Y>
                   <cv:Width>59</cv:Width>
                   <cv:Height>70</cv:Height>
                 </cv:RegionOfInterest>
@@ -8383,7 +7910,7 @@ Item3.Item3 as Coherence2)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
-                <cv:FileName>C:\Data\Data\M25070\20250710\M25070_DotCorridor_ClosedLoop_BodyVideo.avi</cv:FileName>
+                <cv:FileName>C:\\Data\M25065\20250716\M25065_DotCorridor_ClosedLoopPerturbations_BodyVideo.avi</cv:FileName>
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -8444,51 +7971,533 @@ Item3.Item3 as Coherence2)</scr:Expression>
       <Expression xsi:type="SubscribeSubject">
         <Name>PerturbationState</Name>
       </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>DisplayAndResources</Name>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="DisplayDevice" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:CreateWindow">
+                <gl:Width>1280</gl:Width>
+                <gl:Height>800</gl:Height>
+                <gl:VSync>On</gl:VSync>
+                <gl:SwapSync>false</gl:SwapSync>
+                <gl:ClearColor>Gray</gl:ClearColor>
+                <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
+                <gl:CursorVisible>true</gl:CursorVisible>
+                <gl:Location xsi:nil="true" />
+                <gl:WindowBorder>Resizable</gl:WindowBorder>
+                <gl:WindowState>Fullscreen</gl:WindowState>
+                <gl:DisplayDevice>Second</gl:DisplayDevice>
+                <gl:TargetRenderFrequency>60</gl:TargetRenderFrequency>
+                <gl:TargetUpdateFrequency xsi:nil="true" />
+                <gl:RenderState />
+                <gl:GraphicsMode>
+                  <gl:ColorFormat>
+                    <gl:Red>8</gl:Red>
+                    <gl:Green>8</gl:Green>
+                    <gl:Blue>8</gl:Blue>
+                    <gl:Alpha>8</gl:Alpha>
+                  </gl:ColorFormat>
+                  <gl:Depth>16</gl:Depth>
+                  <gl:Stencil>0</gl:Stencil>
+                  <gl:Samples>0</gl:Samples>
+                  <gl:AccumulatorFormat>
+                    <gl:Red>0</gl:Red>
+                    <gl:Green>0</gl:Green>
+                    <gl:Blue>0</gl:Blue>
+                    <gl:Alpha>0</gl:Alpha>
+                  </gl:AccumulatorFormat>
+                  <gl:Buffers>2</gl:Buffers>
+                  <gl:Stereo>false</gl:Stereo>
+                </gl:GraphicsMode>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Primitives.BonVisionResources.bonsai" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:TextureResources">
+                <gl:Textures>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>plaid</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\plaid.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>vertGrat</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\vertGrat.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>fwn1</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\fwn1.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>fwn2</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\fwn2.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>fwn3</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\fwn3.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>fwn4</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\fwn4.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>grayEnd</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\grayEnd.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                  <gl:TextureConfiguration xsi:type="gl:ImageTexture">
+                    <gl:Name>horGrat</gl:Name>
+                    <gl:Width xsi:nil="true" />
+                    <gl:Height xsi:nil="true" />
+                    <gl:InternalFormat>Rgba</gl:InternalFormat>
+                    <gl:WrapS>Repeat</gl:WrapS>
+                    <gl:WrapT>Repeat</gl:WrapT>
+                    <gl:MinFilter>Linear</gl:MinFilter>
+                    <gl:MagFilter>Linear</gl:MagFilter>
+                    <gl:FileName>Textures\horGrat.jpg</gl:FileName>
+                    <gl:ColorType>Unchanged</gl:ColorType>
+                    <gl:FlipMode>Vertical</gl:FlipMode>
+                  </gl:TextureConfiguration>
+                </gl:Textures>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:MeshResources">
+                <gl:Meshes>
+                  <gl:MeshConfiguration xsi:type="gl:TexturedModel">
+                    <gl:Name>cube3d</gl:Name>
+                    <gl:FileName>cube3d.obj</gl:FileName>
+                  </gl:MeshConfiguration>
+                </gl:Meshes>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:ShaderResources">
+                <gl:Shaders>
+                  <gl:ShaderConfiguration xsi:type="gl:Material">
+                    <gl:Name>MeshMapSphere</gl:Name>
+                    <gl:RenderState />
+                    <gl:ShaderUniforms />
+                    <gl:BufferBindings>
+                      <gl:BufferBinding xsi:type="gl:TextureBinding">
+                        <gl:Name>tex</gl:Name>
+                        <gl:TextureSlot>Texture0</gl:TextureSlot>
+                        <gl:TextureTarget>Texture2D</gl:TextureTarget>
+                      </gl:BufferBinding>
+                      <gl:BufferBinding xsi:type="gl:TextureBinding">
+                        <gl:Name>meshMap</gl:Name>
+                        <gl:TextureSlot>Texture1</gl:TextureSlot>
+                        <gl:TextureTarget>Texture2D</gl:TextureTarget>
+                      </gl:BufferBinding>
+                    </gl:BufferBindings>
+                    <gl:FramebufferAttachments />
+                    <gl:VertexShader>Shaders\MeshMapSphere.vert</gl:VertexShader>
+                    <gl:FragmentShader>Shaders\MeshMapSphere.frag</gl:FragmentShader>
+                  </gl:ShaderConfiguration>
+                  <gl:ShaderConfiguration xsi:type="gl:Material">
+                    <gl:Name>MeshMapGradient</gl:Name>
+                    <gl:RenderState />
+                    <gl:ShaderUniforms />
+                    <gl:BufferBindings />
+                    <gl:FramebufferAttachments />
+                    <gl:VertexShader>Shaders\MeshMapSphere.vert</gl:VertexShader>
+                    <gl:FragmentShader>Shaders\gradient.frag</gl:FragmentShader>
+                  </gl:ShaderConfiguration>
+                  <gl:ShaderConfiguration xsi:type="gl:Material">
+                    <gl:Name>MeshMapVector</gl:Name>
+                    <gl:RenderState />
+                    <gl:ShaderUniforms />
+                    <gl:BufferBindings>
+                      <gl:BufferBinding xsi:type="gl:TextureBinding">
+                        <gl:Name>meshMap</gl:Name>
+                        <gl:TextureSlot>Texture0</gl:TextureSlot>
+                        <gl:TextureName>plaid</gl:TextureName>
+                        <gl:TextureTarget>Texture2D</gl:TextureTarget>
+                      </gl:BufferBinding>
+                    </gl:BufferBindings>
+                    <gl:FramebufferAttachments />
+                    <gl:VertexShader>Shaders\MeshMapSphere.vert</gl:VertexShader>
+                    <gl:FragmentShader>Shaders\vector.frag</gl:FragmentShader>
+                  </gl:ShaderConfiguration>
+                </gl:Shaders>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="res:LoadResources" />
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:RenderFrame" />
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.CubemapView.bonsai">
+              <Eye>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>-100</Z>
+              </Eye>
+              <NearClip>0.1</NearClip>
+              <FarClip>10000</FarClip>
+              <Light>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Light>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>Draw3DStim</Name>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:RenderCubemap">
+                <gl:RenderState />
+                <gl:ClearColor>Gray</gl:ClearColor>
+                <gl:ClearMask>DepthBufferBit ColorBufferBit</gl:ClearMask>
+                <gl:FaceSize xsi:nil="true" />
+                <gl:InternalFormat>Rgb</gl:InternalFormat>
+                <gl:MinFilter>Linear</gl:MinFilter>
+                <gl:MagFilter>Linear</gl:MagFilter>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>60.000001669652114</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>-12</X>
+                <Y>0</Y>
+                <Z>-9</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>0</X>
+                <Y>0</Y>
+                <Z>-15</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0.333</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0.333</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.ViewWindow.bonsai">
+              <Width>15</Width>
+              <Height>19.5</Height>
+              <Rotation>
+                <X>0</X>
+                <Y>-60.000001669652114</Y>
+                <Z>0</Z>
+              </Rotation>
+              <Translation>
+                <X>12</X>
+                <Y>0</Y>
+                <Z>-9</Z>
+              </Translation>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
+              <X>0.665</X>
+              <Y>0</Y>
+              <Width>0.333</Width>
+              <Height>1</Height>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="gl:UpdateRenderState">
+                <gl:RenderState>
+                  <gl:StateConfiguration xsi:type="gl:ViewportState">
+                    <gl:X>0.665</gl:X>
+                    <gl:Y>0</gl:Y>
+                    <gl:Width>0.333</gl:Width>
+                    <gl:Height>1</gl:Height>
+                  </gl:StateConfiguration>
+                </gl:RenderState>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>TimeStep.ElapsedRealTime</Selector>
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:ElementIndex" />
+            </Expression>
+            <Expression xsi:type="MemberSelector">
+              <Selector>Index</Selector>
+            </Expression>
+            <Expression xsi:type="MulticastSubject">
+              <Name>RenderFrameCount</Name>
+            </Expression>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.OrthographicView.bonsai">
+              <Left>-180</Left>
+              <Right>180</Right>
+              <Bottom>-90</Bottom>
+              <Top>90</Top>
+            </Expression>
+            <Expression xsi:type="rx:BehaviorSubject">
+              <Name>Draw2D</Name>
+            </Expression>
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="3" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="5" To="6" Label="Source1" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="8" To="9" Label="Source1" />
+            <Edge From="8" To="24" Label="Source1" />
+            <Edge From="8" To="25" Label="Source1" />
+            <Edge From="8" To="28" Label="Source1" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source1" />
+            <Edge From="11" To="16" Label="Source1" />
+            <Edge From="11" To="20" Label="Source1" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+            <Edge From="14" To="15" Label="Source1" />
+            <Edge From="16" To="17" Label="Source1" />
+            <Edge From="17" To="18" Label="Source1" />
+            <Edge From="18" To="19" Label="Source1" />
+            <Edge From="20" To="21" Label="Source1" />
+            <Edge From="21" To="22" Label="Source1" />
+            <Edge From="22" To="23" Label="Source1" />
+            <Edge From="25" To="26" Label="Source1" />
+            <Edge From="26" To="27" Label="Source1" />
+            <Edge From="28" To="29" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
+      <Expression xsi:type="GroupWorkflow">
+        <Name>Borders</Name>
+        <Description>Set values for borders of display</Description>
+        <Workflow>
+          <Nodes>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="TopBorder" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>90</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:ReplaySubject">
+              <Name>Top</Name>
+              <rx:BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="BottomBorder" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>-90</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:ReplaySubject">
+              <Name>Bottom</Name>
+              <rx:BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="LeftBorder" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>-360</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:ReplaySubject">
+              <Name>Left</Name>
+              <rx:BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="ExternalizedMapping">
+              <Property Name="Value" DisplayName="RightBorder" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="FloatProperty">
+                <Value>360</Value>
+              </Combinator>
+            </Expression>
+            <Expression xsi:type="rx:ReplaySubject">
+              <Name>Right</Name>
+              <rx:BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="Combinator">
+              <Combinator xsi:type="rx:Zip" />
+            </Expression>
+            <Expression xsi:type="rx:ReplaySubject">
+              <Name>Borders</Name>
+              <rx:BufferSize xsi:nil="true" />
+            </Expression>
+            <Expression xsi:type="WorkflowOutput" />
+          </Nodes>
+          <Edges>
+            <Edge From="0" To="1" Label="Source1" />
+            <Edge From="1" To="2" Label="Source1" />
+            <Edge From="2" To="12" Label="Source1" />
+            <Edge From="3" To="4" Label="Source1" />
+            <Edge From="4" To="5" Label="Source1" />
+            <Edge From="5" To="12" Label="Source2" />
+            <Edge From="6" To="7" Label="Source1" />
+            <Edge From="7" To="8" Label="Source1" />
+            <Edge From="8" To="12" Label="Source3" />
+            <Edge From="9" To="10" Label="Source1" />
+            <Edge From="10" To="11" Label="Source1" />
+            <Edge From="11" To="12" Label="Source4" />
+            <Edge From="12" To="13" Label="Source1" />
+            <Edge From="13" To="14" Label="Source1" />
+          </Edges>
+        </Workflow>
+      </Expression>
     </Nodes>
     <Edges>
-      <Edge From="2" To="3" Label="Source1" />
-      <Edge From="2" To="4" Label="Source1" />
-      <Edge From="5" To="9" Label="Source1" />
-      <Edge From="6" To="10" Label="Source2" />
-      <Edge From="6" To="28" Label="Source2" />
-      <Edge From="6" To="29" Label="Source2" />
-      <Edge From="7" To="8" Label="Source1" />
-      <Edge From="8" To="9" Label="Source2" />
-      <Edge From="9" To="10" Label="Source1" />
+      <Edge From="1" To="2" Label="Source1" />
+      <Edge From="1" To="3" Label="Source1" />
+      <Edge From="4" To="8" Label="Source1" />
+      <Edge From="5" To="9" Label="Source2" />
+      <Edge From="5" To="16" Label="Source2" />
+      <Edge From="5" To="17" Label="Source2" />
+      <Edge From="6" To="7" Label="Source1" />
+      <Edge From="7" To="8" Label="Source2" />
+      <Edge From="8" To="9" Label="Source1" />
+      <Edge From="10" To="11" Label="Source1" />
       <Edge From="11" To="12" Label="Source1" />
       <Edge From="12" To="13" Label="Source1" />
-      <Edge From="13" To="14" Label="Source1" />
+      <Edge From="13" To="17" Label="Source1" />
       <Edge From="14" To="15" Label="Source1" />
       <Edge From="15" To="16" Label="Source1" />
-      <Edge From="16" To="17" Label="Source1" />
-      <Edge From="17" To="18" Label="Source1" />
-      <Edge From="18" To="19" Label="Source1" />
-      <Edge From="19" To="25" Label="Source1" />
-      <Edge From="20" To="21" Label="Source1" />
-      <Edge From="21" To="22" Label="Source1" />
+      <Edge From="19" To="21" Label="Source1" />
+      <Edge From="20" To="21" Label="Source2" />
       <Edge From="22" To="23" Label="Source1" />
-      <Edge From="23" To="29" Label="Source1" />
-      <Edge From="24" To="25" Label="Source2" />
-      <Edge From="25" To="26" Label="Source1" />
+      <Edge From="25" To="28" Label="Source1" />
       <Edge From="26" To="27" Label="Source1" />
-      <Edge From="27" To="28" Label="Source1" />
-      <Edge From="32" To="34" Label="Source1" />
-      <Edge From="33" To="34" Label="Source2" />
-      <Edge From="35" To="36" Label="Source1" />
-      <Edge From="38" To="41" Label="Source1" />
+      <Edge From="27" To="28" Label="Source2" />
+      <Edge From="29" To="31" Label="Source1" />
+      <Edge From="30" To="31" Label="Source2" />
+      <Edge From="32" To="35" Label="Source1" />
+      <Edge From="33" To="34" Label="Source1" />
+      <Edge From="34" To="35" Label="Source2" />
+      <Edge From="36" To="37" Label="Source1" />
+      <Edge From="37" To="38" Label="Source1" />
       <Edge From="39" To="40" Label="Source1" />
-      <Edge From="40" To="41" Label="Source2" />
-      <Edge From="42" To="44" Label="Source1" />
-      <Edge From="43" To="44" Label="Source2" />
-      <Edge From="45" To="48" Label="Source1" />
-      <Edge From="46" To="47" Label="Source1" />
-      <Edge From="47" To="48" Label="Source2" />
-      <Edge From="49" To="50" Label="Source1" />
-      <Edge From="50" To="51" Label="Source1" />
-      <Edge From="52" To="53" Label="Source1" />
-      <Edge From="53" To="54" Label="Source1" />
-      <Edge From="56" To="58" Label="Source1" />
-      <Edge From="57" To="58" Label="Source2" />
+      <Edge From="40" To="41" Label="Source1" />
+      <Edge From="43" To="45" Label="Source1" />
+      <Edge From="44" To="45" Label="Source2" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>

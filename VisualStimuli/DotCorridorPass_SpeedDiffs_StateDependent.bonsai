@@ -8253,7 +8253,7 @@ Item1.transXR as transXR)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25065\20250612\M25065_DotCorridor_SpeedDiffs_WheelLog.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25066\20250714\M25066_DotCorridor_SpeedDiffs_WheelLog.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -8315,7 +8315,7 @@ Item1.transXR as transXR)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25065\20250612\M25065_DotCorridor_SpeedDiffs_Events.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25066\20250714\M25066_DotCorridor_SpeedDiffs_Events.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -8401,7 +8401,7 @@ Item2 as ArudinoTime)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25065\20250612\M25065_DotCorridor_SpeedDiffs_Trial.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25066\20250714\M25066_DotCorridor_SpeedDiffs_Trial.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -8452,7 +8452,7 @@ Item2 as ArudinoTime)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25065\20250612\M25065_DotCorridor_SpeedDiffs_Video.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25066\20250714\M25066_DotCorridor_SpeedDiffs_Video.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -8499,7 +8499,7 @@ Item2 as ArudinoTime)</scr:Expression>
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\Data\Data\M25065\20250612\M25065_DotCorridor_SpeedDiffs_PDAsync.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25066\20250714\M25066_DotCorridor_SpeedDiffs_PDAsync.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -9304,7 +9304,7 @@ Item4.Item2 as transXR)</scr:Expression>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Exposure</cv:Property>
-                    <cv:Value>-8</cv:Value>
+                    <cv:Value>-5</cv:Value>
                   </cv:CapturePropertyAssignment>
                   <cv:CapturePropertyAssignment>
                     <cv:Property>Gain</cv:Property>
@@ -9383,8 +9383,8 @@ Item4.Item2 as transXR)</scr:Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:Crop">
                 <cv:RegionOfInterest>
-                  <cv:X>2080</cv:X>
-                  <cv:Y>96</cv:Y>
+                  <cv:X>2272</cv:X>
+                  <cv:Y>90</cv:Y>
                   <cv:Width>64</cv:Width>
                   <cv:Height>66</cv:Height>
                 </cv:RegionOfInterest>
@@ -9418,7 +9418,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
-                <cv:FileName>C:\Data\Data\M25065\20250612\M25065_DotCorridor_SpeedDiffs_BodyVideo.avi</cv:FileName>
+                <cv:FileName>C:\\Data\M25066\20250714\M25066_DotCorridor_SpeedDiffs_BodyVideo.avi</cv:FileName>
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -9500,7 +9500,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M25065</Value>
+                <Value>M25066</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -9511,7 +9511,7 @@ Item4.Item2 as transXR)</scr:Expression>
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>C:\Data</Value>
+                <Value>C:\</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="Combinator">
