@@ -3,23 +3,51 @@
   <WindowState>Maximized</WindowState>
   <EditorTheme>Light</EditorTheme>
   <DesktopBounds>
-    <X>80</X>
-    <Y>90</Y>
+    <X>-7</X>
+    <Y>0</Y>
     <Width>654</Width>
     <Height>495</Height>
   </DesktopBounds>
   <RecentlyUsedFiles>
     <RecentlyUsedFile>
-      <Timestamp>2025-07-10T10:58:19.2165781+01:00</Timestamp>
+      <Timestamp>2025-08-07T12:06:05.4091567+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_FastSpeedChanges_MatrixRigs.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-08-06T17:15:21.3685502+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridorPass_SpeedDiffs_StateDependent.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-08-06T17:04:32.5305839+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\SparseNoiseTexture_MatrixRigs.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-08-06T15:03:10.8980407+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridorPass_AsymFlow_StateDependent.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-08-06T13:38:54.0806437+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridor_ClosedLoop.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-07-10T10:54:43.0947293+01:00</Timestamp>
+      <Timestamp>2025-08-05T16:12:01.1588427+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\Checkboard_MatrixRigs.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-07-28T15:05:52.8526478+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentMotCoh.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-07-28T14:13:49.1358398+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
+    </RecentlyUsedFile>
+    <RecentlyUsedFile>
+      <Timestamp>2025-07-25T14:54:08.9695026+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridor_Replay.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-07-08T17:10:27.6181098+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentSpeed.bonsai</Name>
+      <Timestamp>2025-07-25T14:53:02.2657388+01:00</Timestamp>
+      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridor_ClosedLoop_Perturbations.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2025-07-08T17:10:14.7517417+01:00</Timestamp>
@@ -34,28 +62,8 @@
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DriftingGratingsAndPlaids_MatrixRigs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
-      <Timestamp>2025-06-17T11:43:09.7881558+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\Checkboard_MatrixRigs.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-06-17T11:14:12.5309137+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\SparseNoiseTexture_MatrixRigs.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
       <Timestamp>2025-06-17T10:28:53.6226331+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\EH_Speed2D.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-06-13T15:38:12.1908767+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridorPass_AsymFlow_StateDependent.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-06-13T14:32:46.9410235+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotCorridorPass_SpeedDiffs_StateDependent.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-06-12T15:41:21.7591594+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_FastSpeedChanges_MatrixRigs.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2025-06-12T12:39:36.3306648+01:00</Timestamp>
@@ -68,10 +76,6 @@
     <RecentlyUsedFile>
       <Timestamp>2025-06-12T10:02:47.6623404+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\DotCorridorTask\BonsaiWorkflows\DotCorridor_ephys_240708.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-06-11T15:49:54.4259299+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\MatrixRigs\VisualStimuli\DotMotion_StateDependentMotCoh.bonsai</Name>
     </RecentlyUsedFile>
     <RecentlyUsedFile>
       <Timestamp>2025-06-10T15:01:13.4025206+01:00</Timestamp>
@@ -104,10 +108,6 @@
     <RecentlyUsedFile>
       <Timestamp>2025-05-07T13:14:10.8853315+01:00</Timestamp>
       <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Dot corridor closed loop_2024\DotCorridor_ClosedLoop_masa.bonsai</Name>
-    </RecentlyUsedFile>
-    <RecentlyUsedFile>
-      <Timestamp>2025-04-03T17:12:56.9288814+01:00</Timestamp>
-      <Name>C:\Users\saleem_lab\Documents\GitHub\Bonsai_VR_navigation\Diao_VR_training_room_SALEEM21\solenoid_testing.bonsai</Name>
     </RecentlyUsedFile>
   </RecentlyUsedFiles>
 </EditorSettings>

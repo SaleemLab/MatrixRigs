@@ -573,10 +573,10 @@
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Collections.SparseNoise.bonsai">
               <Duration>PT0.1S</Duration>
-              <ActiveQuads>10</ActiveQuads>
+              <ActiveQuads>5</ActiveQuads>
               <GridSize>
-                <Width>32</Width>
-                <Height>16</Height>
+                <Width>16</Width>
+                <Height>8</Height>
               </GridSize>
             </Expression>
             <Expression xsi:type="SubscribeSubject">
@@ -604,7 +604,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="dsp:MatrixWriter">
-                <dsp:Path>C:\\Data\M25065\20250723\M25065_SparseNoise_Log.bin</dsp:Path>
+                <dsp:Path>C:\\Data\M25070\20250806\M25070_SparseNoise_Log.bin</dsp:Path>
                 <dsp:Suffix>Timestamp</dsp:Suffix>
                 <dsp:Overwrite>false</dsp:Overwrite>
                 <dsp:Layout>ColumnMajor</dsp:Layout>
@@ -1337,7 +1337,7 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\\Data\M25065\20250723\M25065_SparseNoise_WheelLog.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25070\20250806\M25070_SparseNoise_WheelLog.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -1388,7 +1388,7 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\\Data\M25065\20250723\M25065_SparseNoise_Video.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25070\20250806\M25070_SparseNoise_Video.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -1435,7 +1435,7 @@
                     </PropertyMappings>
                   </Expression>
                   <Expression xsi:type="io:CsvWriter">
-                    <io:FileName>C:\\Data\M25065\20250723\M25065_SparseNoise_PDAsync.csv</io:FileName>
+                    <io:FileName>C:\\Data\M25070\20250806\M25070_SparseNoise_PDAsync.csv</io:FileName>
                     <io:Delimiter>,</io:Delimiter>
                     <io:Append>false</io:Append>
                     <io:Overwrite>false</io:Overwrite>
@@ -1738,7 +1738,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="cv:VideoWriter">
-                <cv:FileName>C:\\Data\M25065\20250723\M25065_SparseNoise_BodyVideo.avi</cv:FileName>
+                <cv:FileName>C:\\Data\M25070\20250806\M25070_SparseNoise_BodyVideo.avi</cv:FileName>
                 <cv:Suffix>Timestamp</cv:Suffix>
                 <cv:Buffered>true</cv:Buffered>
                 <cv:Overwrite>false</cv:Overwrite>
@@ -1830,7 +1830,7 @@
             </Expression>
             <Expression xsi:type="Combinator">
               <Combinator xsi:type="StringProperty">
-                <Value>M25065</Value>
+                <Value>M25070</Value>
               </Combinator>
             </Expression>
             <Expression xsi:type="SubscribeSubject">

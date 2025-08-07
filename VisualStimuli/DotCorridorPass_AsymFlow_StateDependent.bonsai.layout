@@ -1143,8 +1143,8 @@
       <DialogSettings>
         <Visible>true</Visible>
         <Location>
-          <X>793</X>
-          <Y>219</Y>
+          <X>588</X>
+          <Y>223</Y>
         </Location>
         <Size>
           <Width>336</Width>
@@ -1251,10 +1251,6 @@
           <Height>260</Height>
         </Size>
         <WindowState>Normal</WindowState>
-        <VisualizerTypeName>Bonsai.Vision.Design.IplImageVisualizer</VisualizerTypeName>
-        <VisualizerSettings>
-          <IplImageVisualizer />
-        </VisualizerSettings>
       </DialogSettings>
       <DialogSettings>
         <Visible>false</Visible>
@@ -1307,8 +1303,8 @@
         <VisualizerSettings>
           <TimeSeriesVisualizer>
             <Capacity>640</Capacity>
-            <Min>200000</Min>
-            <Max>1100000</Max>
+            <Min>0</Min>
+            <Max>200000</Max>
             <AutoScale>true</AutoScale>
           </TimeSeriesVisualizer>
         </VisualizerSettings>
@@ -1870,12 +1866,12 @@
           <DialogSettings>
             <Visible>true</Visible>
             <Location>
-              <X>516</X>
-              <Y>625</Y>
+              <X>182</X>
+              <Y>182</Y>
             </Location>
             <Size>
-              <Width>647</Width>
-              <Height>435</Height>
+              <Width>336</Width>
+              <Height>279</Height>
             </Size>
             <WindowState>Normal</WindowState>
             <VisualizerTypeName>Bonsai.Design.Visualizers.TableLayoutPanelVisualizer</VisualizerTypeName>
@@ -1887,8 +1883,8 @@
                   <VisualizerSettings>
                     <BarGraphVisualizer>
                       <Capacity>0</Capacity>
-                      <Min>0</Min>
-                      <Max>2.5</Max>
+                      <Min>-1</Min>
+                      <Max>1</Max>
                       <AutoScale>true</AutoScale>
                     </BarGraphVisualizer>
                   </VisualizerSettings>
@@ -1899,8 +1895,8 @@
                   <VisualizerSettings>
                     <BarGraphVisualizer>
                       <Capacity>0</Capacity>
-                      <Min>0</Min>
-                      <Max>35</Max>
+                      <Min>-1</Min>
+                      <Max>1</Max>
                       <AutoScale>true</AutoScale>
                     </BarGraphVisualizer>
                   </VisualizerSettings>
@@ -1911,8 +1907,8 @@
                   <VisualizerSettings>
                     <TimeSeriesVisualizer>
                       <Capacity>640</Capacity>
-                      <Min>0</Min>
-                      <Max>40</Max>
+                      <Min>5</Min>
+                      <Max>35</Max>
                       <AutoScale>true</AutoScale>
                     </TimeSeriesVisualizer>
                   </VisualizerSettings>
@@ -1923,8 +1919,8 @@
                   <VisualizerSettings>
                     <TimeSeriesVisualizer>
                       <Capacity>640</Capacity>
-                      <Min>0</Min>
-                      <Max>1.1</Max>
+                      <Min>0.95</Min>
+                      <Max>1.05</Max>
                       <AutoScale>true</AutoScale>
                     </TimeSeriesVisualizer>
                   </VisualizerSettings>
