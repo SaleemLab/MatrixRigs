@@ -780,11 +780,9 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                 <Z>-9</Z>
               </Translation>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
-                <ClearColor>Gray</ClearColor>
-                <GammaLut>LUT_GRB.bmp</GammaLut>
-              </Builder>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
               <X>0</X>
@@ -818,11 +816,9 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                 <Z>-15</Z>
               </Translation>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
-                <ClearColor>Gray</ClearColor>
-                <GammaLut>LUT_GRB.bmp</GammaLut>
-              </Builder>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
               <X>0.333</X>
@@ -856,11 +852,9 @@ ViewMatrix.Row3.Yzw as Light)</scr:Expression>
                 <Z>-9</Z>
               </Translation>
             </Expression>
-            <Expression xsi:type="Disable">
-              <Builder xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
-                <ClearColor>Gray</ClearColor>
-                <GammaLut>LUT_GRB.bmp</GammaLut>
-              </Builder>
+            <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.GammaCorrection.bonsai">
+              <ClearColor>Gray</ClearColor>
+              <GammaLut>LUT_GRB.bmp</GammaLut>
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="BonVision:Environment.DrawViewport.bonsai">
               <X>0.665</X>
