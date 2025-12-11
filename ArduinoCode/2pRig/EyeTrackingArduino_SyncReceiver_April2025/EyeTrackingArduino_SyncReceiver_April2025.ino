@@ -1,9 +1,12 @@
+// Typically on COM10 [06.12.2025]
 #define SyncPin 6
 //#define FrameTrig 9   
 
-unsigned long currentMillis;
-unsigned long lastSyncPulseTime;
-unsigned long startMillis;
+
+unsigned long lastSyncPulseTime; // async pluse interrupt time 
+
+unsigned long currentMillis; // rolling timer to check if its time to send the new data 
+unsigned long startMillis; // sample timer that resets everytime new data is sent
 float samplingFrequency = 120;
 const long interval = 1000 / (samplingFrequency);
 

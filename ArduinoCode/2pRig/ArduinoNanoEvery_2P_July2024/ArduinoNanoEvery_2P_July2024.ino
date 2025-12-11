@@ -22,7 +22,7 @@
 #define encoder0PinB 19          // sensor B of rotary encoder
 #define SValvePinL 11             // digital pin controlling the left solenoid valve
 #define SValvePinR 12            // digital pin controlling the right solenoid valve
-#define SyncPin 10               // sync pulse pin
+#define SyncPin 6               // sync pulse pin
 #define PhotodiodePin 17         // photoiode analog input 
 #define FrameTrig 9         // frame trigger digital input 
 #define LineTrig 8         // line trigger digital input 

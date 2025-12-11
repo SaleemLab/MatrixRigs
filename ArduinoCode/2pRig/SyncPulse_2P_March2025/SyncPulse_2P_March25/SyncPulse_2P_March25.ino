@@ -1,5 +1,5 @@
-
-#define encoderPinOUT 8
+// Typically on COM9 (02.12.25)
+#define encoderPinOUT 6
 
 long wait_time;
 

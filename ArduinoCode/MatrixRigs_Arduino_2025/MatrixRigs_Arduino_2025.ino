@@ -68,8 +68,8 @@ void setup() {
   pinMode(WheelPin1, INPUT_PULLUP);  // rotary encoder sensor A
   pinMode(WheelPin2, INPUT_PULLUP);  // rotary encoder sensor B
 
-  pinMode(LickPinL, INPUT_PULLUP);  // lick detector for left port
-  pinMode(LickPinR, INPUT_PULLUP);  // lick detector for right port
+  pinMode(LickPinL, INPUT);  // lick detector for left port
+  pinMode(LickPinR, INPUT);  // lick detector for right port
 
   pinMode(SValvePinL, OUTPUT);    // solenoid valve for left port
   pinMode(SValvePinR, OUTPUT);    // solenoid valve for right port
@@ -88,8 +88,8 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(WheelPin2), updateEncoder, CHANGE);
 
   // interrupt for lick detector
-  attachInterrupt(digitalPinToInterrupt(LickPinL), Lick_CounterL, FALLING);
-  attachInterrupt(digitalPinToInterrupt(LickPinR), Lick_CounterR, FALLING);
+  attachInterrupt(digitalPinToInterrupt(LickPinL), Lick_CounterL, RISING);
+  attachInterrupt(digitalPinToInterrupt(LickPinR), Lick_CounterR, RISING);
 
   // interrupt for sync pulse - no longer used
   //attachInterrupt(digitalPinToInterrupt(SyncPin), SyncPulse_Receiver, RISING);
@@ -236,6 +236,7 @@ void ActivatePVL() {
       StartTimeL = millis();           // get time that valve opened
       ValveOpenL = true;               // set bool flag for open valve
       digitalWrite(SValvePinL, HIGH);  // open the valve
+      //Serial.println("L open");
     }
     newRewardL = false;  // we've opened the valve, so newReward is false.
   }
@@ -245,6 +246,8 @@ void ActivatePVL() {
     {
       digitalWrite(SValvePinL, LOW);  // turn valve off
       ValveOpenL = false;             // set valve open bool to false
+      //Serial.println("L closed");
+
     }
   }
 }
@@ -257,6 +260,7 @@ void ActivatePVR() {
       StartTimeR = millis();           // get time that valve opened
       ValveOpenR = true;               // set bool flag for open valve
       digitalWrite(SValvePinR, HIGH);  // open the valve
+      //Serial.println("R open");
     }
     newRewardR = false;  // we've opened the valve, so newReward is false.
   }
@@ -266,6 +270,8 @@ void ActivatePVR() {
     {
       digitalWrite(SValvePinR, LOW);  // turn valve off
       ValveOpenR = false;             // set valve open bool to false
+      //Serial.println("R closed");
+
 
     }
   }
