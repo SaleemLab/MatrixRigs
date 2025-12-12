@@ -445,7 +445,7 @@
                     <Name>Source1</Name>
                   </Expression>
                   <Expression xsi:type="GroupWorkflow">
-                    <Name>GratingSpec</Name>
+                    <Name>GratingSpec_0dir</Name>
                     <Workflow>
                       <Nodes>
                         <Expression xsi:type="WorkflowInput">
@@ -467,7 +467,7 @@
                                 <p1:spatialFrequency>0.02</p1:spatialFrequency>
                               </p1:DoubleGratingParams>
                               <p1:DoubleGratingParams>
-                                <p1:angle_g1>45</p1:angle_g1>
+                                <p1:angle_g1>0</p1:angle_g1>
                                 <p1:angle_g2>0</p1:angle_g2>
                                 <p1:contrast_g1>1</p1:contrast_g1>
                                 <p1:contrast_g2>0</p1:contrast_g2>
@@ -476,10 +476,10 @@
                                 <p1:phase_g1>0</p1:phase_g1>
                                 <p1:phase_g2>0</p1:phase_g2>
                                 <p1:temporalFrequency>4</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.02</p1:spatialFrequency>
+                                <p1:spatialFrequency>0.04</p1:spatialFrequency>
                               </p1:DoubleGratingParams>
                               <p1:DoubleGratingParams>
-                                <p1:angle_g1>90</p1:angle_g1>
+                                <p1:angle_g1>0</p1:angle_g1>
                                 <p1:angle_g2>0</p1:angle_g2>
                                 <p1:contrast_g1>1</p1:contrast_g1>
                                 <p1:contrast_g2>0</p1:contrast_g2>
@@ -488,10 +488,121 @@
                                 <p1:phase_g1>0</p1:phase_g1>
                                 <p1:phase_g2>0</p1:phase_g2>
                                 <p1:temporalFrequency>4</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.02</p1:spatialFrequency>
+                                <p1:spatialFrequency>0.08</p1:spatialFrequency>
                               </p1:DoubleGratingParams>
                               <p1:DoubleGratingParams>
-                                <p1:angle_g1>135</p1:angle_g1>
+                                <p1:angle_g1>0</p1:angle_g1>
+                                <p1:angle_g2>0</p1:angle_g2>
+                                <p1:contrast_g1>1</p1:contrast_g1>
+                                <p1:contrast_g2>0</p1:contrast_g2>
+                                <p1:opacity_g1>1</p1:opacity_g1>
+                                <p1:opacity_g2>0</p1:opacity_g2>
+                                <p1:phase_g1>0</p1:phase_g1>
+                                <p1:phase_g2>0</p1:phase_g2>
+                                <p1:temporalFrequency>4</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.16</p1:spatialFrequency>
+                              </p1:DoubleGratingParams>
+                              <p1:DoubleGratingParams>
+                                <p1:angle_g1>0</p1:angle_g1>
+                                <p1:angle_g2>0</p1:angle_g2>
+                                <p1:contrast_g1>1</p1:contrast_g1>
+                                <p1:contrast_g2>0</p1:contrast_g2>
+                                <p1:opacity_g1>1</p1:opacity_g1>
+                                <p1:opacity_g2>0</p1:opacity_g2>
+                                <p1:phase_g1>0</p1:phase_g1>
+                                <p1:phase_g2>0</p1:phase_g2>
+                                <p1:temporalFrequency>4</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.32</p1:spatialFrequency>
+                              </p1:DoubleGratingParams>
+                            </p1:Trials>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="GroupWorkflow">
+                    <Name>Blank</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="p1:DoubleGratingSpecification">
+                            <p1:Trials>
+                              <p1:DoubleGratingParams>
+                                <p1:angle_g1>0</p1:angle_g1>
+                                <p1:angle_g2>0</p1:angle_g2>
+                                <p1:contrast_g1>0</p1:contrast_g1>
+                                <p1:contrast_g2>0</p1:contrast_g2>
+                                <p1:opacity_g1>0</p1:opacity_g1>
+                                <p1:opacity_g2>0</p1:opacity_g2>
+                                <p1:phase_g1>0</p1:phase_g1>
+                                <p1:phase_g2>0</p1:phase_g2>
+                                <p1:temporalFrequency>2</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.04</p1:spatialFrequency>
+                              </p1:DoubleGratingParams>
+                            </p1:Trials>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="GroupWorkflow">
+                    <Name>Blank</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="p1:DoubleGratingSpecification">
+                            <p1:Trials>
+                              <p1:DoubleGratingParams>
+                                <p1:angle_g1>0</p1:angle_g1>
+                                <p1:angle_g2>0</p1:angle_g2>
+                                <p1:contrast_g1>0</p1:contrast_g1>
+                                <p1:contrast_g2>0</p1:contrast_g2>
+                                <p1:opacity_g1>0</p1:opacity_g1>
+                                <p1:opacity_g2>0</p1:opacity_g2>
+                                <p1:phase_g1>0</p1:phase_g1>
+                                <p1:phase_g2>0</p1:phase_g2>
+                                <p1:temporalFrequency>2</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.04</p1:spatialFrequency>
+                              </p1:DoubleGratingParams>
+                            </p1:Trials>
+                          </Combinator>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="GroupWorkflow">
+                    <Name>GratingSpec_180dir</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="WorkflowInput">
+                          <Name>Source1</Name>
+                        </Expression>
+                        <Expression xsi:type="Combinator">
+                          <Combinator xsi:type="p1:DoubleGratingSpecification">
+                            <p1:Trials>
+                              <p1:DoubleGratingParams>
+                                <p1:angle_g1>180</p1:angle_g1>
                                 <p1:angle_g2>0</p1:angle_g2>
                                 <p1:contrast_g1>1</p1:contrast_g1>
                                 <p1:contrast_g2>0</p1:contrast_g2>
@@ -512,109 +623,43 @@
                                 <p1:phase_g1>0</p1:phase_g1>
                                 <p1:phase_g2>0</p1:phase_g2>
                                 <p1:temporalFrequency>4</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.02</p1:spatialFrequency>
-                              </p1:DoubleGratingParams>
-                              <p1:DoubleGratingParams>
-                                <p1:angle_g1>225</p1:angle_g1>
-                                <p1:angle_g2>0</p1:angle_g2>
-                                <p1:contrast_g1>1</p1:contrast_g1>
-                                <p1:contrast_g2>0</p1:contrast_g2>
-                                <p1:opacity_g1>1</p1:opacity_g1>
-                                <p1:opacity_g2>0</p1:opacity_g2>
-                                <p1:phase_g1>0</p1:phase_g1>
-                                <p1:phase_g2>0</p1:phase_g2>
-                                <p1:temporalFrequency>4</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.02</p1:spatialFrequency>
-                              </p1:DoubleGratingParams>
-                              <p1:DoubleGratingParams>
-                                <p1:angle_g1>270</p1:angle_g1>
-                                <p1:angle_g2>0</p1:angle_g2>
-                                <p1:contrast_g1>1</p1:contrast_g1>
-                                <p1:contrast_g2>0</p1:contrast_g2>
-                                <p1:opacity_g1>1</p1:opacity_g1>
-                                <p1:opacity_g2>0</p1:opacity_g2>
-                                <p1:phase_g1>0</p1:phase_g1>
-                                <p1:phase_g2>0</p1:phase_g2>
-                                <p1:temporalFrequency>4</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.02</p1:spatialFrequency>
-                              </p1:DoubleGratingParams>
-                              <p1:DoubleGratingParams>
-                                <p1:angle_g1>315</p1:angle_g1>
-                                <p1:angle_g2>0</p1:angle_g2>
-                                <p1:contrast_g1>1</p1:contrast_g1>
-                                <p1:contrast_g2>0</p1:contrast_g2>
-                                <p1:opacity_g1>1</p1:opacity_g1>
-                                <p1:opacity_g2>0</p1:opacity_g2>
-                                <p1:phase_g1>0</p1:phase_g1>
-                                <p1:phase_g2>0</p1:phase_g2>
-                                <p1:temporalFrequency>4</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.02</p1:spatialFrequency>
-                              </p1:DoubleGratingParams>
-                            </p1:Trials>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="WorkflowOutput" />
-                      </Nodes>
-                      <Edges>
-                        <Edge From="0" To="1" Label="Source1" />
-                        <Edge From="1" To="2" Label="Source1" />
-                      </Edges>
-                    </Workflow>
-                  </Expression>
-                  <Expression xsi:type="GroupWorkflow">
-                    <Name>Blank</Name>
-                    <Workflow>
-                      <Nodes>
-                        <Expression xsi:type="WorkflowInput">
-                          <Name>Source1</Name>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="p1:DoubleGratingSpecification">
-                            <p1:Trials>
-                              <p1:DoubleGratingParams>
-                                <p1:angle_g1>0</p1:angle_g1>
-                                <p1:angle_g2>0</p1:angle_g2>
-                                <p1:contrast_g1>0</p1:contrast_g1>
-                                <p1:contrast_g2>0</p1:contrast_g2>
-                                <p1:opacity_g1>0</p1:opacity_g1>
-                                <p1:opacity_g2>0</p1:opacity_g2>
-                                <p1:phase_g1>0</p1:phase_g1>
-                                <p1:phase_g2>0</p1:phase_g2>
-                                <p1:temporalFrequency>2</p1:temporalFrequency>
                                 <p1:spatialFrequency>0.04</p1:spatialFrequency>
                               </p1:DoubleGratingParams>
-                            </p1:Trials>
-                          </Combinator>
-                        </Expression>
-                        <Expression xsi:type="WorkflowOutput" />
-                      </Nodes>
-                      <Edges>
-                        <Edge From="0" To="1" Label="Source1" />
-                        <Edge From="1" To="2" Label="Source1" />
-                      </Edges>
-                    </Workflow>
-                  </Expression>
-                  <Expression xsi:type="GroupWorkflow">
-                    <Name>Blank</Name>
-                    <Workflow>
-                      <Nodes>
-                        <Expression xsi:type="WorkflowInput">
-                          <Name>Source1</Name>
-                        </Expression>
-                        <Expression xsi:type="Combinator">
-                          <Combinator xsi:type="p1:DoubleGratingSpecification">
-                            <p1:Trials>
                               <p1:DoubleGratingParams>
-                                <p1:angle_g1>0</p1:angle_g1>
+                                <p1:angle_g1>180</p1:angle_g1>
                                 <p1:angle_g2>0</p1:angle_g2>
-                                <p1:contrast_g1>0</p1:contrast_g1>
+                                <p1:contrast_g1>1</p1:contrast_g1>
                                 <p1:contrast_g2>0</p1:contrast_g2>
-                                <p1:opacity_g1>0</p1:opacity_g1>
+                                <p1:opacity_g1>1</p1:opacity_g1>
                                 <p1:opacity_g2>0</p1:opacity_g2>
                                 <p1:phase_g1>0</p1:phase_g1>
                                 <p1:phase_g2>0</p1:phase_g2>
-                                <p1:temporalFrequency>2</p1:temporalFrequency>
-                                <p1:spatialFrequency>0.04</p1:spatialFrequency>
+                                <p1:temporalFrequency>4</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.08</p1:spatialFrequency>
+                              </p1:DoubleGratingParams>
+                              <p1:DoubleGratingParams>
+                                <p1:angle_g1>180</p1:angle_g1>
+                                <p1:angle_g2>0</p1:angle_g2>
+                                <p1:contrast_g1>1</p1:contrast_g1>
+                                <p1:contrast_g2>0</p1:contrast_g2>
+                                <p1:opacity_g1>1</p1:opacity_g1>
+                                <p1:opacity_g2>0</p1:opacity_g2>
+                                <p1:phase_g1>0</p1:phase_g1>
+                                <p1:phase_g2>0</p1:phase_g2>
+                                <p1:temporalFrequency>4</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.16</p1:spatialFrequency>
+                              </p1:DoubleGratingParams>
+                              <p1:DoubleGratingParams>
+                                <p1:angle_g1>180</p1:angle_g1>
+                                <p1:angle_g2>0</p1:angle_g2>
+                                <p1:contrast_g1>1</p1:contrast_g1>
+                                <p1:contrast_g2>0</p1:contrast_g2>
+                                <p1:opacity_g1>1</p1:opacity_g1>
+                                <p1:opacity_g2>0</p1:opacity_g2>
+                                <p1:phase_g1>0</p1:phase_g1>
+                                <p1:phase_g2>0</p1:phase_g2>
+                                <p1:temporalFrequency>4</p1:temporalFrequency>
+                                <p1:spatialFrequency>0.32</p1:spatialFrequency>
                               </p1:DoubleGratingParams>
                             </p1:Trials>
                           </Combinator>
@@ -636,10 +681,12 @@
                   <Edge From="0" To="1" Label="Source1" />
                   <Edge From="0" To="2" Label="Source1" />
                   <Edge From="0" To="3" Label="Source1" />
-                  <Edge From="1" To="4" Label="Source1" />
-                  <Edge From="2" To="4" Label="Source3" />
-                  <Edge From="3" To="4" Label="Source2" />
-                  <Edge From="4" To="5" Label="Source1" />
+                  <Edge From="0" To="4" Label="Source1" />
+                  <Edge From="1" To="5" Label="Source1" />
+                  <Edge From="2" To="5" Label="Source3" />
+                  <Edge From="3" To="5" Label="Source2" />
+                  <Edge From="4" To="5" Label="Source4" />
+                  <Edge From="5" To="6" Label="Source1" />
                 </Edges>
               </Workflow>
             </Expression>
