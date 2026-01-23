@@ -24,7 +24,7 @@
 #define SValvePinR 12            // digital pin controlling the right solenoid valve
 #define SyncPin 6               // sync pulse pin
 #define PhotodiodePin 17         // photoiode analog input 
-#define FrameTrig 9         // frame trigger digital input 
+#define FrameTrig 5         // frame trigger digital input 
 #define LineTrig 8         // line trigger digital input 
 #define ScreenOnPin 7     // Teensy output (screen flicker)
 
